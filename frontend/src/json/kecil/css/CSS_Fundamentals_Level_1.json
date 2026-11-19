@@ -1,0 +1,362 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "css_fundamentals",
+  "course_title": "CSS Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "Blueprint_CSS_Level_1_Introduction_to_CSS_Absen_Kecil.pdf"
+  ],
+  "mvp_scope_note": "File ini memuat Level 1 saja sebagai modul pengenalan CSS.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi luar dan kapitalisasi.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Tampilkan mascot_dialogue setelah jawaban divalidasi."
+  },
+  "levels": [
+    {
+      "level_id": "CSS_L01",
+      "level_number": 1,
+      "title": "Introduction to CSS",
+      "description": "Pengenalan fungsi CSS, manfaat, cara penerapan, struktur aturan, serta penggunaan stylesheet internal dan eksternal.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "nodes": [
+        {
+          "node_id": "CSS_L01_N01",
+          "title": "What Is CSS?",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "CSS adalah singkatan dari Cascading Style Sheets, yaitu bahasa yang digunakan untuk mengatur tampilan elemen HTML. HTML menyusun isi dan struktur halaman, sedangkan CSS mengatur aspek visual seperti warna, ukuran teks, jarak, dan tata letak.",
+          "code_example": "h1 {\n  color: navy;\n}",
+          "question": "Sebuah halaman sudah memiliki judul dan paragraf, tetapi tampilannya masih standar. Apa peran CSS dalam situasi tersebut?\nA. Mengganti semua elemen HTML menjadi gambar\nB. Mengatur tampilan visual elemen HTML\nC. Menyimpan data pengguna ke database\nD. Menjalankan logika pembayaran",
+          "options": [
+            {
+              "id": "a",
+              "text": "Mengganti semua elemen HTML menjadi gambar"
+            },
+            {
+              "id": "b",
+              "text": "Mengatur tampilan visual elemen HTML"
+            },
+            {
+              "id": "c",
+              "text": "Menyimpan data pengguna ke database"
+            },
+            {
+              "id": "d",
+              "text": "Menjalankan logika pembayaran"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Tepat! CSS mengatur tampilan, sedangkan HTML menyediakan struktur konten.",
+          "feedback_incorrect": "Belum tepat. Fokus CSS adalah presentasi visual, bukan penyimpanan data atau logika aplikasi.",
+          "mascot_dialogue": "Bagus! Kamu memahami perbedaan tugas HTML dan CSS.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 49,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N02",
+          "title": "Benefits of CSS",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "CSS memungkinkan banyak elemen memakai aturan tampilan yang konsisten. Dengan stylesheet eksternal, perubahan warna atau font dapat dilakukan pada satu file dan diterapkan pada beberapa halaman yang menautkannya. Hal ini membantu pemeliharaan website dan mengurangi pengulangan pengaturan visual.",
+          "code_example": "p {\n  color: #334155;\n}",
+          "question": "Tiga halaman menggunakan file style.css yang sama. Jika warna paragraf di file itu diubah, apa hasil yang diharapkan?\nA. Hanya paragraf pada halaman pertama yang berubah\nB. Semua tag HTML otomatis terhapus\nC. Paragraf yang cocok dengan aturan pada ketiga halaman berubah\nD. Semua teks berubah menjadi judul",
+          "options": [
+            {
+              "id": "a",
+              "text": "Hanya paragraf pada halaman pertama yang berubah"
+            },
+            {
+              "id": "b",
+              "text": "Semua tag HTML otomatis terhapus"
+            },
+            {
+              "id": "c",
+              "text": "Paragraf yang cocok dengan aturan pada ketiga halaman berubah"
+            },
+            {
+              "id": "d",
+              "text": "Semua teks berubah menjadi judul"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! Stylesheet bersama membuat perubahan gaya lebih konsisten.",
+          "feedback_incorrect": "Belum tepat. Aturan CSS berlaku pada elemen yang cocok di halaman yang memuat file tersebut.",
+          "mascot_dialogue": "Mantap! Satu stylesheet dapat dipakai ulang.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N03",
+          "title": "Ways to Apply CSS",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "CSS dapat diterapkan melalui tiga cara: inline pada atribut style, internal di dalam elemen <style> pada dokumen HTML, atau eksternal melalui file .css yang dihubungkan dengan <link>. Untuk proyek dengan banyak halaman, CSS eksternal umumnya lebih mudah dipelihara.",
+          "code_example": "<p style=\"color: red;\">Halo</p>\n<style>p { color: blue; }</style>\n<link rel=\"stylesheet\" href=\"style.css\">",
+          "question": "Seorang siswa ingin menggunakan satu file gaya untuk lima halaman HTML. Metode mana yang paling sesuai?\nA. Menulis seluruh aturan sebagai inline style berulang\nB. Menaruh aturan berbeda pada setiap tag <p>\nC. Menghapus file HTML dan menyisakan CSS\nD. Membuat stylesheet eksternal dan menghubungkannya ke tiap halaman",
+          "options": [
+            {
+              "id": "a",
+              "text": "Menulis seluruh aturan sebagai inline style berulang"
+            },
+            {
+              "id": "b",
+              "text": "Menaruh aturan berbeda pada setiap tag <p>"
+            },
+            {
+              "id": "c",
+              "text": "Menghapus file HTML dan menyisakan CSS"
+            },
+            {
+              "id": "d",
+              "text": "Membuat stylesheet eksternal dan menghubungkannya ke tiap halaman"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "D",
+          "feedback_correct": "Tepat! CSS eksternal dapat digunakan bersama oleh banyak halaman.",
+          "feedback_incorrect": "Belum tepat. Pilih metode yang memungkinkan aturan gaya dipakai ulang.",
+          "mascot_dialogue": "Keren! Kamu bisa memilih cara penerapan CSS sesuai kebutuhan.",
+          "correct_option_id": "d",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 58,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N04",
+          "title": "CSS Rule Anatomy",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Aturan CSS terdiri atas selector dan blok deklarasi. Selector menentukan elemen yang dituju. Di dalam kurung kurawal, deklarasi ditulis sebagai property: value; dan dapat terdiri atas beberapa baris. Contoh h1 { color: blue; } memiliki selector h1, property color, dan value blue.",
+          "code_example": "h1 {\n  color: blue;\n  font-size: 24px;\n}",
+          "question": "Pada aturan CSS tersebut, bagian manakah yang merupakan selector?\nA. h1\nB. color\nC. blue\nD. 24px",
+          "options": [
+            {
+              "id": "a",
+              "text": "h1"
+            },
+            {
+              "id": "b",
+              "text": "color"
+            },
+            {
+              "id": "c",
+              "text": "blue"
+            },
+            {
+              "id": "d",
+              "text": "24px"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "A",
+          "feedback_correct": "Benar! h1 adalah selector yang memilih elemen heading tingkat satu.",
+          "feedback_incorrect": "Belum tepat. Selector berada sebelum kurung kurawal pembuka.",
+          "mascot_dialogue": "Hebat! Kamu dapat membaca bagian utama aturan CSS.",
+          "correct_option_id": "a",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 49,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N05",
+          "title": "Complete a CSS Property",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Property adalah nama pengaturan yang ingin diubah, misalnya color untuk warna teks dan background-color untuk warna latar. Deklarasi harus memakai tanda titik dua antara property dan value serta titik koma sebagai pemisah deklarasi.",
+          "code_example": "p {\n  color: green;\n}",
+          "question": "Lengkapi nama property agar teks paragraf menjadi hijau:\np {\n  _____: green;\n}",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "color",
+          "feedback_correct": "Tepat! Property color mengatur warna teks.",
+          "feedback_incorrect": "Belum tepat. Gunakan property untuk warna huruf, bukan warna latar.",
+          "mascot_dialogue": "Sip! Kamu sudah bisa melengkapi deklarasi CSS.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "color"
+          ],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N06",
+          "title": "Link an External Stylesheet",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "File CSS eksternal dihubungkan melalui elemen <link> yang umumnya ditempatkan dalam <head>. Atribut rel=\"stylesheet\" menyatakan hubungan file sebagai stylesheet, sedangkan href menentukan path file CSS yang akan dimuat browser.",
+          "code_example": "<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>",
+          "question": "Lengkapi nilai atribut rel agar file style.css dikenali sebagai stylesheet:\n<link rel=\"_____\" href=\"style.css\">",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "stylesheet",
+          "feedback_correct": "Benar! Nilai stylesheet menunjukkan jenis hubungan file CSS.",
+          "feedback_incorrect": "Belum tepat. Nilai rel harus menyatakan bahwa file yang ditautkan adalah stylesheet.",
+          "mascot_dialogue": "Bagus! HTML dan CSS sekarang bisa dihubungkan.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "stylesheet"
+          ],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N07",
+          "title": "Complete a CSS Value",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Nilai atau value menentukan hasil pengaturan property. Sebagai contoh, font-size: 20px; mengatur ukuran huruf menjadi 20 piksel CSS. Unit px perlu disertakan agar nilai ukuran dapat dipahami dengan benar pada property font-size.",
+          "code_example": "h2 {\n  font-size: 20px;\n}",
+          "question": "Lengkapi nilai agar ukuran huruf heading menjadi 20 piksel:\nh2 {\n  font-size: _____;\n}",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "20px",
+          "feedback_correct": "Tepat! 20px menyatakan ukuran 20 piksel CSS.",
+          "feedback_incorrect": "Belum tepat. Sertakan angka 20 beserta unit px.",
+          "mascot_dialogue": "Mantap! Kamu memahami pasangan property dan value.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "20px"
+          ],
+          "mascot_dialogue_char_count": 50,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L01_N08",
+          "title": "Arrange a Basic CSS Rule",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Sebuah aturan CSS dimulai dari selector, diikuti kurung kurawal pembuka, satu atau lebih deklarasi, lalu kurung kurawal penutup. Menyusun urutan tersebut adalah keterampilan dasar sebelum membuat aturan gaya yang lebih kompleks.",
+          "code_example": "p {\n  color: purple;\n}",
+          "question": "Susun potongan berikut menjadi aturan CSS yang memberi warna ungu pada paragraf:\n1. }\n2. color: purple;\n3. p {",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "}"
+            },
+            {
+              "id": 2,
+              "code": "color: purple;"
+            },
+            {
+              "id": 3,
+              "code": "p {"
+            }
+          ],
+          "correct_answer": "Urutan: 3 → 2 → 1\nCorrect Code:\np {\n  color: purple;\n}",
+          "feedback_correct": "Benar! Selector, deklarasi, dan penutup berada pada urutan yang tepat.",
+          "feedback_incorrect": "Belum tepat. Mulailah dengan selector p lalu isi deklarasinya.",
+          "mascot_dialogue": "Keren! Kamu berhasil menyusun satu aturan CSS.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "node_id": "CSS_L01_N09",
+          "title": "Arrange HTML and Internal CSS",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Internal CSS ditempatkan di dalam elemen <style> pada bagian <head>. Dengan struktur ini, browser membaca aturan gaya sebagai bagian dari dokumen HTML. Elemen <body> berisi konten yang akan ditampilkan.",
+          "code_example": "<!DOCTYPE html>\n<html>\n<head>\n  <style>h1 { color: teal; }</style>\n</head>\n<body><h1>Halo CSS</h1></body>\n</html>",
+          "question": "Susun blok agar CSS internal berada di head dan judul berada di body:\n1. <body><h1>Halo CSS</h1></body>\n2. </html>\n3. <head><style>h1 { color: teal; }</style></head>\n4. <!DOCTYPE html><html>",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<body><h1>Halo CSS</h1></body>"
+            },
+            {
+              "id": 2,
+              "code": "</html>"
+            },
+            {
+              "id": 3,
+              "code": "<head><style>h1 { color: teal; }</style></head>"
+            },
+            {
+              "id": 4,
+              "code": "<!DOCTYPE html><html>"
+            }
+          ],
+          "correct_answer": "Urutan: 4 → 3 → 1 → 2\nCorrect Code:\n<!DOCTYPE html><html>\n<head><style>h1 { color: teal; }</style></head>\n<body><h1>Halo CSS</h1></body>\n</html>",
+          "feedback_correct": "Tepat! Internal CSS berada di head, sedangkan konten berada di body.",
+          "feedback_incorrect": "Belum tepat. Mulai dari dokumen, kemudian head, body, dan penutup html.",
+          "mascot_dialogue": "Hebat! Kamu menggabungkan HTML dengan CSS internal.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 50,
+          "answer_order": [
+            4,
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "node_id": "CSS_L01_N10",
+          "title": "Build a Page with External CSS",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Pada proyek sederhana, file index.html berisi struktur halaman dan menghubungkan style.css melalui link. File style.css berisi selector serta deklarasi. Pemisahan ini membantu developer menerapkan dua file dengan benar.",
+          "code_example": "index.html:\n<!DOCTYPE html>\n<html>\n<head><link rel=\"stylesheet\" href=\"style.css\"></head>\n<body><h1>Selamat Datang</h1></body>\n</html>\n\nstyle.css:\nh1 {\n  color: navy;\n}",
+          "question": "Susun blok sesuai urutan isi index.html, lalu isi style.css. Setiap blok digunakan sekali:\n1. [style.css] h1 { color: navy; }\n2. [index.html] <body><h1>Selamat Datang</h1></body></html>\n3. [index.html] <head><link rel=\"stylesheet\" href=\"style.css\"></head>\n4. [index.html] <!DOCTYPE html><html>",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "[style.css] h1 { color: navy; }"
+            },
+            {
+              "id": 2,
+              "code": "[index.html] <body><h1>Selamat Datang</h1></body></html>"
+            },
+            {
+              "id": 3,
+              "code": "[index.html] <head><link rel=\"stylesheet\" href=\"style.css\"></head>"
+            },
+            {
+              "id": 4,
+              "code": "[index.html] <!DOCTYPE html><html>"
+            }
+          ],
+          "correct_answer": "Urutan: 4 → 3 → 2 → 1\nCorrect Code:\nindex.html:\n<!DOCTYPE html><html>\n<head><link rel=\"stylesheet\" href=\"style.css\"></head>\n<body><h1>Selamat Datang</h1></body></html>\n\nstyle.css:\nh1 { color: navy; }",
+          "feedback_correct": "Luar biasa! HTML menghubungkan stylesheet dan CSS mengatur judulnya.",
+          "feedback_incorrect": "Belum tepat. Susun kerangka HTML dan link lebih dahulu, lalu aturan di style.css.",
+          "mascot_dialogue": "Selamat! Kamu menyelesaikan CSS Level 1.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 41,
+          "answer_order": [
+            4,
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

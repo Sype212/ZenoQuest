@@ -1,0 +1,377 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "kotlin_fundamentals",
+  "course_title": "Kotlin Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "Blueprint_Kotlin_Level_1(2).pdf",
+    "Blueprint_Kotlin_Level_2(1).pdf",
+    "Blueprint_Kotlin_Level_3(2).pdf",
+    "Blueprint_Kotlin_Level_4(3).pdf",
+    "Blueprint_Kotlin_Level_5(1).pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "KTL_L03",
+    "level_number": 3,
+    "title": "Input, Output, and Conditional Statements",
+    "description": "Materi Input, Output, and Conditional Statements untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "KTL_L03_N01",
+        "title": "Introduction to Input and Output",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Input adalah data yang dimasukkan pengguna ke dalam program, sedangkan output adalah informasi yang ditampilkan oleh\nprogram. Kotlin menyediakan print() dan println() untuk menampilkan output.",
+        "code_example": "fun main() {\nprint(\"Hello Kotlin!\")\n}",
+        "question": "Apa yang dimaksud dengan output dalam sebuah program?\nA. Data yang dimasukkan pengguna\nB. Informasi yang dihasilkan dan ditampilkan program\nC. Perintah untuk menghapus program\nD. Proses mengubah kode menjadi aplikasi",
+        "feedback_correct": "Output merupakan informasi atau hasil yang dihasilkan program dan ditampilkan kepada pengguna.",
+        "feedback_incorrect": "Output adalah hasil atau informasi yang ditampilkan oleh program.",
+        "mascot_dialogue": "Program menerima input, memprosesnya, lalu menghasilkan output!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Data yang dimasukkan pengguna"
+          },
+          {
+            "id": "b",
+            "text": "Informasi yang dihasilkan dan ditampilkan program"
+          },
+          {
+            "id": "c",
+            "text": "Perintah untuk menghapus program"
+          },
+          {
+            "id": "d",
+            "text": "Proses mengubah kode menjadi aplikasi"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Informasi yang dihasilkan dan ditampilkan program"
+      },
+      {
+        "node_id": "KTL_L03_N02",
+        "title": "Reading User Input",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Kotlin menyediakan readln() untuk membaca satu baris input teks dari pengguna melalui console. Nilai yang dibaca bertipe\nString.",
+        "code_example": "fun main() {\nprint(\"Masukkan nama: \")\nval name = readln()\nprintln(\"Halo, $name!\")\n}",
+        "question": "Fungsi Kotlin yang digunakan untuk membaca input pengguna dari console adalah ...\nA. println()\nB. readln()\nC. print()\nD. main()",
+        "feedback_correct": "readln() digunakan untuk membaca satu baris input dari pengguna.",
+        "feedback_incorrect": "print() dan println() menampilkan output, sedangkan readln() membaca input.",
+        "mascot_dialogue": "Gunakan readln() untuk mengambil jawaban dari pengguna!",
+        "options": [
+          {
+            "id": "a",
+            "text": "println()"
+          },
+          {
+            "id": "b",
+            "text": "readln()"
+          },
+          {
+            "id": "c",
+            "text": "print()"
+          },
+          {
+            "id": "d",
+            "text": "main()"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. readln()"
+      },
+      {
+        "node_id": "KTL_L03_N03",
+        "title": "Introduction to Conditional Statements",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Conditional statement atau percabangan digunakan agar program dapat mengambil keputusan berdasarkan kondisi. Kotlin\nmenggunakan if, else if, dan else.",
+        "code_example": "val score = 85\nif (score >= 75) {\nprintln(\"Lulus\")\n}",
+        "question": "Apa fungsi utama conditional statement dalam Kotlin?\nA. Mengulang perintah berkali-kali\nB. Menyimpan data ke dalam variabel\nC. Menentukan tindakan berdasarkan kondisi\nD. Menampilkan seluruh isi program",
+        "feedback_correct": "Percabangan membuat program memilih tindakan berdasarkan kondisi yang diperiksa.",
+        "feedback_incorrect": "Conditional statement digunakan untuk menentukan alur program berdasarkan kondisi.",
+        "mascot_dialogue": "Dengan percabangan, program bisa mengambil keputusan sendiri!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mengulang perintah berkali-kali"
+          },
+          {
+            "id": "b",
+            "text": "Menyimpan data ke dalam variabel"
+          },
+          {
+            "id": "c",
+            "text": "Menentukan tindakan berdasarkan kondisi"
+          },
+          {
+            "id": "d",
+            "text": "Menampilkan seluruh isi program"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. Menentukan tindakan berdasarkan kondisi"
+      },
+      {
+        "node_id": "KTL_L03_N04",
+        "title": "If and Else Statement",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "if menjalankan kode ketika kondisi true. else dijalankan ketika kondisi pada if bernilai false.",
+        "code_example": "fun main() {\nval age = 16\nif (age >= 17) {\nprintln(\"Boleh membuat SIM\")\n} else {\nprintln(\"Belum cukup umur\")\n}\n}",
+        "question": "Jika variabel age memiliki nilai 15, pesan apa yang akan ditampilkan?\nA. Boleh membuat SIM\nB. Belum cukup umur\nC. Program mengalami error\nD. Tidak menampilkan apa pun",
+        "feedback_correct": "Nilai 15 tidak memenuhi kondisi age >= 17, sehingga blok else dijalankan.",
+        "feedback_incorrect": "Karena age adalah 15, kondisi bernilai false dan program menjalankan else.",
+        "mascot_dialogue": "Jika kondisi if salah, program akan menjalankan bagian else!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Boleh membuat SIM"
+          },
+          {
+            "id": "b",
+            "text": "Belum cukup umur"
+          },
+          {
+            "id": "c",
+            "text": "Program mengalami error"
+          },
+          {
+            "id": "d",
+            "text": "Tidak menampilkan apa pun"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Belum cukup umur"
+      },
+      {
+        "node_id": "KTL_L03_N05",
+        "title": "Reading Integer Input",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "readln() menghasilkan String. Untuk mengolah input sebagai bilangan bulat, gunakan toInt() untuk mengonversinya menjadi\nInt.",
+        "code_example": "fun main() {\nprint(\"Masukkan umur: \")\nval age = readln().toInt()\nprintln(age + 1)\n}",
+        "question": "Lengkapi kode agar input pengguna diubah menjadi bilangan bulat.\nval age = readln().________",
+        "feedback_correct": "toInt() mengubah teks angka menjadi tipe data Int.",
+        "feedback_incorrect": "Input readln() masih berupa teks. Gunakan toInt() untuk mengubahnya menjadi bilangan bulat.",
+        "mascot_dialogue": "Ubah input teks menjadi angka sebelum melakukan perhitungan!",
+        "accepted_answers": [
+          "toInt()"
+        ],
+        "correct_answer": "toInt()"
+      },
+      {
+        "node_id": "KTL_L03_N06",
+        "title": "String Templates",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Kotlin menyediakan string template untuk menyisipkan nilai variabel ke dalam teks. Gunakan tanda $ sebelum nama variabel.\nUntuk ekspresi, gunakan ${...}.",
+        "code_example": "val name = \"Rani\"\nprintln(\"Halo, $name\")",
+        "question": "Lengkapi kode agar nilai variabel name ditampilkan di dalam teks.\nval name = \"Dina\"\nprintln(\"Selamat datang, ____name\")",
+        "feedback_correct": "Tanda $ digunakan untuk menyisipkan nilai variabel ke dalam string.",
+        "feedback_incorrect": "Kotlin menggunakan tanda $ sebelum nama variabel untuk string interpolation.",
+        "mascot_dialogue": "Tambahkan tanda dolar agar nilai variabel masuk ke dalam teks!",
+        "accepted_answers": [
+          "$"
+        ],
+        "correct_answer": "$"
+      },
+      {
+        "node_id": "KTL_L03_N07",
+        "title": "Else If and When",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "else if memeriksa kondisi tambahan ketika kondisi sebelumnya false. when digunakan untuk memilih hasil berdasarkan nilai\natau kondisi tertentu.",
+        "code_example": "val score = 85\nif (score >= 90) {\nprintln(\"A\")\n} else if (score >= 75) {\nprintln(\"B\")\n} else {\nprintln(\"C\")\n}",
+        "question": "Lengkapi kata kunci untuk memeriksa kondisi tambahan setelah if.\nif (score >= 90) {\nprintln(\"A\")\n} ______ (score >= 75) {\nprintln(\"B\")\n}",
+        "feedback_correct": "else if memeriksa kondisi tambahan jika kondisi sebelumnya tidak terpenuhi.",
+        "feedback_incorrect": "Kata kunci yang tepat adalah else if karena masih ada kondisi yang perlu diperiksa.",
+        "mascot_dialogue": "Gunakan else if saat program perlu memeriksa lebih dari satu kondisi!",
+        "accepted_answers": [
+          "else if"
+        ],
+        "correct_answer": "else if"
+      },
+      {
+        "node_id": "KTL_L03_N08",
+        "title": "Build a Simple Input and Output Program",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Program Kotlin menerima input menggunakan readln() dan menampilkan hasilnya menggunakan println(). Fungsi main()\nmenjadi titik awal eksekusi program.",
+        "code_example": "fun main() {\nprint(\"Masukkan nama: \")\nval name = readln()\nprintln(\"Halo, $name!\")\n}",
+        "question": "Susun potongan kode agar program meminta nama, membaca input, lalu menampilkan sapaan.\nPotongan kode:\n1. println(\"Halo, $name!\")\n2. val name = readln()\n3. fun main()\n4. {\n5. print(\"Masukkan nama: \")\n6. }",
+        "feedback_correct": "Mulai dengan fungsi main(), tampilkan permintaan nama, baca input, tampilkan sapaan, lalu tutup blok.",
+        "feedback_incorrect": "Urutkan fungsi main(), permintaan input, pembacaan input, output, dan penutup blok.",
+        "mascot_dialogue": "Programmu sekarang bisa berinteraksi dengan pengguna!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println(\"Halo, $name!\")"
+          },
+          {
+            "id": 2,
+            "code": "val name = readln()"
+          },
+          {
+            "id": 3,
+            "code": "fun main()"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          },
+          {
+            "id": 5,
+            "code": "print(\"Masukkan nama: \")"
+          },
+          {
+            "id": 6,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          5,
+          2,
+          1,
+          6
+        ],
+        "correct_answer": "3 → 4 → 5 → 2 → 1 → 6"
+      },
+      {
+        "node_id": "KTL_L03_N09",
+        "title": "Simple Conditional Program",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "if dan else memungkinkan program memilih salah satu dari dua tindakan. Kondisi score >= 75 menghasilkan Boolean yang\nmenentukan blok kode yang dijalankan.",
+        "code_example": "val score = 80\nif (score >= 75) {\nprintln(\"Lulus\")\n} else {\nprintln(\"Tidak lulus\")\n}",
+        "question": "Susun potongan kode agar program memeriksa nilai dan menampilkan status kelulusan.\nPotongan kode:\n1. println(\"Tidak lulus\")\n2. if (score >= 75) {\n3. val score = 80\n4. println(\"Lulus\")\n5. } else {\n6. }\n7. }",
+        "feedback_correct": "Deklarasikan score, jalankan percabangan if-else, lalu tempatkan pesan pada blok yang sesuai.",
+        "feedback_incorrect": "Deklarasikan nilai terlebih dahulu, kemudian susun blok if-else dan kedua pesan keluarannya.",
+        "mascot_dialogue": "Periksa nilainya, lalu tentukan apakah peserta lulus atau tidak!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println(\"Tidak lulus\")"
+          },
+          {
+            "id": 2,
+            "code": "if (score >= 75) {"
+          },
+          {
+            "id": 3,
+            "code": "val score = 80"
+          },
+          {
+            "id": 4,
+            "code": "println(\"Lulus\")"
+          },
+          {
+            "id": 5,
+            "code": "} else {"
+          },
+          {
+            "id": 6,
+            "code": "}"
+          },
+          {
+            "id": 7,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          3,
+          2,
+          4,
+          5,
+          1,
+          6,
+          7
+        ],
+        "correct_answer": "3 → 2 → 4 → 5 → 1 → 6 → 7"
+      },
+      {
+        "node_id": "KTL_L03_N10",
+        "title": "Input and Conditional Program with When",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "when digunakan untuk memilih tindakan berdasarkan nilai yang diperiksa. Struktur ini cocok untuk menangani beberapa\npilihan.",
+        "code_example": "fun main() {\nval choice = readln().toInt()\nwhen (choice) {\n1 -> println(\"Menu Makanan\")\n2 -> println(\"Menu Minuman\")\nelse -> println(\"Menu tidak tersedia\")\n}\n}",
+        "question": "Susun kode agar program membaca pilihan pengguna dan menampilkan menu menggunakan when.\nPotongan kode:\n1. when (choice) {\n2. 1 -> println(\"Menu Makanan\")\n3. val choice = readln().toInt()\n4. fun main()\n5. {\n6. 2 -> println(\"Menu Minuman\")\n7. else -> println(\"Menu tidak tersedia\")\n8. }\n9. }",
+        "feedback_correct": "Baca pilihan pengguna terlebih dahulu, kemudian gunakan when untuk memeriksa nilainya.",
+        "feedback_incorrect": "Baca input angka, periksa dengan when, lalu sediakan cabang untuk pilihan lain.",
+        "mascot_dialogue": "Dengan when, kamu bisa menangani banyak pilihan dengan lebih rapi!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "when (choice) {"
+          },
+          {
+            "id": 2,
+            "code": "1 -> println(\"Menu Makanan\")"
+          },
+          {
+            "id": 3,
+            "code": "val choice = readln().toInt()"
+          },
+          {
+            "id": 4,
+            "code": "fun main()"
+          },
+          {
+            "id": 5,
+            "code": "{"
+          },
+          {
+            "id": 6,
+            "code": "2 -> println(\"Menu Minuman\")"
+          },
+          {
+            "id": 7,
+            "code": "else -> println(\"Menu tidak tersedia\")"
+          },
+          {
+            "id": 8,
+            "code": "}"
+          },
+          {
+            "id": 9,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          4,
+          5,
+          3,
+          1,
+          2,
+          6,
+          7,
+          8,
+          9
+        ],
+        "correct_answer": "4 → 5 → 3 → 1 → 2 → 6 → 7 → 8 → 9"
+      }
+    ]
+  }
+}

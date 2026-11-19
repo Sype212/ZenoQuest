@@ -1,0 +1,372 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "css_fundamentals",
+  "course_title": "CSS Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "intermediate",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "CSS_Fundamentals_Level_5.pdf"
+  ],
+  "mvp_scope_note": "File ini memuat Level 5: Flexbox, Grid, dan Responsive Design.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi luar dan kapitalisasi.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Tampilkan mascot_dialogue setelah jawaban divalidasi."
+  },
+  "levels": [
+    {
+      "level_id": "CSS_L05",
+      "level_number": 5,
+      "title": "Flexbox, Grid & Responsive Design",
+      "description": "Membuat tata letak satu dan dua dimensi menggunakan Flexbox dan Grid, serta menyesuaikan tampilan halaman dengan media query.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "nodes": [
+        {
+          "node_id": "CSS_L05_N01",
+          "title": "Flex Container",
+          "difficulty": "intermediate",
+          "type": "multiple_choice",
+          "theory": "Flexbox menyusun elemen dalam satu dimensi, yaitu baris atau kolom. Aktifkan dengan display: flex pada elemen induk.",
+          "code_example": ".container {\n  display: flex;\n}",
+          "question": "Properti untuk mengaktifkan Flexbox adalah ...",
+          "options": [
+            {
+              "id": "a",
+              "text": "position: flex"
+            },
+            {
+              "id": "b",
+              "text": "display: flex"
+            },
+            {
+              "id": "c",
+              "text": "flex-direction: row"
+            },
+            {
+              "id": "d",
+              "text": "align-items: center"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Benar! display: flex mengaktifkan tata letak Flexbox.",
+          "feedback_incorrect": "Cari deklarasi display yang mengaktifkan Flexbox.",
+          "mascot_dialogue": "Bagus! Elemen anak bisa diatur dengan Flexbox.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 48,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N02",
+          "title": "Flex Direction",
+          "difficulty": "intermediate",
+          "type": "multiple_choice",
+          "theory": "flex-direction menentukan arah susunan item: row, row-reverse, column, atau column-reverse. Nilai default adalah row.",
+          "code_example": ".container {\n  display: flex;\n  flex-direction: column;\n}",
+          "question": "Nilai untuk menyusun item dari atas ke bawah adalah ...",
+          "options": [
+            {
+              "id": "a",
+              "text": "row"
+            },
+            {
+              "id": "b",
+              "text": "reverse"
+            },
+            {
+              "id": "c",
+              "text": "column"
+            },
+            {
+              "id": "d",
+              "text": "wrap"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Tepat! column menyusun item secara vertikal.",
+          "feedback_incorrect": "Pilih nilai yang berarti kolom.",
+          "mascot_dialogue": "Keren! Kamu bisa mengubah arah susunan item.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N03",
+          "title": "Justify Content",
+          "difficulty": "intermediate",
+          "type": "multiple_choice",
+          "theory": "justify-content mengatur distribusi item pada sumbu utama Flexbox. Nilainya antara lain center, space-between, dan space-around.",
+          "code_example": ".container {\n  display: flex;\n  justify-content: space-between;\n}",
+          "question": "Nilai untuk memberi ruang di antara item dan menempatkan item pertama serta terakhir di tepi adalah ...",
+          "options": [
+            {
+              "id": "a",
+              "text": "center"
+            },
+            {
+              "id": "b",
+              "text": "flex-end"
+            },
+            {
+              "id": "c",
+              "text": "space-around"
+            },
+            {
+              "id": "d",
+              "text": "space-between"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "D",
+          "feedback_correct": "Benar! space-between membagi ruang di antara item.",
+          "feedback_incorrect": "Perhatikan nilai yang menyebarkan ruang di antara item.",
+          "mascot_dialogue": "Mantap! Jarak item jadi lebih teratur.",
+          "correct_option_id": "d",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 39,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N04",
+          "title": "Align Items",
+          "difficulty": "intermediate",
+          "type": "multiple_choice",
+          "theory": "align-items mengatur posisi item pada sumbu silang. Nilai center menyelaraskan item ke tengah sumbu silang.",
+          "code_example": ".container {\n  display: flex;\n  align-items: center;\n}",
+          "question": "Properti untuk mengatur perataan item pada sumbu silang adalah ...",
+          "options": [
+            {
+              "id": "a",
+              "text": "align-items"
+            },
+            {
+              "id": "b",
+              "text": "justify-content"
+            },
+            {
+              "id": "c",
+              "text": "flex-direction"
+            },
+            {
+              "id": "d",
+              "text": "flex-wrap"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "A",
+          "feedback_correct": "Tepat! align-items mengatur sumbu silang.",
+          "feedback_incorrect": "Jangan tertukar dengan justify-content.",
+          "mascot_dialogue": "Bagus! Kamu memahami dua sumbu Flexbox.",
+          "correct_option_id": "a",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N05",
+          "title": "Flex Wrap",
+          "difficulty": "intermediate",
+          "type": "fill_blank",
+          "theory": "flex-wrap menentukan apakah item tetap dalam satu baris atau boleh berpindah ke baris berikutnya. Nilai wrap mengizinkannya.",
+          "code_example": ".container {\n  display: flex;\n  flex-wrap: wrap;\n}",
+          "question": "Lengkapi: flex-wrap: _____;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "wrap",
+          "feedback_correct": "Benar! wrap mengizinkan item berpindah baris.",
+          "feedback_incorrect": "Gunakan nilai yang berarti membungkus.",
+          "mascot_dialogue": "Sip! Layout dapat menyesuaikan ruang.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "wrap"
+          ],
+          "mascot_dialogue_char_count": 38,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N06",
+          "title": "Gap in Layout",
+          "difficulty": "intermediate",
+          "type": "fill_blank",
+          "theory": "gap memberi jarak di antara item pada Flexbox maupun Grid tanpa menambahkan margin pada setiap item.",
+          "code_example": ".container {\n  display: flex;\n  gap: 16px;\n}",
+          "question": "Lengkapi properti untuk memberi jarak antaritem: _____: 16px;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "gap",
+          "feedback_correct": "Tepat! gap mengatur jarak antaritem.",
+          "feedback_incorrect": "Cari properti CSS yang berarti celah atau jarak.",
+          "mascot_dialogue": "Keren! Jarak antaritem lebih mudah diatur.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "gap"
+          ],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N07",
+          "title": "CSS Grid Columns",
+          "difficulty": "intermediate",
+          "type": "fill_blank",
+          "theory": "CSS Grid cocok untuk tata letak dua dimensi. grid-template-columns menentukan jumlah dan ukuran kolom pada grid.",
+          "code_example": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}",
+          "question": "Lengkapi: grid-template-_____: 1fr 1fr;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "columns",
+          "feedback_correct": "Benar! grid-template-columns menentukan kolom.",
+          "feedback_incorrect": "Properti ini menggunakan kata columns.",
+          "mascot_dialogue": "Hebat! Kamu bisa membuat layout dua kolom.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "columns"
+          ],
+          "mascot_dialogue_char_count": 45,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L05_N08",
+          "title": "Build a Flex Row",
+          "difficulty": "intermediate",
+          "type": "arrange_code",
+          "theory": "Untuk membuat baris Flexbox, aktifkan display: flex lalu atur gap jika diperlukan.",
+          "code_example": ".menu {\n  display: flex;\n  gap: 12px;\n}",
+          "question": "Susun kode untuk membuat menu Flexbox dengan jarak 12px.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "gap: 12px;"
+            },
+            {
+              "id": 2,
+              "code": "}"
+            },
+            {
+              "id": 3,
+              "code": "display: flex;"
+            },
+            {
+              "id": 4,
+              "code": ".menu {"
+            }
+          ],
+          "correct_answer": "Urutan: 4 → 3 → 1 → 2\nCorrect Code:\n.menu {\n  display: flex;\n  gap: 12px;\n}",
+          "feedback_correct": "Benar! Selector, display, gap, lalu penutup.",
+          "feedback_incorrect": "Mulai dari selector, aktifkan flex, tambahkan gap, lalu tutup.",
+          "mascot_dialogue": "Mantap! Menu tersusun dalam satu baris.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 40,
+          "answer_order": [
+            4,
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "node_id": "CSS_L05_N09",
+          "title": "Build a Grid Layout",
+          "difficulty": "intermediate",
+          "type": "arrange_code",
+          "theory": "Grid dua kolom dibuat dengan display: grid dan grid-template-columns. Satuan fr membagi ruang secara fleksibel.",
+          "code_example": ".cards {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}",
+          "question": "Susun kode untuk membuat grid dengan dua kolom sama lebar:",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "grid-template-columns: 1fr 1fr;"
+            },
+            {
+              "id": 2,
+              "code": "}"
+            },
+            {
+              "id": 3,
+              "code": "display: grid;"
+            },
+            {
+              "id": 4,
+              "code": ".cards {"
+            }
+          ],
+          "correct_answer": "Urutan: 4 → 3 → 1 → 2\nCorrect Code:\n.cards {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}",
+          "feedback_correct": "Tepat! Grid diaktifkan sebelum kolom ditentukan.",
+          "feedback_incorrect": "Awali selector, aktifkan grid, tentukan dua kolom, lalu tutup.",
+          "mascot_dialogue": "Bagus! Kamu sudah membuat layout grid.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 39,
+          "answer_order": [
+            4,
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "node_id": "CSS_L05_N10",
+          "title": "Responsive Media Query",
+          "difficulty": "intermediate",
+          "type": "arrange_code",
+          "theory": "Media query menerapkan aturan CSS berdasarkan kondisi layar. max-width: 600px berlaku ketika lebar viewport maksimal 600px.",
+          "code_example": "@media (max-width: 600px) {\n  .cards {\n    grid-template-columns: 1fr;\n  }\n}",
+          "question": "Susun kode agar .cards menjadi satu kolom pada layar maksimal 600px:",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "}"
+            },
+            {
+              "id": 2,
+              "code": "grid-template-columns: 1fr;"
+            },
+            {
+              "id": 3,
+              "code": "@media (max-width: 600px) {"
+            },
+            {
+              "id": 4,
+              "code": ".cards {"
+            },
+            {
+              "id": 5,
+              "code": "}"
+            }
+          ],
+          "correct_answer": "Urutan: 3 → 4 → 2 → 1 → 5\nCorrect Code:\n@media (max-width: 600px) {\n  .cards {\n    grid-template-columns: 1fr;\n  }\n}",
+          "feedback_correct": "Luar biasa! Media query membungkus aturan yang berlaku pada layar kecil.",
+          "feedback_incorrect": "Susun mulai dari @media, selector, deklarasi, lalu dua kurung penutup.",
+          "mascot_dialogue": "Selamat! Kamu menyelesaikan dasar layout responsif.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 49,
+          "answer_order": [
+            3,
+            4,
+            2,
+            1,
+            5
+          ]
+        }
+      ]
+    }
+  ]
+}

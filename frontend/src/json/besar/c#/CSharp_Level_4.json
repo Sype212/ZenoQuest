@@ -1,0 +1,337 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "csharp_fundamentals",
+  "course_title": "C# Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.1",
+  "source_documents": [
+    "Blueprint_CSharp_Level_1.pdf",
+    "Blueprint_CSharp_Level_2.pdf",
+    "Blueprint_CSharp_Level_3.pdf",
+    "Blueprint_CSharp_Level_4.pdf",
+    "Blueprint_CSharp_Level_5.pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "CSH_L04",
+    "level_number": 4,
+    "title": "Loops & Arrays",
+    "description": "Materi Loops & Arrays dalam C# untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "CSH_L04_N01",
+        "title": "Introduction to Loops",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Loop atau perulangan digunakan untuk menjalankan satu atau beberapa instruksi berulang kali selama kondisi tertentu terpenuhi atau selama data masih tersedia. Loop membantu menghindari penulisan kode yang sama berulang-ulang.",
+        "code_example": "for (int i = 1; i <= 3; i++)\n{\n    Console.WriteLine(\"Belajar C#\");\n}",
+        "question": "Apa fungsi utama loop dalam pemrograman?\nA. Menyimpan banyak data dalam satu variabel\nB. Menjalankan instruksi secara berulang\nC. Mengubah tipe data string menjadi integer\nD. Membuat program selalu berhenti",
+        "feedback_correct": "Loop membantu menjalankan instruksi berulang tanpa harus menulis kode yang sama berkali-kali.",
+        "feedback_incorrect": "Belum tepat. Ingat, loop digunakan untuk melakukan perulangan instruksi.",
+        "mascot_dialogue": "Keren! Dengan loop, pekerjaan berulang jadi lebih sederhana.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Menyimpan banyak data dalam satu variabel"
+          },
+          {
+            "id": "b",
+            "text": "Menjalankan instruksi secara berulang"
+          },
+          {
+            "id": "c",
+            "text": "Mengubah tipe data string menjadi integer"
+          },
+          {
+            "id": "d",
+            "text": "Membuat program selalu berhenti"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Menjalankan instruksi secara berulang"
+      },
+      {
+        "node_id": "CSH_L04_N02",
+        "title": "For Loop",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "for digunakan ketika jumlah perulangan dapat ditentukan melalui bagian inisialisasi, kondisi, dan perubahan nilai. Struktur ini memiliki tiga bagian utama: inisialisasi, kondisi, dan iterasi.",
+        "code_example": "for (int i = 1; i <= 5; i++)\n{\n    Console.WriteLine(i);\n}",
+        "question": "Pada kode for (int i = 1; i <= 5; i++), apa fungsi i++?\nA. Mengurangi nilai i sebanyak satu\nB. Menghentikan perulangan\nC. Menambah nilai i sebanyak satu\nD. Mengubah i menjadi string",
+        "feedback_correct": "Operator i++ menaikkan nilai i satu angka setiap iterasi.",
+        "feedback_incorrect": "Coba perhatikan operator ++. Operator tersebut digunakan untuk menaikkan nilai variabel satu angka.",
+        "mascot_dialogue": "Mantap! Kamu sudah memahami cara penghitung pada for loop bekerja.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mengurangi nilai i sebanyak satu"
+          },
+          {
+            "id": "b",
+            "text": "Menghentikan perulangan"
+          },
+          {
+            "id": "c",
+            "text": "Menambah nilai i sebanyak satu"
+          },
+          {
+            "id": "d",
+            "text": "Mengubah i menjadi string"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. Menambah nilai i sebanyak satu"
+      },
+      {
+        "node_id": "CSH_L04_N03",
+        "title": "While Loop",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "while menjalankan blok kode selama kondisi bernilai true. Kondisi diperiksa sebelum blok dijalankan. Jika kondisi sejak awal bernilai false, blok tidak dijalankan sama sekali.",
+        "code_example": "int number = 1;\nwhile (number <= 3)\n{\n    Console.WriteLine(number);\n    number++;\n}",
+        "question": "Kapan blok kode pada while dijalankan?\nA. Selama kondisi bernilai true\nB. Hanya ketika kondisi bernilai false\nC. Selalu tepat satu kali\nD. Hanya setelah program selesai",
+        "feedback_correct": "While akan mengulang selama kondisi yang diperiksa tetap bernilai true.",
+        "feedback_incorrect": "Ingat, while memeriksa kondisi terlebih dahulu. Perulangan berjalan jika hasilnya true.",
+        "mascot_dialogue": "Bagus! Selalu perhatikan kondisi agar while loop berjalan sesuai harapan.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Selama kondisi bernilai true"
+          },
+          {
+            "id": "b",
+            "text": "Hanya ketika kondisi bernilai false"
+          },
+          {
+            "id": "c",
+            "text": "Selalu tepat satu kali"
+          },
+          {
+            "id": "d",
+            "text": "Hanya setelah program selesai"
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. Selama kondisi bernilai true"
+      },
+      {
+        "node_id": "CSH_L04_N04",
+        "title": "Introduction to Arrays",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Array adalah struktur data yang menyimpan beberapa nilai dengan tipe data yang sama dalam satu variabel. Setiap elemen array memiliki indeks yang dimulai dari angka 0.",
+        "code_example": "int[] scores = { 80, 90, 75 };\nConsole.WriteLine(scores[0]);",
+        "question": "Apa indeks dari elemen pertama sebuah array di C#?\nA. 1\nB. -1\nC. 0\nD. 2",
+        "feedback_correct": "Indeks array C# dimulai dari 0, sehingga elemen pertama berada pada indeks 0.",
+        "feedback_incorrect": "Array C# menggunakan zero-based indexing atau indeks yang dimulai dari 0.",
+        "mascot_dialogue": "Hebat! Jangan lupa, elemen pertama array memiliki indeks 0.",
+        "options": [
+          {
+            "id": "a",
+            "text": "1"
+          },
+          {
+            "id": "b",
+            "text": "-1"
+          },
+          {
+            "id": "c",
+            "text": "0"
+          },
+          {
+            "id": "d",
+            "text": "2"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. 0"
+      },
+      {
+        "node_id": "CSH_L04_N05",
+        "title": "Increment and Decrement",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Operator increment digunakan untuk menaikkan nilai variabel sebanyak satu. Operator decrement digunakan untuk menurunkan nilai variabel sebanyak satu. i++ menaikkan nilai i, sedangkan i-- menurunkannya.",
+        "code_example": "int number = 1;\nnumber++;\nConsole.WriteLine(number);",
+        "question": "Lengkapi kode agar nilai i bertambah satu pada setiap perulangan:\nfor (int i = 0; i < 5; ______)\n{\n    Console.WriteLine(i);\n}",
+        "feedback_correct": "i++ menaikkan nilai i satu angka sehingga perulangan dapat bergerak menuju kondisi berhenti.",
+        "feedback_incorrect": "Perhatikan operator increment. Gunakan operator yang menambah nilai variabel satu angka.",
+        "mascot_dialogue": "Sip! Increment membantu penghitung perulangan terus bertambah.",
+        "accepted_answers": [
+          "i++"
+        ],
+        "correct_answer": "i++"
+      },
+      {
+        "node_id": "CSH_L04_N06",
+        "title": "Accessing Array Elements",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Elemen array dapat diakses menggunakan nama array diikuti indeks di dalam tanda kurung siku. Karena indeks dimulai dari 0, indeks 1 menunjuk elemen kedua.",
+        "code_example": "string[] fruits = { \"Apple\", \"Mango\", \"Orange\" };\nConsole.WriteLine(fruits[1]);",
+        "question": "Lengkapi kode untuk mengambil elemen kedua dari array:\nint[] numbers = { 10, 20, 30 };\nConsole.WriteLine(numbers[___]);",
+        "feedback_correct": "Elemen kedua memiliki indeks 1 karena indeks array dimulai dari 0.",
+        "feedback_incorrect": "Urutan indeks array: elemen pertama 0, elemen kedua 1, dan seterusnya.",
+        "mascot_dialogue": "Bagus! Kamu sudah bisa mengambil elemen array berdasarkan indeks.",
+        "accepted_answers": [
+          "1"
+        ],
+        "correct_answer": "1"
+      },
+      {
+        "node_id": "CSH_L04_N07",
+        "title": "Array Length",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Properti Length digunakan untuk mengetahui jumlah elemen yang terdapat di dalam array. Properti ini berguna ketika membuat perulangan agar semua elemen dapat diproses.",
+        "code_example": "int[] numbers = { 10, 20, 30, 40 };\nConsole.WriteLine(numbers.Length);",
+        "question": "Lengkapi kode untuk mendapatkan jumlah elemen array:\nint[] scores = { 70, 80, 90 };\nConsole.WriteLine(scores.________);",
+        "feedback_correct": "Properti Length mengembalikan jumlah elemen yang terdapat di dalam array.",
+        "feedback_incorrect": "Properti array untuk menghitung jumlah elemennya bernama Length.",
+        "mascot_dialogue": "Hebat! Dengan Length, kamu bisa mengetahui ukuran array dengan mudah.",
+        "accepted_answers": [
+          "Length"
+        ],
+        "correct_answer": "Length"
+      },
+      {
+        "node_id": "CSH_L04_N08",
+        "title": "Build a For Loop",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "For loop dapat digunakan untuk menampilkan urutan angka. Perulangan dimulai dari nilai awal, memeriksa kondisi, menjalankan blok kode, lalu memperbarui nilai penghitung.",
+        "code_example": "for (int i = 1; i <= 3; i++)\n{\n    Console.WriteLine(i);\n}",
+        "question": "Susun potongan kode agar program menampilkan angka 1 sampai 3.\n1. Console.WriteLine(i);\n2. }\n3. for (int i = 1; i <= 3; i++)\n4. {",
+        "feedback_correct": "Program dimulai dari deklarasi for, membuka blok, menjalankan instruksi, lalu menutup blok.",
+        "feedback_incorrect": "Mulai dari deklarasi for, buka blok, tulis instruksi, lalu tutup blok.",
+        "mascot_dialogue": "Mantap! Struktur for loop-mu sudah tersusun dengan benar.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "Console.WriteLine(i);"
+          },
+          {
+            "id": 2,
+            "code": "}"
+          },
+          {
+            "id": 3,
+            "code": "for (int i = 1; i <= 3; i++)"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "correct_answer": "3 → 4 → 1 → 2"
+      },
+      {
+        "node_id": "CSH_L04_N09",
+        "title": "Using Foreach to Read Arrays",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "foreach digunakan untuk membaca setiap elemen dalam koleksi seperti array. Dengan foreach, kita tidak perlu mengatur indeks secara manual untuk mengambil setiap elemen.",
+        "code_example": "string[] fruits = { \"Apple\", \"Mango\", \"Orange\" };\nforeach (string fruit in fruits)\n{\n    Console.WriteLine(fruit);\n}",
+        "question": "Susun potongan kode agar program menampilkan semua nama buah dalam array.\n1. Console.WriteLine(fruit);\n2. string[] fruits = { \"Apple\", \"Mango\", \"Orange\" };\n3. }\n4. foreach (string fruit in fruits)\n5. {",
+        "feedback_correct": "Foreach membaca setiap buah dalam array dan menampilkannya satu per satu.",
+        "feedback_incorrect": "Deklarasikan array, buat foreach, buka blok, tampilkan elemen, lalu tutup blok.",
+        "mascot_dialogue": "Luar biasa! Sekarang kamu bisa membaca seluruh isi array dengan foreach.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "Console.WriteLine(fruit);"
+          },
+          {
+            "id": 2,
+            "code": "string[] fruits = { \"Apple\", \"Mango\", \"Orange\" };"
+          },
+          {
+            "id": 3,
+            "code": "}"
+          },
+          {
+            "id": 4,
+            "code": "foreach (string fruit in fruits)"
+          },
+          {
+            "id": 5,
+            "code": "{"
+          }
+        ],
+        "answer_order": [
+          2,
+          4,
+          5,
+          1,
+          3
+        ],
+        "correct_answer": "2 → 4 → 5 → 1 → 3"
+      },
+      {
+        "node_id": "CSH_L04_N10",
+        "title": "Loop Through an Array",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "For loop dapat dikombinasikan dengan array untuk membaca setiap elemen berdasarkan indeks. Kondisi i < numbers.Length memastikan indeks tetap berada dalam batas array.",
+        "code_example": "int[] numbers = { 10, 20, 30 };\nfor (int i = 0; i < numbers.Length; i++)\n{\n    Console.WriteLine(numbers[i]);\n}",
+        "question": "Susun potongan kode agar program menampilkan semua elemen array menggunakan for loop.\n1. Console.WriteLine(numbers[i]);\n2. }\n3. int[] numbers = { 10, 20, 30 };\n4. for (int i = 0; i < numbers.Length; i++)\n5. {",
+        "feedback_correct": "Kamu berhasil menggabungkan array dan for loop untuk membaca seluruh elemen.",
+        "feedback_incorrect": "Deklarasikan array, buat for loop menggunakan Length, tampilkan elemen berdasarkan indeks, lalu tutup blok.",
+        "mascot_dialogue": "Luar biasa! Kamu sudah bisa mengolah array menggunakan perulangan.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "Console.WriteLine(numbers[i]);"
+          },
+          {
+            "id": 2,
+            "code": "}"
+          },
+          {
+            "id": 3,
+            "code": "int[] numbers = { 10, 20, 30 };"
+          },
+          {
+            "id": 4,
+            "code": "for (int i = 0; i < numbers.Length; i++)"
+          },
+          {
+            "id": 5,
+            "code": "{"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          5,
+          1,
+          2
+        ],
+        "correct_answer": "3 → 4 → 5 → 1 → 2"
+      }
+    ]
+  }
+}

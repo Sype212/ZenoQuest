@@ -1,0 +1,352 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "html_fundamentals",
+  "course_title": "HTML Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.1",
+  "source_documents": [
+    "Blueprint_HTML_Level_2_Text_Formatting_Absen_Kecil.pdf"
+  ],
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
+  },
+  "levels": [
+    {
+      "level_id": "HTML_L02",
+      "level_number": 2,
+      "title": "HTML Text & Formatting",
+      "description": "Pengguna mampu menyusun judul, subjudul, paragraf, teks tebal, teks miring, penekanan, pergantian baris, dan sorotan teks menggunakan elemen HTML dengan struktur yang benar.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "learning_objectives": [
+        "Menyusun judul dan subjudul dengan tingkatan heading yang tepat.",
+        "Membuat paragraf dan mengatur pergantian baris dalam dokumen HTML.",
+        "Membedakan dan menerapkan penekanan teks, teks tebal, miring, sorotan, dan teks kecil.",
+        "Menyusun struktur konten teks HTML secara lengkap dan semantik."
+      ],
+      "nodes": [
+        {
+          "node_id": "HTML_L02_N01",
+          "title": "Node 01",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Heading atau judul digunakan untuk menunjukkan tingkatan informasi. HTML menyediakan <h1> sampai <h6>. <h1> biasanya menjadi judul utama halaman, sedangkan <h2> dan seterusnya digunakan untuk subjudul sesuai urutan pembahasan. Pilih heading berdasarkan struktur, bukan semata-mata ukuran huruf.",
+          "code_example": "<h1>Belajar HTML</h1>\n<h2>Materi Hari Ini</h2>",
+          "question": "Tag mana yang paling tepat untuk judul utama halaman?\nA. <h1>\nB. <p>\nC. <br>\nD. <em>",
+          "options": [
+            {
+              "id": "a",
+              "text": "<h1>"
+            },
+            {
+              "id": "b",
+              "text": "<p>"
+            },
+            {
+              "id": "c",
+              "text": "<br>"
+            },
+            {
+              "id": "d",
+              "text": "<em>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "A",
+          "feedback_correct": "Benar! <h1> menandai judul utama.",
+          "feedback_incorrect": "Belum tepat. Pilih heading dengan tingkat paling tinggi.",
+          "mascot_dialogue": "Hebat! Sekarang kamu bisa membuat judul utama.",
+          "correct_option_id": "a",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N02",
+          "title": "Node 02",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Urutan heading membantu pembaca memahami hubungan antarbab. Setelah <h1> untuk judul utama, gunakan <h2> untuk bagian besar dan <h3> untuk subbagian. Sebaiknya tidak melompati tingkatan heading tanpa alasan struktur yang jelas.",
+          "code_example": "<h1>Resep Masakan</h1>\n<h2>Bahan</h2>\n<h3>Bumbu</h3>",
+          "question": "Heading mana yang cocok untuk subbagian di dalam bagian <h2>?\nA. <h1>\nB. <h3>\nC. <p>\nD. <br>",
+          "options": [
+            {
+              "id": "a",
+              "text": "<h1>"
+            },
+            {
+              "id": "b",
+              "text": "<h3>"
+            },
+            {
+              "id": "c",
+              "text": "<p>"
+            },
+            {
+              "id": "d",
+              "text": "<br>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Tepat! <h3> dapat menjadi subbagian dari <h2>.",
+          "feedback_incorrect": "Belum benar. Perhatikan urutan tingkatan heading.",
+          "mascot_dialogue": "Bagus! Struktur judulmu makin jelas.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 36,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N03",
+          "title": "Node 03",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Elemen <p> digunakan untuk menulis satu paragraf. Setiap paragraf dibungkus dengan tag pembuka <p> dan tag penutup </p>. Browser biasanya memberi jarak antarapagraf agar teks lebih mudah dibaca.",
+          "code_example": "<p>Namaku Rani.</p>\n<p>Aku sedang belajar HTML.</p>",
+          "question": "Tag yang digunakan untuk membentuk paragraf adalah\nA. <h1>\nB. <strong>\nC. <p>\nD. <hr>",
+          "options": [
+            {
+              "id": "a",
+              "text": "<h1>"
+            },
+            {
+              "id": "b",
+              "text": "<strong>"
+            },
+            {
+              "id": "c",
+              "text": "<p>"
+            },
+            {
+              "id": "d",
+              "text": "<hr>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! <p> digunakan untuk menulis paragraf.",
+          "feedback_incorrect": "Belum tepat. Pilih tag khusus untuk satu paragraf teks.",
+          "mascot_dialogue": "Keren! Kamu sudah bisa memisahkan paragraf.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N04",
+          "title": "Node 04",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Tag <strong> menandai teks yang penting dan biasanya tampil tebal. Tag <b> membuat teks tampak tebal tanpa menambahkan makna penting. Gunakan <strong> ketika penekanan makna diperlukan; gunakan <b> untuk menarik perhatian secara visual tanpa makna khusus.",
+          "code_example": "<p><strong>Penting:</strong> Bawa buku.</p>\n<p>Kata <b>HTML</b> dicetak tebal.</p>",
+          "question": "Tag mana yang menandai informasi penting secara semantik?\nA. <i>\nB. <b>\nC. <small>\nD. <strong>",
+          "options": [
+            {
+              "id": "a",
+              "text": "<i>"
+            },
+            {
+              "id": "b",
+              "text": "<b>"
+            },
+            {
+              "id": "c",
+              "text": "<small>"
+            },
+            {
+              "id": "d",
+              "text": "<strong>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "D",
+          "feedback_correct": "Benar! <strong> menunjukkan tingkat kepentingan teks.",
+          "feedback_incorrect": "Belum tepat. Tebal secara visual belum tentu berarti penting.",
+          "mascot_dialogue": "Mantap! Kamu memahami perbedaan teks tebal.",
+          "correct_option_id": "d",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N05",
+          "title": "Node 05",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Tag <em> memberi penekanan makna dan umumnya tampil miring. Tag <i> menandai teks dengan gaya atau suara berbeda, misalnya istilah asing, dan biasanya juga tampil miring. Pilih tag berdasarkan tujuan, bukan hanya bentuk tampilannya.",
+          "code_example": "<p>Aku <em>sangat</em> senang belajar.</p>\n<p>Istilah <i>online</i> sering dipakai.</p>",
+          "question": "Lengkapi tag untuk memberi penekanan makna:\n<p>Aku <_____>sangat</em> senang.</p>\nJawaban diisi dengan nama tag tanpa tanda kurung sudut.",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "em",
+          "feedback_correct": "Tepat! <em> memberi penekanan pada kata.",
+          "feedback_incorrect": "Belum tepat. Gunakan tag emphasis, bukan tag miring visual.",
+          "mascot_dialogue": "Bagus! Sekarang kamu bisa menekankan kata.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "em"
+          ],
+          "mascot_dialogue_char_count": 42,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N06",
+          "title": "Node 06",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Tag <br> digunakan untuk memindahkan teks ke baris berikutnya tanpa membuat paragraf baru. Elemen ini tidak membutuhkan tag penutup. Gunakan untuk alamat, puisi, atau teks yang memang perlu dipisah per baris, bukan untuk membuat jarak kosong.",
+          "code_example": "<p>Jalan Mawar 10<br>Kota Semarang</p>",
+          "question": "Lengkapi kode untuk pindah baris:\n<p>Baris satu<_____>Baris dua</p>\nJawaban diisi dengan nama tag tanpa tanda kurung sudut.",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "br",
+          "feedback_correct": "Benar! <br> membuat pindah baris.",
+          "feedback_incorrect": "Belum tepat. Cari tag line break yang tidak memiliki penutup.",
+          "mascot_dialogue": "Hebat! Kamu bisa mengatur pergantian baris.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "br"
+          ],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N07",
+          "title": "Node 07",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Tag <mark> menandai bagian teks yang relevan atau disorot, dan biasanya terlihat seperti stabilo. Tag <small> menunjukkan keterangan samping atau teks kecil, misalnya catatan hak cipta. Keduanya tetap memiliki fungsi makna dalam dokumen.",
+          "code_example": "<p>Ujian dimulai <mark>Senin</mark>.</p>\n<p><small>Hak cipta 2026</small></p>",
+          "question": "Lengkapi tag untuk menyorot kata:\n<p>Belajar <_____>HTML</mark></p>\nJawaban diisi dengan nama tag tanpa tanda kurung sudut.",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "mark",
+          "feedback_correct": "Benar! <mark> menandai teks yang disorot.",
+          "feedback_incorrect": "Belum tepat. Pilih tag untuk highlight teks.",
+          "mascot_dialogue": "Mantap! Kamu sudah mengenal teks sorotan.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "mark"
+          ],
+          "mascot_dialogue_char_count": 41,
+          "answer_order": null
+        },
+        {
+          "node_id": "HTML_L02_N08",
+          "title": "Node 08",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Halaman sederhana dapat diawali dengan judul <h1> lalu diikuti paragraf <p>. Kedua elemen harus memiliki tag pembuka dan penutup yang sesuai. Susunan yang rapi membuat informasi lebih mudah dipahami.",
+          "code_example": "<h1>Profil Saya</h1>\n<p>Saya siswa SMK.</p>",
+          "question": "Susun potongan kode agar judul tampil sebelum paragraf.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<p>Saya siswa SMK.</p>"
+            },
+            {
+              "id": 2,
+              "code": "<h1>Profil Saya</h1>"
+            }
+          ],
+          "correct_answer": "2 → 1",
+          "feedback_correct": "Tepat! Judul utama ditempatkan sebelum penjelasan.",
+          "feedback_incorrect": "Belum tepat. Letakkan <h1> sebelum <p>.",
+          "mascot_dialogue": "Bagus! Kamu berhasil menyusun judul dan isi.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 44,
+          "answer_order": [
+            2,
+            1
+          ]
+        },
+        {
+          "node_id": "HTML_L02_N09",
+          "title": "Node 09",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Tag format teks dapat diletakkan di dalam paragraf untuk menandai kata tertentu. Pastikan tag dibuka dan ditutup dengan benar, serta tidak menutup paragraf sebelum format teks selesai.",
+          "code_example": "<p>Ini <strong>penting</strong>.</p>",
+          "question": "Susun potongan kode menjadi satu paragraf dengan kata penting.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "penting"
+            },
+            {
+              "id": 2,
+              "code": "</strong>.</p>"
+            },
+            {
+              "id": 3,
+              "code": "<p>Ini <strong>"
+            }
+          ],
+          "correct_answer": "3 → 1 → 2",
+          "feedback_correct": "Benar! Tag <strong> berada di dalam paragraf.",
+          "feedback_incorrect": "Belum tepat. Susun pembuka paragraf, isi, lalu penutup.",
+          "mascot_dialogue": "Keren! Format teksmu sudah tersusun.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 36,
+          "answer_order": [
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "node_id": "HTML_L02_N10",
+          "title": "Node 10",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Konten teks yang terstruktur dapat menggabungkan judul utama, subjudul, dan paragraf dengan teks yang diberi penekanan. Gunakan <h1> untuk judul halaman, <h2> untuk bagian, dan <p> untuk penjelasan. Tag <em> menekankan kata dalam paragraf.",
+          "code_example": "<h1>Belajar HTML</h1>\n<h2>Tujuan</h2>\n<p>Belajar itu <em>menyenangkan</em>.</p>",
+          "question": "Susun kode agar urutannya judul utama, subjudul, lalu paragraf.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<p>Belajar itu <em>menyenangkan</em>.</p>"
+            },
+            {
+              "id": 2,
+              "code": "<h2>Tujuan</h2>"
+            },
+            {
+              "id": 3,
+              "code": "<h1>Belajar HTML</h1>"
+            }
+          ],
+          "correct_answer": "3 → 2 → 1",
+          "feedback_correct": "Luar biasa! Struktur teks lengkap sudah benar.",
+          "feedback_incorrect": "Belum tepat. Mulailah dengan <h1>, lalu <h2>, kemudian <p>.",
+          "mascot_dialogue": "Selamat! Kamu menyelesaikan HTML Level 2.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 41,
+          "answer_order": [
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

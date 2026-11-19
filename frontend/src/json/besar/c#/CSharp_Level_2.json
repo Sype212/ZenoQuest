@@ -1,0 +1,357 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "csharp_fundamentals",
+  "course_title": "C# Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.1",
+  "source_documents": [
+    "Blueprint_CSharp_Level_1.pdf",
+    "Blueprint_CSharp_Level_2.pdf",
+    "Blueprint_CSharp_Level_3.pdf",
+    "Blueprint_CSharp_Level_4.pdf",
+    "Blueprint_CSharp_Level_5.pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "CSH_L02",
+    "level_number": 2,
+    "title": "Variables, Data Types & Operators",
+    "description": "Materi Variables, Data Types & Operators dalam C# untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "CSH_L02_N01",
+        "title": "WHAT IS A VARIABLE?",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Variabel adalah tempat untuk menyimpan data di dalam program. Setiap variabel memiliki nama dan tipe data yang menentukan jenis nilai yang dapat disimpan. Nilai variabel dapat digunakan dan diubah selama program berjalan, selama tidak dibatasi aturan tertentu.",
+        "code_example": "int age = 17;\nConsole.WriteLine(age);",
+        "question": "Apa fungsi utama variabel dalam pemrograman?\nA. Menyimpan data yang digunakan program.\nB. Menghapus seluruh kode program.\nC. Menghentikan komputer.\nD. Mengubah bahasa pemrograman.",
+        "feedback_correct": "Benar! Variabel digunakan untuk menyimpan data agar dapat digunakan dalam program.",
+        "feedback_incorrect": "Belum tepat. Variabel merupakan tempat untuk menyimpan nilai atau data dalam program.",
+        "mascot_dialogue": "Hebat! Sekarang kamu tahu tempat menyimpan data dalam program!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Menyimpan data yang digunakan program."
+          },
+          {
+            "id": "b",
+            "text": "Menghapus seluruh kode program."
+          },
+          {
+            "id": "c",
+            "text": "Menghentikan komputer."
+          },
+          {
+            "id": "d",
+            "text": "Mengubah bahasa pemrograman."
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. Menyimpan data yang digunakan program."
+      },
+      {
+        "node_id": "CSH_L02_N02",
+        "title": "VARIABLE DECLARATION",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Deklarasi variabel adalah proses membuat variabel dengan menentukan tipe data dan nama variabel. Bentuk umum deklarasi: tipeData namaVariabel = nilai;.",
+        "code_example": "int score = 100;\nstring name = \"Andi\";",
+        "question": "Manakah deklarasi variabel yang benar dalam C#?\nA. int age = 17;\nB. age int = 17;\nC. int = age 17;\nD. 17 = int age;",
+        "feedback_correct": "Tepat! Deklarasi variabel C# dimulai dengan tipe data, nama variabel, lalu nilainya.",
+        "feedback_incorrect": "Belum benar. Perhatikan urutan tipe data, nama variabel, tanda sama dengan, dan nilai.",
+        "mascot_dialogue": "Bagus! Kamu sudah bisa mengenali deklarasi variabel yang benar.",
+        "options": [
+          {
+            "id": "a",
+            "text": "int age = 17;"
+          },
+          {
+            "id": "b",
+            "text": "age int = 17;"
+          },
+          {
+            "id": "c",
+            "text": "int = age 17;"
+          },
+          {
+            "id": "d",
+            "text": "17 = int age;"
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. int age = 17;"
+      },
+      {
+        "node_id": "CSH_L02_N03",
+        "title": "C# DATA TYPES",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Tipe data menentukan jenis nilai yang dapat disimpan oleh variabel. int untuk bilangan bulat, double untuk bilangan desimal, string untuk teks, dan bool untuk nilai benar atau salah.",
+        "code_example": "int age = 17;\ndouble height = 170.5;\nstring name = \"Budi\";\nbool isStudent = true;",
+        "question": "Tipe data apa yang tepat untuk menyimpan nilai true atau false?\nA. int\nB. string\nC. bool\nD. double",
+        "feedback_correct": "Benar! Tipe data bool digunakan untuk menyimpan nilai true atau false.",
+        "feedback_incorrect": "Belum tepat. Pilih tipe data yang dirancang untuk menyimpan nilai logika.",
+        "mascot_dialogue": "Mantap! Kamu sudah mengenal tipe data boolean.",
+        "options": [
+          {
+            "id": "a",
+            "text": "int"
+          },
+          {
+            "id": "b",
+            "text": "string"
+          },
+          {
+            "id": "c",
+            "text": "bool"
+          },
+          {
+            "id": "d",
+            "text": "double"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. bool"
+      },
+      {
+        "node_id": "CSH_L02_N04",
+        "title": "ARITHMETIC OPERATORS",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Operator aritmatika digunakan untuk melakukan perhitungan matematika. Operator dasar meliputi + penjumlahan, - pengurangan, * perkalian, / pembagian, dan % sisa pembagian.",
+        "code_example": "int a = 10;\nint b = 3;\nConsole.WriteLine(a + b);\nConsole.WriteLine(a % b);",
+        "question": "Operator apa yang digunakan untuk mendapatkan sisa hasil pembagian?\nA. +\nB. /\nC. *\nD. %",
+        "feedback_correct": "Benar! Operator modulus (%) digunakan untuk mendapatkan sisa hasil pembagian.",
+        "feedback_incorrect": "Belum tepat. Operator yang dicari digunakan untuk menghitung sisa pembagian.",
+        "mascot_dialogue": "Keren! Sekarang kamu mengenal operator matematika dalam C#.",
+        "options": [
+          {
+            "id": "a",
+            "text": "+"
+          },
+          {
+            "id": "b",
+            "text": "/"
+          },
+          {
+            "id": "c",
+            "text": "*"
+          },
+          {
+            "id": "d",
+            "text": "%"
+          }
+        ],
+        "correct_option_id": "d",
+        "correct_answer": "D. %"
+      },
+      {
+        "node_id": "CSH_L02_N05",
+        "title": "INT AND DOUBLE",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "int digunakan untuk menyimpan bilangan bulat, seperti 10, 25, dan 100. double digunakan untuk menyimpan bilangan yang memiliki nilai desimal, seperti 3.14 atau 12.5.",
+        "code_example": "int age = 17;\ndouble price = 12.5;",
+        "question": "Lengkapi kode berikut menggunakan tipe data untuk bilangan desimal:\n_____ price = 12.5;",
+        "feedback_correct": "Tepat! Double digunakan untuk menyimpan bilangan yang memiliki nilai desimal.",
+        "feedback_incorrect": "Belum tepat. Pilih tipe data numerik yang dapat menyimpan angka desimal.",
+        "mascot_dialogue": "Hebat! Kamu sudah bisa membedakan int dan double.",
+        "accepted_answers": [
+          "double"
+        ],
+        "correct_answer": "double"
+      },
+      {
+        "node_id": "CSH_L02_N06",
+        "title": "STRING AND BOOL",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "string digunakan untuk menyimpan kumpulan karakter atau teks, sedangkan bool digunakan untuk menyimpan nilai logika berupa true atau false.",
+        "code_example": "string name = \"Rina\";\nbool isActive = true;",
+        "question": "Lengkapi kode berikut agar variabel isActive dapat menyimpan nilai true:\n_____ isActive = true;",
+        "feedback_correct": "Benar! Bool digunakan untuk menyimpan nilai true atau false.",
+        "feedback_incorrect": "Belum tepat. Gunakan tipe data yang digunakan untuk nilai logika.",
+        "mascot_dialogue": "Bagus! Kamu semakin mengenal tipe data C#.",
+        "accepted_answers": [
+          "bool"
+        ],
+        "correct_answer": "bool"
+      },
+      {
+        "node_id": "CSH_L02_N07",
+        "title": "CONSTANT WITH CONST",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Konstanta adalah nilai yang tidak dapat diubah setelah ditetapkan. Dalam C#, kata kunci const digunakan untuk mendeklarasikan konstanta.",
+        "code_example": "const int daysInWeek = 7;",
+        "question": "Lengkapi deklarasi berikut agar variabel menjadi konstanta:\n_____ double pi = 3.14;",
+        "feedback_correct": "Tepat! Kata kunci const digunakan untuk membuat konstanta yang nilainya tidak dapat diubah.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci untuk mendeklarasikan nilai tetap dalam C#.",
+        "mascot_dialogue": "Luar biasa! Kamu sudah memahami perbedaan variabel dan konstanta.",
+        "accepted_answers": [
+          "const"
+        ],
+        "correct_answer": "const"
+      },
+      {
+        "node_id": "CSH_L02_N08",
+        "title": "ASSIGNMENT AND COMPARISON OPERATORS",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Assignment operator digunakan untuk memberikan atau memperbarui nilai variabel, misalnya = dan +=. Comparison operator membandingkan dua nilai dan menghasilkan true atau false, misalnya ==, !=, >, <, >=, dan <=.",
+        "code_example": "int score = 80;\nscore += 10;\nbool passed = score >= 75;\nConsole.WriteLine(passed);",
+        "question": "Susun potongan kode agar program memberikan nilai 90 kepada variabel score:\n1. int score\n2. =\n3. 90\n4. ;",
+        "feedback_correct": "Benar! Operator assignment digunakan untuk memberikan nilai kepada variabel.",
+        "feedback_incorrect": "Belum tepat. Susun tipe data dan nama variabel, operator assignment, nilai, lalu titik koma.",
+        "mascot_dialogue": "Bagus! Kamu berhasil menyusun assignment operator.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "int score"
+          },
+          {
+            "id": 2,
+            "code": "="
+          },
+          {
+            "id": 3,
+            "code": "90"
+          },
+          {
+            "id": 4,
+            "code": ";"
+          }
+        ],
+        "answer_order": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "correct_answer": "1 → 2 → 3 → 4"
+      },
+      {
+        "node_id": "CSH_L02_N09",
+        "title": "LOGICAL OPERATORS",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Logical operator digunakan untuk menggabungkan atau membalikkan kondisi logika. && berarti AND, || berarti OR, dan ! berarti NOT.",
+        "code_example": "bool hasCard = true;\nbool hasTicket = true;\nbool canEnter = hasCard && hasTicket;\nConsole.WriteLine(canEnter);",
+        "question": "Susun potongan kode untuk membuat canEnter bernilai true jika kedua kondisi benar:\n1. bool canEnter\n2. =\n3. hasCard\n4. &&\n5. hasTicket\n6. ;",
+        "feedback_correct": "Tepat! Operator && digunakan ketika kedua kondisi harus bernilai true.",
+        "feedback_incorrect": "Belum tepat. Gunakan operator AND untuk menggabungkan kedua kondisi.",
+        "mascot_dialogue": "Hebat! Kamu sudah memahami cara menggabungkan kondisi logika.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "bool canEnter"
+          },
+          {
+            "id": 2,
+            "code": "="
+          },
+          {
+            "id": 3,
+            "code": "hasCard"
+          },
+          {
+            "id": 4,
+            "code": "&&"
+          },
+          {
+            "id": 5,
+            "code": "hasTicket"
+          },
+          {
+            "id": 6,
+            "code": ";"
+          }
+        ],
+        "answer_order": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "correct_answer": "1 → 2 → 3 → 4 → 5 → 6"
+      },
+      {
+        "node_id": "CSH_L02_N10",
+        "title": "OPERATOR PRECEDENCE",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Operator precedence adalah aturan urutan pengerjaan operator. Perkalian dan pembagian dikerjakan sebelum penjumlahan dan pengurangan, kecuali tanda kurung mengubah urutan.",
+        "code_example": "int result = 2 + 3 * 4;\nConsole.WriteLine(result);",
+        "question": "Susun potongan kode agar program menghitung hasil dari 2 + (3 × 4):\n1. int result\n2. =\n3. 2\n4. +\n5. (\n6. 3 * 4\n7. )\n8. ;",
+        "feedback_correct": "Luar biasa! Kamu berhasil menyusun ekspresi dengan urutan operasi yang benar.",
+        "feedback_incorrect": "Belum tepat. Perhatikan posisi tanda kurung untuk menentukan urutan operasi.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan Level 2. Siap belajar input dan percabangan?",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "int result"
+          },
+          {
+            "id": 2,
+            "code": "="
+          },
+          {
+            "id": 3,
+            "code": "2"
+          },
+          {
+            "id": 4,
+            "code": "+"
+          },
+          {
+            "id": 5,
+            "code": "("
+          },
+          {
+            "id": 6,
+            "code": "3 * 4"
+          },
+          {
+            "id": 7,
+            "code": ")"
+          },
+          {
+            "id": 8,
+            "code": ";"
+          }
+        ],
+        "answer_order": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "correct_answer": "1 → 2 → 3 → 4 → 5 → 6 → 7 → 8"
+      }
+    ]
+  }
+}

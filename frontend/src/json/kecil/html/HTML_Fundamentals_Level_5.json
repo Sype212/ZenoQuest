@@ -1,0 +1,415 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "html_fundamentals",
+  "course_title": "HTML Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team — Absen Kecil",
+  "difficulty": "Intermediate — Advanced Beginner",
+  "language": "id",
+  "content_version": "3.0 — Revisi Problem Solving",
+  "source_documents": [
+    "Blueprint_HTML_Level_5_Problem_Solving_Absen_Kecil_FINAL.pdf"
+  ],
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis.",
+    "source_integrity": "Isi soal, teori, kode, jawaban, feedback, dan dialog maskot dipindahkan dari hasil ekstraksi Level 5 tanpa melengkapi teks yang terpotong.",
+    "manual_review_required": [
+      "Soal HTML-L5-001: teks pertanyaan pada halaman 2 terpotong setelah huruf 'p'.",
+      "Soal HTML-L5-002: teks pertanyaan pada halaman 3 terpotong setelah 'pa'.",
+      "Soal HTML-L5-003: teks pertanyaan pada halaman 4 terpotong setelah 'kebutuha'.",
+      "Soal HTML-L5-004: teks pertanyaan pada halaman 5 terpotong setelah 'yan'."
+    ],
+    "difficulty_note": "PDF hanya menyebut tingkat kesulitan keseluruhan 'Intermediate — Advanced Beginner'; tingkat kesulitan per soal tidak dicantumkan, sehingga difficulty setiap soal diisi null.",
+    "asset_note": "Tidak ditemukan gambar atau ilustrasi yang menjadi aset soal; seluruh contoh soal berbasis teks dan kode HTML."
+  },
+  "levels": [
+    {
+      "level_id": "HTML_L05",
+      "level_number": 5,
+      "title": "HTML Fundamentals — Level 5: HTML Problem Solving",
+      "description": "Peserta mampu menganalisis kebutuhan halaman, memilih elemen HTML yang tepat, membangun struktur konten semantik, menyusun formulir dan tabel, serta menggabungkan beberapa komponen menjadi solusi halaman yang lengkap.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "learning_objectives": [],
+      "nodes": [
+        {
+          "node_id": "HTML_L05_N01",
+          "title": "Node 01",
+          "difficulty": null,
+          "type": "multiple_choice",
+          "theory": "Problem solving HTML dimulai dari kebutuhan pengguna. Sebelum menulis tag, tentukan hierarki informasi, jenis konten, dan hubungan antarbagian. Heading menyatakan tingkatan judul, paragraf memuat uraian, sedangkan list cocok untuk sekumpulan item. Pemilihan elemen berdasarkan fungsi membantu halaman tetap mudah dibaca dan dipelihara.",
+          "code_example": "<main>\n  <h1>Informasi Kegiatan</h1>\n  <section>\n    <h2>Persyaratan</h2>\n    <ul><li>Kartu peserta</li></ul>\n  </section>\n</main>",
+          "question": "Halaman pendaftaran harus memiliki satu judul utama, bagian persyaratan, dan tiga syarat yang tidak memiliki urutan p",
+          "options": [
+            {
+              "id": "a",
+              "text": "<h1> judul, <h2> persyaratan, <ul> berisi tiga <li>"
+            },
+            {
+              "id": "b",
+              "text": "Semua informasi ditulis dalam satu <h1>"
+            },
+            {
+              "id": "c",
+              "text": "<h3> judul, <br> sebagai daftar syarat"
+            },
+            {
+              "id": "d",
+              "text": "<p> judul dan tiga <h1> untuk setiap syarat"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "A",
+          "feedback_correct": "Benar! Hierarki heading dan unordered list cocok untuk daftar tanpa urutan.",
+          "feedback_incorrect": "Belum tepat. Bedakan judul, subbagian, dan daftar yang tidak memerlukan nomor.",
+          "mascot_dialogue": "Bagus! Kamu mulai menyusun solusi berdasarkan kebutuhan.",
+          "correct_option_id": "a",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 56,
+          "answer_order": null,
+          "topic": "Planning a Structured Information Page",
+          "validation_note": "Teks pertanyaan pada PDF halaman 2 terpotong di sisi kanan setelah huruf 'p'; dipertahankan sesuai teks yang terbaca dan perlu pemeriksaan manual."
+        },
+        {
+          "node_id": "HTML_L05_N02",
+          "title": "Node 02",
+          "difficulty": null,
+          "type": "multiple_choice",
+          "theory": "Halaman dengan navigasi, konten utama, dan informasi tambahan sebaiknya memakai elemen semantik sesuai perannya. <nav> menampung navigasi utama, <main> mewakili konten utama unik pada halaman, dan <aside> memuat informasi pelengkap. Hindari memakai elemen semantik hanya karena bentuk visualnya.",
+          "code_example": "<header><h1>Portal Siswa</h1></header>\n<nav><a href=\"/kelas\">Kelas</a></nav>\n<main><article><h2>Berita</h2></article></main>",
+          "question": "Portal sekolah memiliki menu perpindahan halaman, berita utama, dan informasi jadwal samping. Penempatan mana yang pa",
+          "options": [
+            {
+              "id": "a",
+              "text": "Jadwal di <nav>, menu di <aside>, berita di <footer>"
+            },
+            {
+              "id": "b",
+              "text": "Menu di <nav>, berita di <main>, jadwal di <aside>"
+            },
+            {
+              "id": "c",
+              "text": "Semua konten di <header> karena muncul pertama"
+            },
+            {
+              "id": "d",
+              "text": "Berita di <nav> dan menu di <article>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Tepat! Setiap bagian memakai elemen sesuai fungsi informasinya.",
+          "feedback_incorrect": "Belum tepat. Tentukan mana navigasi, konten utama, dan informasi pelengkap.",
+          "mascot_dialogue": "Keren! Kamu bisa memetakan kebutuhan menjadi struktur semantik.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 63,
+          "answer_order": null,
+          "topic": "Choosing Semantic Page Regions",
+          "validation_note": "Teks pertanyaan pada PDF halaman 3 terpotong di sisi kanan setelah 'pa'; dipertahankan sesuai teks yang terbaca dan perlu pemeriksaan manual."
+        },
+        {
+          "node_id": "HTML_L05_N03",
+          "title": "Node 03",
+          "difficulty": null,
+          "type": "multiple_choice",
+          "theory": "Solusi formulir yang baik perlu menghubungkan label dengan input melalui pasangan for dan id. Atribut name diperlukan agar nilai input memiliki nama saat formulir dikirim. Gunakan type yang sesuai, misalnya email untuk alamat surel, serta required jika pengisian wajib. HTML sendiri tidak menyimpan data; pengolahan kiriman memerlukan tujuan atau sistem lain.",
+          "code_example": "<form action=\"/daftar\" method=\"post\">\n  <label for=\"email\">Email</label>\n  <input id=\"email\" name=\"email\" type=\"email\" required>\n  <button type=\"submit\">Daftar</button>\n</form>",
+          "question": "Sebuah form perlu meminta email wajib dan mengirim nilai dengan nama field email. Pilihan mana yang memenuhi kebutuha",
+          "options": [
+            {
+              "id": "a",
+              "text": "<label>Email</label><input type=\"text\">"
+            },
+            {
+              "id": "b",
+              "text": "<input id=\"email\" type=\"email\"> tanpa name"
+            },
+            {
+              "id": "c",
+              "text": "<label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" required>"
+            },
+            {
+              "id": "d",
+              "text": "<button type=\"email\">Email</button>"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! Label terhubung, nama field tersedia, dan input email diwajibkan.",
+          "feedback_incorrect": "Belum tepat. Periksa for/id, name, type, dan required secara bersamaan.",
+          "mascot_dialogue": "Mantap! Solusimu memperhatikan penggunaan form yang benar.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 58,
+          "answer_order": null,
+          "topic": "Designing Accessible Form Inputs",
+          "validation_note": "Teks pertanyaan pada PDF halaman 4 terpotong di sisi kanan setelah 'kebutuha'; dipertahankan sesuai teks yang terbaca dan perlu pemeriksaan manual."
+        },
+        {
+          "node_id": "HTML_L05_N04",
+          "title": "Node 04",
+          "difficulty": null,
+          "type": "multiple_choice",
+          "theory": "Daftar dan tabel memiliki tujuan berbeda. Gunakan <ol> untuk langkah yang harus berurutan, <ul> untuk kumpulan item, dan <table> untuk data yang berhubungan menurut baris dan kolom. Tabel sebaiknya memiliki header <th> agar hubungan antara kolom dan data dapat dikenali.",
+          "code_example": "<table>\n  <tr><th scope=\"col\">Nama</th><th scope=\"col\">Nilai</th></tr>\n  <tr><td>Ani</td><td>90</td></tr>\n</table>",
+          "question": "Guru ingin menampilkan nama dan nilai 20 siswa agar setiap nilai dapat dikaitkan dengan pemiliknya. Struktur mana yan",
+          "options": [
+            {
+              "id": "a",
+              "text": "<ul> dengan satu item berisi seluruh nama dan nilai"
+            },
+            {
+              "id": "b",
+              "text": "<ol> dengan angka nilai sebagai nomor urut"
+            },
+            {
+              "id": "c",
+              "text": "<p> dengan banyak spasi sebagai kolom"
+            },
+            {
+              "id": "d",
+              "text": "<table> dengan header Nama dan Nilai serta baris data"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "D",
+          "feedback_correct": "Benar! Tabel tepat untuk data dengan hubungan antarkolom.",
+          "feedback_incorrect": "Belum tepat. Pertimbangkan apakah informasi berbentuk langkah, daftar, atau data tabular.",
+          "mascot_dialogue": "Hebat! Kamu memilih struktur sesuai jenis data.",
+          "correct_option_id": "d",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 47,
+          "answer_order": null,
+          "topic": "Selecting a Suitable Data Structure",
+          "validation_note": "Teks pertanyaan pada PDF halaman 5 terpotong di sisi kanan setelah 'yan'; dipertahankan sesuai teks yang terbaca dan perlu pemeriksaan manual."
+        },
+        {
+          "node_id": "HTML_L05_N05",
+          "title": "Node 05",
+          "difficulty": null,
+          "type": "fill_blank",
+          "theory": "Pada tabel, <th> menandai sel header. Atribut scope membantu menjelaskan apakah header berlaku untuk kolom atau baris. Untuk tabel daftar nilai, header Nama dan Nilai berada di bagian atas sehingga masing-masing berperan sebagai header kolom.",
+          "code_example": "<table>\n  <tr><th scope=\"col\">Nama</th></tr>\n  <tr><td>Rani</td></tr>\n</table>",
+          "question": "Lengkapi atribut pada header berikut agar header Nama dinyatakan sebagai judul kolom:\n<th scope=\"_____\">Nama</th>",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "col",
+          "feedback_correct": "Tepat! Nilai col menyatakan bahwa header berlaku untuk kolom.",
+          "feedback_incorrect": "Belum tepat. Pilih nilai scope untuk header kolom, bukan baris.",
+          "mascot_dialogue": "Bagus! Kamu memahami hubungan header dan data.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "col"
+          ],
+          "mascot_dialogue_char_count": 46,
+          "answer_order": null,
+          "topic": "Completing an Accessible Table Header"
+        },
+        {
+          "node_id": "HTML_L05_N06",
+          "title": "Node 06",
+          "difficulty": null,
+          "type": "fill_blank",
+          "theory": "Label yang terkait dengan input memungkinkan pengguna mengklik teks label untuk memfokuskan kontrol dan membantu teknologi bantu mengenali nama field. Nilai for pada <label> harus sama dengan id pada <input>. Nilai name berbeda fungsi karena dipakai untuk mengidentifikasi data kiriman.",
+          "code_example": "<label for=\"nama\">Nama siswa</label>\n<input id=\"nama\" name=\"nama\" type=\"text\">",
+          "question": "Lengkapi atribut label agar terhubung dengan input ber-id nama:\n<label _____=\"nama\">Nama siswa</label>\n<input id=\"nama\" name=\"nama\" type=\"text\">",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "for",
+          "feedback_correct": "Benar! for pada label mengacu pada id input.",
+          "feedback_incorrect": "Belum tepat. Cari atribut yang menghubungkan label dengan id elemen kontrol.",
+          "mascot_dialogue": "Sip! Kamu berhasil membuat label yang terhubung.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "for"
+          ],
+          "mascot_dialogue_char_count": 48,
+          "answer_order": null,
+          "topic": "Connecting a Form Label to Its Input"
+        },
+        {
+          "node_id": "HTML_L05_N07",
+          "title": "Node 07",
+          "difficulty": null,
+          "type": "fill_blank",
+          "theory": "Form pilihan dapat dibuat dengan <select> dan beberapa <option>. Agar pilihan memiliki nama saat dikirim, elemen select perlu atribut name. Jika pengguna wajib memilih, gunakan required serta opsi placeholder dengan value kosong. Opsi placeholder sebaiknya disabled dan selected agar pengguna diminta memilih nilai yang nyata.",
+          "code_example": "<label for=\"jurusan\">Jurusan</label>\n<select id=\"jurusan\" name=\"jurusan\" required>\n  <option value=\"\" disabled selected>Pilih jurusan</option>\n  <option value=\"rpl\">RPL</option>\n</select>",
+          "question": "Lengkapi atribut yang mewajibkan pengguna memilih jurusan:\n<select id=\"jurusan\" name=\"jurusan\" _____>",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "required",
+          "feedback_correct": "Tepat! required meminta pilihan valid sebelum pengiriman form.",
+          "feedback_incorrect": "Belum tepat. Cari atribut boolean yang menandai field wajib diisi.",
+          "mascot_dialogue": "Mantap! Form pilihanmu punya aturan yang jelas.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "required"
+          ],
+          "mascot_dialogue_char_count": 47,
+          "answer_order": null,
+          "topic": "Building a Required Selection Field"
+        },
+        {
+          "node_id": "HTML_L05_N08",
+          "title": "Node 08",
+          "difficulty": null,
+          "type": "arrange_code",
+          "theory": "Untuk menyusun halaman artikel, tempatkan konten utama di dalam <main>. Sebuah <article> dapat memiliki heading dan paragrafnya sendiri. Urutan elemen perlu mencerminkan hierarki informasi. Dalam latihan susun kode, setiap blok disediakan lengkap dan harus dipakai satu kali agar hasilnya merupakan HTML valid.",
+          "code_example": "<main>\n  <article>\n    <h2>Pengumuman</h2>\n    <p>Ujian dimulai Senin.</p>\n  </article>\n</main>",
+          "question": "Susun potongan acak menjadi konten utama yang berisi satu artikel dengan judul dan paragraf.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<p>Ujian dimulai Senin.</p>"
+            },
+            {
+              "id": 2,
+              "code": "</article>"
+            },
+            {
+              "id": 3,
+              "code": "<main>"
+            },
+            {
+              "id": 4,
+              "code": "<h2>Pengumuman</h2>"
+            },
+            {
+              "id": 5,
+              "code": "</main>"
+            },
+            {
+              "id": 6,
+              "code": "<article>"
+            }
+          ],
+          "correct_answer": "3 → 6 → 4 → 1 → 2 → 5",
+          "feedback_correct": "Benar! Konten utama membungkus artikel, lalu artikel memuat judul dan isi.",
+          "feedback_incorrect": "Belum tepat. Buka main dan article dahulu; tutup article sebelum main.",
+          "mascot_dialogue": "Keren! Kamu menyusun konten semantik yang lengkap.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 50,
+          "answer_order": [
+            3,
+            6,
+            4,
+            1,
+            2,
+            5
+          ],
+          "topic": "Assembling a Semantic Article"
+        },
+        {
+          "node_id": "HTML_L05_N09",
+          "title": "Node 09",
+          "difficulty": null,
+          "type": "arrange_code",
+          "theory": "Sebuah form memerlukan wadah <form>, label yang sesuai, input dengan name, dan tombol submit. Pada latihan ini, tujuan pengiriman sudah ditetapkan pada action dan method. Susun komponen dalam urutan yang masuk akal agar pengguna dapat mengisi nama dan mengirimkan formulir. HTML menyediakan struktur antarmuka; endpoint /daftar diasumsikan disediakan developer.",
+          "code_example": "<form action=\"/daftar\" method=\"post\">\n  <label for=\"nama\">Nama</label>\n  <input id=\"nama\" name=\"nama\" required>\n  <button type=\"submit\">Kirim</button>\n</form>",
+          "question": "Susun potongan kode untuk membentuk formulir nama yang wajib diisi dan dapat dikirim.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<button type=\"submit\">Kirim</button>"
+            },
+            {
+              "id": 2,
+              "code": "</form>"
+            },
+            {
+              "id": 3,
+              "code": "<input id=\"nama\" name=\"nama\" required>"
+            },
+            {
+              "id": 4,
+              "code": "<form action=\"/daftar\" method=\"post\">"
+            },
+            {
+              "id": 5,
+              "code": "<label for=\"nama\">Nama</label>"
+            }
+          ],
+          "correct_answer": "4 → 5 → 3 → 1 → 2",
+          "feedback_correct": "Tepat! Form memuat label, input wajib, dan tombol submit sebelum ditutup.",
+          "feedback_incorrect": "Belum tepat. Mulai dengan form, pasangkan label-input, lalu tombol submit.",
+          "mascot_dialogue": "Hebat! Kamu berhasil menyusun formulir yang fungsional secara HTML.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 67,
+          "answer_order": [
+            4,
+            5,
+            3,
+            1,
+            2
+          ],
+          "topic": "Constructing a Data Collection Form"
+        },
+        {
+          "node_id": "HTML_L05_N10",
+          "title": "Node 10",
+          "difficulty": null,
+          "type": "arrange_code",
+          "theory": "Tantangan akhir menggabungkan perencanaan konten, struktur semantik, daftar, dan navigasi. Halaman kegiatan perlu header berisi judul, nav menuju bagian persyaratan, main berisi section persyaratan, serta footer. Nilai href pada tautan internal harus cocok dengan id tujuan. Susun seluruh blok sehingga konten berada pada elemen induk yang tepat dan setiap tag penutup berpasangan.",
+          "code_example": "<!DOCTYPE html>\n<html lang=\"id\">\n<head><title>Kegiatan Sekolah</title></head>\n<body>\n  <header><h1>Kegiatan Sekolah</h1></header>\n  <nav><a href=\"#syarat\">Persyaratan</a></nav>\n  <main>\n    <section id=\"syarat\">\n      <h2>Persyaratan</h2>\n      <ul><li>Kartu peserta</li></ul>\n    </section>\n  </main>\n  <footer><p>Panitia Sekolah</p></footer>\n</body>\n</html>",
+          "question": "Susun blok menjadi halaman HTML lengkap dengan tautan navigasi menuju bagian persyaratan.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "<main><section id=\"syarat\"><h2>Persyaratan</h2><ul><li>Kartu peserta</li></ul></section></main>"
+            },
+            {
+              "id": 2,
+              "code": "</body></html>"
+            },
+            {
+              "id": 3,
+              "code": "<nav><a href=\"#syarat\">Persyaratan</a></nav>"
+            },
+            {
+              "id": 4,
+              "code": "<!DOCTYPE html><html lang=\"id\"><head><title>Kegiatan Sekolah</title></head><body>"
+            },
+            {
+              "id": 5,
+              "code": "<footer><p>Panitia Sekolah</p></footer>"
+            },
+            {
+              "id": 6,
+              "code": "<header><h1>Kegiatan Sekolah</h1></header>"
+            }
+          ],
+          "correct_answer": "4 → 6 → 3 → 1 → 5 → 2",
+          "feedback_correct": "Luar biasa! Semua bagian halaman tersusun dan navigasi mengarah ke section yang benar.",
+          "feedback_incorrect": "Belum tepat. Urutkan kerangka dokumen, header, nav, main, footer, lalu penutup.",
+          "mascot_dialogue": "Selamat! Kamu berhasil memecahkan tantangan halaman HTML Level 5.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 65,
+          "answer_order": [
+            4,
+            6,
+            3,
+            1,
+            5,
+            2
+          ],
+          "topic": "Solving a Multi-Section Webpage Challenge"
+        }
+      ]
+    }
+  ]
+}

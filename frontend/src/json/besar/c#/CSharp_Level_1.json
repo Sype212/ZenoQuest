@@ -1,0 +1,371 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "csharp_fundamentals",
+  "course_title": "C# Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.1",
+  "source_documents": [
+    "Blueprint_CSharp_Level_1.pdf",
+    "Blueprint_CSharp_Level_2.pdf",
+    "Blueprint_CSharp_Level_3.pdf",
+    "Blueprint_CSharp_Level_4.pdf",
+    "Blueprint_CSharp_Level_5.pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "CSH_L01",
+    "level_number": 1,
+    "title": "Introduction to C#",
+    "description": "Materi Introduction to C# untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "CSH_L01_N01",
+        "title": "WHAT IS C#?",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "C# (dibaca C Sharp) adalah bahasa pemrograman modern yang dikembangkan oleh Microsoft. C# digunakan untuk membuat aplikasi desktop, web, game, dan berbagai aplikasi lainnya.",
+        "code_example": "Console.WriteLine(\"Hello, C#!\");",
+        "question": "Apa yang dimaksud dengan C#?\nA. Bahasa pemrograman yang dikembangkan Microsoft.\nB. Sistem operasi untuk komputer.\nC. Aplikasi untuk mengedit gambar.\nD. Bahasa untuk membuat desain grafis.",
+        "feedback_correct": "Benar! C# adalah bahasa pemrograman modern yang dikembangkan oleh Microsoft.",
+        "feedback_incorrect": "Belum tepat. C# merupakan bahasa pemrograman yang dapat digunakan untuk membuat berbagai jenis aplikasi.",
+        "mascot_dialogue": "Hebat! Kamu sudah mengenal C#. Mari mulai petualangan coding!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Bahasa pemrograman yang dikembangkan Microsoft."
+          },
+          {
+            "id": "b",
+            "text": "Sistem operasi untuk komputer."
+          },
+          {
+            "id": "c",
+            "text": "Aplikasi untuk mengedit gambar."
+          },
+          {
+            "id": "d",
+            "text": "Bahasa untuk membuat desain grafis."
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. Bahasa pemrograman yang dikembangkan Microsoft."
+      },
+      {
+        "node_id": "CSH_L01_N02",
+        "title": "USES OF C#",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "C# dapat digunakan untuk mengembangkan aplikasi desktop, aplikasi web, dan game. Unity merupakan salah satu game engine yang menggunakan C# untuk menulis logika permainan.",
+        "code_example": "Console.WriteLine(\"Welcome to my game!\");",
+        "question": "Teknologi apa yang sering menggunakan C# untuk mengembangkan game?\nA. Microsoft Word\nB. Unity\nC. Paint\nD. Notepad",
+        "feedback_correct": "Tepat! Unity menggunakan C# untuk menulis berbagai logika dalam game.",
+        "feedback_incorrect": "Belum benar. Unity merupakan game engine yang umum menggunakan C# sebagai bahasa scripting.",
+        "mascot_dialogue": "Keren! Ternyata C# juga bisa digunakan untuk membuat game!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Microsoft Word"
+          },
+          {
+            "id": "b",
+            "text": "Unity"
+          },
+          {
+            "id": "c",
+            "text": "Paint"
+          },
+          {
+            "id": "d",
+            "text": "Notepad"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Unity"
+      },
+      {
+        "node_id": "CSH_L01_N03",
+        "title": "INTRODUCTION TO .NET",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": ".NET adalah platform pengembangan yang menyediakan lingkungan, library, dan tools untuk membangun serta menjalankan aplikasi. C# merupakan salah satu bahasa yang dapat digunakan bersama .NET.",
+        "code_example": "Console.WriteLine(\"Learning .NET\");",
+        "question": "Apa fungsi utama .NET?\nA. Mengedit foto dan video.\nB. Menyediakan platform dan tools untuk mengembangkan aplikasi.\nC. Menggantikan semua bahasa pemrograman.\nD. Mengatur perangkat keras komputer secara langsung.",
+        "feedback_correct": "Benar! .NET menyediakan platform dan berbagai tools untuk membangun aplikasi.",
+        "feedback_incorrect": "Belum tepat. .NET merupakan platform pengembangan aplikasi yang dapat digunakan bersama C#.",
+        "mascot_dialogue": "Bagus! Sekarang kamu sudah mengenal hubungan C# dan .NET.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mengedit foto dan video."
+          },
+          {
+            "id": "b",
+            "text": "Menyediakan platform dan tools untuk mengembangkan aplikasi."
+          },
+          {
+            "id": "c",
+            "text": "Menggantikan semua bahasa pemrograman."
+          },
+          {
+            "id": "d",
+            "text": "Mengatur perangkat keras komputer secara langsung."
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Menyediakan platform dan tools untuk mengembangkan aplikasi."
+      },
+      {
+        "node_id": "CSH_L01_N04",
+        "title": "BASIC C# PROGRAM STRUCTURE",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Program C# dapat memiliki struktur berupa namespace, class, dan method Main. Method Main merupakan titik awal eksekusi untuk program yang menggunakan entry point tersebut.",
+        "code_example": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"Hello World!\");\n    }\n}",
+        "question": "Bagian manakah yang menjadi titik awal eksekusi pada contoh program tersebut?\nA. using System;\nB. class Program\nC. static void Main()\nD. Console.WriteLine()",
+        "feedback_correct": "Benar! Method Main menjadi titik awal eksekusi program pada contoh tersebut.",
+        "feedback_incorrect": "Belum tepat. Perhatikan method yang berada di dalam class Program dan menjadi entry point aplikasi.",
+        "mascot_dialogue": "Mantap! Kamu sudah memahami bagian penting struktur program C#.",
+        "options": [
+          {
+            "id": "a",
+            "text": "using System;"
+          },
+          {
+            "id": "b",
+            "text": "class Program"
+          },
+          {
+            "id": "c",
+            "text": "static void Main()"
+          },
+          {
+            "id": "d",
+            "text": "Console.WriteLine()"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. static void Main()"
+      },
+      {
+        "node_id": "CSH_L01_N05",
+        "title": "USING SYSTEM",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "using System; digunakan untuk mengimpor namespace System agar anggota di dalamnya dapat digunakan tanpa menuliskan nama lengkap namespace setiap kali dipanggil. Console merupakan salah satu anggota namespace System.",
+        "code_example": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"Hello!\");\n    }\n}",
+        "question": "Lengkapi kode berikut agar namespace System dapat digunakan:\n_____ System;",
+        "feedback_correct": "Tepat! Kata kunci using digunakan untuk mengimpor namespace.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci yang ditulis sebelum nama namespace.",
+        "mascot_dialogue": "Bagus! Kamu sudah tahu cara mengimpor namespace.",
+        "accepted_answers": [
+          "using"
+        ],
+        "correct_answer": "using"
+      },
+      {
+        "node_id": "CSH_L01_N06",
+        "title": "CLASS PROGRAM",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Class merupakan bagian penting dalam pemrograman berorientasi objek di C#. Class digunakan sebagai cetak biru untuk membuat objek. Program sederhana sering menggunakan class bernama Program.",
+        "code_example": "class Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"Hello!\");\n    }\n}",
+        "question": "Lengkapi deklarasi class berikut:\n_____ Program",
+        "feedback_correct": "Benar! Kata kunci class digunakan untuk mendeklarasikan sebuah class.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci C# untuk membuat deklarasi class.",
+        "mascot_dialogue": "Hebat! Kamu sudah memahami deklarasi class dalam C#.",
+        "accepted_answers": [
+          "class"
+        ],
+        "correct_answer": "class"
+      },
+      {
+        "node_id": "CSH_L01_N07",
+        "title": "MAIN METHOD",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Method Main merupakan titik awal eksekusi pada program C# yang menggunakan entry point Main. Kata void menunjukkan bahwa method tidak mengembalikan nilai.",
+        "code_example": "static void Main()\n{\n    Console.WriteLine(\"Program Started\");\n}",
+        "question": "Lengkapi method berikut agar menjadi deklarasi Main yang benar:\nstatic _____ Main()",
+        "feedback_correct": "Tepat! Void menunjukkan bahwa method tersebut tidak mengembalikan nilai.",
+        "feedback_incorrect": "Belum tepat. Perhatikan tipe pengembalian method yang tidak menghasilkan nilai.",
+        "mascot_dialogue": "Luar biasa! Kamu semakin memahami struktur program C#.",
+        "accepted_answers": [
+          "void"
+        ],
+        "correct_answer": "void"
+      },
+      {
+        "node_id": "CSH_L01_N08",
+        "title": "CONSOLE WRITELINE",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Console.WriteLine() digunakan untuk menampilkan teks atau nilai ke console. Setelah menampilkan output, cursor berpindah ke baris berikutnya.",
+        "code_example": "Console.WriteLine(\"Hello World!\");\nConsole.WriteLine(\"I am learning C#.\");",
+        "question": "Susun potongan kode berikut agar program menampilkan tulisan Hello C#!:\n1. Console.WriteLine\n2. ;\n3. (\"Hello C#!\")",
+        "feedback_correct": "Benar! Susunan kode sudah tepat untuk menampilkan teks ke console.",
+        "feedback_incorrect": "Belum tepat. Susun nama perintah, tanda kurung beserta teks, lalu akhiri dengan titik koma.",
+        "mascot_dialogue": "Yeay! Kamu berhasil menyusun perintah output pertama!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "Console.WriteLine"
+          },
+          {
+            "id": 2,
+            "code": ";"
+          },
+          {
+            "id": 3,
+            "code": "(\"Hello C#!\")"
+          }
+        ],
+        "answer_order": [
+          1,
+          3,
+          2
+        ],
+        "correct_answer": "1 → 3 → 2",
+        "assembly_separator": ""
+      },
+      {
+        "node_id": "CSH_L01_N09",
+        "title": "HELLO WORLD PROGRAM",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Program Hello World merupakan contoh sederhana untuk memulai belajar bahasa pemrograman. Dalam C#, program ini dapat menggunakan class, method Main, dan Console.WriteLine.",
+        "code_example": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"Hello World!\");\n    }\n}",
+        "question": "Susun potongan kode berikut menjadi program Hello World yang benar:\n1. class Program\n2. using System;\n3. }\n4. {\n5. static void Main()\n6. {\n7. Console.WriteLine(\"Hello World!\");\n8. }",
+        "feedback_correct": "Sempurna! Kamu berhasil menyusun program Hello World dengan struktur yang benar.",
+        "feedback_incorrect": "Belum tepat. Mulailah dari namespace, class, method Main, lalu perintah output.",
+        "mascot_dialogue": "Hebat! Program pertamamu berhasil tersusun!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "class Program"
+          },
+          {
+            "id": 2,
+            "code": "using System;"
+          },
+          {
+            "id": 3,
+            "code": "}",
+            "description": "penutup class Program"
+          },
+          {
+            "id": 4,
+            "code": "{",
+            "description": "pembuka class Program"
+          },
+          {
+            "id": 5,
+            "code": "static void Main()"
+          },
+          {
+            "id": 6,
+            "code": "{",
+            "description": "pembuka method Main"
+          },
+          {
+            "id": 7,
+            "code": "Console.WriteLine(\"Hello World!\");"
+          },
+          {
+            "id": 8,
+            "code": "}",
+            "description": "penutup method Main"
+          }
+        ],
+        "answer_order": [
+          2,
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          3
+        ],
+        "correct_answer": "2 → 1 → 4 → 5 → 6 → 7 → 8 → 3"
+      },
+      {
+        "node_id": "CSH_L01_N10",
+        "title": "BUILD A SIMPLE C# PROGRAM",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Namespace, class, method Main, dan Console.WriteLine dapat digabungkan menjadi satu program sederhana yang menampilkan pesan kepada pengguna.",
+        "code_example": "using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"I Love Coding!\");\n    }\n}",
+        "question": "Susun potongan kode berikut menjadi program yang menampilkan tulisan I Love Coding!:\n1. using System;\n2. static void Main()\n3. class Program\n4. Console.WriteLine(\"I Love Coding!\");\n5. {\n6. }\n7. {\n8. }",
+        "feedback_correct": "Luar biasa! Kamu berhasil membuat program C# sederhana dari awal.",
+        "feedback_incorrect": "Ayo coba lagi! Ingat urutan namespace, class, method Main, dan perintah output.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan Level 1. Siap menghadapi tantangan berikutnya!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "using System;"
+          },
+          {
+            "id": 2,
+            "code": "static void Main()"
+          },
+          {
+            "id": 3,
+            "code": "class Program"
+          },
+          {
+            "id": 4,
+            "code": "Console.WriteLine(\"I Love Coding!\");"
+          },
+          {
+            "id": 5,
+            "code": "{",
+            "description": "pembuka class Program"
+          },
+          {
+            "id": 6,
+            "code": "}",
+            "description": "penutup class Program"
+          },
+          {
+            "id": 7,
+            "code": "{",
+            "description": "pembuka method Main"
+          },
+          {
+            "id": 8,
+            "code": "}",
+            "description": "penutup method Main"
+          }
+        ],
+        "answer_order": [
+          1,
+          3,
+          5,
+          2,
+          7,
+          4,
+          8,
+          6
+        ],
+        "correct_answer": "1 → 3 → 5 → 2 → 7 → 4 → 8 → 6"
+      }
+    ]
+  }
+}

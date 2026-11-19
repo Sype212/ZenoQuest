@@ -1,0 +1,367 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "kotlin_fundamentals",
+  "course_title": "Kotlin Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "Blueprint_Kotlin_Level_1(2).pdf",
+    "Blueprint_Kotlin_Level_2(1).pdf",
+    "Blueprint_Kotlin_Level_3(2).pdf",
+    "Blueprint_Kotlin_Level_4(3).pdf",
+    "Blueprint_Kotlin_Level_5(1).pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "KTL_L04",
+    "level_number": 4,
+    "title": "Loops and Arrays",
+    "description": "Materi Loops and Arrays untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "KTL_L04_N01",
+        "title": "Introduction to Loops",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Loop atau perulangan digunakan untuk menjalankan satu atau beberapa perintah secara berulang. Perulangan mengurangi\npenulisan kode yang sama berkali-kali. Kotlin memiliki for dan while.",
+        "code_example": "fun main() {\nrepeat(3) {\nprintln(\"Belajar Kotlin\")\n}\n}",
+        "question": "Apa fungsi utama perulangan dalam pemrograman?\nA. Menghapus variabel dari program\nB. Menjalankan perintah secara berulang\nC. Mengubah tipe data menjadi String\nD. Menghentikan seluruh proses program",
+        "feedback_correct": "Perulangan membantu menjalankan perintah berkali-kali tanpa menulis kode yang sama berulang kali.",
+        "feedback_incorrect": "Loop digunakan untuk menjalankan perintah secara berulang sesuai aturan atau kondisi.",
+        "mascot_dialogue": "Dengan loop, kamu tidak perlu menulis perintah yang sama berkali-kali!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Menghapus variabel dari program"
+          },
+          {
+            "id": "b",
+            "text": "Menjalankan perintah secara berulang"
+          },
+          {
+            "id": "c",
+            "text": "Mengubah tipe data menjadi String"
+          },
+          {
+            "id": "d",
+            "text": "Menghentikan seluruh proses program"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Menjalankan perintah secara berulang"
+      },
+      {
+        "node_id": "KTL_L04_N02",
+        "title": "For Loop",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "for digunakan untuk melakukan perulangan terhadap rentang nilai atau kumpulan data. Perulangan berjalan mengikuti elemen\natau nilai yang tersedia.",
+        "code_example": "fun main() {\nfor (i in 1..3) {\nprintln(i)\n}\n}",
+        "question": "Berapa kali println(i) dijalankan pada kode for (i in 1..5)?\nA. 3 kali\nB. 4 kali\nC. 5 kali\nD. 6 kali",
+        "feedback_correct": "Rentang 1..5 mencakup 1, 2, 3, 4, dan 5 sehingga perintah dijalankan lima kali.",
+        "feedback_incorrect": "Operator .. mencakup nilai awal dan nilai akhir. Rentang 1..5 memiliki lima angka.",
+        "mascot_dialogue": "Hitung dari angka pertama sampai angka terakhir, ya!",
+        "options": [
+          {
+            "id": "a",
+            "text": "3 kali"
+          },
+          {
+            "id": "b",
+            "text": "4 kali"
+          },
+          {
+            "id": "c",
+            "text": "5 kali"
+          },
+          {
+            "id": "d",
+            "text": "6 kali"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. 5 kali"
+      },
+      {
+        "node_id": "KTL_L04_N03",
+        "title": "While Loop",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "while menjalankan perintah selama kondisi bernilai true. Kondisi diperiksa sebelum blok perulangan dijalankan. Jika kondisi\nsejak awal false, blok tidak dijalankan.",
+        "code_example": "fun main() {\nvar number = 1\nwhile (number <= 3) {\nprintln(number)\nnumber++\n}\n}",
+        "question": "Kapan perulangan while akan terus dijalankan?\nA. Ketika kondisi bernilai true\nB. Ketika kondisi bernilai false\nC. Hanya ketika program mengalami error\nD. Ketika tidak ada variabel",
+        "feedback_correct": "while berjalan selama kondisi yang diperiksa bernilai true.",
+        "feedback_incorrect": "Selama kondisi while true, perintah di dalam blok akan terus dijalankan.",
+        "mascot_dialogue": "Selama kondisinya true, perulangan akan terus berjalan!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ketika kondisi bernilai true"
+          },
+          {
+            "id": "b",
+            "text": "Ketika kondisi bernilai false"
+          },
+          {
+            "id": "c",
+            "text": "Hanya ketika program mengalami error"
+          },
+          {
+            "id": "d",
+            "text": "Ketika tidak ada variabel"
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. Ketika kondisi bernilai true"
+      },
+      {
+        "node_id": "KTL_L04_N04",
+        "title": "Introduction to Arrays",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Array menyimpan beberapa nilai dalam satu variabel. Setiap elemen memiliki indeks yang dimulai dari 0. Kotlin menyediakan\narrayOf() untuk membuat array.",
+        "code_example": "fun main() {\nval fruits = arrayOf(\"Apel\", \"Jeruk\", \"Mangga\")\nprintln(fruits[0])\n}",
+        "question": "Berapakah indeks dari elemen pertama dalam array Kotlin?\nA. 1\nB. 2\nC. 0\nD. -1",
+        "feedback_correct": "Indeks array Kotlin dimulai dari 0, sehingga elemen pertama berada pada indeks 0.",
+        "feedback_incorrect": "Indeks array Kotlin dimulai dari angka 0, bukan 1.",
+        "mascot_dialogue": "Jangan lupa, elemen pertama array dimulai dari indeks nol!",
+        "options": [
+          {
+            "id": "a",
+            "text": "1"
+          },
+          {
+            "id": "b",
+            "text": "2"
+          },
+          {
+            "id": "c",
+            "text": "0"
+          },
+          {
+            "id": "d",
+            "text": "-1"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. 0"
+      },
+      {
+        "node_id": "KTL_L04_N05",
+        "title": "Range Operator",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Kotlin menggunakan operator range .. untuk membuat rentang nilai dari batas awal hingga batas akhir, termasuk kedua batas\ntersebut.",
+        "code_example": "for (number in 1..5) {\nprintln(number)\n}",
+        "question": "Lengkapi kode agar perulangan berjalan dari angka 1 sampai 10.\nfor (number in 1 ____ 10) {\nprintln(number)\n}",
+        "feedback_correct": "Operator .. membuat rentang yang mencakup angka awal dan akhir.",
+        "feedback_incorrect": "Gunakan dua titik untuk membuat range inklusif, contohnya 1..10.",
+        "mascot_dialogue": "Dua titik membantu membuat rentang angka dalam Kotlin!",
+        "accepted_answers": [
+          ".."
+        ],
+        "correct_answer": ".."
+      },
+      {
+        "node_id": "KTL_L04_N06",
+        "title": "Creating an Array",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Kotlin menyediakan fungsi arrayOf() untuk membuat array yang berisi beberapa elemen. Elemen array dapat diakses\nmenggunakan indeks.",
+        "code_example": "val numbers = arrayOf(10, 20, 30)\nprintln(numbers[1])",
+        "question": "Lengkapi kode berikut agar dapat membuat array yang berisi tiga nama.\nval names = ______(\"Andi\", \"Budi\", \"Citra\")",
+        "feedback_correct": "arrayOf() digunakan untuk membuat array yang berisi beberapa elemen.",
+        "feedback_incorrect": "Gunakan fungsi arrayOf() untuk membuat array Kotlin.",
+        "mascot_dialogue": "Kumpulkan beberapa nilai dalam satu array menggunakan arrayOf()!",
+        "accepted_answers": [
+          "arrayOf"
+        ],
+        "correct_answer": "arrayOf"
+      },
+      {
+        "node_id": "KTL_L04_N07",
+        "title": "Array Size Property",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Array Kotlin memiliki properti size untuk mengetahui jumlah elemen yang tersimpan. Properti ini dapat digunakan untuk\nmenentukan batas perulangan.",
+        "code_example": "val fruits = arrayOf(\"Apel\", \"Jeruk\", \"Mangga\")\nprintln(fruits.size)",
+        "question": "Lengkapi kode agar program menampilkan jumlah elemen dalam array.\nval numbers = arrayOf(10, 20, 30, 40)\nprintln(numbers.______)",
+        "feedback_correct": "Properti size digunakan untuk mengetahui jumlah elemen dalam array.",
+        "feedback_incorrect": "Gunakan properti size untuk mengetahui banyaknya elemen array.",
+        "mascot_dialogue": "Ingin tahu jumlah isi array? Gunakan size!",
+        "accepted_answers": [
+          "size"
+        ],
+        "correct_answer": "size"
+      },
+      {
+        "node_id": "KTL_L04_N08",
+        "title": "Create a For Loop Program",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "for dapat menjalankan perintah berdasarkan rentang angka. Range membuat program mengulang dari nilai awal hingga nilai\nakhir.",
+        "code_example": "fun main() {\nfor (number in 1..5) {\nprintln(number)\n}\n}",
+        "question": "Susun potongan kode agar program menampilkan angka 1 sampai 5 menggunakan for.\nPotongan kode:\n1. println(number)\n2. for (number in 1..5) {\n3. fun main()\n4. {\n5. } — penutup blok for\n6. } — penutup fungsi main",
+        "feedback_correct": "Mulai dengan main(), buka blok fungsi, buat for, tampilkan nilai, lalu tutup blok for dan main().",
+        "feedback_incorrect": "Pastikan ada dua kurung kurawal penutup: satu untuk for dan satu untuk main().",
+        "mascot_dialogue": "Satu perulangan bisa menampilkan banyak angka secara otomatis!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println(number)"
+          },
+          {
+            "id": 2,
+            "code": "for (number in 1..5) {"
+          },
+          {
+            "id": 3,
+            "code": "fun main()"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          },
+          {
+            "id": 5,
+            "code": "}",
+            "description": "penutup blok for"
+          },
+          {
+            "id": 6,
+            "code": "}",
+            "description": "penutup fungsi main"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          2,
+          1,
+          5,
+          6
+        ],
+        "correct_answer": "3 → 4 → 2 → 1 → 5 → 6"
+      },
+      {
+        "node_id": "KTL_L04_N09",
+        "title": "Accessing Array Elements",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Elemen array diakses menggunakan nama array dan indeks di dalam tanda kurung siku []. Indeks pertama dimulai dari 0.",
+        "code_example": "fun main() {\nval fruits = arrayOf(\"Apel\", \"Jeruk\", \"Mangga\")\nprintln(fruits[0])\n}",
+        "question": "Susun kode agar program membuat array buah dan menampilkan elemen pertamanya.\nPotongan kode:\n1. println(fruits[0])\n2. val fruits = arrayOf(\"Apel\", \"Jeruk\", \"Mangga\")\n3. fun main()\n4. {\n5. } — penutup fungsi main",
+        "feedback_correct": "Buat array terlebih dahulu sebelum mengakses elemennya. Gunakan indeks 0 untuk elemen pertama.",
+        "feedback_incorrect": "Buat array sebelum mengambil elemennya, lalu tutup fungsi main().",
+        "mascot_dialogue": "Array sudah siap! Sekarang ambil elemennya menggunakan indeks.",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println(fruits[0])"
+          },
+          {
+            "id": 2,
+            "code": "val fruits = arrayOf(\"Apel\", \"Jeruk\", \"Mangga\")"
+          },
+          {
+            "id": 3,
+            "code": "fun main()"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          },
+          {
+            "id": 5,
+            "code": "}",
+            "description": "penutup fungsi main"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          2,
+          1,
+          5
+        ],
+        "correct_answer": "3 → 4 → 2 → 1 → 5"
+      },
+      {
+        "node_id": "KTL_L04_N10",
+        "title": "While Loop with Counter",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "while membutuhkan kondisi yang diperiksa sebelum setiap pengulangan. Variabel penghitung harus diperbarui, misalnya\ndengan number++, agar perulangan dapat berhenti.",
+        "code_example": "fun main() {\nvar number = 1\nwhile (number <= 3) {\nprintln(number)\nnumber++\n}\n}",
+        "question": "Susun kode agar program menampilkan angka 1 sampai 3 menggunakan while.\nPotongan kode:\n1. number++\n2. var number = 1\n3. while (number <= 3) {\n4. println(number)\n5. fun main()\n6. {\n7. } — penutup while\n8. } — penutup fungsi main",
+        "feedback_correct": "Deklarasikan penghitung, periksa kondisi, tampilkan angka, naikkan penghitung, lalu tutup blok while dan main().",
+        "feedback_incorrect": "Perbarui penghitung agar kondisi akhirnya false. Tutup blok while dan fungsi main() secara terpisah.",
+        "mascot_dialogue": "Jangan lupa memperbarui penghitung agar while tidak berjalan selamanya!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "number++"
+          },
+          {
+            "id": 2,
+            "code": "var number = 1"
+          },
+          {
+            "id": 3,
+            "code": "while (number <= 3) {"
+          },
+          {
+            "id": 4,
+            "code": "println(number)"
+          },
+          {
+            "id": 5,
+            "code": "fun main()"
+          },
+          {
+            "id": 6,
+            "code": "{"
+          },
+          {
+            "id": 7,
+            "code": "}",
+            "description": "penutup while"
+          },
+          {
+            "id": 8,
+            "code": "}",
+            "description": "penutup fungsi main"
+          }
+        ],
+        "answer_order": [
+          5,
+          6,
+          2,
+          3,
+          4,
+          1,
+          7,
+          8
+        ],
+        "correct_answer": "5 → 6 → 2 → 3 → 4 → 1 → 7 → 8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "kotlin_fundamentals",
+  "course_title": "Kotlin Fundamentals",
+  "group": "Absen Besar",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "Blueprint_Kotlin_Level_1(2).pdf",
+    "Blueprint_Kotlin_Level_2(1).pdf",
+    "Blueprint_Kotlin_Level_3(2).pdf",
+    "Blueprint_Kotlin_Level_4(3).pdf",
+    "Blueprint_Kotlin_Level_5(1).pdf"
+  ],
+  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
+    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
+    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
+    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
+    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
+  },
+  "level": {
+    "level_id": "KTL_L01",
+    "level_number": 1,
+    "title": "Introduction to Kotlin",
+    "description": "Materi Introduction to Kotlin untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "KTL_L01_N01",
+        "title": "INTRODUCTION TO KOTLIN",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Kotlin adalah bahasa pemrograman modern yang dikembangkan oleh JetBrains. Kotlin memiliki sintaks ringkas dan mendukung\npemrograman berorientasi objek maupun fungsional. Kotlin banyak digunakan untuk pengembangan Android.",
+        "code_example": "fun main() {\n println(\"Learning Kotlin!\")\n}",
+        "question": "Siapa yang mengembangkan bahasa pemrograman Kotlin?\nA. Google\nB. Microsoft\nC. JetBrains\nD. Apple",
+        "feedback_correct": "Benar! Kotlin dikembangkan oleh JetBrains sebagai bahasa pemrograman modern yang ringkas dan aman.",
+        "feedback_incorrect": "Belum tepat. Kotlin dikembangkan oleh perusahaan yang juga membuat IDE IntelliJ IDEA.",
+        "mascot_dialogue": "Hebat! Kamu sudah mengenal Kotlin. Yuk, mulai petualangan coding!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Google"
+          },
+          {
+            "id": "b",
+            "text": "Microsoft"
+          },
+          {
+            "id": "c",
+            "text": "JetBrains"
+          },
+          {
+            "id": "d",
+            "text": "Apple"
+          }
+        ],
+        "correct_option_id": "c",
+        "correct_answer": "C. JetBrains"
+      },
+      {
+        "node_id": "KTL_L01_N02",
+        "title": "USES OF KOTLIN",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Kotlin dapat digunakan untuk membuat aplikasi Android, backend, aplikasi multiplatform, dan program yang berjalan di JVM.",
+        "code_example": "fun main() {\n println(\"Welcome to Android Development!\")\n}",
+        "question": "Salah satu penggunaan utama Kotlin dalam pengembangan aplikasi adalah untuk membuat ...\nA. Aplikasi Android\nB. Sistem operasi Windows\nC. Dokumen Microsoft Word\nD. Desain gambar menggunakan Paint",
+        "feedback_correct": "Tepat! Kotlin banyak digunakan untuk mengembangkan aplikasi Android.",
+        "feedback_incorrect": "Belum benar. Kotlin merupakan salah satu bahasa pemrograman yang didukung untuk pengembangan\naplikasi Android.",
+        "mascot_dialogue": "Keren! Ternyata Kotlin bisa digunakan untuk membuat aplikasi Android!",
+        "options": [
+          {
+            "id": "a",
+            "text": "Aplikasi Android"
+          },
+          {
+            "id": "b",
+            "text": "Sistem operasi Windows"
+          },
+          {
+            "id": "c",
+            "text": "Dokumen Microsoft Word"
+          },
+          {
+            "id": "d",
+            "text": "Desain gambar menggunakan Paint"
+          }
+        ],
+        "correct_option_id": "a",
+        "correct_answer": "A. Aplikasi Android"
+      },
+      {
+        "node_id": "KTL_L01_N03",
+        "title": "INTRODUCTION TO KOTLIN PLATFORM",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Kotlin dapat dikompilasi menjadi Java bytecode dan dijalankan menggunakan Java Virtual Machine (JVM). Kotlin juga memiliki\ntarget platform lain, seperti JavaScript dan Native.",
+        "code_example": "fun main() {\n println(\"Kotlin runs on JVM!\")\n}",
+        "question": "Apa kepanjangan dari JVM?\nA. Java Variable Method\nB. Java Virtual Machine\nC. Java Visual Manager\nD. Joint Virtual Memory",
+        "feedback_correct": "Benar! JVM menjalankan Java bytecode, termasuk hasil kompilasi Kotlin untuk target JVM.",
+        "feedback_incorrect": "Belum tepat. JVM adalah lingkungan untuk menjalankan bytecode pada ekosistem Java.",
+        "mascot_dialogue": "Bagus! Sekarang kamu sudah mengenal salah satu platform tempat Kotlin berjalan.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Java Variable Method"
+          },
+          {
+            "id": "b",
+            "text": "Java Virtual Machine"
+          },
+          {
+            "id": "c",
+            "text": "Java Visual Manager"
+          },
+          {
+            "id": "d",
+            "text": "Joint Virtual Memory"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. Java Virtual Machine"
+      },
+      {
+        "node_id": "KTL_L01_N04",
+        "title": "BASIC KOTLIN PROGRAM STRUCTURE",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Program Kotlin sederhana dapat dimulai dengan fungsi main(). Fungsi ini menjadi titik awal eksekusi. Kata kunci fun digunakan\nuntuk mendeklarasikan fungsi. Fungsi main dapat ditulis langsung di tingkat file tanpa class pembungkus.",
+        "code_example": "fun main() {\n println(\"Hello Kotlin!\")\n}",
+        "question": "Pada program Kotlin sederhana, bagian manakah yang menjadi titik awal eksekusi?\nA. println()\nB. fun main()\nC. String\nD. class",
+        "feedback_correct": "Benar! Fungsi main merupakan titik awal eksekusi program Kotlin pada contoh tersebut.",
+        "feedback_incorrect": "Belum tepat. Perhatikan fungsi yang memiliki nama main dan menjadi entry point program.",
+        "mascot_dialogue": "Mantap! Kamu sudah memahami struktur dasar program Kotlin.",
+        "options": [
+          {
+            "id": "a",
+            "text": "println()"
+          },
+          {
+            "id": "b",
+            "text": "fun main()"
+          },
+          {
+            "id": "c",
+            "text": "String"
+          },
+          {
+            "id": "d",
+            "text": "class"
+          }
+        ],
+        "correct_option_id": "b",
+        "correct_answer": "B. fun main()"
+      },
+      {
+        "node_id": "KTL_L01_N05",
+        "title": "IMPORT STATEMENT",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Kata kunci import digunakan untuk mengakses class, fungsi, atau properti dari package lain tanpa harus menuliskan nama\nlengkapnya setiap kali dipanggil.",
+        "code_example": "import kotlin.math.PI\nfun main() {\n println(PI)\n\n}",
+        "question": "Lengkapi kode agar properti PI dari package kotlin.math dapat diimpor:\n_____ kotlin.math.PI",
+        "feedback_correct": "Tepat! Kata kunci import digunakan untuk mengakses anggota dari package lain.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci yang ditulis sebelum nama package.",
+        "mascot_dialogue": "Bagus! Kamu sudah tahu cara mengimpor anggota package di Kotlin.",
+        "accepted_answers": [
+          "import"
+        ],
+        "correct_answer": "import"
+      },
+      {
+        "node_id": "KTL_L01_N06",
+        "title": "CLASS DECLARATION",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Class merupakan cetak biru untuk membuat objek. Class dapat memiliki properti dan fungsi yang menggambarkan karakteristik\nserta perilaku objek. Dalam Kotlin, class dideklarasikan menggunakan kata kunci class.",
+        "code_example": "class Student {\n var name = \"Andi\"\n}",
+        "question": "Lengkapi deklarasi class berikut:\n_____ Student {\nvar name = \"Andi\"\n}",
+        "feedback_correct": "Benar! Kata kunci class digunakan untuk mendeklarasikan sebuah class dalam Kotlin.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci Kotlin untuk membuat cetak biru objek.",
+        "mascot_dialogue": "Hebat! Kamu sudah memahami cara membuat class dalam Kotlin.",
+        "accepted_answers": [
+          "class"
+        ],
+        "correct_answer": "class"
+      },
+      {
+        "node_id": "KTL_L01_N07",
+        "title": "MAIN FUNCTION",
+        "difficulty": "beginner",
+        "type": "fill_in_the_blank",
+        "theory": "Fungsi main merupakan titik awal eksekusi program Kotlin. Fungsi dideklarasikan menggunakan fun, kemudian diikuti nama\nfungsi dan tanda kurung. Bentuk dasarnya adalah fun main().",
+        "code_example": "fun main() {\n println(\"Program Started\")\n}",
+        "question": "Lengkapi deklarasi berikut agar menjadi fungsi utama program Kotlin:\nfun _____() {\nprintln(\"Program Started\")\n}",
+        "feedback_correct": "Tepat! Main merupakan nama fungsi utama yang menjadi titik awal eksekusi program Kotlin.",
+        "feedback_incorrect": "Belum tepat. Perhatikan nama fungsi yang digunakan sebagai entry point program.",
+        "mascot_dialogue": "Luar biasa! Kamu semakin memahami struktur program Kotlin.",
+        "accepted_answers": [
+          "main"
+        ],
+        "correct_answer": "main"
+      },
+      {
+        "node_id": "KTL_L01_N08",
+        "title": "PRINTLN OUTPUT",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "println() digunakan untuk menampilkan teks atau nilai ke console. Setelah menampilkan output, cursor berpindah ke baris\nberikutnya. Berbeda dengan print(), println() menambahkan baris baru.",
+        "code_example": "println(\"Hello Kotlin!\")\nprintln(\"I am learning Kotlin.\")",
+        "question": "Susun potongan kode agar program menampilkan tulisan Hello Kotlin!:\n1. println\n2. (\"Hello Kotlin!\")",
+        "feedback_correct": "Benar! Susunan kode sudah tepat untuk menampilkan teks ke console menggunakan println.",
+        "feedback_incorrect": "Belum tepat. Susun nama fungsi terlebih dahulu, kemudian tanda kurung beserta teks yang akan\nditampilkan.",
+        "mascot_dialogue": "Yeay! Kamu berhasil menyusun perintah output pertama di Kotlin!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println"
+          },
+          {
+            "id": 2,
+            "code": "(\"Hello Kotlin!\")"
+          }
+        ],
+        "answer_order": [
+          1,
+          2
+        ],
+        "correct_answer": "1 → 2",
+        "assembly_separator": ""
+      },
+      {
+        "node_id": "KTL_L01_N09",
+        "title": "HELLO WORLD PROGRAM",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Program Hello World merupakan contoh sederhana untuk memulai belajar bahasa pemrograman. Dalam Kotlin, program ini\ndapat dibuat menggunakan fungsi main dan perintah println.",
+        "code_example": "fun main() {\n println(\"Hello World!\")\n}",
+        "question": "Susun potongan kode berikut menjadi program Hello World Kotlin yang benar:\n1. println(\"Hello World!\")\n2. fun main()\n3. }\n4. {",
+        "feedback_correct": "Sempurna! Kamu berhasil menyusun program Hello World menggunakan struktur Kotlin yang benar.",
+        "feedback_incorrect": "Belum tepat. Mulailah dari deklarasi fungsi main, buka blok kode, tulis perintah output, lalu tutup blok.",
+        "mascot_dialogue": "Hebat! Program Kotlin pertamamu berhasil tersusun!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "println(\"Hello World!\")"
+          },
+          {
+            "id": 2,
+            "code": "fun main()"
+          },
+          {
+            "id": 3,
+            "code": "}"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          }
+        ],
+        "answer_order": [
+          2,
+          4,
+          1,
+          3
+        ],
+        "correct_answer": "2 → 4 → 1 → 3"
+      },
+      {
+        "node_id": "KTL_L01_N10",
+        "title": "BUILD A SIMPLE KOTLIN PROGRAM",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Fungsi main dan println dapat digabungkan menjadi program sederhana untuk menampilkan pesan kepada pengguna.",
+        "code_example": "fun main() {\n println(\"I Love Coding!\")\n}",
+        "question": "Susun potongan kode berikut menjadi program yang menampilkan I Love Coding!:\n1. fun main()\n2. println(\"I Love Coding!\")\n3. }\n4. {",
+        "feedback_correct": "Luar biasa! Kamu berhasil membuat program Kotlin sederhana dari awal.",
+        "feedback_incorrect": "Ayo coba lagi! Ingat urutan deklarasi fungsi main, pembuka blok, perintah output, dan penutup blok.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan Level 1 Kotlin. Siap menghadapi tantangan berikutnya!",
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "fun main()"
+          },
+          {
+            "id": 2,
+            "code": "println(\"I Love Coding!\")"
+          },
+          {
+            "id": 3,
+            "code": "}"
+          },
+          {
+            "id": 4,
+            "code": "{"
+          }
+        ],
+        "answer_order": [
+          1,
+          4,
+          2,
+          3
+        ],
+        "correct_answer": "1 → 4 → 2 → 3"
+      }
+    ]
+  }
+}

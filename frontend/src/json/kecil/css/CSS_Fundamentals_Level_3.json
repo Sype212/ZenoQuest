@@ -1,0 +1,372 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "css_fundamentals",
+  "course_title": "CSS Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "source_documents": [
+    "CSS_Fundamentals_Level_3.pdf"
+  ],
+  "mvp_scope_note": "File ini memuat Level 3 CSS Box Model, Borders & Spacing.",
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi luar dan kapitalisasi.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Tampilkan mascot_dialogue setelah jawaban divalidasi."
+  },
+  "levels": [
+    {
+      "level_id": "CSS_L03",
+      "level_number": 3,
+      "title": "CSS Box Model, Borders & Spacing",
+      "description": "Mengatur ukuran elemen, ruang dalam dan luar, garis tepi, serta sudut elemen menggunakan properti CSS.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "nodes": [
+        {
+          "node_id": "CSS_L03_N01",
+          "title": "Box Model",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Elemen HTML tersusun dari content, padding, border, dan margin. Keempat bagian ini menentukan ukuran serta jarak elemen.",
+          "code_example": "div {\n  padding: 16px;\n  border: 2px solid black;\n  margin: 10px;\n}",
+          "question": "Bagian yang memberi ruang di luar border adalah ...\nA. content\nB. padding\nC. border\nD. margin",
+          "options": [
+            {
+              "id": "a",
+              "text": "content"
+            },
+            {
+              "id": "b",
+              "text": "padding"
+            },
+            {
+              "id": "c",
+              "text": "border"
+            },
+            {
+              "id": "d",
+              "text": "margin"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "D",
+          "feedback_correct": "Benar! margin mengatur jarak di luar border.",
+          "feedback_incorrect": "Padding berada di dalam border, sedangkan margin di luarnya.",
+          "mascot_dialogue": "Bagus! Kamu mengenal susunan kotak CSS.",
+          "correct_option_id": "d",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 41,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N02",
+          "title": "Padding",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Padding mengatur ruang antara isi elemen dan border. Nilainya dapat ditulis dengan satu atau beberapa ukuran.",
+          "code_example": ".card {\n  padding: 20px;\n}",
+          "question": "Properti untuk memberi ruang di dalam border adalah ...\nA. margin\nB. padding\nC. outline\nD. gap",
+          "options": [
+            {
+              "id": "a",
+              "text": "margin"
+            },
+            {
+              "id": "b",
+              "text": "padding"
+            },
+            {
+              "id": "c",
+              "text": "outline"
+            },
+            {
+              "id": "d",
+              "text": "gap"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Tepat! padding memberi ruang di dalam border.",
+          "feedback_incorrect": "Bedakan ruang dalam (padding) dan ruang luar (margin).",
+          "mascot_dialogue": "Keren! Isi elemen jadi lebih lega.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 35,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N03",
+          "title": "Margin",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Margin adalah ruang di luar border yang memisahkan elemen. margin: 0 auto dapat memusatkan elemen blok yang memiliki lebar tertentu.",
+          "code_example": ".container {\n  width: 80%;\n  margin: 0 auto;\n}",
+          "question": "Apa fungsi margin: 0 auto pada elemen yang memiliki width?\nA. Membuat teks tebal\nB. Mengubah warna latar\nC. Memusatkan elemen horizontal\nD. Mengatur tinggi elemen",
+          "options": [
+            {
+              "id": "a",
+              "text": "Membuat teks tebal"
+            },
+            {
+              "id": "b",
+              "text": "Mengubah warna latar"
+            },
+            {
+              "id": "c",
+              "text": "Memusatkan elemen horizontal"
+            },
+            {
+              "id": "d",
+              "text": "Mengatur tinggi elemen"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! Margin kiri dan kanan otomatis dapat memusatkan elemen.",
+          "feedback_incorrect": "Perhatikan pengaturan margin kiri dan kanan.",
+          "mascot_dialogue": "Mantap! Kamu bisa mengatur jarak antarelemen.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 44,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N04",
+          "title": "Border",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Border mengatur garis tepi elemen. Penulisannya dapat menggabungkan ketebalan, jenis garis, dan warna.",
+          "code_example": ".box {\n  border: 2px solid #333;\n}",
+          "question": "Manakah contoh penulisan border yang benar?\nA. 2px solid black\nB. solid 2px 10px\nC. black border 2px\nD. 2px padding solid",
+          "options": [
+            {
+              "id": "a",
+              "text": "2px solid black"
+            },
+            {
+              "id": "b",
+              "text": "solid 2px 10px"
+            },
+            {
+              "id": "c",
+              "text": "black border 2px"
+            },
+            {
+              "id": "d",
+              "text": "2px padding solid"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "A",
+          "feedback_correct": "Tepat! Ketebalan, jenis garis, lalu warna.",
+          "feedback_incorrect": "Periksa kembali format singkat border.",
+          "mascot_dialogue": "Bagus! Elemenmu memiliki garis tepi.",
+          "correct_option_id": "a",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 38,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N05",
+          "title": "Border Radius",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "border-radius membuat sudut elemen menjadi melengkung. Nilainya dapat menggunakan px atau persen.",
+          "code_example": "button {\n  border-radius: 8px;\n}",
+          "question": "Lengkapi nama properti berikut agar sudut elemen melengkung:\nborder-_____ : 8px;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "radius",
+          "feedback_correct": "Benar! border-radius membuat sudut membulat.",
+          "feedback_incorrect": "Nama propertinya diawali border dan mengatur radius sudut.",
+          "mascot_dialogue": "Sip! Sudut kotak tidak lagi tajam.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "radius"
+          ],
+          "mascot_dialogue_char_count": 35,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N06",
+          "title": "Width and Height",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "width mengatur lebar elemen dan height mengatur tinggi elemen. Nilai dapat menggunakan px atau persen.",
+          "code_example": ".card {\n  width: 300px;\n  height: 150px;\n}",
+          "question": "Lengkapi properti untuk mengatur lebar elemen:\n_____: 300px;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "width",
+          "feedback_correct": "Tepat! width mengatur lebar elemen.",
+          "feedback_incorrect": "Cari properti yang berarti lebar.",
+          "mascot_dialogue": "Keren! Kamu dapat mengatur ukuran elemen.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "width"
+          ],
+          "mascot_dialogue_char_count": 40,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N07",
+          "title": "Box Sizing",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "box-sizing: border-box membuat width dan height mencakup content, padding, serta border.",
+          "code_example": "* {\n  box-sizing: border-box;\n}",
+          "question": "Lengkapi nilai berikut agar ukuran mencakup content, padding, dan border:\nbox-sizing: _____;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "border-box",
+          "feedback_correct": "Benar! border-box memasukkan padding dan border ke ukuran.",
+          "feedback_incorrect": "Pilih nilai yang membuat ukuran total lebih mudah dikendalikan.",
+          "mascot_dialogue": "Hebat! Ukuran elemen lebih terprediksi.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "border-box"
+          ],
+          "mascot_dialogue_char_count": 39,
+          "answer_order": null
+        },
+        {
+          "node_id": "CSS_L03_N08",
+          "title": "Margin and Padding Together",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Margin dan padding dapat digunakan bersama untuk mengatur jarak luar dan dalam elemen.",
+          "code_example": ".card {\n  margin: 12px;\n  padding: 20px;\n}",
+          "question": "Susun potongan kode berikut agar elemen .card memiliki margin 12px dan padding 20px.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "}"
+            },
+            {
+              "id": 2,
+              "code": "padding: 20px;"
+            },
+            {
+              "id": 3,
+              "code": ".card {"
+            },
+            {
+              "id": 4,
+              "code": "margin: 12px;"
+            }
+          ],
+          "correct_answer": "Urutan: 3 → 4 → 2 → 1\nCorrect Code:\n.card {\n  margin: 12px;\n  padding: 20px;\n}",
+          "feedback_correct": "Benar! Selector ditulis lebih dulu, kemudian deklarasi, lalu kurung penutup.",
+          "feedback_incorrect": "Mulai dari selector, masukkan dua deklarasi, lalu tutup aturan.",
+          "mascot_dialogue": "Sip! Kamu bisa mengatur ruang dalam dan luar.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 45,
+          "answer_order": [
+            3,
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "node_id": "CSS_L03_N09",
+          "title": "Border Style",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "border-style menentukan bentuk garis tepi, seperti solid, dashed, dotted, dan double.",
+          "code_example": "p {\n  border-style: dashed;\n}",
+          "question": "Susun kode berikut agar paragraf memiliki garis tepi putus-putus.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "border-style: dashed;"
+            },
+            {
+              "id": 2,
+              "code": "}"
+            },
+            {
+              "id": 3,
+              "code": "p {"
+            }
+          ],
+          "correct_answer": "Urutan: 3 → 1 → 2\nCorrect Code:\np {\n  border-style: dashed;\n}",
+          "feedback_correct": "Tepat! Selector, deklarasi, lalu kurung penutup.",
+          "feedback_incorrect": "Susun aturan CSS dari selector hingga penutup.",
+          "mascot_dialogue": "Mantap! Kamu mengenal berbagai bentuk border.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 45,
+          "answer_order": [
+            3,
+            1,
+            2
+          ]
+        },
+        {
+          "node_id": "CSS_L03_N10",
+          "title": "Complete Box Styling",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Aturan CSS dapat menggabungkan width, padding, border, dan margin dalam satu selector.",
+          "code_example": ".panel {\n  width: 300px;\n  padding: 16px;\n  border: 1px solid #777;\n  margin: 12px;\n}",
+          "question": "Susun potongan kode berikut untuk membuat panel dengan width, padding, border, dan margin.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "margin: 12px;"
+            },
+            {
+              "id": 2,
+              "code": "}"
+            },
+            {
+              "id": 3,
+              "code": "width: 300px;"
+            },
+            {
+              "id": 4,
+              "code": ".panel {"
+            },
+            {
+              "id": 5,
+              "code": "border: 1px solid #777;"
+            },
+            {
+              "id": 6,
+              "code": "padding: 16px;"
+            }
+          ],
+          "correct_answer": "Urutan: 4 → 3 → 6 → 5 → 1 → 2\nCorrect Code:\n.panel {\n  width: 300px;\n  padding: 16px;\n  border: 1px solid #777;\n  margin: 12px;\n}",
+          "feedback_correct": "Luar biasa! Semua deklarasi berada di dalam aturan .panel.",
+          "feedback_incorrect": "Awali dengan selector, tulis empat deklarasi, lalu tutup kurung.",
+          "mascot_dialogue": "Selamat! Kamu menyelesaikan CSS Box Model.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 43,
+          "answer_order": [
+            4,
+            3,
+            6,
+            5,
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
