@@ -1,0 +1,147 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "javascript_fundamentals",
+  "course_title": "JavaScript Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.0",
+  "module_id": "JS_L03",
+  "module_title": "JavaScript Functions & Conditional Statements - Level 3",
+  "module_description": "Membuat function, menggunakan parameter dan return value, memahami percabangan if, else if, else, serta switch untuk mengatur alur program.",
+  "data_source": {
+    "file": "JavaScript_Fundamentals_Level_3_Functions_Conditional_Statements.json",
+    "level_id": "JS_L03"
+  },
+  "runtime": {
+    "language": "JavaScript",
+    "framework": "Vanilla JavaScript",
+    "mode": "client-side",
+    "load_json": true,
+    "render_lessons": true,
+    "render_questions": true
+  },
+  "initialization": {
+    "function": "loadLessons",
+    "steps": [
+      "Fetch JSON lesson data",
+      "Parse JSON response",
+      "Find level JS_L03",
+      "Read all 10 nodes",
+      "Render theory and code example",
+      "Render interactive questions"
+    ]
+  },
+  "rendering": {
+    "container_id": "lesson",
+    "progress_id": "progress",
+    "score_id": "score",
+    "sequence": [
+      "node_title",
+      "theory",
+      "code_example",
+      "question",
+      "answer_input",
+      "check_button",
+      "feedback",
+      "mascot_dialogue"
+    ],
+    "show_node_number": true,
+    "show_theory_first": true,
+    "show_code_example": true,
+    "show_question_after_material": true
+  },
+  "question_handlers": {
+    "multiple_choice": {
+      "enabled": true,
+      "input_type": "radio",
+      "function": "checkMultipleChoice",
+      "validation": "selected_option_id_equals_correct_option_id"
+    },
+    "fill_blank": {
+      "enabled": true,
+      "input_type": "text",
+      "function": "checkFillBlank",
+      "validation": "compare_with_accepted_answers",
+      "trim_spaces": true,
+      "ignore_case": true
+    },
+    "arrange_code": {
+      "enabled": true,
+      "input_type": "number_sequence",
+      "function": "checkArrangeCode",
+      "separator": ",",
+      "validation": "compare_with_answer_order",
+      "ignore_spaces": true
+    }
+  },
+  "answer_processing": {
+    "function": "checkAnswer",
+    "prevent_empty_answer": true,
+    "prevent_duplicate_submission": true,
+    "lock_after_answer": true,
+    "save_answer_status": true,
+    "save_correct_status": true
+  },
+  "scoring": {
+    "enabled": true,
+    "total_questions": 10,
+    "correct_answer_points": 10,
+    "incorrect_answer_points": 0,
+    "maximum_score": 100,
+    "function": "calculateScore"
+  },
+  "progress": {
+    "enabled": true,
+    "function": "updateProgress",
+    "track_answered_nodes": true,
+    "track_correct_answers": true,
+    "display_completed_questions": true,
+    "display_total_questions": true,
+    "display_score": true
+  },
+  "feedback": {
+    "show_feedback_correct": true,
+    "show_feedback_incorrect": true,
+    "show_correct_answer": true,
+    "show_mascot_dialogue": true,
+    "function": "showFeedback"
+  },
+  "mascot": {
+    "enabled": true,
+    "source": "mascot_dialogue",
+    "display_after_answer": true,
+    "maximum_characters": 160
+  },
+  "completion": {
+    "enabled": true,
+    "required_questions": 10,
+    "function": "finishLevel",
+    "message": "Selamat! Kamu telah menyelesaikan JavaScript Level 3.",
+    "show_final_score": true,
+    "show_completed_status": true
+  },
+  "error_handling": {
+    "json_not_found": "File JSON materi tidak ditemukan.",
+    "invalid_json": "Format JSON tidak valid.",
+    "level_not_found": "Level JS_L03 tidak ditemukan.",
+    "empty_answer": "Silakan isi jawaban terlebih dahulu.",
+    "invalid_order": "Urutan kode belum benar."
+  },
+  "security": {
+    "escape_html": true,
+    "prevent_html_injection": true,
+    "validate_user_input": true
+  },
+  "interface": {
+    "page_title": "JavaScript Fundamentals - Level 3",
+    "level_title": "JavaScript Functions & Conditional Statements",
+    "group_name": "Absen Kecil",
+    "show_header": true,
+    "show_footer": true,
+    "show_progress": true,
+    "show_score": true,
+    "show_mascot": true
+  }
+}

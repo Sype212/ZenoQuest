@@ -1,0 +1,362 @@
+{
+  "schema_version": "draft-1.0",
+  "course_id": "javascript_fundamentals",
+  "course_title": "JavaScript Fundamentals",
+  "group": "Absen Kecil",
+  "division": "Content Team",
+  "difficulty": "beginner",
+  "language": "id",
+  "content_version": "1.1",
+  "source_documents": [
+    "JavaScript_Fundamentals_Level_4_Absen_Kecil.pdf"
+  ],
+  "validation_notes": {
+    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
+    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
+    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
+    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
+  },
+  "levels": [
+    {
+      "level_id": "JS_L04",
+      "level_number": 4,
+      "title": "JavaScript Loops, Arrays & DOM Manipulation",
+      "description": "Pengguna mampu menerapkan perulangan for dan while untuk mengeksekusi kode berulang, menyimpan serta mengelola kumpulan data menggunakan array dan indeksnya, serta memilih dan memodifikasi elemen HTML secara dinamis melalui DOM Manipulation.",
+      "node_count": 10,
+      "question_count": 10,
+      "distribution": {
+        "multiple_choice": 4,
+        "fill_in_the_blank": 3,
+        "arrange_code": 3
+      },
+      "learning_objectives": [
+        "Menerapkan perulangan for dan while untuk menjalankan blok kode secara berulang dengan kondisi berhenti yang tepat.",
+        "Membuat array, mengakses elemen berdasarkan indeks mulai dari 0, dan mengetahui jumlah elemen menggunakan properti length.",
+        "Mengelola isi array secara dinamis dengan menambah elemen menggunakan push() dan menghapus elemen terakhir menggunakan pop().",
+        "Memilih elemen HTML melalui DOM menggunakan querySelector() dan mengubah konten teks maupun gaya tampilannya menggunakan JavaScript."
+      ],
+      "nodes": [
+        {
+          "node_id": "JS_L04_N01",
+          "title": "Node 01",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Perulangan for digunakan untuk menjalankan blok kode berulang kali dengan jumlah iterasi yang sudah diketahui. Struktur dasarnya terdiri dari tiga bagian di dalam kurung: inisialisasi variabel penghitung, kondisi berhenti, dan pembaruan nilai penghitung.",
+          "code_example": "for (let i = 1; i <= 3; i++) {\n  console.log(\"Putaran ke-\" + i);\n}",
+          "question": "Berapa kali teks \"Putaran ke-\" akan dicetak oleh kode perulangan di atas?\nA. 1 kali\nB. 2 kali\nC. 3 kali\nD. 4 kali",
+          "options": [
+            {
+              "id": "a",
+              "text": "1 kali"
+            },
+            {
+              "id": "b",
+              "text": "2 kali"
+            },
+            {
+              "id": "c",
+              "text": "3 kali"
+            },
+            {
+              "id": "d",
+              "text": "4 kali"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Tepat! Variabel i berjalan dari 1 hingga 3 (1, 2, 3), sehingga kode dijalankan 3 kali.",
+          "feedback_incorrect": "Belum tepat. Perhatikan kondisi i <= 3 yang berarti perulangan berjalan saat i bernilai 1, 2, dan 3.",
+          "mascot_dialogue": "Hebat! Kamu sudah memahami cara kerja perulangan for.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 53,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N02",
+          "title": "Node 02",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Perulangan while terus menjalankan blok kode selama kondisi di dalam tanda kurung bernilai true. Di dalam blok while, variabel kondisi harus diperbarui agar perulangan bisa berhenti dan tidak terjadi infinite loop.",
+          "code_example": "let nyawa = 3;\nwhile (nyawa > 0) {\n  console.log(\"Sisa nyawa: \" + nyawa);\n  nyawa--;\n}",
+          "question": "Kapan perulangan while pada contoh kode di atas akan berhenti berjalan?\nA. Saat variabel nyawa bernilai 3\nB. Saat variabel nyawa bernilai 1\nC. Saat variabel nyawa bernilai 0\nD. Perulangan tidak akan pernah berhenti",
+          "options": [
+            {
+              "id": "a",
+              "text": "Saat variabel nyawa bernilai 3"
+            },
+            {
+              "id": "b",
+              "text": "Saat variabel nyawa bernilai 1"
+            },
+            {
+              "id": "c",
+              "text": "Saat variabel nyawa bernilai 0"
+            },
+            {
+              "id": "d",
+              "text": "Perulangan tidak akan pernah berhenti"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! Ketika nyawa menjadi 0, kondisi nyawa > 0 bernilai false sehingga loop berhenti.",
+          "feedback_incorrect": "Belum benar. Cek syarat nyawa > 0; perulangan berhenti begitu syarat tersebut tidak lagi terpenuhi.",
+          "mascot_dialogue": "Mantap! Kamu tahu cara mengontrol kondisi berhenti pada while.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 62,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N03",
+          "title": "Node 03",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "Array adalah struktur data yang digunakan untuk menyimpan banyak nilai dalam satu variabel menggunakan tanda kurung siku []. Setiap item di dalam array memiliki posisi yang disebut indeks, dan penghitungan indeks selalu dimulai dari angka 0.",
+          "code_example": "const buah = [\"Apel\", \"Jeruk\", \"Mangga\"];\nconsole.log(buah[1]);",
+          "question": "Apa output yang ditampilkan di konsol dari kode buah[1] di atas?\nA. Apel\nB. Jeruk\nC. Mangga\nD. undefined",
+          "options": [
+            {
+              "id": "a",
+              "text": "Apel"
+            },
+            {
+              "id": "b",
+              "text": "Jeruk"
+            },
+            {
+              "id": "c",
+              "text": "Mangga"
+            },
+            {
+              "id": "d",
+              "text": "undefined"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "B",
+          "feedback_correct": "Tepat! Indeks 0 adalah \"Apel\", sehingga indeks 1 adalah \"Jeruk\".",
+          "feedback_incorrect": "Belum tepat. Ingat bahwa indeks array di JavaScript selalu dimulai dari 0, bukan 1.",
+          "mascot_dialogue": "Keren! Kamu sudah paham konsep indeks array yang dimulai dari 0.",
+          "correct_option_id": "b",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 64,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N04",
+          "title": "Node 04",
+          "difficulty": "beginner",
+          "type": "multiple_choice",
+          "theory": "DOM (Document Object Model) memungkinkan JavaScript berinteraksi dengan elemen HTML pada halaman web. Metode document.querySelector() digunakan untuk memilih elemen pertama yang cocok dengan selector CSS seperti tag, kelas (.kelas), atau ID (#id).",
+          "code_example": "const judul = document.querySelector(\"#judul-utama\");",
+          "question": "Apa fungsi tanda pagar (#) pada argumen \"#judul-utama\" di dalam querySelector?\nA. Memilih elemen berdasarkan nama tag HTML\nB. Memilih elemen berdasarkan atribut class\nC. Memilih elemen berdasarkan atribut id\nD. Menghapus elemen dari halaman HTML",
+          "options": [
+            {
+              "id": "a",
+              "text": "Memilih elemen berdasarkan nama tag HTML"
+            },
+            {
+              "id": "b",
+              "text": "Memilih elemen berdasarkan atribut class"
+            },
+            {
+              "id": "c",
+              "text": "Memilih elemen berdasarkan atribut id"
+            },
+            {
+              "id": "d",
+              "text": "Menghapus elemen dari halaman HTML"
+            }
+          ],
+          "answer_fragments": [],
+          "correct_answer": "C",
+          "feedback_correct": "Benar! Awalan # digunakan untuk memilih elemen berdasarkan atribut id.",
+          "feedback_incorrect": "Belum tepat. Dalam selector CSS dan querySelector, tanda # merujuk pada id elemen.",
+          "mascot_dialogue": "Bagus! Sekarang kamu bisa memilih elemen HTML lewat DOM.",
+          "correct_option_id": "c",
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 56,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N05",
+          "title": "Node 05",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Properti length mengembalikan jumlah total elemen yang tersimpan di dalam sebuah array. Properti ini sangat berguna saat menggabungkan array dengan perulangan for agar perulangan berhenti tepat di elemen terakhir.",
+          "code_example": "const warna = [\"Merah\", \"Kuning\", \"Hijau\", \"Biru\"];\nconsole.log(warna.length); // Output: 4",
+          "question": "Lengkapi properti untuk mendapatkan jumlah elemen pada array siswa:\nconst totalSiswa = siswa._____;",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "length",
+          "feedback_correct": "Tepat! Properti length menghitung jumlah item di dalam array.",
+          "feedback_incorrect": "Belum tepat. Gunakan properti bahasa Inggris yang berarti panjang atau jumlah elemen array.",
+          "mascot_dialogue": "Sip! Kamu bisa mengecek panjang array dengan mudah.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "length"
+          ],
+          "mascot_dialogue_char_count": 51,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N06",
+          "title": "Node 06",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Array di JavaScript bersifat dinamis sehingga isinya dapat ditambah atau dikurangi. Metode push() menambahkan satu atau lebih elemen baru ke bagian akhir array, sedangkan pop() menghapus elemen paling akhir.",
+          "code_example": "const tugas = [\"Belajar JS\", \"Latihan DOM\"];\ntugas.push(\"Buat Proyek\");",
+          "question": "Lengkapi metode array untuk menambahkan \"Kopi\" ke bagian akhir array menu:\nmenu._____(\"Kopi\");",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "push",
+          "feedback_correct": "Benar! Metode push() memasukkan elemen baru di posisi terakhir array.",
+          "feedback_incorrect": "Belum tepat. Cari metode array yang berfungsi mendorong atau menambah item baru ke akhir.",
+          "mascot_dialogue": "Hebat! Kamu sudah bisa menambah data baru ke dalam array.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "push"
+          ],
+          "mascot_dialogue_char_count": 57,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N07",
+          "title": "Node 07",
+          "difficulty": "beginner",
+          "type": "fill_blank",
+          "theory": "Setelah memilih elemen HTML menggunakan DOM, kita dapat mengubah isi teks di dalamnya menggunakan properti textContent. Properti ini mengganti teks lama di dalam elemen dengan string teks yang baru secara aman.",
+          "code_example": "const status = document.querySelector(\"#status\");\nstatus.textContent = \"Berhasil Login!\";",
+          "question": "Lengkapi properti DOM untuk mengubah isi teks pada elemen pesan:\npesan._____ = \"Selamat Datang!\";",
+          "options": [],
+          "answer_fragments": [],
+          "correct_answer": "textContent",
+          "feedback_correct": "Tepat! Properti textContent memperbarui isi teks pada elemen HTML terpilih.",
+          "feedback_incorrect": "Belum tepat. Perhatikan penulisan camelCase dari properti textContent.",
+          "mascot_dialogue": "Keren! Teks di halaman web kini bisa diubah lewat JavaScript.",
+          "correct_option_id": null,
+          "accepted_answers": [
+            "textContent"
+          ],
+          "mascot_dialogue_char_count": 61,
+          "answer_order": null
+        },
+        {
+          "node_id": "JS_L04_N08",
+          "title": "Node 08",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Perulangan for sering digunakan untuk menelusuri seluruh isi array dari indeks ke-0 hingga indeks terakhir (array.length - 1). Dengan begitu, setiap elemen dapat diproses satu per satu secara otomatis.",
+          "code_example": "const angka = [10, 20, 30];\nfor (let i = 0; i < angka.length; i++) {\n  console.log(angka[i]);\n}",
+          "question": "Susun potongan kode berikut untuk mencetak seluruh isi array kota menggunakan perulangan for.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "  console.log(kota[i]);"
+            },
+            {
+              "id": 2,
+              "code": "const kota = [\"Bandung\", \"Surabaya\", \"Medan\"];"
+            },
+            {
+              "id": 3,
+              "code": "}"
+            },
+            {
+              "id": 4,
+              "code": "for (let i = 0; i < kota.length; i++) {"
+            }
+          ],
+          "correct_answer": "2 → 4 → 1 → 3",
+          "feedback_correct": "Benar! Array dideklarasikan dulu, lalu dibuka blok perulangan for, dicetak isinya, dan ditutup kurung kurawal.",
+          "feedback_incorrect": "Belum tepat. Mulai dari deklarasi array kota, diikuti header perulangan for, isi console.log, lalu penutup }.",
+          "mascot_dialogue": "Mantap! Kamu berhasil menggabungkan array dan perulangan for.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 61,
+          "answer_order": [
+            2,
+            4,
+            1,
+            3
+          ]
+        },
+        {
+          "node_id": "JS_L04_N09",
+          "title": "Node 09",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Untuk mengubah tampilan CSS sebuah elemen melalui DOM, gunakan properti style diikuti nama properti CSS dalam format camelCase (misalnya backgroundColor atau color). Pastikan elemen sudah dipilih terlebih dahulu sebelum gayanya diubah.",
+          "code_example": "const kotak = document.querySelector(\".box\");\nkotak.style.backgroundColor = \"lightblue\";",
+          "question": "Susun potongan kode untuk memilih tombol dan mengubah warna teksnya menjadi putih.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "tombol.style.color = \"white\";"
+            },
+            {
+              "id": 2,
+              "code": "const tombol = document.querySelector(\"button\");"
+            }
+          ],
+          "correct_answer": "2 → 1",
+          "feedback_correct": "Tepat! Elemen button dipilih terlebih dahulu dengan querySelector sebelum properti style.color diubah.",
+          "feedback_incorrect": "Belum tepat. Pilih elemen tombol terlebih dahulu sebelum memodifikasi style.color.",
+          "mascot_dialogue": "Bagus! Kamu sudah bisa mengatur gaya CSS lewat JavaScript.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 58,
+          "answer_order": [
+            2,
+            1
+          ]
+        },
+        {
+          "node_id": "JS_L04_N10",
+          "title": "Node 10",
+          "difficulty": "beginner",
+          "type": "arrange_code",
+          "theory": "Manipulasi array dan DOM dapat digabungkan untuk menampilkan data dinamis ke halaman web. Kita bisa menambah item baru ke array menggunakan push(), lalu menampilkan elemen tersebut ke elemen HTML melalui textContent.",
+          "code_example": "const daftar = [\"Buku\", \"Pena\"];\ndaftar.push(\"Penggaris\");\nconst info = document.querySelector(\"#info\");\ninfo.textContent = daftar[2];",
+          "question": "Susun kode untuk menambahkan \"Budi\" ke array antrean lalu menampilkannya ke elemen #panggilan.",
+          "options": [],
+          "answer_fragments": [
+            {
+              "id": 1,
+              "code": "const layar = document.querySelector(\"#panggilan\");"
+            },
+            {
+              "id": 2,
+              "code": "antrean.push(\"Budi\");"
+            },
+            {
+              "id": 3,
+              "code": "layar.textContent = antrean[1];"
+            },
+            {
+              "id": 4,
+              "code": "const antrean = [\"Ani\"];"
+            }
+          ],
+          "correct_answer": "4 → 2 → 1 → 3",
+          "feedback_correct": "Luar biasa! Susunan pembuatan array, penambahan data dengan push(), pemilihan elemen DOM, dan pembaruan teks sudah tepat.",
+          "feedback_incorrect": "Belum tepat. Buat array antrean dan tambah \"Budi\" dulu, lalu pilih elemen #panggilan dan ubah textContent-nya.",
+          "mascot_dialogue": "Selamat! Kamu telah menyelesaikan JavaScript Level 4.",
+          "correct_option_id": null,
+          "accepted_answers": [],
+          "mascot_dialogue_char_count": 53,
+          "answer_order": [
+            4,
+            2,
+            1,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

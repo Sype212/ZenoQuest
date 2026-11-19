@@ -1,0 +1,380 @@
+{
+  "content_blueprint": {
+    "title": "JavaScript Fundamentals — Level 5",
+    "subtitle": "Debugging & Problem Solving",
+    "division": "Content Team — Absen Kecil",
+    "level": "5 dari 5",
+    "total_nodes": 10,
+    "total_questions": 10,
+    "question_distribution": {
+      "multiple_choice": 4,
+      "fill_in_the_blank": 3,
+      "arrange_code": 3
+    },
+    "difficulty": "Intermediate",
+    "version": "1.0 — Materi Produksi",
+    "learning_objectives": "Pengguna mampu mengidentifikasi dan memperbaiki kesalahan sederhana pada kode JavaScript, menelusuri nilai program, memperbaiki logika, serta menggabungkan variabel, function, percabangan, perulangan, dan DOM untuk membuat fitur interaktif sederhana.",
+    "introduction": "Level ini berfokus pada debugging dan problem solving. Pengguna belajar membaca pesan error, mengenali syntax error dan logic error, menggunakan console.log() untuk menelusuri nilai, serta memeriksa function, kondisi, loop, dan event DOM. Proses debugging dilakukan bertahap: amati gejala, temukan bagian bermasalah, perbaiki kode, lalu uji kembali hasilnya.",
+    "nodes": [
+      {
+        "node_id": "JS_L05_N01",
+        "number": 1,
+        "title": "Read the Error Message",
+        "difficulty": "Intermediate",
+        "question_type": "Multiple Choice",
+        "theory": "Debugging adalah proses menemukan, memahami, dan memperbaiki kesalahan program. Pesan error di Console biasanya menunjukkan jenis kesalahan dan lokasi baris kode. Baca pesan tersebut sebelum mengubah kode.",
+        "code_example": "const score = 90;\nconsole.log(scrore);\n// ReferenceError: scrore is not defined",
+        "interactive_question": "Pada kode tersebut, mengapa pesan ReferenceError muncul?",
+        "options": [
+          {
+            "label": "A",
+            "text": "Variabel score harus bertipe string"
+          },
+          {
+            "label": "B",
+            "text": "Nama variabel yang dipanggil salah ketik"
+          },
+          {
+            "label": "C",
+            "text": "console.log tidak dapat menampilkan angka"
+          },
+          {
+            "label": "D",
+            "text": "JavaScript tidak mendukung const"
+          }
+        ],
+        "correct_answer": "B",
+        "feedback_correct": "Benar! scrore berbeda dari nama variabel score sehingga JavaScript tidak menemukannya.",
+        "feedback_incorrect": "Periksa kembali ejaan nama variabel yang digunakan di console.log.",
+        "mascot_dialogue": "Bagus! Membaca pesan error membantu menemukan sumber masalah."
+      },
+      {
+        "node_id": "JS_L05_N02",
+        "number": 2,
+        "title": "Fix a Syntax Error",
+        "difficulty": "Intermediate",
+        "question_type": "Multiple Choice",
+        "theory": "SyntaxError terjadi ketika penulisan kode tidak mengikuti aturan sintaks JavaScript, misalnya tanda kurung tidak lengkap atau tanda kutip tidak berpasangan.",
+        "code_example": "if (temperature > 30 {\n  console.log(\"Panas\");\n}",
+        "interactive_question": "Perbaikan yang tepat untuk kode tersebut adalah ...",
+        "options": [
+          {
+            "label": "A",
+            "text": "Menambahkan tanda ) setelah angka 30"
+          },
+          {
+            "label": "B",
+            "text": "Menghapus kata if"
+          },
+          {
+            "label": "C",
+            "text": "Mengganti console.log menjadi const"
+          },
+          {
+            "label": "D",
+            "text": "Menghapus kurung kurawal pembuka"
+          }
+        ],
+        "correct_answer": "A",
+        "feedback_correct": "Tepat! Kondisi if harus ditutup dengan tanda kurung ) sebelum blok kode dimulai.",
+        "feedback_incorrect": "Periksa pasangan tanda kurung pada kondisi if.",
+        "mascot_dialogue": "Keren! Ketelitian pada tanda baca mencegah SyntaxError."
+      },
+      {
+        "node_id": "JS_L05_N03",
+        "number": 3,
+        "title": "Find a Logic Error",
+        "difficulty": "Intermediate",
+        "question_type": "Multiple Choice",
+        "theory": "Logic error terjadi ketika program berjalan tanpa pesan error, tetapi hasilnya tidak sesuai tujuan. Periksa alur perhitungan, kondisi, dan nilai yang digunakan.",
+        "code_example": "const price = 5000;\nconst quantity = 3;\nconst total = price + quantity;\nconsole.log(total);",
+        "interactive_question": "Program seharusnya menghitung total harga. Perbaikan yang benar adalah ...",
+        "options": [
+          {
+            "label": "A",
+            "text": "const total = price - quantity;"
+          },
+          {
+            "label": "B",
+            "text": "const total = price * quantity;"
+          },
+          {
+            "label": "C",
+            "text": "const total = price / quantity;"
+          },
+          {
+            "label": "D",
+            "text": "const total = price === quantity;"
+          }
+        ],
+        "correct_answer": "B",
+        "feedback_correct": "Benar! Total harga diperoleh dari harga satuan dikalikan jumlah barang.",
+        "feedback_incorrect": "Pikirkan operasi matematika untuk menghitung harga beberapa barang.",
+        "mascot_dialogue": "Mantap! Program bebas error belum tentu memiliki logika yang benar."
+      },
+      {
+        "node_id": "JS_L05_N04",
+        "number": 4,
+        "title": "Use Console to Trace Values",
+        "difficulty": "Intermediate",
+        "question_type": "Multiple Choice",
+        "theory": "console.log() dapat memeriksa nilai variabel dan hasil proses pada titik tertentu. Teknik ini membantu mengikuti jalannya program dan menemukan nilai yang tidak sesuai.",
+        "code_example": "let count = 2;\ncount = count + 1;\nconsole.log(count);",
+        "interactive_question": "Nilai yang ditampilkan oleh console.log(count) adalah ...",
+        "options": [
+          {
+            "label": "A",
+            "text": "1"
+          },
+          {
+            "label": "B",
+            "text": "2"
+          },
+          {
+            "label": "C",
+            "text": "3"
+          },
+          {
+            "label": "D",
+            "text": "4"
+          }
+        ],
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! Nilai count bertambah satu dari 2 menjadi 3.",
+        "feedback_incorrect": "Ikuti perubahan nilai count dari baris pertama hingga console.log dijalankan.",
+        "mascot_dialogue": "Hebat! Console membantu melacak nilai selama program berjalan."
+      },
+      {
+        "node_id": "JS_L05_N05",
+        "number": 5,
+        "title": "Correct a Variable Name",
+        "difficulty": "Intermediate",
+        "question_type": "Fill in the Blank",
+        "theory": "Nama variabel harus konsisten saat dibuat dan dipanggil. JavaScript membedakan huruf besar dan kecil, sehingga totalHarga dan totalharga dianggap berbeda.",
+        "code_example": "const totalHarga = 25000;\nconsole.log(_____);",
+        "interactive_question": "Lengkapi nama variabel agar nilai harga dapat ditampilkan.",
+        "correct_answer": "totalHarga",
+        "feedback_correct": "Benar! Nama variabel harus ditulis sama persis, termasuk huruf kapital.",
+        "feedback_incorrect": "Perhatikan nama variabel yang dideklarasikan pada baris pertama.",
+        "mascot_dialogue": "Sip! Konsistensi penamaan membuat kode lebih mudah diperiksa."
+      },
+      {
+        "node_id": "JS_L05_N06",
+        "number": 6,
+        "title": "Fix a Function Return",
+        "difficulty": "Intermediate",
+        "question_type": "Fill in the Blank",
+        "theory": "Function dapat mengembalikan hasil menggunakan kata kunci return. Tanpa return, pemanggilan function tidak menghasilkan nilai yang dapat digunakan sebagai hasil perhitungan.",
+        "code_example": "function multiply(a, b) {\n  _____ a * b;\n}\nconst result = multiply(4, 3);",
+        "interactive_question": "Lengkapi function agar hasil perkalian dikembalikan kepada pemanggil.",
+        "correct_answer": "return",
+        "feedback_correct": "Tepat! return mengirimkan hasil a * b keluar dari function.",
+        "feedback_incorrect": "Gunakan kata kunci JavaScript untuk mengembalikan nilai dari function.",
+        "mascot_dialogue": "Bagus! Nilai return dapat digunakan kembali dalam program."
+      },
+      {
+        "node_id": "JS_L05_N07",
+        "number": 7,
+        "title": "Correct a Loop Condition",
+        "difficulty": "Intermediate",
+        "question_type": "Fill in the Blank",
+        "theory": "Perulangan harus memiliki kondisi yang dapat menjadi false agar proses berhenti. Periksa perubahan variabel penghitung dan kondisi perulangan.",
+        "code_example": "let i = 1;\nwhile (i <= 3) {\n  console.log(i);\n  i_____; \n}",
+        "interactive_question": "Lengkapi bagian yang kosong agar nilai i bertambah satu pada setiap putaran.",
+        "correct_answer": "++",
+        "feedback_correct": "Benar! Operator ++ menaikkan nilai i satu angka sehingga loop dapat mencapai kondisi berhenti.",
+        "feedback_incorrect": "Pilih operator increment untuk menambah nilai variabel satu per satu.",
+        "mascot_dialogue": "Keren! Perubahan penghitung membantu perulangan berhenti dengan benar."
+      },
+      {
+        "node_id": "JS_L05_N08",
+        "number": 8,
+        "title": "Debug a Conditional Function",
+        "difficulty": "Intermediate",
+        "question_type": "Arrange Code",
+        "theory": "Saat memeriksa function dengan percabangan, pastikan parameter diterima dengan benar, kondisi ditulis lengkap, dan setiap blok dibuka serta ditutup pada tempatnya.",
+        "code_example": "function checkAge(age) {\n  if (age >= 17) {\n    return \"Dewasa\";\n  }\n  return \"Belum dewasa\";\n}",
+        "interactive_question": "Susun potongan kode berikut menjadi function yang memeriksa umur.",
+        "code_fragments": [
+          {
+            "number": 1,
+            "code": "if (age >= 17) {"
+          },
+          {
+            "number": 2,
+            "code": "return \"Dewasa\";"
+          },
+          {
+            "number": 3,
+            "code": "function checkAge(age) {"
+          },
+          {
+            "number": 4,
+            "code": "}"
+          },
+          {
+            "number": 5,
+            "code": "return \"Belum dewasa\";"
+          },
+          {
+            "number": 6,
+            "code": "}"
+          }
+        ],
+        "correct_answer_order": [
+          3,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "feedback_correct": "Benar! Function dimulai dengan deklarasi, dilanjutkan kondisi if, hasil kondisi, dan nilai default.",
+        "feedback_incorrect": "Mulai dari deklarasi function, susun kondisi if beserta return, lalu tambahkan return default dan penutup.",
+        "mascot_dialogue": "Mantap! Kamu menyusun alur function dan percabangan dengan benar."
+      },
+      {
+        "node_id": "JS_L05_N09",
+        "number": 9,
+        "title": "Fix a DOM Event Handler",
+        "difficulty": "Intermediate",
+        "question_type": "Arrange Code",
+        "theory": "DOM memungkinkan JavaScript memilih dan mengubah elemen HTML. Event listener menjalankan function ketika peristiwa terjadi, misalnya saat tombol diklik. Pastikan elemen dipilih sebelum event listener dipasang.",
+        "code_example": "const button = document.querySelector(\"#changeBtn\");\nbutton.addEventListener(\"click\", function () {\n  document.querySelector(\"#message\").textContent = \"Berhasil!\";\n});",
+        "interactive_question": "Susun potongan kode agar tombol mengubah teks elemen #message ketika diklik.",
+        "code_fragments": [
+          {
+            "number": 1,
+            "code": "button.addEventListener(\"click\", function () {"
+          },
+          {
+            "number": 2,
+            "code": "document.querySelector(\"#message\").textContent = \"Berhasil!\";"
+          },
+          {
+            "number": 3,
+            "code": "});"
+          },
+          {
+            "number": 4,
+            "code": "const button = document.querySelector(\"#changeBtn\");"
+          }
+        ],
+        "correct_answer_order": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "feedback_correct": "Tepat! Pilih tombol terlebih dahulu, pasang event listener, ubah teks, lalu tutup function.",
+        "feedback_incorrect": "Pilih elemen tombol sebelum memasang event listener dan menuliskan aksi saat diklik.",
+        "mascot_dialogue": "Hebat! Kamu menghubungkan event dengan perubahan pada halaman."
+      },
+      {
+        "node_id": "JS_L05_N10",
+        "number": 10,
+        "title": "Build a Simple Interactive Feature",
+        "difficulty": "Intermediate",
+        "question_type": "Arrange Code",
+        "theory": "Fitur interaktif sederhana dapat menggabungkan variabel, function, dan DOM. Variabel menyimpan jumlah klik, event listener menjalankan aksi, dan DOM menampilkan hasilnya.",
+        "code_example": "let clicks = 0;\nconst button = document.querySelector(\"#counterBtn\");\nconst output = document.querySelector(\"#count\");\nbutton.addEventListener(\"click\", function () {\n  clicks++;\n  output.textContent = clicks;\n});",
+        "interactive_question": "Susun kode agar setiap klik tombol menambah penghitung dan menampilkan nilainya.",
+        "code_fragments": [
+          {
+            "number": 1,
+            "code": "clicks++;"
+          },
+          {
+            "number": 2,
+            "code": "let clicks = 0;"
+          },
+          {
+            "number": 3,
+            "code": "output.textContent = clicks;"
+          },
+          {
+            "number": 4,
+            "code": "const button = document.querySelector(\"#counterBtn\");"
+          },
+          {
+            "number": 5,
+            "code": "const output = document.querySelector(\"#count\");"
+          },
+          {
+            "number": 6,
+            "code": "button.addEventListener(\"click\", function () {"
+          },
+          {
+            "number": 7,
+            "code": "});"
+          }
+        ],
+        "correct_answer_order": [
+          2,
+          4,
+          5,
+          6,
+          1,
+          3,
+          7
+        ],
+        "feedback_correct": "Luar biasa! Variabel menyimpan jumlah klik, event listener menjalankan aksi, dan DOM menampilkan hasilnya.",
+        "feedback_incorrect": "Mulai dari variabel dan pemilihan elemen, pasang event listener, tambahkan nilai, tampilkan hasil, lalu tutup function.",
+        "mascot_dialogue": "Selamat! Kamu berhasil menggabungkan beberapa konsep JavaScript menjadi fitur interaktif."
+      }
+    ],
+    "recap": [
+      {
+        "node": 1,
+        "topic": "Read the Error Message",
+        "question_type": "Multiple Choice"
+      },
+      {
+        "node": 2,
+        "topic": "Fix a Syntax Error",
+        "question_type": "Multiple Choice"
+      },
+      {
+        "node": 3,
+        "topic": "Find a Logic Error",
+        "question_type": "Multiple Choice"
+      },
+      {
+        "node": 4,
+        "topic": "Use Console to Trace Values",
+        "question_type": "Multiple Choice"
+      },
+      {
+        "node": 5,
+        "topic": "Correct a Variable Name",
+        "question_type": "Fill in the Blank"
+      },
+      {
+        "node": 6,
+        "topic": "Fix a Function Return",
+        "question_type": "Fill in the Blank"
+      },
+      {
+        "node": 7,
+        "topic": "Correct a Loop Condition",
+        "question_type": "Fill in the Blank"
+      },
+      {
+        "node": 8,
+        "topic": "Debug a Conditional Function",
+        "question_type": "Arrange Code"
+      },
+      {
+        "node": 9,
+        "topic": "Fix a DOM Event Handler",
+        "question_type": "Arrange Code"
+      },
+      {
+        "node": 10,
+        "topic": "Build a Simple Interactive Feature",
+        "question_type": "Arrange Code"
+      }
+    ],
+    "integration_notes": "Developer perlu menentukan validasi jawaban isian (termasuk kapitalisasi dan spasi), mekanisme pengurutan fragmen kode, penanganan karakter khusus JavaScript, serta cara menampilkan pesan error dan feedback setelah jawaban divalidasi."
+  }
+}
