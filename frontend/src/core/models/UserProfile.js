@@ -10,17 +10,17 @@ export class UserProfile {
    * @param {string} data.selectedTrack - 'html' | 'css' | 'js' | 'csharp' | 'kotlin'
    * @param {string} data.experienceLevel - 'beginner' | 'intermediate'
    * @param {number} data.dailyTargetMinutes
-   * @param {string} data.avatar - 'idol' | 'happy'
+   * @param {string} data.avatar - 'idle' | 'hi' | 'happy' | 'sad'
    * @param {number} data.hearts
    * @param {number} data.xp
    * @param {string|null} data.createdAt
    */
   constructor({
     nickname = 'Fall_Adventurer',
-    selectedTrack = 'html',
+    selectedTrack = 'csharp',
     experienceLevel = 'beginner',
     dailyTargetMinutes = 10,
-    avatar = 'idol',
+    avatar = 'idle',
     hearts = 5,
     xp = 0,
     createdAt = null,

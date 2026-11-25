@@ -95,7 +95,7 @@ function _commitAndFinish() {
     selectedTrack: state.draft.selectedTrack || 'html',
     experienceLevel: state.draft.experienceLevel || 'beginner',
     dailyTargetMinutes: state.draft.dailyTargetMinutes,
-    avatar: 'idol',
+    avatar: 'idle',
     hearts: 5,
     xp: 0,
   });

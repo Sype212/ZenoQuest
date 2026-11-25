@@ -20,7 +20,7 @@ defineEmits(['next'])
       </div>
 
       <!-- Mascot -->
-      <MascotAvatar variant="idol" size="lg" />
+      <MascotAvatar variant="hi" size="lg" />
 
       <!-- Headline -->
       <div class="flex flex-col gap-2">

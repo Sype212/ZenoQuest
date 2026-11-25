@@ -19,7 +19,7 @@ defineProps({
 <template>
   <div class="card-base p-4 flex items-start gap-3">
     <!-- Mini mascot -->
-    <MascotAvatar variant="idol" size="sm" class="shrink-0" />
+    <MascotAvatar variant="hi" size="sm" class="shrink-0" />
 
     <!-- Text bubble -->
     <div class="flex flex-col gap-1">

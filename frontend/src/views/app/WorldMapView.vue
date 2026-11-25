@@ -114,9 +114,7 @@ const tipMessage = computed(() => {
         </div>
 
         <!-- Right: Mascot avatar -->
-        <div class="w-9 h-9 rounded-full border-2 border-[#FF2B51] overflow-hidden bg-[#0B0F19] flex items-center justify-center">
-          <MascotAvatar variant="idol" size="sm" class="scale-110" />
-        </div>
+        <MascotAvatar variant="idle" size="xs" />
       </div>
 
       <!-- ── TRACK SELECTOR ─────────────────────────────────────────────── -->
@@ -206,9 +204,7 @@ const tipMessage = computed(() => {
 
                 <!-- MULAI badge + mascot (only for active level) -->
                 <div v-if="level.isActive" class="flex items-center gap-1 mb-1 self-start -ml-1">
-                  <div class="w-5 h-5 rounded-full border-2 border-[#FF2B51] overflow-hidden bg-[#0B0F19] flex items-center justify-center">
-                    <MascotAvatar variant="idol" size="sm" class="scale-150" />
-                  </div>
+                  <MascotAvatar variant="idle" size="2xs" />
                   <span class="text-[11px] font-extrabold text-[#FF2B51] tracking-wider uppercase bg-[rgba(255,43,81,0.15)] px-2 py-0.5 rounded-full border border-[#FF2B51]">
                     MULAI
                   </span>
@@ -276,9 +272,7 @@ const tipMessage = computed(() => {
           v-if="showTip"
           class="shrink-0 mx-4 mb-2 card-base p-3 flex items-start gap-2.5 border-[#FF2B51]/30 bg-[rgba(255,43,81,0.05)]"
         >
-          <div class="w-8 h-8 rounded-full border border-[#FF2B51] overflow-hidden bg-[#0B0F19] flex items-center justify-center shrink-0">
-            <MascotAvatar variant="idol" size="sm" class="scale-125" />
-          </div>
+          <MascotAvatar variant="hi" size="xs" />
           <div class="flex-1 min-w-0">
             <div class="text-[11px] font-bold text-[#FF2B51] uppercase tracking-wider mb-0.5">
               Tips L3-Bot • Kode Bersih

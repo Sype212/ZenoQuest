@@ -76,11 +76,31 @@ export class StorageService {
   // ─── XP & Stats ──────────────────────────────────────────────────────────
 
   static getStats() {
-    return StorageService.get(StorageService.KEYS.STATS) || { xp: 0, levelsCompleted: 0 };
+    const raw = StorageService.get(StorageService.KEYS.STATS);
+    return {
+      xp: raw?.xp ?? 0,
+      levelsCompleted: raw?.levelsCompleted ?? 0,
+      perfectRunLevels: Array.isArray(raw?.perfectRunLevels) ? raw.perfectRunLevels : [],
+    };
   }
 
   static saveStats(stats) {
-    return StorageService.set(StorageService.KEYS.STATS, stats);
+    const normalized = {
+      xp: stats?.xp ?? 0,
+      levelsCompleted: stats?.levelsCompleted ?? 0,
+      perfectRunLevels: Array.isArray(stats?.perfectRunLevels) ? stats.perfectRunLevels : [],
+    };
+    return StorageService.set(StorageService.KEYS.STATS, normalized);
+  }
+
+  static addPerfectRun(levelId) {
+    const stats = StorageService.getStats();
+    if (!stats.perfectRunLevels.includes(levelId)) {
+      stats.perfectRunLevels.push(levelId);
+      StorageService.saveStats(stats);
+      return true;
+    }
+    return false;
   }
 
   // ─── Node Claims (Anti-XP duplication) ───────────────────────────────────

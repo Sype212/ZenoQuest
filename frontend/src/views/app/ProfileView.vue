@@ -129,7 +129,7 @@ function executeReset() {
         <div class="card-base p-4 flex items-center gap-4">
           <!-- Mascot avatar -->
           <div class="shrink-0">
-            <MascotAvatar variant="idol" size="md" />
+            <MascotAvatar :variant="profile?.avatar || 'idle'" size="md" />
           </div>
           <!-- Info -->
           <div class="flex-1 min-w-0">

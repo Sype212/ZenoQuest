@@ -53,9 +53,7 @@ function goToMap(trackId) {
             <p class="text-[12px] text-[#8E9AB0]">Selamat belajar,</p>
             <h1 class="text-[20px] font-extrabold text-white leading-tight">{{ nickname }}</h1>
           </div>
-          <div class="shrink-0 w-11 h-11 rounded-full border-2 border-[#FF2B51] overflow-hidden bg-[#0B0F19] flex items-center justify-center">
-            <MascotAvatar variant="idol" size="sm" class="scale-110" />
-          </div>
+          <MascotAvatar variant="idle" size="badge" />
         </div>
 
         <!-- XP summary bar -->

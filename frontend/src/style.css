@@ -104,7 +104,8 @@ html, body {
 
 /* ─── Mascot ring glow ─────────────────────────────────────────────────────── */
 .mascot-ring {
-  border: 3px solid var(--color-accent);
+  border-style: solid;
+  border-color: var(--color-accent);
   box-shadow: 0 0 20px rgba(255, 43, 81, 0.5), inset 0 0 10px rgba(255, 43, 81, 0.1);
 }
 

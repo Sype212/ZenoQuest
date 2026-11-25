@@ -1,3 +1,5 @@
+import { normalizeLevelPayload } from './levelNormalizer.js'
+
 /**
  * @class CurriculumService
  * Service untuk memuat metadata kurikulum dan data JSON level.
@@ -115,24 +117,44 @@ export class CurriculumService {
   }
 
   /**
-   * Dynamic loader: Muat konten JSON lengkap sebuah level untuk Quiz Arena.
+   * Cari metadata track & level dari levelId (contoh: 'csh_l01', 'kt_l02').
+   * @param {string} levelId
+   * @returns {{ trackId: string, courseTitle: string, level: Object, nextLevel: Object|null } | null}
+   */
+  static findLevelById(levelId) {
+    for (const [trackId, meta] of Object.entries(CurriculumService.TRACKS)) {
+      const idx = meta.levels.findIndex((l) => l.id === levelId)
+      if (idx !== -1) {
+        return {
+          trackId,
+          courseTitle: meta.courseTitle,
+          level: meta.levels[idx],
+          nextLevel: meta.levels[idx + 1] || null,
+        }
+      }
+    }
+    return null
+  }
+
+  /**
+   * Dynamic loader: Muat dan normalkan konten JSON lengkap sebuah level untuk Quiz Arena.
    * File path berbeda berdasarkan track.
    */
-  static async loadLevelContent(trackId, levelNum) {
+  static async loadLevelContent(trackId, levelNum, levelId = '') {
     const loaders = {
-      html:   (n) => import(`@/json/kecil/html/HTML_Fundamentals_Level_${n}.json`),
-      css:    (n) => import(`@/json/kecil/css/CSS_Fundamentals_Level_${n}.json`),
+      html:   (n) => import(`../../json/kecil/html/HTML_Fundamentals_Level_${n}.json`),
+      css:    (n) => import(`../../json/kecil/css/CSS_Fundamentals_Level_${n}.json`),
       js:     (n) => {
-        if (n === 3) return import('@/json/kecil/js/JavaScript_Fundamental_Level_3.json')
-        if (n === 5) return import('@/json/kecil/js/JavaScript_Fundamental_Level_5.json')
-        return import(`@/json/kecil/js/JavaScript_Fundamentals_Level_${n}.json`)
+        if (n === 3) return import('../../json/kecil/js/JavaScript_Fundamental_Level_3.json')
+        if (n === 5) return import('../../json/kecil/js/JavaScript_Fundamental_Level_5.json')
+        return import(`../../json/kecil/js/JavaScript_Fundamentals_Level_${n}.json`)
       },
-      csharp: (n) => import(`@/json/besar/c#/CSharp_Level_${n}.json`),
-      kotlin: (n) => import(`@/json/besar/kotlin/Kotlin_Level_${n}.json`),
+      csharp: (n) => import(`../../json/besar/c#/CSharp_Level_${n}.json`),
+      kotlin: (n) => import(`../../json/besar/kotlin/Kotlin_Level_${n}.json`),
     }
     const loader = loaders[trackId]
     if (!loader) throw new Error(`Unknown track: ${trackId}`)
     const module = await loader(levelNum)
-    return module.default
+    return normalizeLevelPayload(module.default, { trackId, levelId, levelNum })
   }
 }
