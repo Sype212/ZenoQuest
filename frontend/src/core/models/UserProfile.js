@@ -17,7 +17,7 @@ export class UserProfile {
    */
   constructor({
     nickname = 'Fall_Adventurer',
-    selectedTrack = 'csharp',
+    selectedTrack = 'html',
     experienceLevel = 'beginner',
     dailyTargetMinutes = 10,
     avatar = 'idle',

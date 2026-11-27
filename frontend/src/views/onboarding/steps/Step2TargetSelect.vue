@@ -27,7 +27,7 @@ const experienceOptions = [
     id: 'intermediate',
     icon: '💻',
     label: 'Pernah Koding',
-    description: 'Ingin latihan sintaks & logika',
+    description: 'Ingin langsung latihan sintaks & logika',
   },
 ]
 </script>

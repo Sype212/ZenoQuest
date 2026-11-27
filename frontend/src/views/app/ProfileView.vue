@@ -2,32 +2,33 @@
 /**
  * ProfileView - Tab "Profil" (/profile)
  * Menampilkan: avatar maskot, nickname, statistik petualangan,
- * jalur utama, dan tombol Reset Progress.
+ * jalur utama, pencapaian, dan tombol Reset Semua Progres.
+ * Menyelaraskan 100% dengan referensi visual Android.
  */
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import AppShellLayout from '@/layouts/AppShellLayout.vue'
-import MascotAvatar from '@/components/mascot/MascotAvatar.vue'
+import L3MascotAnimated from '@/components/mascot/L3MascotAnimated.vue'
 import { StorageService } from '@/core/services/StorageService.js'
 import { UserProfile } from '@/core/models/UserProfile.js'
 import { onboardingStore } from '@/stores/onboardingStore.js'
 
 const router = useRouter()
 
-// ─── Load data ────────────────────────────────────────────────────────────────
+// ─── Load Reaktif Data ────────────────────────────────────────────────────────
 const profileData = StorageService.getProfile()
-const profile     = profileData ? UserProfile.fromJSON(profileData) : null
-const stats       = StorageService.getStats()
-const progressMap = StorageService.getProgress()
-const nodeClaims  = StorageService.getNodeClaims()
+const profile     = ref(profileData ? UserProfile.fromJSON(profileData) : null)
+const stats       = ref(StorageService.getStats())
+const progressMap = ref(StorageService.getProgress())
+const nodeClaims  = ref(StorageService.getNodeClaims())
 
 // ─── Stats computed ───────────────────────────────────────────────────────────
-const totalXp = computed(() => stats?.xp ?? 0)
+const totalXp = computed(() => stats.value?.xp ?? 0)
 
 const levelsCompleted = computed(() => {
-  if (!progressMap) return 0
+  if (!progressMap.value) return 0
   let count = 0
-  Object.values(progressMap).forEach(trackProgress => {
+  Object.values(progressMap.value).forEach(trackProgress => {
     Object.values(trackProgress || {}).forEach(status => {
       if (status === 'completed') count++
     })
@@ -35,10 +36,13 @@ const levelsCompleted = computed(() => {
   return count
 })
 
-// Perfect run count: levels completed with 5 hearts (approximated from node claims)
-// For now, show claimed nodes / 10 as "sessions"
+// Perfect run count: dihitung dari riwayat claim / perfect run storage
 const perfectRuns = computed(() => {
-  return Math.floor(nodeClaims.length / 10)
+  const perfectLevels = StorageService.get('zq_perfect_runs') || []
+  if (Array.isArray(perfectLevels) && perfectLevels.length > 0) {
+    return perfectLevels.length
+  }
+  return Math.floor(nodeClaims.value.length / 10)
 })
 
 // ─── User title by XP ─────────────────────────────────────────────────────────
@@ -52,41 +56,43 @@ const userTitle = computed(() => {
 
 // ─── Join date from profile ───────────────────────────────────────────────────
 const joinDate = computed(() => {
-  if (!profile?.createdAt) return 'Nov 2026'
-  const d = new Date(profile.createdAt)
+  if (!profile.value?.createdAt) return 'Nov 2026'
+  const d = new Date(profile.value.createdAt)
   return d.toLocaleDateString('id-ID', { month: 'short', year: 'numeric' })
 })
 
-// ─── Track short name ─────────────────────────────────────────────────────────
+// ─── Track short name (sesuai referensi UI: Web Dev, C#, Kotlin, dll) ────────
 const trackShortName = computed(() => {
   const map = {
-    html: 'HTML', css: 'CSS', js: 'JavaScript',
-    csharp: 'C#', kotlin: 'Kotlin',
+    html:   'HTML',
+    css:    'CSS',
+    js:     'JavaScript',
+    csharp: 'C#',
+    kotlin: 'Kotlin',
   }
-  return map[profile?.selectedTrack] || 'HTML'
+  return map[profile.value?.selectedTrack] || 'HTML'
 })
 
-// ─── Edit Nickname ────────────────────────────────────────────────────────────
-const isEditing   = ref(false)
-const editName    = ref(profile?.nickname || '')
-const isSaving    = ref(false)
+// ─── Edit Nickname (Inline) ───────────────────────────────────────────────────
+const isEditing = ref(false)
+const editName  = ref(profile.value?.nickname || '')
 
 function startEdit() {
-  editName.value = profile?.nickname || ''
+  editName.value = profile.value?.nickname || ''
   isEditing.value = true
 }
 
 function saveNickname() {
   const name = editName.value.trim()
   if (name.length < 3 || name.length > 20) return
-  if (profile) {
-    profile.nickname = name
-    StorageService.saveProfile(profile.toJSON())
+  if (profile.value) {
+    profile.value.nickname = name
+    StorageService.saveProfile(profile.value.toJSON())
   }
   isEditing.value = false
 }
 
-// ─── Reset Progress ───────────────────────────────────────────────────────────
+// ─── Reset Progress Modal ─────────────────────────────────────────────────────
 const showResetConfirm = ref(false)
 
 function confirmReset() {
@@ -102,19 +108,24 @@ function executeReset() {
 
 <template>
   <AppShellLayout>
-    <div class="flex flex-col h-full bg-[#0B0F19] overflow-y-auto scrollbar-hide">
+    <div class="flex flex-col h-full bg-[#0B0F19] overflow-y-auto scrollbar-hide relative">
 
       <!-- ── HEADER ─────────────────────────────────────────────────────── -->
       <div
         class="shrink-0 flex items-center justify-between px-5 pb-3 pt-4 border-b border-[#1A2238]"
         style="padding-top: max(16px, env(safe-area-inset-top))"
       >
-        <div class="flex-1" />
+        <div class="w-9" />
         <h1 class="text-[14px] font-extrabold text-white uppercase tracking-widest text-center leading-tight">
-          Profil<br/>Pengguna
+          PROFIL<br/>PENGGUNA
         </h1>
-        <div class="flex-1 flex justify-end">
-          <button type="button" class="w-9 h-9 flex items-center justify-center rounded-xl bg-[#13192B] border border-[#222B45] active:scale-95 transition-transform cursor-pointer">
+        <div class="w-9 flex justify-end">
+          <button
+            type="button"
+            class="w-9 h-9 flex items-center justify-center rounded-xl bg-[#13192B] border border-[#222B45] active:scale-95 transition-transform cursor-pointer"
+            aria-label="Pengaturan"
+            title="Pengaturan Akun"
+          >
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
               <path d="M12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z" stroke="#8E9AB0" stroke-width="2"/>
               <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="#8E9AB0" stroke-width="2"/>
@@ -125,18 +136,19 @@ function executeReset() {
 
       <div class="flex flex-col gap-5 px-5 py-4 pb-6">
 
-        <!-- ── USER CARD ──────────────────────────────────────────────── -->
+        <!-- ── USER CARD (Frame Avatar Rounded-Square Merah Neon) ──────── -->
         <div class="card-base p-4 flex items-center gap-4">
-          <!-- Mascot avatar -->
-          <div class="shrink-0">
-            <MascotAvatar :variant="profile?.avatar || 'idle'" size="md" />
+          <!-- Mascot avatar (kotak rounded-2xl dengan border merah neon menyala sesuai referensi UI) -->
+          <div class="w-16 h-16 rounded-2xl border-2 border-[#FF2B51] shadow-[0_0_14px_rgba(255,43,81,0.45)] bg-[#0B0F19] flex items-center justify-center shrink-0 overflow-hidden p-1.5">
+            <L3MascotAnimated variant="idle" class="w-full h-full" />
           </div>
-          <!-- Info -->
+
+          <!-- Info & Nama -->
           <div class="flex-1 min-w-0">
-            <!-- Nickname / edit mode -->
+            <!-- Mode Tampil -->
             <div v-if="!isEditing">
               <h2 class="text-[20px] font-extrabold text-white truncate">
-                {{ profile?.nickname || 'Petualang' }}
+                {{ profile?.nickname || 'Fall_Adventurer' }}
               </h2>
               <p class="text-[12px] text-[#8E9AB0] mt-0.5">
                 {{ userTitle }} • Bergabung {{ joinDate }}
@@ -149,23 +161,32 @@ function executeReset() {
                 Ubah Nama
               </button>
             </div>
-            <!-- Edit mode -->
+
+            <!-- Mode Edit Inline -->
             <div v-else class="flex flex-col gap-2">
               <input
                 v-model="editName"
                 type="text"
                 maxlength="20"
                 autofocus
-                class="w-full px-3 py-2 rounded-lg bg-[#0B0F19] border border-[#FF2B51] text-white text-[14px] font-bold outline-none"
+                class="w-full px-3 py-1.5 rounded-lg bg-[#0B0F19] border border-[#FF2B51] text-white text-[14px] font-bold outline-none"
                 autocomplete="off"
                 autocorrect="off"
                 spellcheck="false"
               />
               <div class="flex gap-2">
-                <button @click="saveNickname" type="button" class="flex-1 py-1.5 rounded-lg bg-[#FF2B51] text-white text-[12px] font-bold cursor-pointer active:scale-95 transition-transform">
+                <button
+                  @click="saveNickname"
+                  type="button"
+                  class="flex-1 py-1 rounded-lg bg-[#FF2B51] text-white text-[12px] font-bold cursor-pointer active:scale-95 transition-transform"
+                >
                   Simpan
                 </button>
-                <button @click="isEditing = false" type="button" class="flex-1 py-1.5 rounded-lg bg-[#1A2238] text-[#8E9AB0] text-[12px] font-bold cursor-pointer active:scale-95 transition-transform">
+                <button
+                  @click="isEditing = false"
+                  type="button"
+                  class="flex-1 py-1 rounded-lg bg-[#1A2238] text-[#8E9AB0] text-[12px] font-bold cursor-pointer active:scale-95 transition-transform"
+                >
                   Batal
                 </button>
               </div>
@@ -173,51 +194,56 @@ function executeReset() {
           </div>
         </div>
 
-        <!-- ── STATISTIK PETUALANGAN ───────────────────────────────────── -->
+        <!-- ── STATISTIK PETUALANGAN (Warna Sesuai Referensi UI) ────────── -->
         <div class="flex flex-col gap-2.5">
           <span class="text-[11px] font-bold text-[#8E9AB0] uppercase tracking-widest">
             Statistik Petualangan
           </span>
 
           <div class="grid grid-cols-2 gap-2.5">
-            <!-- XP -->
+            <!-- XP (Kuning Emas #F59E0B sesuai UI) -->
             <div class="card-base p-4 flex flex-col gap-1">
-              <span class="text-[22px] font-extrabold text-[#FF2B51]">{{ totalXp }} XP</span>
+              <span class="text-[22px] font-extrabold text-[#F59E0B]">{{ totalXp }} XP</span>
               <span class="text-[12px] text-[#8E9AB0]">Total Akumulasi</span>
             </div>
-            <!-- Levels completed -->
+
+            <!-- Level Ditamatkan (Hijau #22C55E sesuai UI) -->
             <div class="card-base p-4 flex flex-col gap-1">
               <span class="text-[22px] font-extrabold text-[#22C55E]">{{ levelsCompleted }} Level</span>
               <span class="text-[12px] text-[#8E9AB0]">Level Ditamatkan</span>
             </div>
-            <!-- Perfect run count -->
+
+            <!-- 5 Hati Utuh (Merah #FF2B51 sesuai UI) -->
             <div class="card-base p-4 flex flex-col gap-1">
-              <span class="text-[22px] font-extrabold text-[#F7DF1E]">{{ perfectRuns }} Kali</span>
+              <span class="text-[22px] font-extrabold text-[#FF2B51]">{{ perfectRuns }} Kali</span>
               <span class="text-[12px] text-[#8E9AB0]">5 Hati Utuh</span>
             </div>
-            <!-- Main track -->
+
+            <!-- Jalur Utama (Cyan/Sky #38BDF8 sesuai UI) -->
             <div class="card-base p-4 flex flex-col gap-1">
-              <span class="text-[22px] font-extrabold text-[#8B5CF6] leading-tight">{{ trackShortName }}</span>
+              <span class="text-[22px] font-extrabold text-[#38BDF8] leading-tight truncate">
+                {{ trackShortName }}
+              </span>
               <span class="text-[12px] text-[#8E9AB0]">Jalur Utama</span>
             </div>
           </div>
         </div>
 
-        <!-- ── PENCAPAIAN TERBARU ──────────────────────────────────────── -->
+        <!-- ── PENCAPAIAN TERBARU (Medal Hijau Sesuai UI) ──────────────── -->
         <div class="flex flex-col gap-2.5">
           <span class="text-[11px] font-bold text-[#8E9AB0] uppercase tracking-widest">
             Pencapaian Terbaru
           </span>
 
           <div class="card-base p-4 flex items-center gap-3">
-            <!-- Badge icon -->
-            <div class="w-12 h-12 rounded-full bg-[rgba(34,197,94,0.1)] border-2 border-[#22C55E] flex items-center justify-center shrink-0">
+            <!-- Badge Icon Hijau -->
+            <div class="w-12 h-12 rounded-full bg-[rgba(34,197,94,0.12)] border-2 border-[#22C55E] flex items-center justify-center shrink-0">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="8" r="6" stroke="#22C55E" stroke-width="2"/>
                 <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <!-- Achievement info -->
+            <!-- Achievement Details -->
             <div class="flex-1 min-w-0">
               <div class="text-[14px] font-bold text-white">
                 {{ levelsCompleted > 0 ? 'First Forger' : 'Petualang Baru' }}
@@ -225,22 +251,25 @@ function executeReset() {
               <div class="text-[12px] text-[#8E9AB0] leading-snug mt-0.5">
                 {{ levelsCompleted > 0
                   ? 'Selesaikan tantangan pertama di Cyber Foundry'
-                  : 'Bergabung di ZenoQuest dan mulai petualanganmu!' }}
+                  : 'Bergabung di ZenoQuest dan mulai petualangan codingmu!' }}
               </div>
             </div>
-            <!-- Badge status -->
-            <div class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase"
-              :class="levelsCompleted > 0 ? 'bg-[rgba(34,197,94,0.15)] text-[#22C55E] border border-[#22C55E]' : 'border border-[#222B45] text-[#8E9AB0]'"
+            <!-- Status Badge -->
+            <div
+              class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide"
+              :class="levelsCompleted > 0
+                ? 'bg-[rgba(34,197,94,0.15)] text-[#22C55E] border border-[#22C55E]'
+                : 'border border-[#222B45] text-[#8E9AB0] bg-[#161D31]'"
             >
               {{ levelsCompleted > 0 ? 'TERBUKA' : 'TERKUNCI' }}
             </div>
           </div>
         </div>
 
-        <!-- ── PENYIMPANAN DATA LOKAL ──────────────────────────────────── -->
+        <!-- ── PENYIMPANAN DATA LOKAL & RESET BUTTON ───────────────────── -->
         <div class="rounded-xl border border-[rgba(255,43,81,0.3)] bg-[rgba(255,43,81,0.05)] p-4 flex flex-col gap-3">
           <div class="text-[11px] font-bold text-[#FF2B51] uppercase tracking-widest">
-            Penyimpanan Data Lokal
+            PENYIMPANAN DATA LOKAL
           </div>
           <p class="text-[12px] text-[#8E9AB0] leading-relaxed">
             Progres tersimpan pada penyimpanan perangkat (localStorage). Reset akan mengulang petualangan dari awal.
@@ -248,9 +277,9 @@ function executeReset() {
           <button
             @click="confirmReset"
             type="button"
-            class="w-full py-3.5 rounded-xl bg-[#FF2B51] text-white font-bold text-[13px] uppercase tracking-widest active:scale-[0.98] transition-transform cursor-pointer shadow-[0_0_16px_rgba(255,43,81,0.3)]"
+            class="w-full py-3.5 rounded-xl bg-[#FF2B51] hover:bg-[#ff3f62] text-white font-bold text-[13px] uppercase tracking-widest active:scale-[0.98] transition-all cursor-pointer shadow-[0_0_16px_rgba(255,43,81,0.35)]"
           >
-            Reset Semua Progres
+            RESET SEMUA PROGRES
           </button>
         </div>
 
@@ -261,12 +290,12 @@ function executeReset() {
     <Transition name="slide-left">
       <div
         v-if="showResetConfirm"
-        class="absolute inset-0 bg-black/70 flex items-end justify-center z-50 pb-8 px-5"
+        class="absolute inset-0 bg-black/80 flex items-end justify-center z-50 pb-8 px-5"
         @click.self="showResetConfirm = false"
       >
-        <div class="card-base w-full max-w-sm p-5 flex flex-col gap-4">
+        <div class="card-base w-full max-w-sm p-5 flex flex-col gap-4 border-[#222B45] bg-[#13192B] shadow-2xl">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-[rgba(255,43,81,0.15)] flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-[rgba(255,43,81,0.15)] flex items-center justify-center shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="#FF2B51" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -277,13 +306,21 @@ function executeReset() {
             </div>
           </div>
           <p class="text-[12px] text-[#8E9AB0] leading-relaxed">
-            Seluruh data XP, level tamat, dan sesi aktif akan dihapus. Kamu akan diarahkan ulang ke halaman onboarding.
+            Seluruh data XP, level tamat, dan sesi aktif akan dihapus dari penyimpanan lokal browser. Kamu akan diarahkan ulang ke onboarding.
           </p>
           <div class="flex gap-2.5">
-            <button @click="showResetConfirm = false" type="button" class="flex-1 py-3 rounded-xl bg-[#1A2238] border border-[#222B45] text-[#8E9AB0] font-bold text-[13px] cursor-pointer active:scale-95 transition-transform">
+            <button
+              @click="showResetConfirm = false"
+              type="button"
+              class="flex-1 py-3 rounded-xl bg-[#1A2238] hover:bg-[#222B45] border border-[#222B45] text-[#8E9AB0] font-bold text-[13px] cursor-pointer active:scale-95 transition-transform"
+            >
               Batal
             </button>
-            <button @click="executeReset" type="button" class="flex-1 py-3 rounded-xl bg-[#FF2B51] text-white font-bold text-[13px] cursor-pointer active:scale-95 transition-transform">
+            <button
+              @click="executeReset"
+              type="button"
+              class="flex-1 py-3 rounded-xl bg-[#FF2B51] hover:bg-[#ff3f62] text-white font-bold text-[13px] cursor-pointer active:scale-95 transition-transform shadow-[0_0_12px_rgba(255,43,81,0.4)]"
+            >
               Ya, Reset
             </button>
           </div>

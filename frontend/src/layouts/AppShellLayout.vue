@@ -2,7 +2,7 @@
 /**
  * AppShellLayout
  * Shared layout for the main 3-tab application shell.
- * Shows Bottom Navigation Bar (Materi / Peta / Profil).
+ * Shows Bottom Navigation Bar (Materi / Peta / Profil) with active red dot indicator.
  * Hides automatically on /onboarding and /quiz routes.
  */
 import { computed } from 'vue'
@@ -10,14 +10,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { StorageService } from '@/core/services/StorageService.js'
 
 const router = useRouter()
-const route = useRoute()
-
-const profileData = StorageService.getProfile()
-const xp = computed(() => {
-  const stats = StorageService.getStats()
-  return stats?.xp || 0
-})
-const hearts = computed(() => profileData?.hearts ?? 5)
+const route  = useRoute()
 
 const tabs = [
   { name: 'courses', label: 'Materi', path: '/courses' },
@@ -34,7 +27,8 @@ const activeTab = computed(() => {
 
 function navigate(tab) {
   if (tab.name === 'map') {
-    const p = profileData?.selectedTrack || 'html'
+    const currentProfile = StorageService.getProfile()
+    const p = currentProfile?.selectedTrack || 'html'
     router.push(`/map/${p}`)
   } else {
     router.push(tab.path)
@@ -49,40 +43,55 @@ function navigate(tab) {
       <slot />
     </div>
 
-    <!-- Bottom Navigation Bar -->
+    <!-- Bottom Navigation Bar (matches mobile UI reference) -->
     <nav
       class="shrink-0 flex items-center border-t border-[#1A2238] bg-[#0B0F19]"
-      style="padding-bottom: env(safe-area-inset-bottom, 0px)"
+      style="padding-bottom: max(6px, env(safe-area-inset-bottom, 0px))"
     >
       <button
         v-for="tab in tabs"
         :key="tab.name"
         @click="navigate(tab)"
         type="button"
-        class="flex-1 flex flex-col items-center justify-center gap-1 py-2.5 cursor-pointer transition-all active:scale-95"
+        class="flex-1 flex flex-col items-center justify-center py-2 cursor-pointer transition-all active:scale-95 relative"
         :class="activeTab === tab.name ? 'text-[#FF2B51]' : 'text-[#8E9AB0]'"
       >
-        <!-- Icons -->
-        <template v-if="tab.name === 'courses'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" :stroke="activeTab === 'courses' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" :stroke="activeTab === 'courses' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </template>
-        <template v-else-if="tab.name === 'map'">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" :stroke="activeTab === 'map' ? '#FF2B51' : '#8E9AB0'" stroke-width="2"/>
-            <path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" :stroke="activeTab === 'map' ? '#FF2B51' : '#8E9AB0'" stroke-width="2"/>
-            <path d="M12 2v2M12 20v2M2 12h2M20 12h2" :stroke="activeTab === 'map' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </template>
-        <template v-else>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" :stroke="activeTab === 'profile' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="12" cy="7" r="4" :stroke="activeTab === 'profile' ? '#FF2B51' : '#8E9AB0'" stroke-width="2"/>
-          </svg>
-        </template>
-        <span class="text-[11px] font-semibold">{{ tab.label }}</span>
+        <!-- Active indicator red dot (persis sesuai referensi UI) -->
+        <div class="h-1.5 flex items-center justify-center mb-0.5">
+          <span
+            v-if="activeTab === tab.name"
+            class="w-1.5 h-1.5 rounded-full bg-[#FF2B51] shadow-[0_0_6px_rgba(255,43,81,0.9)]"
+          />
+        </div>
+
+        <!-- Tab Icons -->
+        <div class="h-6 flex items-center justify-center">
+          <!-- Materi: Book icon -->
+          <template v-if="tab.name === 'courses'">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" :stroke="activeTab === 'courses' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" :stroke="activeTab === 'courses' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </template>
+
+          <!-- Peta: Compass icon with diagonal needle -->
+          <template v-else-if="tab.name === 'map'">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" :stroke="activeTab === 'map' ? '#FF2B51' : '#8E9AB0'" stroke-width="2"/>
+              <polygon points="12,4 15,12 12,20 9,12" :stroke="activeTab === 'map' ? '#FF2B51' : '#8E9AB0'" stroke-width="1.8" :fill="activeTab === 'map' ? '#FF2B51' : 'none'" fill-opacity="0.3" transform="rotate(45 12 12)"/>
+            </svg>
+          </template>
+
+          <!-- Profil: User icon -->
+          <template v-else>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" :stroke="activeTab === 'profile' ? '#FF2B51' : '#8E9AB0'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" :stroke="activeTab === 'profile' ? '#FF2B51' : '#8E9AB0'" stroke-width="2"/>
+            </svg>
+          </template>
+        </div>
+
+        <span class="text-[11px] font-semibold tracking-wide mt-0.5">{{ tab.label }}</span>
       </button>
     </nav>
   </div>
