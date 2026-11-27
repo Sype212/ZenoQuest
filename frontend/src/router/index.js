@@ -6,6 +6,7 @@ const OnboardingView = () => import('@/views/onboarding/OnboardingView.vue')
 const CoursesView    = () => import('@/views/app/CoursesView.vue')
 const WorldMapView   = () => import('@/views/app/WorldMapView.vue')
 const ProfileView    = () => import('@/views/app/ProfileView.vue')
+const QuizArenaView  = () => import('@/views/quiz/QuizArenaView.vue')
 
 const routes = [
   {
@@ -39,6 +40,12 @@ const routes = [
     name: 'profile',
     component: ProfileView,
     meta: { requiresProfile: true },
+  },
+  {
+    path: '/quiz/:levelId',
+    name: 'quiz',
+    component: QuizArenaView,
+    meta: { hideNav: true, requiresProfile: true },
   },
   // Catch-all fallback
   { path: '/:pathMatch(.*)*', redirect: '/' },

@@ -5,28 +5,31 @@
  * jalur utama, pencapaian, dan tombol Reset Semua Progres.
  * Menyelaraskan 100% dengan referensi visual Android.
  */
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import AppShellLayout from '@/layouts/AppShellLayout.vue'
 import L3MascotAnimated from '@/components/mascot/L3MascotAnimated.vue'
-import { StorageService } from '@/core/services/StorageService.js'
+import { gameStore } from '@/stores/gameStore.js'
 import { UserProfile } from '@/core/models/UserProfile.js'
 import { onboardingStore } from '@/stores/onboardingStore.js'
 
 const router = useRouter()
 
+onMounted(() => {
+  gameStore.refresh()
+})
+
 // ─── Load Reaktif Data ────────────────────────────────────────────────────────
-const profileData = StorageService.getProfile()
-const profile     = ref(profileData ? UserProfile.fromJSON(profileData) : null)
-const stats       = ref(StorageService.getStats())
-const progressMap = ref(StorageService.getProgress())
-const nodeClaims  = ref(StorageService.getNodeClaims())
+const profile     = computed(() =>
+  gameStore.state.profile ? UserProfile.fromJSON(gameStore.state.profile) : null
+)
+const stats       = computed(() => gameStore.state.stats)
+const progressMap = computed(() => gameStore.state.progress || {})
 
 // ─── Stats computed ───────────────────────────────────────────────────────────
 const totalXp = computed(() => stats.value?.xp ?? 0)
 
 const levelsCompleted = computed(() => {
-  if (!progressMap.value) return 0
   let count = 0
   Object.values(progressMap.value).forEach(trackProgress => {
     Object.values(trackProgress || {}).forEach(status => {
@@ -36,13 +39,9 @@ const levelsCompleted = computed(() => {
   return count
 })
 
-// Perfect run count: dihitung dari riwayat claim / perfect run storage
+// Perfect run count: akurat dari zq_stats.perfectRunLevels
 const perfectRuns = computed(() => {
-  const perfectLevels = StorageService.get('zq_perfect_runs') || []
-  if (Array.isArray(perfectLevels) && perfectLevels.length > 0) {
-    return perfectLevels.length
-  }
-  return Math.floor(nodeClaims.value.length / 10)
+  return stats.value?.perfectRunLevels?.length ?? 0
 })
 
 // ─── User title by XP ─────────────────────────────────────────────────────────
@@ -75,7 +74,7 @@ const trackShortName = computed(() => {
 
 // ─── Edit Nickname (Inline) ───────────────────────────────────────────────────
 const isEditing = ref(false)
-const editName  = ref(profile.value?.nickname || '')
+const editName  = ref('')
 
 function startEdit() {
   editName.value = profile.value?.nickname || ''
@@ -85,10 +84,7 @@ function startEdit() {
 function saveNickname() {
   const name = editName.value.trim()
   if (name.length < 3 || name.length > 20) return
-  if (profile.value) {
-    profile.value.nickname = name
-    StorageService.saveProfile(profile.value.toJSON())
-  }
+  gameStore.updateProfile({ nickname: name })
   isEditing.value = false
 }
 
@@ -100,7 +96,7 @@ function confirmReset() {
 }
 
 function executeReset() {
-  StorageService.clearAll()
+  gameStore.resetAll()
   onboardingStore.reset()
   router.replace('/onboarding')
 }

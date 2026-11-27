@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 import { UserProfile } from '../core/models/UserProfile.js';
 import { StorageService } from '../core/services/StorageService.js';
+import { gameStore } from './gameStore.js';
 
 /**
  * @module onboardingStore
@@ -112,7 +113,8 @@ function _commitAndFinish() {
     kotlin: { kt_l01:      'active', kt_l02:      'locked', kt_l03:      'locked', kt_l04:      'locked', kt_l05:      'locked' },
   };
   StorageService.saveProgress(progress);
-  StorageService.saveStats({ xp: 0, levelsCompleted: 0 });
+  StorageService.saveStats({ xp: 0, levelsCompleted: 0, perfectRunLevels: [] });
+  gameStore.refresh();
 
   return profile;
 }

@@ -6,11 +6,11 @@
  * - Interaktif: Tapping level menampilkan pratinjau detail node kurikulum
  * - Top HUD: Navigasi cepat ke Materi (Layers icon) dan Profil (Avatar)
  */
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AppShellLayout from '@/layouts/AppShellLayout.vue'
 import MascotAvatar from '@/components/mascot/MascotAvatar.vue'
-import { StorageService } from '@/core/services/StorageService.js'
+import { gameStore } from '@/stores/gameStore.js'
 import { UserProfile } from '@/core/models/UserProfile.js'
 import { CourseTrack } from '@/core/models/CourseTrack.js'
 import { CurriculumService } from '@/core/services/CurriculumService.js'
@@ -18,24 +18,190 @@ import { CurriculumService } from '@/core/services/CurriculumService.js'
 const route  = useRoute()
 const router = useRouter()
 
-// ─── Load Profile & Progress ──────────────────────────────────────────────────
-const profileData = StorageService.getProfile()
-const profile     = profileData ? UserProfile.fromJSON(profileData) : null
-const stats       = StorageService.getStats()
-const progressMap = StorageService.getProgress()
+// ─── Map Refs, Curved Connectors & Camera Pan ────────────────────────────────
+const scrollContainerRef = ref(null)
+const mapCanvasRef       = ref(null)
+const bossBtnRef         = ref(null)
+const nodeBtnRefs        = ref({})
+const pathSegments       = ref([])
+const canvasSize         = ref({ width: 0, height: 0 })
 
-const xp     = computed(() => stats?.xp     ?? 0)
-const hearts = computed(() => profile?.hearts ?? 5)
+let resizeObserver = null
+let panAnimFrameId = null
+let panDelayTimer  = null
+
+function setNodeBtnRef(levelId, el) {
+  if (el) nodeBtnRefs.value[levelId] = el
+  else delete nodeBtnRefs.value[levelId]
+}
+
+function cancelCameraPan() {
+  if (panDelayTimer) {
+    clearTimeout(panDelayTimer)
+    panDelayTimer = null
+  }
+  if (panAnimFrameId) {
+    cancelAnimationFrame(panAnimFrameId)
+    panAnimFrameId = null
+  }
+}
+
+function measurePathConnectors() {
+  const canvas = mapCanvasRef.value
+  if (!canvas) return
+  const cRect = canvas.getBoundingClientRect()
+  canvasSize.value = { width: cRect.width, height: cRect.height }
+
+  // Build ordered node points from lowest (Level 1) to highest (Level 5 -> Boss Gate)
+  const ordered = levels.value.map((lvl) => ({
+    key: lvl.id,
+    level: lvl,
+    el: nodeBtnRefs.value[lvl.id],
+  }))
+  if (bossBtnRef.value) {
+    ordered.push({
+      key: 'BOSS',
+      level: { isCompleted: false, isActive: bossUnlocked.value, isLocked: !bossUnlocked.value },
+      el: bossBtnRef.value,
+    })
+  }
+
+  const pts = ordered
+    .map((item) => {
+      if (!item.el) return null
+      const r = item.el.getBoundingClientRect()
+      return {
+        ...item,
+        x: r.left - cRect.left + r.width / 2,
+        y: r.top - cRect.top + r.height / 2,
+      }
+    })
+    .filter(Boolean)
+
+  const segments = []
+  for (let i = 0; i < pts.length - 1; i++) {
+    const from = pts[i]
+    const to = pts[i + 1]
+    const midY = (from.y + to.y) / 2
+    const d = `M ${from.x.toFixed(1)} ${from.y.toFixed(1)} C ${from.x.toFixed(1)} ${midY.toFixed(1)}, ${to.x.toFixed(1)} ${midY.toFixed(1)}, ${to.x.toFixed(1)} ${to.y.toFixed(1)}`
+
+    let state = 'locked'
+    if (from.level.isCompleted && (to.level.isCompleted || to.level.isActive)) {
+      state = to.level.isCompleted ? 'completed' : 'active'
+    } else if (from.level.isActive) {
+      state = 'upcoming'
+    }
+
+    segments.push({ id: `${from.key}-${to.key}`, d, state })
+  }
+  pathSegments.value = segments
+}
+
+function runCameraPanToActive() {
+  cancelCameraPan()
+  const container = scrollContainerRef.value
+  if (!container) return
+
+  // Start at top (highest level / Boss Gate)
+  container.scrollTop = 0
+
+  const reducedMotion = typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+  const targetLevel =
+    levels.value.find((l) => l.isActive) ||
+    levels.value[0]
+  const targetEl = targetLevel ? nodeBtnRefs.value[targetLevel.id] : null
+
+  const computeTargetScroll = () => {
+    if (!targetEl) {
+      return Math.max(0, container.scrollHeight - container.clientHeight)
+    }
+    const contRect = container.getBoundingClientRect()
+    const elRect = targetEl.getBoundingClientRect()
+    const elCenterInContent = elRect.top - contRect.top + container.scrollTop + elRect.height / 2
+    const desired = elCenterInContent - container.clientHeight * 0.58
+    const maxScroll = Math.max(0, container.scrollHeight - container.clientHeight)
+    return Math.min(maxScroll, Math.max(0, desired))
+  }
+
+  if (reducedMotion) {
+    container.scrollTop = computeTargetScroll()
+    return
+  }
+
+  panDelayTimer = setTimeout(() => {
+    const startTop = container.scrollTop
+    const targetTop = computeTargetScroll()
+    const distance = targetTop - startTop
+    if (Math.abs(distance) < 8) return
+
+    const duration = 950
+    let startTime = null
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+    const step = (ts) => {
+      if (startTime === null) startTime = ts
+      const elapsed = ts - startTime
+      const progress = Math.min(1, elapsed / duration)
+      container.scrollTop = startTop + distance * easeInOutCubic(progress)
+      if (progress < 1) {
+        panAnimFrameId = requestAnimationFrame(step)
+      } else {
+        panAnimFrameId = null
+      }
+    }
+    panAnimFrameId = requestAnimationFrame(step)
+  }, 180)
+}
+
+onMounted(async () => {
+  gameStore.refresh()
+  await nextTick()
+  measurePathConnectors()
+  runCameraPanToActive()
+
+  if (typeof ResizeObserver !== 'undefined' && mapCanvasRef.value) {
+    resizeObserver = new ResizeObserver(() => measurePathConnectors())
+    resizeObserver.observe(mapCanvasRef.value)
+  }
+})
+
+onBeforeUnmount(() => {
+  cancelCameraPan()
+  resizeObserver?.disconnect()
+})
+
+// ─── Load Profile & Progress (Reactive) ──────────────────────────────────────
+const profile       = computed(() =>
+  gameStore.state.profile ? UserProfile.fromJSON(gameStore.state.profile) : null
+)
+const stats         = computed(() => gameStore.state.stats)
+const progressMap   = computed(() => gameStore.state.progress || {})
+const activeSession = computed(() => gameStore.state.activeSession)
+
+const xp     = computed(() => stats.value?.xp ?? 0)
+const hearts = computed(() => {
+  if (activeSession.value?.trackId === activeTrackId.value && activeSession.value?.currentHearts > 0) {
+    return activeSession.value.currentHearts
+  }
+  return profile.value?.hearts ?? 5
+})
 
 // ─── Active Track & Reactivity ────────────────────────────────────────────────
 const activeTrackId = ref(route.params.trackId && route.params.trackId !== 'active'
   ? route.params.trackId
-  : (profile?.selectedTrack || 'html'))
+  : (profile.value?.selectedTrack || 'html'))
 
 // Sinkronisasi jika parameter rute berubah
-watch(() => route.params.trackId, (newId) => {
+watch(() => route.params.trackId, async (newId) => {
   if (newId && newId !== 'active' && newId !== activeTrackId.value) {
     activeTrackId.value = newId
+    await nextTick()
+    measurePathConnectors()
+    runCameraPanToActive()
   }
 })
 
@@ -45,15 +211,18 @@ const activeTrack = computed(() => CourseTrack.findById(activeTrackId.value) || 
 // Track dropdown
 const showTrackMenu = ref(false)
 
-function switchTrack(trackId) {
+async function switchTrack(trackId) {
   activeTrackId.value = trackId
   showTrackMenu.value = false
   router.replace(`/map/${trackId}`)
+  await nextTick()
+  measurePathConnectors()
+  runCameraPanToActive()
 }
 
 // ─── Levels ───────────────────────────────────────────────────────────────────
 const levels = computed(() =>
-  CurriculumService.getLevelsWithStatus(activeTrackId.value, progressMap)
+  CurriculumService.getLevelsWithStatus(activeTrackId.value, progressMap.value)
 )
 
 // Reverse levels for bottom-to-top display (Level 5 di atas, Level 1 di bawah)
@@ -67,6 +236,19 @@ const selectedLevelModal = ref(null)
 
 function onSelectLevel(level) {
   selectedLevelModal.value = level
+}
+
+function startSelectedLevel() {
+  const lvl = selectedLevelModal.value
+  if (!lvl || lvl.isLocked) return
+  if (lvl.id) {
+    selectedLevelModal.value = null
+    router.push(`/quiz/${lvl.id}`)
+  } else if (lvl.num === 'BOSS' && levels.value.length) {
+    const lastLevel = levels.value[levels.value.length - 1]
+    selectedLevelModal.value = null
+    router.push(`/quiz/${lastLevel.id}`)
+  }
 }
 
 function onSelectBossGate() {
@@ -202,13 +384,57 @@ const tipMessage = computed(() => {
       </div>
 
       <!-- ── WORLD MAP (vertical zigzag) ──────────────────────────────────── -->
-      <div class="flex-1 min-h-0 overflow-y-auto scrollbar-hide px-4 py-4" @click="showTrackMenu = false">
+      <div
+        ref="scrollContainerRef"
+        class="flex-1 min-h-0 overflow-y-auto scrollbar-hide px-4 py-5"
+        @click="showTrackMenu = false"
+        @wheel.passive="cancelCameraPan"
+        @touchstart.passive="cancelCameraPan"
+        @pointerdown.passive="cancelCameraPan"
+      >
 
-        <div class="flex flex-col gap-0 relative min-h-full pb-4">
+        <div ref="mapCanvasRef" class="flex flex-col gap-10 relative min-h-full pb-6">
+
+          <!-- Curved SVG Path Layer Connecting Level 1 → Level 5 → Boss Gate -->
+          <svg
+            v-if="canvasSize.width > 0 && pathSegments.length > 0"
+            class="absolute inset-0 pointer-events-none z-0"
+            :width="canvasSize.width"
+            :height="canvasSize.height"
+            :viewBox="`0 0 ${canvasSize.width} ${canvasSize.height}`"
+            fill="none"
+          >
+            <g v-for="seg in pathSegments" :key="seg.id">
+              <!-- Soft glow under completed/active path -->
+              <path
+                v-if="seg.state === 'completed' || seg.state === 'active'"
+                :d="seg.d"
+                :stroke="seg.state === 'completed' ? '#22C55E' : '#FF2B51'"
+                stroke-width="8"
+                stroke-linecap="round"
+                opacity="0.18"
+              />
+              <!-- Main connector line -->
+              <path
+                :d="seg.d"
+                :stroke="seg.state === 'completed'
+                  ? '#22C55E'
+                  : seg.state === 'active'
+                    ? '#FF2B51'
+                    : seg.state === 'upcoming'
+                      ? '#475569'
+                      : '#2A3450'"
+                :stroke-width="seg.state === 'completed' ? 3.5 : 2.5"
+                :stroke-dasharray="seg.state === 'completed' ? 'none' : '7 7'"
+                stroke-linecap="round"
+              />
+            </g>
+          </svg>
 
           <!-- Boss Gate Node (Atas Kanan) -->
-          <div class="flex flex-col items-center mb-4" :class="positionClasses[0]">
+          <div class="flex flex-col items-center relative z-10" :class="positionClasses[0]">
             <button
+              ref="bossBtnRef"
               @click="onSelectBossGate"
               type="button"
               class="w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all cursor-pointer active:scale-95"
@@ -226,33 +452,34 @@ const tipMessage = computed(() => {
               </svg>
             </button>
             <div class="mt-1.5 text-center">
-              <span class="text-[12px] font-bold" :class="bossUnlocked ? 'text-[#F7DF1E]' : 'text-[#8E9AB0]'">
+              <span class="text-[12px] font-bold px-2.5 py-0.5 rounded-xl bg-[#0B0F19]" :class="bossUnlocked ? 'text-[#F7DF1E]' : 'text-[#8E9AB0]'">
                 Boss Gate • Proyek Akhir
               </span>
             </div>
           </div>
 
-          <!-- Dashed connector to Level 5 -->
-          <div class="w-px h-8 border-l-2 border-dashed border-[#2A3450] self-end mr-20 mb-1" />
-
           <!-- Level Nodes (Tampil dari atas ke bawah: Level 5 -> 1) -->
           <template v-for="(level, idx) in levelsDisplayed" :key="level.id">
 
-            <div class="flex flex-col mb-1" :class="positionClasses[idx + 1]">
+            <div class="flex flex-col items-center relative z-10" :class="positionClasses[idx + 1]">
 
               <!-- Node Wrapper -->
               <div class="relative flex flex-col items-center">
 
-                <!-- Mascot & MULAI Badge (Hanya pada level aktif) -->
-                <div v-if="level.isActive" class="flex items-center gap-1 mb-1 self-start -ml-2">
+                <!-- Mascot & MULAI / LANJUT Badge (pada level aktif atau sesi tersimpan) -->
+                <div
+                  v-if="level.isActive || activeSession?.levelId === level.id"
+                  class="flex items-center gap-1 mb-1 self-start -ml-2"
+                >
                   <MascotAvatar variant="idle" size="2xs" />
-                  <span class="text-[11px] font-extrabold text-[#FF2B51] tracking-wider uppercase bg-[rgba(255,43,81,0.18)] px-2 py-0.5 rounded-full border border-[#FF2B51] shadow-[0_0_8px_rgba(255,43,81,0.4)]">
-                    MULAI
+                  <span class="text-[11px] font-extrabold text-[#FF2B51] tracking-wider uppercase bg-[#24101B] px-2 py-0.5 rounded-full border border-[#FF2B51] shadow-[0_0_8px_rgba(255,43,81,0.4)]">
+                    {{ activeSession?.levelId === level.id ? `LANJUT ${activeSession.nodeIndex + 1}/10` : 'MULAI' }}
                   </span>
                 </div>
 
                 <!-- Level Node Button -->
                 <button
+                  :ref="(el) => setNodeBtnRef(level.id, el)"
                   type="button"
                   @click="onSelectLevel(level)"
                   class="w-16 h-16 rounded-2xl flex items-center justify-center transition-all cursor-pointer active:scale-95"
@@ -261,7 +488,7 @@ const tipMessage = computed(() => {
                       ? 'bg-[#22C55E] border-2 border-[#22C55E] shadow-[0_0_16px_rgba(34,197,94,0.4)]'
                       : level.isActive
                         ? 'bg-[#FF2B51] border-2 border-[#FF2B51] shadow-[0_0_20px_rgba(255,43,81,0.5)]'
-                        : 'bg-[#13192B] border-2 border-[#1A2238] opacity-75'
+                        : 'bg-[#13192B] border-2 border-[#1A2238] opacity-90'
                   ]"
                 >
                   <!-- Completed: Checkmark -->
@@ -281,11 +508,11 @@ const tipMessage = computed(() => {
               </div>
 
               <!-- Level Title Pill -->
-              <div class="mt-1.5 text-center max-w-[150px]">
+              <div class="mt-1.5 text-center max-w-[156px]">
                 <div
-                  class="text-[12px] font-bold px-2.5 py-0.5 rounded-full inline-block"
+                  class="text-[12px] font-bold px-2.5 py-0.5 rounded-xl inline-block bg-[#0B0F19]"
                   :class="level.isActive
-                    ? 'text-white bg-[#13192B] border border-[#222B45] shadow-sm'
+                    ? 'text-white !bg-[#13192B] border border-[#222B45] shadow-sm'
                     : level.isCompleted
                       ? 'text-[#22C55E]'
                       : 'text-[#8E9AB0]'"
@@ -294,22 +521,6 @@ const tipMessage = computed(() => {
                 </div>
               </div>
             </div>
-
-            <!-- Floating stepping-stone oval decoration (between level 3 and 2) -->
-            <div
-              v-if="idx === 2"
-              class="w-10 h-16 rounded-full bg-[#13192B] border border-[#222B45]/70 self-center my-1 opacity-70 shadow-inner"
-              title="Stepping stone biome"
-            />
-
-            <!-- Dashed Path Connector -->
-            <div
-              v-if="idx < levelsDisplayed.length - 1"
-              class="w-px h-8 border-l-2 border-dashed border-[#2A3450] mb-1"
-              :class="[
-                (idx % 2 === 0) ? 'self-start ml-24' : 'self-end mr-24'
-              ]"
-            />
 
           </template>
 
@@ -399,18 +610,45 @@ const tipMessage = computed(() => {
               </div>
             </div>
 
-            <div class="p-3 rounded-lg bg-[rgba(255,43,81,0.08)] border border-[rgba(255,43,81,0.2)] text-[12px] text-[#8E9AB0] flex items-center gap-2.5">
-              <span class="text-base shrink-0">🎨</span>
-              <span>Desain UI Arena Soal sedang dikembangkan. Kamu sudah dapat meninjau peta dan kurikulum!</span>
+            <div
+              v-if="activeSession?.levelId === selectedLevelModal.id"
+              class="p-3 rounded-lg bg-[rgba(255,43,81,0.1)] border border-[rgba(255,43,81,0.35)] text-[12px] text-white flex items-center justify-between gap-2"
+            >
+              <span>Sesi tersimpan pada <strong>Node {{ activeSession.nodeIndex + 1 }}/10</strong></span>
+              <span class="font-bold text-[#FF2B51]">♥ {{ activeSession.currentHearts }}</span>
             </div>
 
-            <button
-              @click="selectedLevelModal = null"
-              type="button"
-              class="w-full py-3 rounded-xl bg-[#1A2238] hover:bg-[#222B45] text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            <div
+              v-if="selectedLevelModal.isLocked"
+              class="p-3 rounded-lg bg-[#0B0F19] border border-[#222B45] text-[12px] text-[#8E9AB0]"
             >
-              Tutup Pratinjau
-            </button>
+              Selesaikan level sebelumnya untuk membuka tantangan ini.
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <button
+                v-if="!selectedLevelModal.isLocked"
+                @click="startSelectedLevel"
+                type="button"
+                class="btn-cta !py-3.5 !text-[13px]"
+              >
+                {{
+                  activeSession?.levelId === selectedLevelModal.id
+                    ? 'LANJUTKAN KUIS →'
+                    : selectedLevelModal.isCompleted
+                      ? 'MAINKAN ULANG →'
+                      : 'MULAI BELAJAR →'
+                }}
+              </button>
+
+              <button
+                @click="selectedLevelModal = null"
+                type="button"
+                class="w-full py-3 rounded-xl bg-[#1A2238] hover:bg-[#222B45] text-[#8E9AB0] hover:text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+              >
+                Tutup
+              </button>
+            </div>
           </div>
         </div>
       </Transition>

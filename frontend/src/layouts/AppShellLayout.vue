@@ -5,16 +5,20 @@
  * Shows Bottom Navigation Bar (Materi / Peta / Profil) with active red dot indicator.
  * Hides automatically on /onboarding and /quiz routes.
  */
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { StorageService } from '@/core/services/StorageService.js'
+import { gameStore } from '@/stores/gameStore.js'
 
 const router = useRouter()
 const route  = useRoute()
 
+onMounted(() => {
+  gameStore.refresh()
+})
+
 const tabs = [
   { name: 'courses', label: 'Materi', path: '/courses' },
-  { name: 'map',     label: 'Peta',   path: '/map/active' },
+  { name: 'map',     label: 'Belajar', path: '/map/active' },
   { name: 'profile', label: 'Profil', path: '/profile' },
 ]
 
@@ -27,8 +31,7 @@ const activeTab = computed(() => {
 
 function navigate(tab) {
   if (tab.name === 'map') {
-    const currentProfile = StorageService.getProfile()
-    const p = currentProfile?.selectedTrack || 'html'
+    const p = gameStore.state.profile?.selectedTrack || 'html'
     router.push(`/map/${p}`)
   } else {
     router.push(tab.path)

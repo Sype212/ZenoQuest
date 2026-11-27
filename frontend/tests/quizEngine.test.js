@@ -9,6 +9,7 @@ import {
 } from '../src/core/services/quizEngine.js'
 import { resolveLevelTheme, getThemeCssVars } from '../src/core/services/themeEngine.js'
 import { StorageService } from '../src/core/services/StorageService.js'
+import { formatArrangedCodeLines, tokenizeCodeLine } from '../src/utils/codeSyntax.js'
 
 // Mock window.localStorage for Node environment
 function installLocalStorageMock() {
@@ -163,5 +164,57 @@ describe('StorageService & themeEngine', () => {
     assert.equal(fallbackTheme.bgPrimary, '#0B0F19')
     const cssVars = getThemeCssVars(csharpTheme)
     assert.equal(cssVars['--zq-accent'], '#8B5CF6')
+  })
+})
+
+describe('codeSyntax editor formatter', () => {
+  it('formats HTML blocks with stacked indentation and restores closing indent', () => {
+    const htmlDoc = [
+      { id: 1, code: '<!DOCTYPE html><html>' },
+      { id: 2, code: '<head><title>Profil</title></head>' },
+      { id: 3, code: '<body><h1>Halo!</h1></body>' },
+      { id: 4, code: '</html>' },
+    ]
+    const docLines = formatArrangedCodeLines(htmlDoc)
+    assert.equal(docLines.length, 4)
+    assert.deepEqual(docLines.map((l) => l.indentLevel), [0, 1, 1, 0])
+
+    // Closing outer table should unwind unclosed inner rows
+    const htmlTable = [
+      { id: 1, code: '<table border="1">' },
+      { id: 2, code: '<tr>' },
+      { id: 3, code: '<td>Buku</td>' },
+      { id: 4, code: '</table>' },
+    ]
+    const tableLines = formatArrangedCodeLines(htmlTable)
+    assert.deepEqual(tableLines.map((l) => l.indentLevel), [0, 1, 2, 0])
+  })
+
+  it('keeps expression tokens and separator="" calls on a single editor line while indenting C# braces', () => {
+    const inlineCall = formatArrangedCodeLines(
+      [{ id: 1, code: 'console.log' }, { id: 2, code: '("Hello JS");' }],
+      { assemblySeparator: '' }
+    )
+    assert.equal(inlineCall.length, 1)
+    assert.equal(inlineCall[0].items.length, 2)
+
+    const csharpExpr = formatArrangedCodeLines([
+      { id: 1, code: 'int score' },
+      { id: 2, code: '=' },
+      { id: 3, code: '90' },
+      { id: 4, code: ';' },
+    ])
+    assert.equal(csharpExpr.length, 1)
+    assert.equal(csharpExpr[0].items.length, 4)
+
+    const csharpClass = formatArrangedCodeLines([
+      { id: 1, code: 'using System;' },
+      { id: 2, code: 'class Program' },
+      { id: 3, code: '{' },
+      { id: 4, code: 'Console.WriteLine("Hi");' },
+      { id: 5, code: '}' },
+    ])
+    assert.deepEqual(csharpClass.map((l) => l.indentLevel), [0, 0, 0, 1, 0])
+    assert.ok(tokenizeCodeLine('<p>"ok"</p>').some((t) => t.text === '"ok"' || t.text.includes('<p>')))
   })
 })

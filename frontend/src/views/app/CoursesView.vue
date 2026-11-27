@@ -4,29 +4,35 @@
  * Menampilkan semua 5 jalur kurikulum beserta progress masing-masing.
  * User bisa tap kartu untuk langsung masuk ke World Map jalur tersebut.
  */
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import AppShellLayout from '@/layouts/AppShellLayout.vue'
 import MascotAvatar from '@/components/mascot/MascotAvatar.vue'
-import { StorageService } from '@/core/services/StorageService.js'
+import { gameStore } from '@/stores/gameStore.js'
 import { UserProfile } from '@/core/models/UserProfile.js'
 import { CourseTrack } from '@/core/models/CourseTrack.js'
 import { CurriculumService } from '@/core/services/CurriculumService.js'
 
-const router     = useRouter()
-const profileData = StorageService.getProfile()
-const profile    = profileData ? UserProfile.fromJSON(profileData) : null
-const stats      = StorageService.getStats()
-const progressMap = StorageService.getProgress()
+const router = useRouter()
 
-const nickname = computed(() => profile?.nickname || 'Petualang')
-const totalXp  = computed(() => stats?.xp ?? 0)
+onMounted(() => {
+  gameStore.refresh()
+})
 
-// All 5 tracks with progress data
+const profile = computed(() =>
+  gameStore.state.profile ? UserProfile.fromJSON(gameStore.state.profile) : null
+)
+const stats       = computed(() => gameStore.state.stats)
+const progressMap = computed(() => gameStore.state.progress || {})
+
+const nickname = computed(() => profile.value?.nickname || 'Petualang')
+const totalXp  = computed(() => stats.value?.xp ?? 0)
+
+// All 5 tracks with reactive progress data
 const tracksWithProgress = computed(() =>
   CourseTrack.getAll().map((track) => {
-    const pct    = CurriculumService.getTrackProgress(track.id, progressMap)
-    const levels = CurriculumService.getLevelsWithStatus(track.id, progressMap)
+    const pct    = CurriculumService.getTrackProgress(track.id, progressMap.value)
+    const levels = CurriculumService.getLevelsWithStatus(track.id, progressMap.value)
     const done   = levels.filter(l => l.isCompleted).length
     const active = levels.find(l => l.isActive)
     return { ...track, pct, done, total: levels.length, activeLevel: active }
