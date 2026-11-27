@@ -1,147 +1,370 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "javascript_fundamentals",
   "course_title": "JavaScript Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "module_id": "JS_L03",
-  "module_title": "JavaScript Functions & Conditional Statements - Level 3",
-  "module_description": "Membuat function, menggunakan parameter dan return value, memahami percabangan if, else if, else, serta switch untuk mengatur alur program.",
-  "data_source": {
-    "file": "JavaScript_Fundamentals_Level_3_Functions_Conditional_Statements.json",
-    "level_id": "JS_L03"
-  },
-  "runtime": {
-    "language": "JavaScript",
-    "framework": "Vanilla JavaScript",
-    "mode": "client-side",
-    "load_json": true,
-    "render_lessons": true,
-    "render_questions": true
-  },
-  "initialization": {
-    "function": "loadLessons",
-    "steps": [
-      "Fetch JSON lesson data",
-      "Parse JSON response",
-      "Find level JS_L03",
-      "Read all 10 nodes",
-      "Render theory and code example",
-      "Render interactive questions"
+  "content_version": "1.1",
+  "level": {
+    "level_id": "JS_L03",
+    "level_number": 3,
+    "title": "Functions & Conditional Statements",
+    "description": "Materi fungsi dan percabangan logika dalam JavaScript untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "JS_L03_N01",
+        "title": "Introduction to Functions",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Function adalah blok kode yang dirancang untuk menjalankan tugas tertentu dan dapat dipanggil berkali-kali agar kode tidak berulang.",
+        "code_example": "function greet() {\n  console.log(\"Halo JS!\");\n}",
+        "question": "Kata kunci apa yang digunakan untuk mendeklarasikan fungsi standar di JavaScript?\nA. func\nB. def\nC. function\nD. method",
+        "options": [
+          {
+            "id": "a",
+            "text": "func"
+          },
+          {
+            "id": "b",
+            "text": "def"
+          },
+          {
+            "id": "c",
+            "text": "function"
+          },
+          {
+            "id": "d",
+            "text": "method"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. function",
+        "feedback_correct": "Benar! JavaScript menggunakan kata kunci function untuk membuat deklarasi fungsi.",
+        "feedback_incorrect": "Belum tepat. Gunakan kata kunci lengkap 'function' dalam JavaScript.",
+        "mascot_dialogue": "Fungsi bikin kodemu rapi dan bisa dipakai berulang kali!"
+      },
+      {
+        "node_id": "JS_L03_N02",
+        "title": "Function Parameters",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Parameter ditulis di dalam tanda kurung saat mendefinisikan fungsi untuk menerima nilai masukan (argumen) ketika fungsi dipanggil.",
+        "code_example": "function sayHi(name) {\n  console.log(\"Hi \" + name);\n}",
+        "question": "Apa fungsi parameter di dalam sebuah function JavaScript?\nA. Menghentikan eksekusi browser\nB. Menerima nilai input saat fungsi dipanggil\nC. Menghapus variabel global\nD. Mengubah file HTML menjadi CSS",
+        "options": [
+          {
+            "id": "a",
+            "text": "Menghentikan eksekusi browser"
+          },
+          {
+            "id": "b",
+            "text": "Menerima nilai input saat fungsi dipanggil"
+          },
+          {
+            "id": "c",
+            "text": "Menghapus variabel global"
+          },
+          {
+            "id": "d",
+            "text": "Mengubah file HTML menjadi CSS"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Menerima nilai input saat fungsi dipanggil",
+        "feedback_correct": "Tepat! Parameter bertindak sebagai variabel penerima nilai yang dikirim saat pemanggilan fungsi.",
+        "feedback_incorrect": "Ingat, parameter menampung data yang dikirim ke dalam fungsi.",
+        "mascot_dialogue": "Bagus! Dengan parameter, satu fungsi bisa mengolah banyak data berbeda."
+      },
+      {
+        "node_id": "JS_L03_N03",
+        "title": "Conditional Statements (if)",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Pernyataan if mengeksekusi blok kode hanya jika kondisi di dalam tanda kurung bernilai true.",
+        "code_example": "let score = 85;\nif (score >= 75) {\n  console.log(\"Lulus\");\n}",
+        "question": "Kapan blok kode di dalam pernyataan if akan dijalankan?\nA. Ketika kondisi bernilai true\nB. Ketika kondisi bernilai false\nC. Selalu dijalankan tanpa syarat\nD. Hanya saat terjadi error",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ketika kondisi bernilai true"
+          },
+          {
+            "id": "b",
+            "text": "Ketika kondisi bernilai false"
+          },
+          {
+            "id": "c",
+            "text": "Selalu dijalankan tanpa syarat"
+          },
+          {
+            "id": "d",
+            "text": "Hanya saat terjadi error"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. Ketika kondisi bernilai true",
+        "feedback_correct": "Benar! Blok if hanya dieksekusi apabila ekspresi kondisinya menghasilkan true.",
+        "feedback_incorrect": "Periksa syarat if: blok kode berjalan jika kondisinya terpenuhi (true).",
+        "mascot_dialogue": "Mantap! Percabangan if membantu program mengambil keputusan."
+      },
+      {
+        "node_id": "JS_L03_N04",
+        "title": "If and Else",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Blok else menyediakan alternatif kode yang akan dijalankan apabila kondisi pada pernyataan if bernilai false.",
+        "code_example": "let age = 15;\nif (age >= 17) {\n  console.log(\"Dewasa\");\n} else {\n  console.log(\"Remaja\");\n}",
+        "question": "Pada contoh kode di atas dengan age = 15, teks apa yang tampil di console?\nA. Dewasa\nB. Remaja\nC. undefined\nD. Tidak ada output",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dewasa"
+          },
+          {
+            "id": "b",
+            "text": "Remaja"
+          },
+          {
+            "id": "c",
+            "text": "undefined"
+          },
+          {
+            "id": "d",
+            "text": "Tidak ada output"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Remaja",
+        "feedback_correct": "Tepat! Karena 15 >= 17 bernilai false, program menjalankan blok else dan mencetak 'Remaja'.",
+        "feedback_incorrect": "Bandingkan nilai age (15) dengan syarat >= 17. Karena tidak terpenuhi, cabang else yang dipilih.",
+        "mascot_dialogue": "Keren! Kamu sudah paham alur keputusan if dan else."
+      },
+      {
+        "node_id": "JS_L03_N05",
+        "title": "Return Statement",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Kata kunci return menghentikan eksekusi fungsi dan mengembalikan suatu nilai kepada pemanggil fungsi tersebut.",
+        "code_example": "function add(a, b) {\n  return a + b;\n}",
+        "question": "Lengkapi fungsi berikut agar mengembalikan hasil perkalian a dan b:\nfunction multiply(a, b) {\n  ___ a * b;\n}",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "return"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "return",
+        "feedback_correct": "Benar! return mengirimkan hasil perkalian keluar dari fungsi.",
+        "feedback_incorrect": "Gunakan kata kunci untuk mengembalikan nilai hasil perhitungan dari fungsi.",
+        "mascot_dialogue": "Sip! Gunakan return untuk mengirim hasil proses dari fungsi."
+      },
+      {
+        "node_id": "JS_L03_N06",
+        "title": "Else If Keyword",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Gunakan else if untuk memeriksa kondisi alternatif baru apabila kondisi if sebelumnya bernilai false.",
+        "code_example": "if (nilai >= 90) {\n  grade = \"A\";\n} else if (nilai >= 80) {\n  grade = \"B\";\n}",
+        "question": "Lengkapi percabangan kedua berikut:\nif (score >= 90) {\n  console.log(\"A\");\n} ___ ___ (score >= 75) {\n  console.log(\"B\");\n}",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "else if"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "else if",
+        "feedback_correct": "Tepat! else if digunakan untuk menambah cabang kondisi berikutnya.",
+        "feedback_incorrect": "Gabungkan kata kunci else dan if untuk membuat kondisi lanjutan.",
+        "mascot_dialogue": "Bagus! Dengan else if, kamu bisa mengecek banyak kondisi bertingkat."
+      },
+      {
+        "node_id": "JS_L03_N07",
+        "title": "Strict Equality Operator",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Operator === (strict equality) membandingkan kesamaan nilai sekaligus tipe datanya tanpa konversi otomatis.",
+        "code_example": "if (status === \"active\") {\n  console.log(\"Aktif\");\n}",
+        "question": "Lengkapi operator perbandingan ketat (nilai dan tipe data sama):\nif (role ___ \"admin\") {\n  console.log(\"Akses diterima\");\n}",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "==="
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "===",
+        "feedback_correct": "Benar! Operator === memeriksa kesamaan nilai dan tipe data secara ketat.",
+        "feedback_incorrect": "Gunakan tiga tanda sama dengan (===) untuk strict equality di JavaScript.",
+        "mascot_dialogue": "Hebat! Operator === mencegah bug akibat perbedaan tipe data."
+      },
+      {
+        "node_id": "JS_L03_N08",
+        "title": "Create and Call a Function",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Setelah fungsi dideklarasikan, kita dapat menjalankannya dengan menuliskan nama fungsi diikuti tanda kurung ().",
+        "code_example": "function hello() {\n  console.log(\"Hello\");\n}\nhello();",
+        "question": "Susun potongan kode berikut untuk membuat dan memanggil fungsi hello:\n1. hello();\n2. function hello() {\n3. }\n4. console.log(\"Hello\");",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "hello();"
+          },
+          {
+            "id": 2,
+            "code": "function hello() {"
+          },
+          {
+            "id": 3,
+            "code": "}"
+          },
+          {
+            "id": 4,
+            "code": "console.log(\"Hello\");"
+          }
+        ],
+        "answer_order": [
+          2,
+          4,
+          3,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "function hello() { console.log(\"Hello\"); } hello();",
+        "correct_answer": "2 → 4 → 3 → 1",
+        "feedback_correct": "Sempurna! Deklarasi fungsi disusun lebih dulu, lalu dipanggil dengan hello().",
+        "feedback_incorrect": "Buat deklarasi function hello(), isi console.log, tutup kurung kurawal, lalu panggil hello().",
+        "mascot_dialogue": "Keren! Kamu sudah bisa membuat dan memanggil fungsi di JS."
+      },
+      {
+        "node_id": "JS_L03_N09",
+        "title": "Build an If-Else Check",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Struktur if-else memeriksa nilai variabel dan menentukan pesan yang sesuai.",
+        "code_example": "let temp = 32;\nif (temp > 30) {\n  console.log(\"Panas\");\n} else {\n  console.log(\"Sejuk\");\n}",
+        "question": "Susun kode pengecekan suhu berikut:\n1. } else {\n2. if (temp > 30) {\n3. console.log(\"Sejuk\");\n4. console.log(\"Panas\");\n5. }",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "} else {"
+          },
+          {
+            "id": 2,
+            "code": "if (temp > 30) {"
+          },
+          {
+            "id": 3,
+            "code": "console.log(\"Sejuk\");"
+          },
+          {
+            "id": 4,
+            "code": "console.log(\"Panas\");"
+          },
+          {
+            "id": 5,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          2,
+          4,
+          1,
+          3,
+          5
+        ],
+        "assembly_separator": " ",
+        "correct_code": "if (temp > 30) { console.log(\"Panas\"); } else { console.log(\"Sejuk\"); }",
+        "correct_answer": "2 → 4 → 1 → 3 → 5",
+        "feedback_correct": "Benar! Struktur percabangan if dan else tersusun dengan tepat.",
+        "feedback_incorrect": "Mulai dengan if (temp > 30) {, tampilkan Panas, lanjut } else {, tampilkan Sejuk, lalu tutup }.",
+        "mascot_dialogue": "Mantap! Logika percabanganmu sudah berjalan dengan baik."
+      },
+      {
+        "node_id": "JS_L03_N10",
+        "title": "Function with Condition",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Fungsi dapat menggabungkan parameter dan pernyataan if untuk mengembalikan keputusan.",
+        "code_example": "function isEven(num) {\n  if (num % 2 === 0) {\n    return true;\n  }\n  return false;\n}",
+        "question": "Susun fungsi pengecekan bilangan genap berikut:\n1. return false;\n2. function isEven(num) {\n3. if (num % 2 === 0) { return true; }\n4. }",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "return false;"
+          },
+          {
+            "id": 2,
+            "code": "function isEven(num) {"
+          },
+          {
+            "id": 3,
+            "code": "if (num % 2 === 0) { return true; }"
+          },
+          {
+            "id": 4,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1,
+          4
+        ],
+        "assembly_separator": " ",
+        "correct_code": "function isEven(num) { if (num % 2 === 0) { return true; } return false; }",
+        "correct_answer": "2 → 3 → 1 → 4",
+        "feedback_correct": "Luar biasa! Fungsi menerima parameter num, mengecek sisa bagi 2, dan mengembalikan boolean.",
+        "feedback_incorrect": "Buka fungsi isEven(num), cek kondisi if, kembalikan false jika tidak terpenuhi, lalu tutup fungsi.",
+        "mascot_dialogue": "Selamat! Kamu menyelesaikan JavaScript Level 3!"
+      }
     ]
-  },
-  "rendering": {
-    "container_id": "lesson",
-    "progress_id": "progress",
-    "score_id": "score",
-    "sequence": [
-      "node_title",
-      "theory",
-      "code_example",
-      "question",
-      "answer_input",
-      "check_button",
-      "feedback",
-      "mascot_dialogue"
-    ],
-    "show_node_number": true,
-    "show_theory_first": true,
-    "show_code_example": true,
-    "show_question_after_material": true
-  },
-  "question_handlers": {
-    "multiple_choice": {
-      "enabled": true,
-      "input_type": "radio",
-      "function": "checkMultipleChoice",
-      "validation": "selected_option_id_equals_correct_option_id"
-    },
-    "fill_blank": {
-      "enabled": true,
-      "input_type": "text",
-      "function": "checkFillBlank",
-      "validation": "compare_with_accepted_answers",
-      "trim_spaces": true,
-      "ignore_case": true
-    },
-    "arrange_code": {
-      "enabled": true,
-      "input_type": "number_sequence",
-      "function": "checkArrangeCode",
-      "separator": ",",
-      "validation": "compare_with_answer_order",
-      "ignore_spaces": true
-    }
-  },
-  "answer_processing": {
-    "function": "checkAnswer",
-    "prevent_empty_answer": true,
-    "prevent_duplicate_submission": true,
-    "lock_after_answer": true,
-    "save_answer_status": true,
-    "save_correct_status": true
-  },
-  "scoring": {
-    "enabled": true,
-    "total_questions": 10,
-    "correct_answer_points": 10,
-    "incorrect_answer_points": 0,
-    "maximum_score": 100,
-    "function": "calculateScore"
-  },
-  "progress": {
-    "enabled": true,
-    "function": "updateProgress",
-    "track_answered_nodes": true,
-    "track_correct_answers": true,
-    "display_completed_questions": true,
-    "display_total_questions": true,
-    "display_score": true
-  },
-  "feedback": {
-    "show_feedback_correct": true,
-    "show_feedback_incorrect": true,
-    "show_correct_answer": true,
-    "show_mascot_dialogue": true,
-    "function": "showFeedback"
-  },
-  "mascot": {
-    "enabled": true,
-    "source": "mascot_dialogue",
-    "display_after_answer": true,
-    "maximum_characters": 160
-  },
-  "completion": {
-    "enabled": true,
-    "required_questions": 10,
-    "function": "finishLevel",
-    "message": "Selamat! Kamu telah menyelesaikan JavaScript Level 3.",
-    "show_final_score": true,
-    "show_completed_status": true
-  },
-  "error_handling": {
-    "json_not_found": "File JSON materi tidak ditemukan.",
-    "invalid_json": "Format JSON tidak valid.",
-    "level_not_found": "Level JS_L03 tidak ditemukan.",
-    "empty_answer": "Silakan isi jawaban terlebih dahulu.",
-    "invalid_order": "Urutan kode belum benar."
-  },
-  "security": {
-    "escape_html": true,
-    "prevent_html_injection": true,
-    "validate_user_input": true
-  },
-  "interface": {
-    "page_title": "JavaScript Fundamentals - Level 3",
-    "level_title": "JavaScript Functions & Conditional Statements",
-    "group_name": "Absen Kecil",
-    "show_header": true,
-    "show_footer": true,
-    "show_progress": true,
-    "show_score": true,
-    "show_mascot": true
   }
 }

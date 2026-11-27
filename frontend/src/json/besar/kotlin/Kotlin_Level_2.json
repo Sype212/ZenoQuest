@@ -1,27 +1,12 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "kotlin_fundamentals",
   "course_title": "Kotlin Fundamentals",
   "group": "Absen Besar",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "Blueprint_Kotlin_Level_1(2).pdf",
-    "Blueprint_Kotlin_Level_2(1).pdf",
-    "Blueprint_Kotlin_Level_3(2).pdf",
-    "Blueprint_Kotlin_Level_4(3).pdf",
-    "Blueprint_Kotlin_Level_5(1).pdf"
-  ],
-  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
-    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
-    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
-    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
-    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
-  },
+  "content_version": "1.1",
   "level": {
     "level_id": "KTL_L02",
     "level_number": 2,
@@ -31,7 +16,7 @@
     "question_count": 10,
     "distribution": {
       "multiple_choice": 4,
-      "fill_in_the_blank": 3,
+      "fill_blank": 3,
       "arrange_code": 3
     },
     "nodes": [
@@ -41,11 +26,8 @@
         "difficulty": "beginner",
         "type": "multiple_choice",
         "theory": "Variabel adalah tempat untuk menyimpan data yang dapat digunakan kembali oleh program. Setiap variabel memiliki\nnama dan nilai. Nilai tersebut dapat berupa teks, angka, atau jenis data lainnya.",
-        "code_example": "val studentName = \"Rani\"\\nvar studentAge = 17",
+        "code_example": "val studentName = \"Rani\"\nvar studentAge = 17",
         "question": "Apa fungsi utama variabel dalam program Kotlin?\nA. Menghentikan program\nB. Menyimpan data\nC. Menghapus seluruh kode\nD. Mengubah Kotlin menjadi Java",
-        "feedback_correct": "Variabel menyimpan nilai agar dapat dibaca atau digunakan oleh bagian program lainnya.",
-        "feedback_incorrect": "Belum tepat. Variabel digunakan untuk menyimpan nilai, bukan untuk menghentikan atau menghapus program.",
-        "mascot_dialogue": "Bayangkan variabel seperti kotak berlabel untuk menyimpan sebuah nilai!",
         "options": [
           {
             "id": "a",
@@ -65,7 +47,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Menyimpan data"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Menyimpan data",
+        "feedback_correct": "Variabel menyimpan nilai agar dapat dibaca atau digunakan oleh bagian program lainnya.",
+        "feedback_incorrect": "Belum tepat. Variabel digunakan untuk menyimpan nilai, bukan untuk menghentikan atau menghapus program.",
+        "mascot_dialogue": "Bayangkan variabel seperti kotak berlabel untuk menyimpan sebuah nilai!"
       },
       {
         "node_id": "KTL_L02_N02",
@@ -73,11 +63,8 @@
         "difficulty": "beginner",
         "type": "multiple_choice",
         "theory": "Kotlin menyediakan dua kata kunci umum untuk deklarasi variabel. `val` digunakan untuk referensi yang tidak dapat diberi\nnilai ulang, sedangkan `var` dapat diberi nilai ulang.",
-        "code_example": "val school = \"SMK Tunas Harapan\"\\nvar score = 80\\nscore = 90",
+        "code_example": "val school = \"SMK Tunas Harapan\"\nvar score = 80\nscore = 90",
         "question": "Kata kunci manakah yang digunakan jika nilai variabel perlu diubah kembali?\nA. val\nB. var\nC. fun\nD. class",
-        "feedback_correct": "`var` mengizinkan nilai variabel diberi nilai ulang. `val` tidak mengizinkan reassignment setelah inisialisasi.",
-        "feedback_incorrect": "Coba ingat perbedaannya: `var` bisa diubah nilainya, sedangkan `val` tidak bisa diberi nilai ulang.",
-        "mascot_dialogue": "Gunakan `var` saat nilainya perlu berubah. Gunakan `val` jika cukup ditetapkan sekali.",
         "options": [
           {
             "id": "a",
@@ -97,7 +84,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. var"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. var",
+        "feedback_correct": "`var` mengizinkan nilai variabel diberi nilai ulang. `val` tidak mengizinkan reassignment setelah inisialisasi.",
+        "feedback_incorrect": "Coba ingat perbedaannya: `var` bisa diubah nilainya, sedangkan `val` tidak bisa diberi nilai ulang.",
+        "mascot_dialogue": "Gunakan `var` saat nilainya perlu berubah. Gunakan `val` jika cukup ditetapkan sekali."
       },
       {
         "node_id": "KTL_L02_N03",
@@ -105,11 +100,8 @@
         "difficulty": "beginner",
         "type": "multiple_choice",
         "theory": "Tipe data menentukan jenis nilai yang disimpan. Kotlin memiliki tipe dasar seperti `Int` untuk bilangan bulat, `Double`\nuntuk bilangan desimal, `String` untuk teks, `Boolean` untuk true/false, dan `Char` untuk satu karakter.",
-        "code_example": "val age: Int = 17\\nval height: Double = 165.5\\nval isStudent: Boolean = true",
+        "code_example": "val age: Int = 17\nval height: Double = 165.5\nval isStudent: Boolean = true",
         "question": "Tipe data Kotlin yang digunakan untuk menyimpan nilai true atau false adalah ...\nA. String\nB. Int\nC. Boolean\nD. Char",
-        "feedback_correct": "`Boolean` hanya memiliki dua kemungkinan nilai, yaitu `true` dan `false`.",
-        "feedback_incorrect": "Belum tepat. `Boolean` digunakan untuk nilai logika true atau false.",
-        "mascot_dialogue": "Boolean hanya punya dua pilihan: true atau false.",
         "options": [
           {
             "id": "a",
@@ -129,7 +121,15 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. Boolean"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. Boolean",
+        "feedback_correct": "`Boolean` hanya memiliki dua kemungkinan nilai, yaitu `true` dan `false`.",
+        "feedback_incorrect": "Belum tepat. `Boolean` digunakan untuk nilai logika true atau false.",
+        "mascot_dialogue": "Boolean hanya punya dua pilihan: true atau false."
       },
       {
         "node_id": "KTL_L02_N04",
@@ -137,11 +137,8 @@
         "difficulty": "beginner",
         "type": "multiple_choice",
         "theory": "Operator aritmetika digunakan untuk melakukan perhitungan matematika. Operator yang umum adalah `+` (penjumlahan),\n`-` (pengurangan), `*` (perkalian), `/` (pembagian), dan `%` (sisa bagi).",
-        "code_example": "val result = 18 % 4\\nprintln(result) // 2",
+        "code_example": "val result = 18 % 4\nprintln(result) // 2",
         "question": "Berapakah hasil dari operasi `18 % 4`?\nA. 2\nB. 4\nC. 4.5\nD. 18",
-        "feedback_correct": "18 dibagi 4 menghasilkan 4 dengan sisa 2. Operator `%` mengambil sisa pembagian.",
-        "feedback_incorrect": "Ingat, operator `%` menghasilkan sisa pembagian, bukan hasil bagi.",
-        "mascot_dialogue": "Tanda persen `%` pada operasi ini berarti mencari sisa pembagian.",
         "options": [
           {
             "id": "a",
@@ -161,55 +158,81 @@
           }
         ],
         "correct_option_id": "a",
-        "correct_answer": "A. 2"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. 2",
+        "feedback_correct": "18 dibagi 4 menghasilkan 4 dengan sisa 2. Operator `%` mengambil sisa pembagian.",
+        "feedback_incorrect": "Ingat, operator `%` menghasilkan sisa pembagian, bukan hasil bagi.",
+        "mascot_dialogue": "Tanda persen `%` pada operasi ini berarti mencari sisa pembagian."
       },
       {
         "node_id": "KTL_L02_N05",
         "title": "Int and Double",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "`Int` digunakan untuk bilangan bulat, sedangkan `Double` digunakan untuk bilangan yang memiliki bagian desimal. Kotlin\ndapat menyimpulkan tipe data secara otomatis, tetapi tipe juga dapat ditulis secara eksplisit.",
-        "code_example": "val itemCount: Int = 5\\nval productPrice: ______ = 15000.75",
+        "code_example": "val itemCount: Int = 5\nval productPrice: ___ = 15000.75",
         "question": "Lengkapi tipe data yang tepat untuk menyimpan nilai 15000.75.",
-        "feedback_correct": "Nilai 15000.75 memiliki bagian desimal sehingga tipe yang sesuai adalah `Double`.",
-        "feedback_incorrect": "Perhatikan bahwa nilai tersebut memiliki angka di belakang titik desimal. Gunakan `Double`.",
-        "mascot_dialogue": "Angka dengan bagian desimal cocok disimpan menggunakan Double.",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "Double"
         ],
-        "correct_answer": "Double"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "Double",
+        "feedback_correct": "Nilai 15000.75 memiliki bagian desimal sehingga tipe yang sesuai adalah `Double`.",
+        "feedback_incorrect": "Perhatikan bahwa nilai tersebut memiliki angka di belakang titik desimal. Gunakan `Double`.",
+        "mascot_dialogue": "Angka dengan bagian desimal cocok disimpan menggunakan Double."
       },
       {
         "node_id": "KTL_L02_N06",
         "title": "String and Boolean",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "`String` digunakan untuk menyimpan teks, sedangkan `Boolean` digunakan untuk menyimpan nilai logika `true` atau\n`false`. Penulisan tipe data Kotlin memperhatikan huruf besar dan kecil.",
-        "code_example": "val memberName: String = \"Dina\"\\nval isMember: ______ = true",
+        "code_example": "val memberName: String = \"Dina\"\nval isMember: ___ = true",
         "question": "Lengkapi tipe data yang tepat untuk variabel `isMember`.",
-        "feedback_correct": "Nilai `true` merupakan nilai bertipe `Boolean`.",
-        "feedback_incorrect": "Nilai true/false menggunakan tipe data `Boolean`, dengan huruf B kapital.",
-        "mascot_dialogue": "Kalau nilainya true atau false, pilih Boolean.",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "Boolean"
         ],
-        "correct_answer": "Boolean"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "Boolean",
+        "feedback_correct": "Nilai `true` merupakan nilai bertipe `Boolean`.",
+        "feedback_incorrect": "Nilai true/false menggunakan tipe data `Boolean`, dengan huruf B kapital.",
+        "mascot_dialogue": "Kalau nilainya true atau false, pilih Boolean."
       },
       {
         "node_id": "KTL_L02_N07",
         "title": "Constant with const val",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "`const val` digunakan untuk mendeklarasikan konstanta waktu kompilasi. Nilainya harus diketahui saat kompilasi.\nDeklarasi `const val` ditempatkan pada level teratas atau di dalam `object`/`companion object`.",
-        "code_example": "_____ val MAX_SCORE = 100",
+        "code_example": "___ val MAX_SCORE = 100",
         "question": "Lengkapi kata kunci untuk membuat konstanta waktu kompilasi Kotlin.",
-        "feedback_correct": "Kombinasi `const val` mendeklarasikan konstanta yang nilainya tidak dapat diberi nilai ulang dan diketahui saat\nkompilasi.",
-        "feedback_incorrect": "Kata yang hilang adalah `const`, sehingga deklarasinya menjadi `const val MAX_SCORE = 100`.",
-        "mascot_dialogue": "Konstanta waktu kompilasi ditulis dengan pasangan kata kunci const val.",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "const"
         ],
-        "correct_answer": "const"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "const",
+        "feedback_correct": "Kombinasi `const val` mendeklarasikan konstanta yang nilainya tidak dapat diberi nilai ulang dan diketahui saat\nkompilasi.",
+        "feedback_incorrect": "Kata yang hilang adalah `const`, sehingga deklarasinya menjadi `const val MAX_SCORE = 100`.",
+        "mascot_dialogue": "Konstanta waktu kompilasi ditulis dengan pasangan kata kunci const val."
       },
       {
         "node_id": "KTL_L02_N08",
@@ -217,11 +240,11 @@
         "difficulty": "beginner",
         "type": "arrange_code",
         "theory": "Operator penugasan `=` memberikan nilai ke variabel. Operator perbandingan seperti `>=`, `<=`, `==`, dan `!=`\nmembandingkan dua nilai dan menghasilkan Boolean.",
-        "code_example": "var score = 85\\nval passed = score >= 75\\nprintln(passed)",
+        "code_example": "var score = 85\nval passed = score >= 75\nprintln(passed)",
         "question": "Susun potongan kode berikut agar program menentukan apakah nilai memenuhi batas kelulusan, lalu menampilkan\nhasilnya.\nPotongan kode:\n1. val passed = score >= 75\n2. var score = 85\n3. println(passed)",
-        "feedback_correct": "Variabel `score` harus dibuat terlebih dahulu, kemudian hasil perbandingan disimpan ke `passed`, lalu dicetak.",
-        "feedback_incorrect": "Urutan yang benar: deklarasikan score, lakukan perbandingan, kemudian tampilkan hasil.",
-        "mascot_dialogue": "Buat datanya dulu, bandingkan nilainya, lalu tampilkan hasilnya.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -241,7 +264,12 @@
           1,
           3
         ],
-        "correct_answer": "2 → 1 → 3"
+        "assembly_separator": " ",
+        "correct_code": "var score = 85 val passed = score >= 75 println(passed)",
+        "correct_answer": "2 → 1 → 3",
+        "feedback_correct": "Variabel `score` harus dibuat terlebih dahulu, kemudian hasil perbandingan disimpan ke `passed`, lalu dicetak.",
+        "feedback_incorrect": "Urutan yang benar: deklarasikan score, lakukan perbandingan, kemudian tampilkan hasil.",
+        "mascot_dialogue": "Buat datanya dulu, bandingkan nilainya, lalu tampilkan hasilnya."
       },
       {
         "node_id": "KTL_L02_N09",
@@ -249,11 +277,11 @@
         "difficulty": "beginner",
         "type": "arrange_code",
         "theory": "Operator logika menggabungkan kondisi Boolean. `&&` berarti AND (semua kondisi harus true), `||` berarti OR (minimal\nsatu kondisi true), dan `!` membalik nilai Boolean.",
-        "code_example": "val hasTicket = true\\nval hasIdentityCard = true\\nval canEnter = hasTicket &&\nhasIdentityCard\\nprintln(canEnter)",
+        "code_example": "val hasTicket = true\nval hasIdentityCard = true\nval canEnter = hasTicket &&\nhasIdentityCard\nprintln(canEnter)",
         "question": "Susun kode agar program memeriksa kepemilikan tiket dan kartu identitas sebelum menampilkan hasil.\nPotongan kode:\n1. val canEnter = hasTicket && hasIdentityCard\n2. val hasIdentityCard = true\n3. println(canEnter)\n4. val hasTicket = true",
-        "feedback_correct": "Kedua variabel kondisi harus dideklarasikan sebelum digabungkan dengan `&&`. Setelah itu hasilnya dicetak.",
-        "feedback_incorrect": "Deklarasikan kedua kondisi terlebih dahulu, gabungkan dengan `&&`, lalu cetak hasilnya.",
-        "mascot_dialogue": "Operator AND memastikan kedua syarat harus terpenuhi.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -278,7 +306,12 @@
           1,
           3
         ],
-        "correct_answer": "4 → 2 → 1 → 3"
+        "assembly_separator": " ",
+        "correct_code": "val hasTicket = true val hasIdentityCard = true val canEnter = hasTicket && hasIdentityCard println(canEnter)",
+        "correct_answer": "4 → 2 → 1 → 3",
+        "feedback_correct": "Kedua variabel kondisi harus dideklarasikan sebelum digabungkan dengan `&&`. Setelah itu hasilnya dicetak.",
+        "feedback_incorrect": "Deklarasikan kedua kondisi terlebih dahulu, gabungkan dengan `&&`, lalu cetak hasilnya.",
+        "mascot_dialogue": "Operator AND memastikan kedua syarat harus terpenuhi."
       },
       {
         "node_id": "KTL_L02_N10",
@@ -286,11 +319,11 @@
         "difficulty": "beginner",
         "type": "arrange_code",
         "theory": "Prioritas operator menentukan urutan operasi dalam sebuah ekspresi. Tanda kurung dapat digunakan untuk memperjelas\natau mengatur bagian operasi yang dihitung lebih dahulu.",
-        "code_example": "fun main() {\\n val result = 6 + (4 * 3)\\n println(result)\\n}",
+        "code_example": "fun main() {\n val result = 6 + (4 * 3)\n println(result)\n}",
         "question": "Susun potongan kode berikut menjadi program Kotlin yang menghitung ekspresi dan menampilkan hasilnya.\nPotongan kode:\n1. println(result)\n2. fun main()\n3. val result = 6 + (4 * 3)\n4. {\n5. }",
-        "feedback_correct": "Fungsi main dan kurung kurawalnya membentuk blok program. Variabel dihitung sebelum dicetak, lalu blok ditutup.",
-        "feedback_incorrect": "Mulai dari deklarasi `fun main()`, buka blok, hitung nilai, cetak hasil, lalu tutup blok.",
-        "mascot_dialogue": "Kurung membantu menentukan operasi yang dikerjakan lebih dahulu.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -320,7 +353,12 @@
           1,
           5
         ],
-        "correct_answer": "2 → 4 → 3 → 1 → 5"
+        "assembly_separator": " ",
+        "correct_code": "fun main() { val result = 6 + (4 * 3) println(result) }",
+        "correct_answer": "2 → 4 → 3 → 1 → 5",
+        "feedback_correct": "Fungsi main dan kurung kurawalnya membentuk blok program. Variabel dihitung sebelum dicetak, lalu blok ditutup.",
+        "feedback_incorrect": "Mulai dari deklarasi `fun main()`, buka blok, hitung nilai, cetak hasil, lalu tutup blok.",
+        "mascot_dialogue": "Kurung membantu menentukan operasi yang dikerjakan lebih dahulu."
       }
     ]
   }

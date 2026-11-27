@@ -1,5 +1,5 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "csharp_fundamentals",
   "course_title": "C# Fundamentals",
   "group": "Absen Besar",
@@ -7,21 +7,6 @@
   "difficulty": "beginner",
   "language": "id",
   "content_version": "1.1",
-  "source_documents": [
-    "Blueprint_CSharp_Level_1.pdf",
-    "Blueprint_CSharp_Level_2.pdf",
-    "Blueprint_CSharp_Level_3.pdf",
-    "Blueprint_CSharp_Level_4.pdf",
-    "Blueprint_CSharp_Level_5.pdf"
-  ],
-  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
-    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
-    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
-    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
-    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
-  },
   "level": {
     "level_id": "CSH_L03",
     "level_number": 3,
@@ -31,7 +16,7 @@
     "question_count": 10,
     "distribution": {
       "multiple_choice": 4,
-      "fill_in_the_blank": 3,
+      "fill_blank": 3,
       "arrange_code": 3
     },
     "nodes": [
@@ -43,9 +28,6 @@
         "theory": "Program berinteraksi dengan pengguna melalui input dan output. Input adalah data yang dimasukkan pengguna, sedangkan output adalah informasi yang ditampilkan program.",
         "code_example": "Console.Write(\"Masukkan nama: \");\nstring name = Console.ReadLine();\nConsole.WriteLine(\"Halo, \" + name);",
         "question": "Apa perbedaan utama input dan output pada program?\nA. Input menerima data, output menampilkan hasil\nB. Input menampilkan hasil, output menerima data\nC. Input dan output selalu berupa angka\nD. Input hanya digunakan untuk membuat variabel",
-        "feedback_correct": "Input membawa data dari pengguna ke program. Output menyampaikan informasi dari program kepada pengguna.",
-        "feedback_incorrect": "Belum tepat. Ingat: input masuk ke program, sedangkan output keluar untuk ditampilkan.",
-        "mascot_dialogue": "Keren! Kamu sudah memahami cara program berkomunikasi dengan pengguna.",
         "options": [
           {
             "id": "a",
@@ -65,7 +47,15 @@
           }
         ],
         "correct_option_id": "a",
-        "correct_answer": "A. Input menerima data, output menampilkan hasil"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. Input menerima data, output menampilkan hasil",
+        "feedback_correct": "Input membawa data dari pengguna ke program. Output menyampaikan informasi dari program kepada pengguna.",
+        "feedback_incorrect": "Belum tepat. Ingat: input masuk ke program, sedangkan output keluar untuk ditampilkan.",
+        "mascot_dialogue": "Keren! Kamu sudah memahami cara program berkomunikasi dengan pengguna."
       },
       {
         "node_id": "CSH_L03_N02",
@@ -75,9 +65,6 @@
         "theory": "Console.ReadLine() membaca satu baris teks yang diketik pengguna. Nilai yang dikembalikan bertipe string, sehingga perlu dikonversi jika ingin dipakai sebagai angka.",
         "code_example": "Console.Write(\"Nama: \");\nstring nama = Console.ReadLine();",
         "question": "Apa fungsi Console.ReadLine()?\nA. Menghapus teks pada layar\nB. Membaca input satu baris dari pengguna\nC. Menampilkan teks tanpa pindah baris\nD. Menghentikan program secara permanen",
-        "feedback_correct": "Console.ReadLine() menunggu pengguna mengetik lalu menekan Enter, kemudian mengembalikan teks sebagai string.",
-        "feedback_incorrect": "Coba bedakan ReadLine() yang membaca input dengan WriteLine() yang menampilkan output.",
-        "mascot_dialogue": "Bagus! Sekarang kamu tahu cara membaca masukan dari pengguna.",
         "options": [
           {
             "id": "a",
@@ -97,7 +84,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Membaca input satu baris dari pengguna"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Membaca input satu baris dari pengguna",
+        "feedback_correct": "Console.ReadLine() menunggu pengguna mengetik lalu menekan Enter, kemudian mengembalikan teks sebagai string.",
+        "feedback_incorrect": "Coba bedakan ReadLine() yang membaca input dengan WriteLine() yang menampilkan output.",
+        "mascot_dialogue": "Bagus! Sekarang kamu tahu cara membaca masukan dari pengguna."
       },
       {
         "node_id": "CSH_L03_N03",
@@ -107,9 +102,6 @@
         "theory": "Conditional statement atau percabangan membuat program memilih tindakan berdasarkan kondisi. Ekspresi kondisi menghasilkan nilai true atau false.",
         "code_example": "int temperature = 30;\nif (temperature > 25)\n{\n    Console.WriteLine(\"Panas\");\n}",
         "question": "Mengapa conditional statement digunakan dalam program?\nA. Mengulang kode tanpa batas\nB. Menyimpan banyak nilai dalam satu variabel\nC. Menentukan tindakan berdasarkan kondisi\nD. Mengubah semua teks menjadi angka",
-        "feedback_correct": "Percabangan memungkinkan program menjalankan blok kode tertentu ketika kondisi terpenuhi atau tidak terpenuhi.",
-        "feedback_incorrect": "Belum benar. Percabangan dipakai untuk mengambil keputusan berdasarkan kondisi true atau false.",
-        "mascot_dialogue": "Mantap! Percabangan membuat program bisa mengambil keputusan.",
         "options": [
           {
             "id": "a",
@@ -129,7 +121,15 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. Menentukan tindakan berdasarkan kondisi"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. Menentukan tindakan berdasarkan kondisi",
+        "feedback_correct": "Percabangan memungkinkan program menjalankan blok kode tertentu ketika kondisi terpenuhi atau tidak terpenuhi.",
+        "feedback_incorrect": "Belum benar. Percabangan dipakai untuk mengambil keputusan berdasarkan kondisi true atau false.",
+        "mascot_dialogue": "Mantap! Percabangan membuat program bisa mengambil keputusan."
       },
       {
         "node_id": "CSH_L03_N04",
@@ -139,9 +139,6 @@
         "theory": "Pernyataan if menjalankan blok kode ketika kondisi bernilai true. Blok else dijalankan ketika kondisi if bernilai false.",
         "code_example": "int score = 60;\nif (score >= 75)\n{\n    Console.WriteLine(\"Lulus\");\n}\nelse\n{\n    Console.WriteLine(\"Belum lulus\");\n}",
         "question": "Jika kondisi pada if bernilai false, blok mana yang dijalankan pada struktur if-else?\nA. Blok if\nB. Blok else\nC. Kedua blok selalu dijalankan\nD. Tidak ada blok yang dapat dijalankan",
-        "feedback_correct": "Pada struktur if-else, hanya satu cabang yang dipilih: if ketika kondisi true, atau else ketika kondisi false.",
-        "feedback_incorrect": "Periksa nilai kondisi. Jika hasilnya false, program berpindah ke blok else.",
-        "mascot_dialogue": "Tepat! Coba terus membaca kondisi sebelum menentukan cabang.",
         "options": [
           {
             "id": "a",
@@ -161,55 +158,81 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Blok else"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Blok else",
+        "feedback_correct": "Pada struktur if-else, hanya satu cabang yang dipilih: if ketika kondisi true, atau else ketika kondisi false.",
+        "feedback_incorrect": "Periksa nilai kondisi. Jika hasilnya false, program berpindah ke blok else.",
+        "mascot_dialogue": "Tepat! Coba terus membaca kondisi sebelum menentukan cabang."
       },
       {
         "node_id": "CSH_L03_N05",
         "title": "Data Type Conversion",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Console.ReadLine() menghasilkan string. Untuk mengubah teks angka menjadi integer, C# menyediakan int.Parse(). Gunakan hanya jika input benar-benar berisi angka yang valid.",
         "code_example": "string input = \"17\";\nint age = int.Parse(input);",
-        "question": "Lengkapi kode berikut untuk mengubah input string menjadi integer:\nint age = __________(input);",
-        "feedback_correct": "int.Parse() mengubah string angka menjadi nilai bertipe int.",
-        "feedback_incorrect": "Petunjuk: gunakan Parse milik tipe int untuk mengubah string angka menjadi integer.",
-        "mascot_dialogue": "Hebat! Tipe data yang tepat membantu program mengolah input.",
+        "question": "Lengkapi kode berikut untuk mengubah input string menjadi integer:\nint age = ___(input);",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "int.Parse"
         ],
-        "correct_answer": "int.Parse"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "int.Parse",
+        "feedback_correct": "int.Parse() mengubah string angka menjadi nilai bertipe int.",
+        "feedback_incorrect": "Petunjuk: gunakan Parse milik tipe int untuk mengubah string angka menjadi integer.",
+        "mascot_dialogue": "Hebat! Tipe data yang tepat membantu program mengolah input."
       },
       {
         "node_id": "CSH_L03_N06",
         "title": "String Interpolation",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "String interpolation memudahkan penyisipan nilai variabel ke dalam teks. Dalam C#, tambahkan tanda $ sebelum tanda kutip string, lalu tulis variabel di dalam kurung kurawal.",
         "code_example": "string name = \"Alya\";\nConsole.WriteLine($\"Hello {name}\");",
-        "question": "Lengkapi awalan string agar variabel name dapat disisipkan:\nConsole.WriteLine(__\"Hello {name}\");",
-        "feedback_correct": "Tanda $ mengaktifkan string interpolation sehingga {name} diganti dengan nilai variabel name.",
-        "feedback_incorrect": "Ingat, string interpolation menggunakan tanda dolar ($) sebelum tanda kutip.",
-        "mascot_dialogue": "Sip! Tanda kecil ini membuat penyisipan variabel jadi lebih mudah.",
+        "question": "Lengkapi awalan string agar variabel name dapat disisipkan:\nConsole.WriteLine(___\"Hello {name}\");",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "$"
         ],
-        "correct_answer": "$"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "$",
+        "feedback_correct": "Tanda $ mengaktifkan string interpolation sehingga {name} diganti dengan nilai variabel name.",
+        "feedback_incorrect": "Ingat, string interpolation menggunakan tanda dolar ($) sebelum tanda kutip.",
+        "mascot_dialogue": "Sip! Tanda kecil ini membuat penyisipan variabel jadi lebih mudah."
       },
       {
         "node_id": "CSH_L03_N07",
         "title": "Else If and Switch",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "else if digunakan untuk memeriksa kondisi tambahan setelah if. Jika satu kondisi terpenuhi, cabang berikutnya tidak diperiksa. Untuk banyak pilihan berdasarkan satu nilai, C# juga menyediakan switch.",
         "code_example": "int score = 82;\nif (score >= 90)\n{\n    Console.WriteLine(\"A\");\n}\nelse if (score >= 75)\n{\n    Console.WriteLine(\"B\");\n}\nelse\n{\n    Console.WriteLine(\"C\");\n}",
-        "question": "Lengkapi kata kunci untuk memeriksa kondisi kedua setelah if:\n_____ if (score >= 75)",
-        "feedback_correct": "else if menambahkan kondisi alternatif yang diperiksa ketika kondisi if sebelumnya false.",
-        "feedback_incorrect": "Gunakan dua kata kunci: else diikuti if untuk menambahkan kondisi alternatif.",
-        "mascot_dialogue": "Bagus! Kamu bisa memeriksa beberapa kondisi secara berurutan.",
+        "question": "Lengkapi kata kunci untuk memeriksa kondisi kedua setelah if:\n___ if (score >= 75)",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "else"
         ],
-        "correct_answer": "else"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "else",
+        "feedback_correct": "else if menambahkan kondisi alternatif yang diperiksa ketika kondisi if sebelumnya false.",
+        "feedback_incorrect": "Gunakan dua kata kunci: else diikuti if untuk menambahkan kondisi alternatif.",
+        "mascot_dialogue": "Bagus! Kamu bisa memeriksa beberapa kondisi secara berurutan."
       },
       {
         "node_id": "CSH_L03_N08",
@@ -219,9 +242,9 @@
         "theory": "Program input-output sederhana biasanya menampilkan prompt, membaca input, lalu menampilkan kembali data yang diterima.",
         "code_example": "Console.Write(\"Masukkan nama: \");\nstring name = Console.ReadLine();\nConsole.WriteLine(\"Halo, \" + name);",
         "question": "Susun potongan kode berikut menjadi program yang meminta nama lalu menampilkan sapaan.\nPotongan kode:\n1. Console.WriteLine(\"Halo, \" + name);\n2. Console.Write(\"Masukkan nama: \");\n3. string name = Console.ReadLine();",
-        "feedback_correct": "Program harus menampilkan permintaan nama terlebih dahulu, membaca input, kemudian menampilkan sapaan.",
-        "feedback_incorrect": "Urutannya adalah tampilkan prompt, baca input, lalu tampilkan hasil.",
-        "mascot_dialogue": "Susunan yang tepat membuat instruksi program berjalan sesuai alur.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -241,7 +264,12 @@
           3,
           1
         ],
-        "correct_answer": "2 → 3 → 1"
+        "assembly_separator": " ",
+        "correct_code": "Console.Write(\"Masukkan nama: \"); string name = Console.ReadLine(); Console.WriteLine(\"Halo, \" + name);",
+        "correct_answer": "2 → 3 → 1",
+        "feedback_correct": "Program harus menampilkan permintaan nama terlebih dahulu, membaca input, kemudian menampilkan sapaan.",
+        "feedback_incorrect": "Urutannya adalah tampilkan prompt, baca input, lalu tampilkan hasil.",
+        "mascot_dialogue": "Susunan yang tepat membuat instruksi program berjalan sesuai alur."
       },
       {
         "node_id": "CSH_L03_N09",
@@ -251,9 +279,9 @@
         "theory": "Program dapat menentukan status berdasarkan nilai. Operator perbandingan >= menghasilkan true jika nilai di kiri lebih besar atau sama dengan nilai di kanan.",
         "code_example": "int score = 80;\nif (score >= 75)\n{\n    Console.WriteLine(\"Passed\");\n}\nelse\n{\n    Console.WriteLine(\"Failed\");\n}",
         "question": "Susun potongan kode berikut menjadi program yang menampilkan Passed jika score minimal 75, selain itu Failed.\nPotongan kode:\n1. Console.WriteLine(\"Failed\");\n2. int score = 80;\n3. {\n4. Console.WriteLine(\"Passed\");\n5. if (score >= 75)\n6. }\n7. {\n8. }\n9. else",
-        "feedback_correct": "Deklarasikan score, tulis if dan blok Passed, lalu else dan blok Failed. Kurung kurawal harus membungkus setiap blok.",
-        "feedback_incorrect": "Mulai dari deklarasi score, lalu susun if beserta bloknya dan akhiri dengan else beserta bloknya.",
-        "mascot_dialogue": "Kamu berhasil menyusun logika keputusan. Terus berlatih!",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -307,7 +335,12 @@
           1,
           8
         ],
-        "correct_answer": "2 → 5 → 3 → 4 → 6 → 9 → 7 → 1 → 8"
+        "assembly_separator": " ",
+        "correct_code": "int score = 80; if (score >= 75) { Console.WriteLine(\"Passed\"); } else { Console.WriteLine(\"Failed\"); }",
+        "correct_answer": "2 → 5 → 3 → 4 → 6 → 9 → 7 → 1 → 8",
+        "feedback_correct": "Deklarasikan score, tulis if dan blok Passed, lalu else dan blok Failed. Kurung kurawal harus membungkus setiap blok.",
+        "feedback_incorrect": "Mulai dari deklarasi score, lalu susun if beserta bloknya dan akhiri dengan else beserta bloknya.",
+        "mascot_dialogue": "Kamu berhasil menyusun logika keputusan. Terus berlatih!"
       },
       {
         "node_id": "CSH_L03_N10",
@@ -317,9 +350,9 @@
         "theory": "Program dapat menggabungkan input, konversi tipe data, dan percabangan. Setelah input dibaca sebagai string, ubah ke int sebelum membandingkan nilainya.",
         "code_example": "Console.Write(\"Masukkan nilai: \");\nstring input = Console.ReadLine();\nint score = int.Parse(input);\nif (score >= 75)\n{\n    Console.WriteLine(\"Lulus\");\n}\nelse\n{\n    Console.WriteLine(\"Belum lulus\");\n}",
         "question": "Susun kode menjadi program yang meminta nilai, mengubahnya menjadi int, lalu menampilkan status kelulusan dengan batas 75.\nPotongan kode:\n1. int score = int.Parse(input);\n2. else\n3. Console.WriteLine(\"Lulus\");\n4. Console.Write(\"Masukkan nilai: \");\n5. {\n6. string input = Console.ReadLine();\n7. if (score >= 75)\n8. }\n9. {\n10. Console.WriteLine(\"Belum lulus\");\n11. }",
-        "feedback_correct": "Urutan dimulai dari prompt dan input, dilanjutkan konversi integer, kondisi if, lalu cabang else.",
-        "feedback_incorrect": "Pastikan input dibaca dan dikonversi sebelum variabel score diperiksa pada kondisi if.",
-        "mascot_dialogue": "Luar biasa! Kamu menggabungkan input, konversi, dan percabangan.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -383,7 +416,12 @@
           10,
           11
         ],
-        "correct_answer": "4 → 6 → 1 → 7 → 5 → 3 → 8 → 2 → 9 → 10 → 11"
+        "assembly_separator": " ",
+        "correct_code": "Console.Write(\"Masukkan nilai: \"); string input = Console.ReadLine(); int score = int.Parse(input); if (score >= 75) { Console.WriteLine(\"Lulus\"); } else { Console.WriteLine(\"Belum lulus\"); }",
+        "correct_answer": "4 → 6 → 1 → 7 → 5 → 3 → 8 → 2 → 9 → 10 → 11",
+        "feedback_correct": "Urutan dimulai dari prompt dan input, dilanjutkan konversi integer, kondisi if, lalu cabang else.",
+        "feedback_incorrect": "Pastikan input dibaca dan dikonversi sebelum variabel score diperiksa pada kondisi if.",
+        "mascot_dialogue": "Luar biasa! Kamu menggabungkan input, konversi, dan percabangan."
       }
     ]
   }

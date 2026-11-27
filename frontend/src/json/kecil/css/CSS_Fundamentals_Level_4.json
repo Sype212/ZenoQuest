@@ -1,317 +1,380 @@
 {
-  "schema_version": "draft-1.0",
-  "course_id": "html_fundamentals",
-  "course_title": "HTML Fundamentals",
+  "schema_version": "1.0",
+  "course_id": "css_fundamentals",
+  "course_title": "CSS Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "CSS_Level_4_Absen_Kecil.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Blueprint sumber hanya mencantumkan kunci jawaban (huruf/nilai) dan tidak menyediakan teks opsi. options dibiarkan kosong; jangan mengarang opsi.",
-    "fill_in_the_blank": "accepted_answers memuat jawaban yang tercantum pada blueprint.",
-    "arrange_code": "answer_order mengikuti kunci urutan dari blueprint. Fragmen dipertahankan sesuai daftar soal sumber.",
-    "source_integrity": "Konten teori, contoh kode, pertanyaan, feedback, dan dialog maskot ditranskripsi dari CSS Level 4 PDF. Potongan kode yang terpotong/ambigu ditandai di laporan validasi."
-  },
-  "levels": [
-    {
-      "level_id": "CSS_L04",
-      "level_number": 4,
-      "title": "CSS Layout & Responsive Design",
-      "description": "CSS Layout, Flexbox, Flex Direction, Justify Content, CSS Grid, Grid Template Columns, Gap, Positioning, Media Query, Responsive Breakpoint, serta kombinasi layout dan responsive design.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "content_version": "1.1",
+  "level": {
+    "level_id": "CSS_L04",
+    "level_number": 4,
+    "title": "CSS Layout & Responsive Design",
+    "description": "CSS Layout, Flexbox, Flex Direction, Justify Content, CSS Grid, Grid Template Columns, Gap, Positioning, Media Query, Responsive Breakpoint, serta kombinasi layout dan responsive design.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "CSS_L04_N01",
+        "title": "Node 01",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti display: flex mengaktifkan Flexbox pada sebuah container sehingga elemen anak dapat disusun secara fleksibel.",
+        "code_example": ".container {\n  display: flex;\n}",
+        "question": "Properti apa yang digunakan untuk mengaktifkan Flexbox?",
+        "options": [
+          {
+            "id": "a",
+            "text": "display: block"
+          },
+          {
+            "id": "b",
+            "text": "display: flex"
+          },
+          {
+            "id": "c",
+            "text": "flex-direction: row"
+          },
+          {
+            "id": "d",
+            "text": "position: relative"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. display: flex",
+        "feedback_correct": "Benar! display: flex mengaktifkan tata letak Flexbox.",
+        "feedback_incorrect": "Belum tepat. Cari deklarasi display yang bernilai flex.",
+        "mascot_dialogue": "Bagus! Kamu sudah mengenal dasar Flexbox."
       },
-      "learning_objectives": [
-        "Mengatur tata letak elemen HTML menggunakan Flexbox, Grid dasar, dan positioning.",
-        "Menerapkan media query sederhana agar website menyesuaikan ukuran layar."
-      ],
-      "nodes": [
-        {
-          "node_id": "CSS_L04_N01",
-          "title": "Node 01",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti display: flex mengaktifkan Flexbox pada sebuah container sehingga elemen anak dapat disusun secara fleksibel.",
-          "code_example": ".container {\n  display: flex;\n}",
-          "question": "Properti apa yang digunakan untuk mengaktifkan Flexbox?",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "B. display: flex",
-          "feedback_correct": "Benar! display: flex mengaktifkan tata letak Flexbox.",
-          "feedback_incorrect": "Belum tepat. Cari deklarasi display yang bernilai flex.",
-          "mascot_dialogue": "Bagus! Kamu sudah mengenal dasar Flexbox.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 41,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N02",
-          "title": "Node 02",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti flex-direction menentukan arah susunan item Flexbox. Nilai row menyusun item secara horizontal, sedangkan column menyusunnya secara vertikal.",
-          "code_example": ".container {\n  display: flex;\n  flex-direction: column;\n}",
-          "question": "Nilai apa yang membuat item Flexbox tersusun dari atas ke bawah?",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "C. column",
-          "feedback_correct": "Tepat! column menyusun item secara vertikal.",
-          "feedback_incorrect": "Belum benar. Pilih nilai yang berarti kolom atau arah vertikal.",
-          "mascot_dialogue": "Keren! Kamu bisa mengatur arah susunan elemen.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 46,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N03",
-          "title": "Node 03",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti justify-content mengatur perataan dan distribusi ruang item pada sumbu utama Flexbox. Contohnya center, space-between, dan space-around.",
-          "code_example": ".container {\n  display: flex;\n  justify-content: center;\n}",
-          "question": "Nilai apa yang digunakan agar item berada di tengah sumbu utama?",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "B. center",
-          "feedback_correct": "Benar! center menempatkan item di tengah sumbu utama.",
-          "feedback_incorrect": "Belum tepat. Perhatikan nilai untuk perataan ke tengah.",
-          "mascot_dialogue": "Mantap! Kamu bisa mengatur posisi item Flexbox.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 47,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N04",
-          "title": "Node 04",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "CSS Grid digunakan untuk membuat tata letak berbasis baris dan kolom. Properti display: grid mengaktifkan Grid pada sebuah container.",
-          "code_example": ".grid-container {\n  display: grid;\n}",
-          "question": "Deklarasi apa yang digunakan untuk mengaktifkan CSS Grid?",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "A. display: grid",
-          "feedback_correct": "Tepat! display: grid mengaktifkan CSS Grid.",
-          "feedback_incorrect": "Belum benar. Cari nilai grid pada properti display.",
-          "mascot_dialogue": "Hebat! Kamu sudah mengenal dasar CSS Grid.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 42,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N05",
-          "title": "Node 05",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti grid-template-columns menentukan jumlah dan ukuran kolom pada CSS Grid. Nilai 1fr berarti satu bagian dari ruang yang tersedia.",
-          "code_example": ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}",
-          "question": "Lengkapi properti untuk membuat dua kolom dengan lebar seimbang:\n__________: 1fr 1fr;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "grid-template-columns",
-          "feedback_correct": "Benar! grid-template-columns mengatur kolom pada Grid.",
-          "feedback_incorrect": "Belum tepat. Gunakan properti yang mengatur template kolom.",
-          "mascot_dialogue": "Sip! Kamu bisa membuat susunan kolom.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "grid-template-columns"
-          ],
-          "mascot_dialogue_char_count": 37,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N06",
-          "title": "Node 06",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti gap mengatur jarak antarbaris dan antarkolom pada layout Flexbox maupun Grid.",
-          "code_example": ".container {\n  display: grid;\n  gap: 20px;\n}",
-          "question": "Lengkapi properti untuk memberi jarak 20px antaritem:\n_____ : 20px;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "gap",
-          "feedback_correct": "Tepat! gap mengatur jarak antaritem.",
-          "feedback_incorrect": "Belum benar. Cari properti CSS untuk jarak antaritem.",
-          "mascot_dialogue": "Bagus! Tata letak jadi lebih rapi dengan gap.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "gap"
-          ],
-          "mascot_dialogue_char_count": 45,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N07",
-          "title": "Node 07",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti position menentukan metode penempatan elemen. Nilai relative membuat elemen dapat digeser relatif terhadap posisi normalnya, sedangkan absolute menempatkan elemen relatif terhadap ancestor yang diposisikan.",
-          "code_example": ".box {\n  position: relative;\n  top: 10px;\n}",
-          "question": "Lengkapi properti agar elemen menggunakan posisi relatif:\n________ : relative;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "position",
-          "feedback_correct": "Benar! position menentukan metode penempatan elemen.",
-          "feedback_incorrect": "Belum tepat. Properti ini digunakan bersama nilai relative atau absolute.",
-          "mascot_dialogue": "Keren! Kamu mulai memahami positioning.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "position"
-          ],
-          "mascot_dialogue_char_count": 39,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L04_N08",
-          "title": "Node 08",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Media query menerapkan aturan CSS berdasarkan kondisi perangkat, misalnya lebar layar. Aturan ini umum digunakan untuk membuat tampilan responsif.",
-          "code_example": "@media (max-width: 600px) {\n  .container {\n    flex-direction: column;\n  }\n}",
-          "question": "Susun kode berikut agar aturan diterapkan pada layar dengan lebar maksimal 600px:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "}"
-            },
-            {
-              "id": 2,
-              "code": "@media (max-width: 600px) {"
-            },
-            {
-              "id": 3,
-              "code": ".container {"
-            },
-            {
-              "id": 4,
-              "code": "flex-direction: column;"
-            },
-            {
-              "id": 5,
-              "code": "}"
-            }
-          ],
-          "correct_answer": "2 → 3 → 4 → 5 → 1",
-          "feedback_correct": "Benar! Media query membungkus aturan CSS untuk kondisi layar tertentu.",
-          "feedback_incorrect": "Belum tepat. Mulai dari @media, tulis selector dan deklarasi, lalu tutup kurung.",
-          "mascot_dialogue": "Hebat! Website dapat menyesuaikan tampilan berdasarkan ukuran layar.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 68,
-          "answer_order": [
-            2,
-            3,
-            4,
-            5,
-            1
-          ]
-        },
-        {
-          "node_id": "CSS_L04_N09",
-          "title": "Node 09",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Breakpoint adalah batas ukuran layar ketika tata letak atau gaya CSS berubah. Contohnya, aturan max-width: 768px dapat digunakan untuk layar yang lebarnya 768px atau lebih kecil.",
-          "code_example": "@media (max-width: 768px) {\n  .menu {\n    display: none;\n  }\n}",
-          "question": "Susun potongan kode berikut untuk menyembunyikan menu pada layar maksimal 768px:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "display: none;"
-            },
-            {
-              "id": 2,
-              "code": "}"
-            },
-            {
-              "id": 3,
-              "code": "@media (max-width: 768px) {"
-            },
-            {
-              "id": 4,
-              "code": ".menu {"
-            },
-            {
-              "id": 5,
-              "code": "}"
-            }
-          ],
-          "correct_answer": "3 → 4 → 1 → 5 → 2",
-          "feedback_correct": "Tepat! Urutan media query dimulai dari kondisi layar, selector, deklarasi, lalu penutup.",
-          "feedback_incorrect": "Belum tepat. Susun kondisi media query sebelum selector dan deklarasi CSS.",
-          "mascot_dialogue": "Mantap! Kamu memahami penggunaan breakpoint.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 44,
-          "answer_order": [
-            3,
-            4,
-            1,
-            5,
-            2
-          ]
-        },
-        {
-          "node_id": "CSS_L04_N10",
-          "title": "Node 10",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Flexbox atau Grid dapat digabungkan dengan media query agar susunan elemen berubah sesuai ukuran layar. Contohnya, dua kolom pada layar lebar dapat berubah menjadi satu kolom pada layar kecil.",
-          "code_example": ".cards {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n@media (max-width: 600px) {\n  .cards {\n    grid-template-columns: 1fr;\n  }\n}",
-          "question": "Susun potongan kode untuk mengubah layout menjadi satu kolom pada layar maksimal 600px:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "grid-template-columns: 1fr;"
-            },
-            {
-              "id": 2,
-              "code": "@media (max-width: 600px) {"
-            },
-            {
-              "id": 3,
-              "code": ".cards {"
-            },
-            {
-              "id": 4,
-              "code": "}"
-            },
-            {
-              "id": 5,
-              "code": "}"
-            }
-          ],
-          "correct_answer": "2 → 3 → 1 → 4 → 5",
-          "feedback_correct": "Luar biasa! Layout dapat berubah menjadi satu kolom pada layar kecil.",
-          "feedback_incorrect": "Belum tepat. Mulai dengan media query, lalu selector dan deklarasi kolom.",
-          "mascot_dialogue": "Selamat! Kamu telah menyelesaikan CSS Level 4.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 46,
-          "answer_order": [
-            2,
-            3,
-            1,
-            4,
-            5
-          ]
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "CSS_L04_N02",
+        "title": "Node 02",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti flex-direction menentukan arah susunan item Flexbox. Nilai row menyusun item secara horizontal, sedangkan column menyusunnya secara vertikal.",
+        "code_example": ".container {\n  display: flex;\n  flex-direction: column;\n}",
+        "question": "Nilai apa yang membuat item Flexbox tersusun dari atas ke bawah?",
+        "options": [
+          {
+            "id": "a",
+            "text": "row"
+          },
+          {
+            "id": "b",
+            "text": "wrap"
+          },
+          {
+            "id": "c",
+            "text": "column"
+          },
+          {
+            "id": "d",
+            "text": "center"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. column",
+        "feedback_correct": "Tepat! column menyusun item secara vertikal.",
+        "feedback_incorrect": "Belum benar. Pilih nilai yang berarti kolom atau arah vertikal.",
+        "mascot_dialogue": "Keren! Kamu bisa mengatur arah susunan elemen."
+      },
+      {
+        "node_id": "CSS_L04_N03",
+        "title": "Node 03",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti justify-content mengatur perataan dan distribusi ruang item pada sumbu utama Flexbox. Contohnya center, space-between, dan space-around.",
+        "code_example": ".container {\n  display: flex;\n  justify-content: center;\n}",
+        "question": "Nilai apa yang digunakan agar item berada di tengah sumbu utama?",
+        "options": [
+          {
+            "id": "a",
+            "text": "flex-start"
+          },
+          {
+            "id": "b",
+            "text": "center"
+          },
+          {
+            "id": "c",
+            "text": "space-between"
+          },
+          {
+            "id": "d",
+            "text": "stretch"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. center",
+        "feedback_correct": "Benar! center menempatkan item di tengah sumbu utama.",
+        "feedback_incorrect": "Belum tepat. Perhatikan nilai untuk perataan ke tengah.",
+        "mascot_dialogue": "Mantap! Kamu bisa mengatur posisi item Flexbox."
+      },
+      {
+        "node_id": "CSS_L04_N04",
+        "title": "Node 04",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "CSS Grid digunakan untuk membuat tata letak berbasis baris dan kolom. Properti display: grid mengaktifkan Grid pada sebuah container.",
+        "code_example": ".grid-container {\n  display: grid;\n}",
+        "question": "Deklarasi apa yang digunakan untuk mengaktifkan CSS Grid?",
+        "options": [
+          {
+            "id": "a",
+            "text": "display: grid"
+          },
+          {
+            "id": "b",
+            "text": "display: flex"
+          },
+          {
+            "id": "c",
+            "text": "grid-template: auto"
+          },
+          {
+            "id": "d",
+            "text": "position: grid"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. display: grid",
+        "feedback_correct": "Tepat! display: grid mengaktifkan CSS Grid.",
+        "feedback_incorrect": "Belum benar. Cari nilai grid pada properti display.",
+        "mascot_dialogue": "Hebat! Kamu sudah mengenal dasar CSS Grid."
+      },
+      {
+        "node_id": "CSS_L04_N05",
+        "title": "Node 05",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti grid-template-columns menentukan jumlah dan ukuran kolom pada CSS Grid. Nilai 1fr berarti satu bagian dari ruang yang tersedia.",
+        "code_example": ".container {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}",
+        "question": "Lengkapi properti untuk membuat dua kolom dengan lebar seimbang:\n___: 1fr 1fr;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "grid-template-columns"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "grid-template-columns",
+        "feedback_correct": "Benar! grid-template-columns mengatur kolom pada Grid.",
+        "feedback_incorrect": "Belum tepat. Gunakan properti yang mengatur template kolom.",
+        "mascot_dialogue": "Sip! Kamu bisa membuat susunan kolom."
+      },
+      {
+        "node_id": "CSS_L04_N06",
+        "title": "Node 06",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti gap mengatur jarak antarbaris dan antarkolom pada layout Flexbox maupun Grid.",
+        "code_example": ".container {\n  display: grid;\n  gap: 20px;\n}",
+        "question": "Lengkapi properti untuk memberi jarak 20px antaritem:\n___ : 20px;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "gap"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "gap",
+        "feedback_correct": "Tepat! gap mengatur jarak antaritem.",
+        "feedback_incorrect": "Belum benar. Cari properti CSS untuk jarak antaritem.",
+        "mascot_dialogue": "Bagus! Tata letak jadi lebih rapi dengan gap."
+      },
+      {
+        "node_id": "CSS_L04_N07",
+        "title": "Node 07",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti position menentukan metode penempatan elemen. Nilai relative membuat elemen dapat digeser relatif terhadap posisi normalnya, sedangkan absolute menempatkan elemen relatif terhadap ancestor yang diposisikan.",
+        "code_example": ".box {\n  position: relative;\n  top: 10px;\n}",
+        "question": "Lengkapi properti agar elemen menggunakan posisi relatif:\n___ : relative;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "position"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "position",
+        "feedback_correct": "Benar! position menentukan metode penempatan elemen.",
+        "feedback_incorrect": "Belum tepat. Properti ini digunakan bersama nilai relative atau absolute.",
+        "mascot_dialogue": "Keren! Kamu mulai memahami positioning."
+      },
+      {
+        "node_id": "CSS_L04_N08",
+        "title": "Node 08",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Media query menerapkan aturan CSS berdasarkan kondisi perangkat, misalnya lebar layar. Aturan ini umum digunakan untuk membuat tampilan responsif.",
+        "code_example": "@media (max-width: 600px) {\n  .container {\n    flex-direction: column;\n  }\n}",
+        "question": "Susun kode berikut agar aturan diterapkan pada layar dengan lebar maksimal 600px:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "}"
+          },
+          {
+            "id": 2,
+            "code": "@media (max-width: 600px) {"
+          },
+          {
+            "id": 3,
+            "code": ".container {"
+          },
+          {
+            "id": 4,
+            "code": "flex-direction: column;"
+          },
+          {
+            "id": 5,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          4,
+          5,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "@media (max-width: 600px) { .container { flex-direction: column; } }",
+        "correct_answer": "2 → 3 → 4 → 5 → 1",
+        "feedback_correct": "Benar! Media query membungkus aturan CSS untuk kondisi layar tertentu.",
+        "feedback_incorrect": "Belum tepat. Mulai dari @media, tulis selector dan deklarasi, lalu tutup kurung.",
+        "mascot_dialogue": "Hebat! Website dapat menyesuaikan tampilan berdasarkan ukuran layar."
+      },
+      {
+        "node_id": "CSS_L04_N09",
+        "title": "Node 09",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Breakpoint adalah batas ukuran layar ketika tata letak atau gaya CSS berubah. Contohnya, aturan max-width: 768px dapat digunakan untuk layar yang lebarnya 768px atau lebih kecil.",
+        "code_example": "@media (max-width: 768px) {\n  .menu {\n    display: none;\n  }\n}",
+        "question": "Susun potongan kode berikut untuk menyembunyikan menu pada layar maksimal 768px:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "display: none;"
+          },
+          {
+            "id": 2,
+            "code": "}"
+          },
+          {
+            "id": 3,
+            "code": "@media (max-width: 768px) {"
+          },
+          {
+            "id": 4,
+            "code": ".menu {"
+          },
+          {
+            "id": 5,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          1,
+          5,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "@media (max-width: 768px) { .menu { display: none; } }",
+        "correct_answer": "3 → 4 → 1 → 5 → 2",
+        "feedback_correct": "Tepat! Urutan media query dimulai dari kondisi layar, selector, deklarasi, lalu penutup.",
+        "feedback_incorrect": "Belum tepat. Susun kondisi media query sebelum selector dan deklarasi CSS.",
+        "mascot_dialogue": "Mantap! Kamu memahami penggunaan breakpoint."
+      },
+      {
+        "node_id": "CSS_L04_N10",
+        "title": "Node 10",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Flexbox atau Grid dapat digabungkan dengan media query agar susunan elemen berubah sesuai ukuran layar. Contohnya, dua kolom pada layar lebar dapat berubah menjadi satu kolom pada layar kecil.",
+        "code_example": ".cards {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n@media (max-width: 600px) {\n  .cards {\n    grid-template-columns: 1fr;\n  }\n}",
+        "question": "Susun potongan kode untuk mengubah layout menjadi satu kolom pada layar maksimal 600px:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "grid-template-columns: 1fr;"
+          },
+          {
+            "id": 2,
+            "code": "@media (max-width: 600px) {"
+          },
+          {
+            "id": 3,
+            "code": ".cards {"
+          },
+          {
+            "id": 4,
+            "code": "}"
+          },
+          {
+            "id": 5,
+            "code": "}"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1,
+          4,
+          5
+        ],
+        "assembly_separator": " ",
+        "correct_code": "@media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }",
+        "correct_answer": "2 → 3 → 1 → 4 → 5",
+        "feedback_correct": "Luar biasa! Layout dapat berubah menjadi satu kolom pada layar kecil.",
+        "feedback_incorrect": "Belum tepat. Mulai dengan media query, lalu selector dan deklarasi kolom.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan CSS Level 4."
+      }
+    ]
+  }
 }

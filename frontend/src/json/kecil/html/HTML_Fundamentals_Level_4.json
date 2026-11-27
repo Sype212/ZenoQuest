@@ -1,401 +1,380 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "html_fundamentals",
   "course_title": "HTML Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "Blueprint_HTML_Level_4_Tables_Forms_Absen_Kecil_Revisi.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
-    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
-    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
-  },
-  "levels": [
-    {
-      "level_id": "HTML_L04",
-      "level_number": 4,
-      "title": "HTML Tables & Forms",
-      "description": "Peserta mampu memahami penggunaan tabel dan formulir dalam HTML untuk menampilkan data secara terstruktur serta membuat formulir yang dapat menerima masukan dari pengguna.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "content_version": "1.1",
+  "level": {
+    "level_id": "HTML_L04",
+    "level_number": 4,
+    "title": "HTML Tables & Forms",
+    "description": "Peserta mampu memahami penggunaan tabel dan formulir dalam HTML untuk menampilkan data secara terstruktur serta membuat formulir yang dapat menerima masukan dari pengguna.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "HTML_L04_N01",
+        "title": "Node 01",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "HTML Table digunakan untuk menampilkan data dalam bentuk tabel yang terdiri dari baris dan kolom. Tabel membantu menyusun informasi agar lebih rapi dan mudah dibaca.\nBeberapa elemen dasar tabel adalah:\n• <table> untuk membuat tabel.\n• <tr> untuk membuat baris.\n• <th> untuk membuat judul kolom.\n• <td> untuk mengisi data tabel.",
+        "code_example": "<table border=\"1\">\n  <tr>\n    <th>Nama Barang</th>\n    <th>Harga</th>\n  </tr>\n  <tr>\n    <td>Buku</td>\n    <td>Rp10.000</td>\n  </tr>\n</table>",
+        "question": "Apa fungsi utama elemen <table> dalam HTML?\nA. Membuat formulir pengguna\nB. Membuat tabel untuk menampilkan data\nC. Membuat gambar pada halaman\nD. Membuat tombol interaktif",
+        "options": [
+          {
+            "id": "a",
+            "text": "Membuat formulir pengguna"
+          },
+          {
+            "id": "b",
+            "text": "Membuat tabel untuk menampilkan data"
+          },
+          {
+            "id": "c",
+            "text": "Membuat gambar pada halaman"
+          },
+          {
+            "id": "d",
+            "text": "Membuat tombol interaktif"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! Elemen <table> digunakan untuk membuat tabel yang berisi baris dan kolom.",
+        "feedback_incorrect": "Belum tepat. Ingat, <table> merupakan elemen utama untuk membuat tabel dalam HTML.",
+        "mascot_dialogue": "Keren! Sekarang kamu sudah mengenal fungsi dasar HTML Table."
       },
-      "learning_objectives": [
-        "Menjelaskan fungsi HTML Table.",
-        "Menggunakan elemen <table> dan <tr>.",
-        "Memahami perbedaan <th> dan <td>.",
-        "Menjelaskan fungsi HTML Form.",
-        "Membuat kolom input menggunakan <input>.",
-        "Membuat daftar pilihan menggunakan <select> dan <option>.",
-        "Membuat tombol menggunakan <button>.",
-        "Menggabungkan tabel dan formulir dalam satu halaman HTML."
-      ],
-      "nodes": [
-        {
-          "node_id": "HTML_L04_N01",
-          "title": "Node 01",
-          "type": "multiple_choice",
-          "theory": "HTML Table digunakan untuk menampilkan data dalam bentuk tabel yang terdiri dari baris dan kolom. Tabel membantu menyusun informasi agar lebih rapi dan mudah dibaca.\nBeberapa elemen dasar tabel adalah:\n• <table> untuk membuat tabel.\n• <tr> untuk membuat baris.\n• <th> untuk membuat judul kolom.\n• <td> untuk mengisi data tabel.",
-          "code_example": "<table border=\"1\">\n  <tr>\n    <th>Nama Barang</th>\n    <th>Harga</th>\n  </tr>\n  <tr>\n    <td>Buku</td>\n    <td>Rp10.000</td>\n  </tr>\n</table>",
-          "question": "Apa fungsi utama elemen <table> dalam HTML?\nA. Membuat formulir pengguna\nB. Membuat tabel untuk menampilkan data\nC. Membuat gambar pada halaman\nD. Membuat tombol interaktif",
-          "options": [
-            {
-              "id": "a",
-              "text": "Membuat formulir pengguna"
-            },
-            {
-              "id": "b",
-              "text": "Membuat tabel untuk menampilkan data"
-            },
-            {
-              "id": "c",
-              "text": "Membuat gambar pada halaman"
-            },
-            {
-              "id": "d",
-              "text": "Membuat tombol interaktif"
-            }
-          ],
-          "fc": "Benar! Elemen <table> digunakan untuk membuat tabel yang berisi baris dan kolom.",
-          "fi": "Belum tepat. Ingat, <table> merupakan elemen utama untuk membuat tabel dalam HTML.",
-          "mascot": "Keren! Sekarang kamu sudah mengenal fungsi dasar HTML Table.",
-          "difficulty": "beginner",
-          "answer_fragments": [],
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "correct_answer": "B",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 60,
-          "topic": "Introduction to HTML Tables"
-        },
-        {
-          "node_id": "HTML_L04_N02",
-          "title": "Node 02",
-          "type": "multiple_choice",
-          "theory": "Baris dalam tabel HTML dibuat menggunakan elemen <tr> atau Table Row. Setiap elemen <tr> dapat berisi elemen <th> atau <td> untuk menampilkan informasi pada kolom.",
-          "code_example": "<table border=\"1\">\n  <tr>\n    <td>Apel</td>\n    <td>Rp5.000</td>\n  </tr>\n  <tr>\n    <td>Jeruk</td>\n    <td>Rp7.000</td>\n  </tr>\n</table>",
-          "question": "Elemen HTML apa yang digunakan untuk membuat baris pada tabel?\nA. <table>\nB. <td>\nC. <tr>\nD. <th>",
-          "options": [
-            {
-              "id": "a",
-              "text": "<table>"
-            },
-            {
-              "id": "b",
-              "text": "<td>"
-            },
-            {
-              "id": "c",
-              "text": "<tr>"
-            },
-            {
-              "id": "d",
-              "text": "<th>"
-            }
-          ],
-          "fc": "Tepat! Elemen <tr> digunakan untuk membuat satu baris dalam tabel HTML.",
-          "fi": "Coba ingat kembali. Table Row menggunakan elemen <tr> untuk membuat baris.",
-          "mascot": "Mantap! Kamu sudah memahami cara membuat baris pada tabel.",
-          "difficulty": "beginner",
-          "answer_fragments": [],
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "correct_answer": "C",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 58,
-          "topic": "Table Rows"
-        },
-        {
-          "node_id": "HTML_L04_N03",
-          "title": "Node 03",
-          "type": "multiple_choice",
-          "theory": "HTML menyediakan dua elemen untuk mengisi tabel, yaitu <th> dan <td>. Elemen <th> digunakan untuk membuat sel judul atau header, sedangkan <td> digunakan untuk menampilkan data biasa.",
-          "code_example": "<table border=\"1\">\n  <tr>\n    <th>Nama</th>\n    <th>Kota</th>\n  </tr>\n  <tr>\n    <td>Andi</td>\n    <td>Semarang</td>\n  </tr>\n</table>",
-          "question": "Apa perbedaan fungsi elemen <th> dan <td>?\nA. <th> untuk gambar dan <td> untuk teks\nB. <th> untuk judul kolom dan <td> untuk data\nC. <th> untuk membuat baris dan <td> untuk membuat tabel\nD. Keduanya digunakan untuk membuat tombol",
-          "options": [
-            {
-              "id": "a",
-              "text": "<th> untuk gambar dan <td> untuk teks"
-            },
-            {
-              "id": "b",
-              "text": "<th> untuk judul kolom dan <td> untuk data"
-            },
-            {
-              "id": "c",
-              "text": "<th> untuk membuat baris dan <td> untuk membuat tabel"
-            },
-            {
-              "id": "d",
-              "text": "Keduanya digunakan untuk membuat tombol"
-            }
-          ],
-          "fc": "Benar! <th> digunakan sebagai judul kolom, sedangkan <td> digunakan untuk mengisi data tabel.",
-          "fi": "Belum tepat. Ingat, <th> berarti Table Header dan <td> berarti Table Data.",
-          "mascot": "Hebat! Kamu sudah bisa membedakan judul dan isi dalam tabel HTML.",
-          "difficulty": "beginner",
-          "answer_fragments": [],
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "correct_answer": "B",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 65,
-          "topic": "Table Header and Data"
-        },
-        {
-          "node_id": "HTML_L04_N04",
-          "title": "Node 04",
-          "type": "multiple_choice",
-          "theory": "HTML Form digunakan untuk membuat formulir yang memungkinkan pengguna memasukkan dan mengirimkan data. Formulir biasanya berisi input teks, pilihan, dan tombol.\nElemen <form> menjadi wadah untuk berbagai elemen formulir.",
-          "code_example": "<form>\n  <label>Nama:</label>\n  <input type=\"text\">\n  <button type=\"submit\">Kirim</button>\n</form>",
-          "question": "Apa fungsi utama elemen <form> dalam HTML?\nA. Menampilkan tabel data\nB. Membuat formulir untuk menerima masukan pengguna\nC. Menampilkan gambar\nD. Mengatur warna halaman",
-          "options": [
-            {
-              "id": "a",
-              "text": "Menampilkan tabel data"
-            },
-            {
-              "id": "b",
-              "text": "Membuat formulir untuk menerima masukan pengguna"
-            },
-            {
-              "id": "c",
-              "text": "Menampilkan gambar"
-            },
-            {
-              "id": "d",
-              "text": "Mengatur warna halaman"
-            }
-          ],
-          "fc": "Tepat! Elemen <form> digunakan sebagai wadah untuk membuat formulir dan menerima masukan dari pengguna.",
-          "fi": "Coba perhatikan kembali. Form digunakan untuk mengumpulkan informasi yang dimasukkan oleh pengguna.",
-          "mascot": "Bagus! Sekarang kamu sudah mengenal fungsi HTML Form.",
-          "difficulty": "beginner",
-          "answer_fragments": [],
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "correct_answer": "B",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 53,
-          "topic": "Introduction to HTML Forms"
-        },
-        {
-          "node_id": "HTML_L04_N05",
-          "title": "Node 05",
-          "type": "fill_blank",
-          "theory": "Elemen <input> digunakan untuk menerima masukan dari pengguna. Atribut type menentukan jenis masukan yang dibuat.\nContohnya, type=\"text\" digunakan untuk membuat kolom input teks.",
-          "code_example": "<form>\n  <label>Nama Lengkap:</label>\n  <input type=\"text\" placeholder=\"Masukkan nama\">\n</form>",
-          "question": "Lengkapi kode berikut agar pengguna dapat memasukkan teks:\n<input type=\"______\" placeholder=\"Masukkan nama\">",
-          "fc": "Benar! Atribut type=\"text\" digunakan untuk membuat kolom masukan berupa teks.",
-          "fi": "Belum tepat. Gunakan jenis input yang berfungsi untuk menerima tulisan atau teks.",
-          "mascot": "Sip! Sekarang kamu sudah bisa membuat kolom input teks.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [],
-          "correct_option_id": null,
-          "accepted_answers": [
-            "text"
-          ],
-          "correct_answer": "text",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 55,
-          "topic": "Text Input"
-        },
-        {
-          "node_id": "HTML_L04_N06",
-          "title": "Node 06",
-          "type": "fill_blank",
-          "theory": "Elemen <select> digunakan untuk membuat daftar pilihan atau dropdown. Setiap pilihan di dalamnya dibuat menggunakan elemen <option>.\nPengguna dapat memilih salah satu pilihan yang tersedia.",
-          "code_example": "<label>Pilih Kota:</label>\n<select>\n  <option>Semarang</option>\n  <option>Pati</option>\n  <option>Jepara</option>\n</select>",
-          "question": "Lengkapi kode berikut untuk membuat pilihan di dalam dropdown:\n<select>\n  <______>Semarang</option>\n  <option>Pati</option>\n</select>",
-          "fc": "Tepat! Elemen <option> digunakan untuk membuat pilihan di dalam dropdown.",
-          "fi": "Coba ingat kembali. Elemen yang digunakan untuk membuat setiap pilihan pada <select> adalah <option>.",
-          "mascot": "Bagus! Kamu sudah memahami cara membuat daftar pilihan menggunakan HTML.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [],
-          "correct_option_id": null,
-          "accepted_answers": [
-            "option"
-          ],
-          "correct_answer": "option",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 72,
-          "topic": "Select and Option"
-        },
-        {
-          "node_id": "HTML_L04_N07",
-          "title": "Node 07",
-          "type": "fill_blank",
-          "theory": "Elemen <button> digunakan untuk membuat tombol pada halaman HTML. Tombol dapat memiliki beberapa jenis, seperti submit, reset, dan button.\nTipe submit digunakan untuk mengirimkan data formulir.",
-          "code_example": "<form>\n  <input type=\"text\" placeholder=\"Nama\">\n  <button type=\"submit\">Kirim</button>\n</form>",
-          "question": "Lengkapi kode berikut agar tombol dapat digunakan untuk mengirimkan formulir:\n<button type=\"______\">Kirim</button>",
-          "fc": "Benar! Tipe submit digunakan untuk mengirimkan data formulir.",
-          "fi": "Belum tepat. Pilih tipe tombol yang berfungsi untuk mengirimkan formulir.",
-          "mascot": "Hebat! Sekarang kamu sudah mengetahui cara membuat tombol pengiriman formulir.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [],
-          "correct_option_id": null,
-          "accepted_answers": [
-            "submit"
-          ],
-          "correct_answer": "submit",
-          "answer_order": null,
-          "mascot_dialogue_char_count": 78,
-          "topic": "HTML Buttons"
-        },
-        {
-          "node_id": "HTML_L04_N08",
-          "title": "Node 08",
-          "type": "arrange_code",
-          "theory": "Untuk membuat tabel HTML, kita perlu menyusun elemen <table>, <tr>, dan <td> dengan benar. Elemen <table> menjadi wadah utama, <tr> membuat baris, sedangkan <td> menampilkan data.",
-          "code_example": "<table border=\"1\">\n  <tr>\n    <td>Buku</td>\n    <td>Rp10.000</td>\n  </tr>\n</table>",
-          "question": "Susun potongan kode berikut agar menghasilkan tabel yang menampilkan nama barang dan harganya.",
-          "fc": "Benar! Kamu sudah menyusun elemen tabel dengan urutan yang tepat.",
-          "fi": "Mulailah dari elemen <table>, buat baris menggunakan <tr>, masukkan data, lalu tutup tabel.",
-          "mascot": "Mantap! Tabel HTML-mu sudah tersusun dengan benar.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "<td>Rp10.000</td>"
-            },
-            {
-              "id": 2,
-              "code": "</table>"
-            },
-            {
-              "id": 3,
-              "code": "<table border=\"1\">"
-            },
-            {
-              "id": 4,
-              "code": "<tr>"
-            },
-            {
-              "id": 5,
-              "code": "<td>Buku</td>"
-            }
-          ],
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "correct_answer": "3 → 4 → 5 → 1 → 2",
-          "answer_order": [
-            3,
-            4,
-            5,
-            1,
-            2
-          ],
-          "mascot_dialogue_char_count": 50,
-          "topic": "Build an HTML Table"
-        },
-        {
-          "node_id": "HTML_L04_N09",
-          "title": "Node 09",
-          "type": "arrange_code",
-          "theory": "Formulir HTML dapat dibuat dengan menggabungkan elemen <form>, <input>, dan <button>. Elemen <input> digunakan untuk menerima masukan, sedangkan <button> digunakan untuk membuat tombol.",
-          "code_example": "<form>\n  <input type=\"text\" placeholder=\"Masukkan nama\">\n  <button type=\"submit\">Kirim</button>\n</form>",
-          "question": "Susun potongan kode berikut agar menghasilkan formulir sederhana untuk memasukkan nama.",
-          "fc": "Tepat! Kamu berhasil menggabungkan elemen form, input, dan button dengan benar.",
-          "fi": "Mulailah dengan membuka <form>, tambahkan input, buat tombol, lalu tutup formulir.",
-          "mascot": "Luar biasa! Kamu sudah bisa membuat formulir sederhana menggunakan HTML.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "<input type=\"text\" placeholder=\"Masukkan nama\">"
-            },
-            {
-              "id": 2,
-              "code": "</form>"
-            },
-            {
-              "id": 3,
-              "code": "<form>"
-            },
-            {
-              "id": 4,
-              "code": "<button type=\"submit\">Kirim</button>"
-            }
-          ],
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "correct_answer": "3 → 1 → 4 → 2",
-          "answer_order": [
-            3,
-            1,
-            4,
-            2
-          ],
-          "mascot_dialogue_char_count": 72,
-          "topic": "Build an HTML Form"
-        },
-        {
-          "node_id": "HTML_L04_N10",
-          "title": "Node 10",
-          "type": "arrange_code",
-          "theory": "Formulir HTML dapat memiliki berbagai jenis masukan, termasuk input teks dan dropdown. Elemen <select> digunakan sebagai wadah pilihan, sedangkan <option> digunakan untuk menentukan pilihan yang tersedia.",
-          "code_example": "<form>\n  <input type=\"text\" placeholder=\"Nama\">\n  <select>\n    <option>Semarang</option>\n    <option>Pati</option>\n  </select>\n  <button type=\"submit\">Kirim</button>\n</form>",
-          "question": "Susun potongan kode berikut agar menghasilkan formulir yang memiliki input nama, pilihan kota, dan tombol kirim.",
-          "fc": "Hebat! Kamu berhasil menyusun formulir dengan input teks dan dropdown secara benar.",
-          "fi": "Mulailah dari <form>, tambahkan input teks, buat dropdown dengan <select> dan <option>, kemudian tutup elemen dengan urutan yang benar.",
-          "mascot": "Luar biasa! Sekarang kamu sudah bisa menggabungkan beberapa elemen formulir HTML.",
-          "difficulty": "beginner",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "<input type=\"text\" placeholder=\"Nama\">"
-            },
-            {
-              "id": 2,
-              "code": "<select>"
-            },
-            {
-              "id": 3,
-              "code": "<form>"
-            },
-            {
-              "id": 4,
-              "code": "</form>"
-            },
-            {
-              "id": 5,
-              "code": "<option>Semarang</option>"
-            },
-            {
-              "id": 6,
-              "code": "</select>"
-            }
-          ],
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "correct_answer": "3 → 1 → 2 → 5 → 6 → 4",
-          "answer_order": [
-            3,
-            1,
-            2,
-            5,
-            6,
-            4
-          ],
-          "mascot_dialogue_char_count": 81,
-          "topic": "Build a Form with Selection"
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "HTML_L04_N02",
+        "title": "Node 02",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Baris dalam tabel HTML dibuat menggunakan elemen <tr> atau Table Row. Setiap elemen <tr> dapat berisi elemen <th> atau <td> untuk menampilkan informasi pada kolom.",
+        "code_example": "<table border=\"1\">\n  <tr>\n    <td>Apel</td>\n    <td>Rp5.000</td>\n  </tr>\n  <tr>\n    <td>Jeruk</td>\n    <td>Rp7.000</td>\n  </tr>\n</table>",
+        "question": "Elemen HTML apa yang digunakan untuk membuat baris pada tabel?\nA. <table>\nB. <td>\nC. <tr>\nD. <th>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<table>"
+          },
+          {
+            "id": "b",
+            "text": "<td>"
+          },
+          {
+            "id": "c",
+            "text": "<tr>"
+          },
+          {
+            "id": "d",
+            "text": "<th>"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! Elemen <tr> digunakan untuk membuat satu baris dalam tabel HTML.",
+        "feedback_incorrect": "Coba ingat kembali. Table Row menggunakan elemen <tr> untuk membuat baris.",
+        "mascot_dialogue": "Mantap! Kamu sudah memahami cara membuat baris pada tabel."
+      },
+      {
+        "node_id": "HTML_L04_N03",
+        "title": "Node 03",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "HTML menyediakan dua elemen untuk mengisi tabel, yaitu <th> dan <td>. Elemen <th> digunakan untuk membuat sel judul atau header, sedangkan <td> digunakan untuk menampilkan data biasa.",
+        "code_example": "<table border=\"1\">\n  <tr>\n    <th>Nama</th>\n    <th>Kota</th>\n  </tr>\n  <tr>\n    <td>Andi</td>\n    <td>Semarang</td>\n  </tr>\n</table>",
+        "question": "Apa perbedaan fungsi elemen <th> dan <td>?\nA. <th> untuk gambar dan <td> untuk teks\nB. <th> untuk judul kolom dan <td> untuk data\nC. <th> untuk membuat baris dan <td> untuk membuat tabel\nD. Keduanya digunakan untuk membuat tombol",
+        "options": [
+          {
+            "id": "a",
+            "text": "<th> untuk gambar dan <td> untuk teks"
+          },
+          {
+            "id": "b",
+            "text": "<th> untuk judul kolom dan <td> untuk data"
+          },
+          {
+            "id": "c",
+            "text": "<th> untuk membuat baris dan <td> untuk membuat tabel"
+          },
+          {
+            "id": "d",
+            "text": "Keduanya digunakan untuk membuat tombol"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! <th> digunakan sebagai judul kolom, sedangkan <td> digunakan untuk mengisi data tabel.",
+        "feedback_incorrect": "Belum tepat. Ingat, <th> berarti Table Header dan <td> berarti Table Data.",
+        "mascot_dialogue": "Hebat! Kamu sudah bisa membedakan judul dan isi dalam tabel HTML."
+      },
+      {
+        "node_id": "HTML_L04_N04",
+        "title": "Node 04",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "HTML Form digunakan untuk membuat formulir yang memungkinkan pengguna memasukkan dan mengirimkan data. Formulir biasanya berisi input teks, pilihan, dan tombol.\nElemen <form> menjadi wadah untuk berbagai elemen formulir.",
+        "code_example": "<form>\n  <label>Nama:</label>\n  <input type=\"text\">\n  <button type=\"submit\">Kirim</button>\n</form>",
+        "question": "Apa fungsi utama elemen <form> dalam HTML?\nA. Menampilkan tabel data\nB. Membuat formulir untuk menerima masukan pengguna\nC. Menampilkan gambar\nD. Mengatur warna halaman",
+        "options": [
+          {
+            "id": "a",
+            "text": "Menampilkan tabel data"
+          },
+          {
+            "id": "b",
+            "text": "Membuat formulir untuk menerima masukan pengguna"
+          },
+          {
+            "id": "c",
+            "text": "Menampilkan gambar"
+          },
+          {
+            "id": "d",
+            "text": "Mengatur warna halaman"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Tepat! Elemen <form> digunakan sebagai wadah untuk membuat formulir dan menerima masukan dari pengguna.",
+        "feedback_incorrect": "Coba perhatikan kembali. Form digunakan untuk mengumpulkan informasi yang dimasukkan oleh pengguna.",
+        "mascot_dialogue": "Bagus! Sekarang kamu sudah mengenal fungsi HTML Form."
+      },
+      {
+        "node_id": "HTML_L04_N05",
+        "title": "Node 05",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Elemen <input> digunakan untuk menerima masukan dari pengguna. Atribut type menentukan jenis masukan yang dibuat.\nContohnya, type=\"text\" digunakan untuk membuat kolom input teks.",
+        "code_example": "<form>\n  <label>Nama Lengkap:</label>\n  <input type=\"text\" placeholder=\"Masukkan nama\">\n</form>",
+        "question": "Lengkapi kode berikut agar pengguna dapat memasukkan teks:\n<input type=\"___\" placeholder=\"Masukkan nama\">",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "text"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "text",
+        "feedback_correct": "Benar! Atribut type=\"text\" digunakan untuk membuat kolom masukan berupa teks.",
+        "feedback_incorrect": "Belum tepat. Gunakan jenis input yang berfungsi untuk menerima tulisan atau teks.",
+        "mascot_dialogue": "Sip! Sekarang kamu sudah bisa membuat kolom input teks."
+      },
+      {
+        "node_id": "HTML_L04_N06",
+        "title": "Node 06",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Elemen <select> digunakan untuk membuat daftar pilihan atau dropdown. Setiap pilihan di dalamnya dibuat menggunakan elemen <option>.\nPengguna dapat memilih salah satu pilihan yang tersedia.",
+        "code_example": "<label>Pilih Kota:</label>\n<select>\n  <option>Semarang</option>\n  <option>Pati</option>\n  <option>Jepara</option>\n</select>",
+        "question": "Lengkapi kode berikut untuk membuat pilihan di dalam dropdown:\n<select>\n  <___>Semarang</option>\n  <option>Pati</option>\n</select>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "option"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "option",
+        "feedback_correct": "Tepat! Elemen <option> digunakan untuk membuat pilihan di dalam dropdown.",
+        "feedback_incorrect": "Coba ingat kembali. Elemen yang digunakan untuk membuat setiap pilihan pada <select> adalah <option>.",
+        "mascot_dialogue": "Bagus! Kamu sudah memahami cara membuat daftar pilihan menggunakan HTML."
+      },
+      {
+        "node_id": "HTML_L04_N07",
+        "title": "Node 07",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Elemen <button> digunakan untuk membuat tombol pada halaman HTML. Tombol dapat memiliki beberapa jenis, seperti submit, reset, dan button.\nTipe submit digunakan untuk mengirimkan data formulir.",
+        "code_example": "<form>\n  <input type=\"text\" placeholder=\"Nama\">\n  <button type=\"submit\">Kirim</button>\n</form>",
+        "question": "Lengkapi kode berikut agar tombol dapat digunakan untuk mengirimkan formulir:\n<button type=\"___\">Kirim</button>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "submit"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "submit",
+        "feedback_correct": "Benar! Tipe submit digunakan untuk mengirimkan data formulir.",
+        "feedback_incorrect": "Belum tepat. Pilih tipe tombol yang berfungsi untuk mengirimkan formulir.",
+        "mascot_dialogue": "Hebat! Sekarang kamu sudah mengetahui cara membuat tombol pengiriman formulir."
+      },
+      {
+        "node_id": "HTML_L04_N08",
+        "title": "Node 08",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Untuk membuat tabel HTML, kita perlu menyusun elemen <table>, <tr>, dan <td> dengan benar. Elemen <table> menjadi wadah utama, <tr> membuat baris, sedangkan <td> menampilkan data.",
+        "code_example": "<table border=\"1\">\n  <tr>\n    <td>Buku</td>\n    <td>Rp10.000</td>\n  </tr>\n</table>",
+        "question": "Susun potongan kode berikut agar menghasilkan tabel yang menampilkan nama barang dan harganya.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<td>Rp10.000</td>"
+          },
+          {
+            "id": 2,
+            "code": "</table>"
+          },
+          {
+            "id": 3,
+            "code": "<table border=\"1\">"
+          },
+          {
+            "id": 4,
+            "code": "<tr>"
+          },
+          {
+            "id": 5,
+            "code": "<td>Buku</td>"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          5,
+          1,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<table border=\"1\"> <tr> <td>Buku</td> <td>Rp10.000</td> </table>",
+        "correct_answer": "3 → 4 → 5 → 1 → 2",
+        "feedback_correct": "Benar! Kamu sudah menyusun elemen tabel dengan urutan yang tepat.",
+        "feedback_incorrect": "Mulailah dari elemen <table>, buat baris menggunakan <tr>, masukkan data, lalu tutup tabel.",
+        "mascot_dialogue": "Mantap! Tabel HTML-mu sudah tersusun dengan benar."
+      },
+      {
+        "node_id": "HTML_L04_N09",
+        "title": "Node 09",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Formulir HTML dapat dibuat dengan menggabungkan elemen <form>, <input>, dan <button>. Elemen <input> digunakan untuk menerima masukan, sedangkan <button> digunakan untuk membuat tombol.",
+        "code_example": "<form>\n  <input type=\"text\" placeholder=\"Masukkan nama\">\n  <button type=\"submit\">Kirim</button>\n</form>",
+        "question": "Susun potongan kode berikut agar menghasilkan formulir sederhana untuk memasukkan nama.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<input type=\"text\" placeholder=\"Masukkan nama\">"
+          },
+          {
+            "id": 2,
+            "code": "</form>"
+          },
+          {
+            "id": 3,
+            "code": "<form>"
+          },
+          {
+            "id": 4,
+            "code": "<button type=\"submit\">Kirim</button>"
+          }
+        ],
+        "answer_order": [
+          3,
+          1,
+          4,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<form> <input type=\"text\" placeholder=\"Masukkan nama\"> <button type=\"submit\">Kirim</button> </form>",
+        "correct_answer": "3 → 1 → 4 → 2",
+        "feedback_correct": "Tepat! Kamu berhasil menggabungkan elemen form, input, dan button dengan benar.",
+        "feedback_incorrect": "Mulailah dengan membuka <form>, tambahkan input, buat tombol, lalu tutup formulir.",
+        "mascot_dialogue": "Luar biasa! Kamu sudah bisa membuat formulir sederhana menggunakan HTML."
+      },
+      {
+        "node_id": "HTML_L04_N10",
+        "title": "Node 10",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Formulir HTML dapat memiliki berbagai jenis masukan, termasuk input teks dan dropdown. Elemen <select> digunakan sebagai wadah pilihan, sedangkan <option> digunakan untuk menentukan pilihan yang tersedia.",
+        "code_example": "<form>\n  <input type=\"text\" placeholder=\"Nama\">\n  <select>\n    <option>Semarang</option>\n    <option>Pati</option>\n  </select>\n  <button type=\"submit\">Kirim</button>\n</form>",
+        "question": "Susun potongan kode berikut agar menghasilkan formulir yang memiliki input nama, pilihan kota, dan tombol kirim.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<input type=\"text\" placeholder=\"Nama\">"
+          },
+          {
+            "id": 2,
+            "code": "<select>"
+          },
+          {
+            "id": 3,
+            "code": "<form>"
+          },
+          {
+            "id": 4,
+            "code": "</form>"
+          },
+          {
+            "id": 5,
+            "code": "<option>Semarang</option>"
+          },
+          {
+            "id": 6,
+            "code": "</select>"
+          }
+        ],
+        "answer_order": [
+          3,
+          1,
+          2,
+          5,
+          6,
+          4
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<form> <input type=\"text\" placeholder=\"Nama\"> <select> <option>Semarang</option> </select> </form>",
+        "correct_answer": "3 → 1 → 2 → 5 → 6 → 4",
+        "feedback_correct": "Hebat! Kamu berhasil menyusun formulir dengan input teks dan dropdown secara benar.",
+        "feedback_incorrect": "Mulailah dari <form>, tambahkan input teks, buat dropdown dengan <select> dan <option>, kemudian tutup elemen dengan urutan yang benar.",
+        "mascot_dialogue": "Luar biasa! Sekarang kamu sudah bisa menggabungkan beberapa elemen formulir HTML."
+      }
+    ]
+  }
 }

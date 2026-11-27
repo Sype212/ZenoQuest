@@ -1,27 +1,12 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "kotlin_fundamentals",
   "course_title": "Kotlin Fundamentals",
   "group": "Absen Besar",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "Blueprint_Kotlin_Level_1(2).pdf",
-    "Blueprint_Kotlin_Level_2(1).pdf",
-    "Blueprint_Kotlin_Level_3(2).pdf",
-    "Blueprint_Kotlin_Level_4(3).pdf",
-    "Blueprint_Kotlin_Level_5(1).pdf"
-  ],
-  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
-    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
-    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
-    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
-    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
-  },
+  "content_version": "1.1",
   "level": {
     "level_id": "KTL_L05",
     "level_number": 5,
@@ -31,7 +16,7 @@
     "question_count": 10,
     "distribution": {
       "multiple_choice": 4,
-      "fill_in_the_blank": 3,
+      "fill_blank": 3,
       "arrange_code": 3
     },
     "nodes": [
@@ -43,9 +28,6 @@
         "theory": "Function atau fungsi adalah sekumpulan perintah yang dibuat untuk menjalankan tugas tertentu. Fungsi membantu program\nmenjadi lebih terstruktur, mengurangi pengulangan kode, dan memudahkan pemeliharaan program. Dalam Kotlin, fungsi dibuat\nmenggunakan kata kunci fun.",
         "code_example": "fun sayHello() {\nprintln(\"Hello Kotlin!\")\n}\nfun main() {\nsayHello()\n}",
         "question": "Apa manfaat utama penggunaan fungsi dalam pemrograman?\nA. Membuat program tidak membutuhkan variabel\nB. Mengelompokkan perintah agar dapat digunakan kembali\nC. Menghapus seluruh proses program\nD. Mengubah semua tipe data menjadi String",
-        "feedback_correct": "Fungsi membantu mengelompokkan kode sehingga lebih terstruktur dan dapat dipanggil kembali.",
-        "feedback_incorrect": "Fungsi digunakan untuk mengelompokkan perintah tertentu agar kode lebih terorganisasi dan dapat digunakan kembali.",
-        "mascot_dialogue": "Buat fungsi sekali, lalu panggil kapan saja saat dibutuhkan!",
         "options": [
           {
             "id": "a",
@@ -65,7 +47,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Mengelompokkan perintah agar dapat digunakan kembali"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Mengelompokkan perintah agar dapat digunakan kembali",
+        "feedback_correct": "Fungsi membantu mengelompokkan kode sehingga lebih terstruktur dan dapat dipanggil kembali.",
+        "feedback_incorrect": "Fungsi digunakan untuk mengelompokkan perintah tertentu agar kode lebih terorganisasi dan dapat digunakan kembali.",
+        "mascot_dialogue": "Buat fungsi sekali, lalu panggil kapan saja saat dibutuhkan!"
       },
       {
         "node_id": "KTL_L05_N02",
@@ -75,9 +65,6 @@
         "theory": "Kotlin menggunakan kata kunci fun untuk mendeklarasikan fungsi. Setelah kata kunci tersebut, tuliskan nama fungsi, tanda\nkurung, dan blok kode jika diperlukan. Nama fungsi biasanya menggunakan gaya penulisan camelCase.",
         "code_example": "fun showMessage() {\nprintln(\"Selamat belajar!\")\n}",
         "question": "Kata kunci yang digunakan untuk membuat fungsi dalam Kotlin adalah ...\nA. function\nB. define\nC. fun\nD. method",
-        "feedback_correct": "Kotlin menggunakan kata kunci fun untuk mendeklarasikan fungsi.",
-        "feedback_incorrect": "Kata kunci untuk membuat fungsi adalah fun, bukan function.",
-        "mascot_dialogue": "Awali deklarasi fungsi Kotlin dengan kata kunci fun!",
         "options": [
           {
             "id": "a",
@@ -97,7 +84,15 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. fun"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. fun",
+        "feedback_correct": "Kotlin menggunakan kata kunci fun untuk mendeklarasikan fungsi.",
+        "feedback_incorrect": "Kata kunci untuk membuat fungsi adalah fun, bukan function.",
+        "mascot_dialogue": "Awali deklarasi fungsi Kotlin dengan kata kunci fun!"
       },
       {
         "node_id": "KTL_L05_N03",
@@ -107,9 +102,6 @@
         "theory": "Parameter adalah variabel yang ditulis pada deklarasi fungsi untuk menerima data. Argumen adalah nilai yang diberikan ketika\nfungsi dipanggil. Kotlin menuliskan parameter dengan format namaParameter: TipeData.",
         "code_example": "fun greet(name: String) {\nprintln(\"Hello, $name!\")\n}\nfun main() {\ngreet(\"Rani\")\n}",
         "question": "Pada pemanggilan greet(\"Rani\"), bagian \"Rani\" disebut ...\nA. Parameter\nB. Argumen\nC. Return type\nD. Nama fungsi",
-        "feedback_correct": "Rani merupakan nilai yang dikirimkan ketika fungsi dipanggil, sehingga disebut argumen.",
-        "feedback_incorrect": "Parameter ditulis pada deklarasi fungsi, sedangkan argumen diberikan ketika fungsi dipanggil.",
-        "mascot_dialogue": "Parameter menerima data, argumen memberikan nilainya!",
         "options": [
           {
             "id": "a",
@@ -129,7 +121,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Argumen"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Argumen",
+        "feedback_correct": "Rani merupakan nilai yang dikirimkan ketika fungsi dipanggil, sehingga disebut argumen.",
+        "feedback_incorrect": "Parameter ditulis pada deklarasi fungsi, sedangkan argumen diberikan ketika fungsi dipanggil.",
+        "mascot_dialogue": "Parameter menerima data, argumen memberikan nilainya!"
       },
       {
         "node_id": "KTL_L05_N04",
@@ -139,9 +139,6 @@
         "theory": "Fungsi dapat mengembalikan hasil menggunakan kata kunci return. Tipe data hasil yang dikembalikan ditulis setelah tanda titik\ndua pada deklarasi fungsi. Fungsi yang mengembalikan bilangan bulat menggunakan tipe Int.",
         "code_example": "fun add(a: Int, b: Int): Int {\nreturn a + b\n}\nfun main() {\nval result = add(5, 3)\nprintln(result)\n}",
         "question": "Apa fungsi kata kunci return dalam sebuah fungsi Kotlin?\nA. Mengulang perintah\nB. Menghentikan seluruh aplikasi secara paksa\nC. Mengembalikan nilai dari fungsi\nD. Membuat variabel baru",
-        "feedback_correct": "return digunakan untuk mengembalikan nilai dari fungsi kepada bagian program yang memanggilnya.",
-        "feedback_incorrect": "return mengirimkan hasil dari fungsi, bukan untuk membuat perulangan atau variabel baru.",
-        "mascot_dialogue": "Gunakan return untuk mengirimkan hasil dari fungsi!",
         "options": [
           {
             "id": "a",
@@ -161,55 +158,81 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. Mengembalikan nilai dari fungsi"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. Mengembalikan nilai dari fungsi",
+        "feedback_correct": "return digunakan untuk mengembalikan nilai dari fungsi kepada bagian program yang memanggilnya.",
+        "feedback_incorrect": "return mengirimkan hasil dari fungsi, bukan untuk membuat perulangan atau variabel baru.",
+        "mascot_dialogue": "Gunakan return untuk mengirimkan hasil dari fungsi!"
       },
       {
         "node_id": "KTL_L05_N05",
         "title": "Function Declaration Keyword",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Setiap fungsi Kotlin dideklarasikan menggunakan kata kunci fun. Kata kunci tersebut diikuti nama fungsi, parameter jika ada,\ndan blok perintah.",
         "code_example": "fun displayInfo() {\nprintln(\"Belajar Kotlin\")\n}",
-        "question": "Lengkapi kode berikut dengan kata kunci yang tepat untuk mendeklarasikan fungsi.\n_____ showMessage() {\nprintln(\"Halo!\")\n}",
-        "feedback_correct": "Kata kunci fun digunakan untuk mendeklarasikan fungsi Kotlin.",
-        "feedback_incorrect": "Gunakan fun sebelum nama fungsi untuk membuat deklarasi fungsi Kotlin.",
-        "mascot_dialogue": "Jangan lupa kata kunci fun saat membuat fungsi!",
+        "question": "Lengkapi kode berikut dengan kata kunci yang tepat untuk mendeklarasikan fungsi.\n___ showMessage() {\nprintln(\"Halo!\")\n}",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "fun"
         ],
-        "correct_answer": "fun"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "fun",
+        "feedback_correct": "Kata kunci fun digunakan untuk mendeklarasikan fungsi Kotlin.",
+        "feedback_incorrect": "Gunakan fun sebelum nama fungsi untuk membuat deklarasi fungsi Kotlin.",
+        "mascot_dialogue": "Jangan lupa kata kunci fun saat membuat fungsi!"
       },
       {
         "node_id": "KTL_L05_N06",
         "title": "Function Parameter Type",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Parameter fungsi Kotlin memiliki nama dan tipe data. Format penulisannya adalah namaParameter: TipeData. Jika parameter\nmenerima teks, tipe data yang digunakan adalah String.",
         "code_example": "fun greet(name: String) {\nprintln(\"Hello, $name\")\n}",
-        "question": "Lengkapi tipe data parameter berikut agar fungsi dapat menerima teks.\nfun greet(name: ______) {\nprintln(\"Hello, $name\")\n}",
-        "feedback_correct": "String digunakan sebagai tipe data untuk menerima teks.",
-        "feedback_incorrect": "Parameter name menerima teks, sehingga tipe data yang tepat adalah String.",
-        "mascot_dialogue": "Pastikan tipe parameter sesuai dengan data yang diterima!",
+        "question": "Lengkapi tipe data parameter berikut agar fungsi dapat menerima teks.\nfun greet(name: ___) {\nprintln(\"Hello, $name\")\n}",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "String"
         ],
-        "correct_answer": "String"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "String",
+        "feedback_correct": "String digunakan sebagai tipe data untuk menerima teks.",
+        "feedback_incorrect": "Parameter name menerima teks, sehingga tipe data yang tepat adalah String.",
+        "mascot_dialogue": "Pastikan tipe parameter sesuai dengan data yang diterima!"
       },
       {
         "node_id": "KTL_L05_N07",
         "title": "Return Type",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Return type adalah tipe data dari nilai yang dikembalikan oleh sebuah fungsi. Return type ditulis setelah tanda titik dua pada\ndeklarasi fungsi. Jika fungsi mengembalikan bilangan bulat, gunakan tipe Int.",
         "code_example": "fun calculateTotal(): Int {\nreturn 100 + 50\n}",
-        "question": "Lengkapi return type berikut agar fungsi mengembalikan bilangan bulat.\nfun calculateScore(): ______ {\nreturn 90\n}",
-        "feedback_correct": "Fungsi mengembalikan bilangan bulat, sehingga return type yang digunakan adalah Int.",
-        "feedback_incorrect": "Nilai yang dikembalikan adalah bilangan bulat. Gunakan tipe data Int.",
-        "mascot_dialogue": "Return type menjelaskan jenis hasil yang dikembalikan fungsi!",
+        "question": "Lengkapi return type berikut agar fungsi mengembalikan bilangan bulat.\nfun calculateScore(): ___ {\nreturn 90\n}",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "Int"
         ],
-        "correct_answer": "Int"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "Int",
+        "feedback_correct": "Fungsi mengembalikan bilangan bulat, sehingga return type yang digunakan adalah Int.",
+        "feedback_incorrect": "Nilai yang dikembalikan adalah bilangan bulat. Gunakan tipe data Int.",
+        "mascot_dialogue": "Return type menjelaskan jenis hasil yang dikembalikan fungsi!"
       },
       {
         "node_id": "KTL_L05_N08",
@@ -219,9 +242,9 @@
         "theory": "Fungsi dapat dipanggil menggunakan nama fungsi diikuti tanda kurung. Fungsi yang dideklarasikan di luar main() dapat\ndipanggil dari dalam main().",
         "code_example": "fun sayHello() {\nprintln(\"Halo Kotlin!\")\n}\nfun main() {\nsayHello()\n}",
         "question": "Susun potongan kode agar program mendeklarasikan fungsi sayHello() dan memanggilnya dari dalam main().\nPotongan kode:\n1. println(\"Halo Kotlin!\")\n2. fun sayHello() {\n3. sayHello()\n4. fun main() {\n5. } — penutup fungsi main()\n6. } — penutup fungsi sayHello()",
-        "feedback_correct": "Fungsi berhasil dibuat dan dipanggil dari dalam main().",
-        "feedback_incorrect": "Deklarasikan sayHello() terlebih dahulu, lalu buat main() dan panggil fungsi tersebut di dalamnya.",
-        "mascot_dialogue": "Fungsi sudah dibuat! Sekarang panggil untuk menjalankan tugasnya!",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -258,7 +281,12 @@
           3,
           5
         ],
-        "correct_answer": "2 → 1 → 6 → 4 → 3 → 5"
+        "assembly_separator": " ",
+        "correct_code": "fun sayHello() { println(\"Halo Kotlin!\") } fun main() { sayHello() }",
+        "correct_answer": "2 → 1 → 6 → 4 → 3 → 5",
+        "feedback_correct": "Fungsi berhasil dibuat dan dipanggil dari dalam main().",
+        "feedback_incorrect": "Deklarasikan sayHello() terlebih dahulu, lalu buat main() dan panggil fungsi tersebut di dalamnya.",
+        "mascot_dialogue": "Fungsi sudah dibuat! Sekarang panggil untuk menjalankan tugasnya!"
       },
       {
         "node_id": "KTL_L05_N09",
@@ -268,9 +296,9 @@
         "theory": "Fungsi dapat menerima parameter agar dapat digunakan dengan nilai yang berbeda. Ketika dipanggil, program mengirimkan\nargumen sesuai parameter yang dibutuhkan.",
         "code_example": "fun greet(name: String) {\nprintln(\"Halo, $name!\")\n}\nfun main() {\ngreet(\"Dina\")\n}",
         "question": "Susun potongan kode agar program membuat fungsi greet() yang menerima nama dan menampilkan sapaan.\nPotongan kode:\n1. println(\"Halo, $name!\")\n2. fun greet(name: String) {\n3. greet(\"Dina\")\n4. fun main() {\n5. } — penutup fungsi main()\n6. } — penutup fungsi greet()",
-        "feedback_correct": "Fungsi berhasil menerima argumen dan menggunakan nilainya untuk menampilkan sapaan.",
-        "feedback_incorrect": "Buat fungsi dengan parameter name terlebih dahulu. Setelah itu panggil fungsi dari main() dengan memberikan argumen.",
-        "mascot_dialogue": "Kirimkan argumen agar fungsi dapat bekerja dengan data yang berbeda!",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -307,7 +335,12 @@
           3,
           5
         ],
-        "correct_answer": "2 → 1 → 6 → 4 → 3 → 5"
+        "assembly_separator": " ",
+        "correct_code": "fun greet(name: String) { println(\"Halo, $name!\") } fun main() { greet(\"Dina\") }",
+        "correct_answer": "2 → 1 → 6 → 4 → 3 → 5",
+        "feedback_correct": "Fungsi berhasil menerima argumen dan menggunakan nilainya untuk menampilkan sapaan.",
+        "feedback_incorrect": "Buat fungsi dengan parameter name terlebih dahulu. Setelah itu panggil fungsi dari main() dengan memberikan argumen.",
+        "mascot_dialogue": "Kirimkan argumen agar fungsi dapat bekerja dengan data yang berbeda!"
       },
       {
         "node_id": "KTL_L05_N10",
@@ -317,9 +350,9 @@
         "theory": "Fungsi dapat digunakan untuk memecahkan masalah sederhana dengan membagi proses menjadi bagian-bagian kecil.\nContohnya, membuat fungsi untuk menjumlahkan dua angka, lalu memanggil fungsi tersebut dari main().",
         "code_example": "fun add(a: Int, b: Int): Int {\nreturn a + b\n}\nfun main() {\nval result = add(5, 3)\nprintln(result)\n}",
         "question": "Susun kode agar program membuat fungsi penjumlahan dua angka, memanggil fungsi tersebut, lalu menampilkan hasilnya.\nPotongan kode:\n1. return a + b\n2. fun add(a: Int, b: Int): Int {\n3. val result = add(5, 3)\n4. fun main() {\n5. println(result)\n6. } — penutup fungsi main()\n7. } — penutup fungsi add()",
-        "feedback_correct": "Kamu berhasil membuat fungsi dengan parameter, return value, dan memanggilnya untuk menyelesaikan perhitungan.",
-        "feedback_incorrect": "Buat fungsi add() terlebih dahulu, kembalikan hasil penjumlahan, lalu panggil dari main() dan tampilkan hasilnya.",
-        "mascot_dialogue": "Pecahkan masalah dengan membagi pekerjaan ke dalam fungsi-fungsi kecil!",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -361,7 +394,12 @@
           5,
           6
         ],
-        "correct_answer": "2 → 1 → 7 → 4 → 3 → 5 → 6"
+        "assembly_separator": " ",
+        "correct_code": "fun add(a: Int, b: Int): Int { return a + b } fun main() { val result = add(5, 3) println(result) }",
+        "correct_answer": "2 → 1 → 7 → 4 → 3 → 5 → 6",
+        "feedback_correct": "Kamu berhasil membuat fungsi dengan parameter, return value, dan memanggilnya untuk menyelesaikan perhitungan.",
+        "feedback_incorrect": "Buat fungsi add() terlebih dahulu, kembalikan hasil penjumlahan, lalu panggil dari main() dan tampilkan hasilnya.",
+        "mascot_dialogue": "Pecahkan masalah dengan membagi pekerjaan ke dalam fungsi-fungsi kecil!"
       }
     ]
   }

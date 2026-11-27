@@ -1,5 +1,5 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "css_fundamentals",
   "course_title": "CSS Fundamentals",
   "group": "Absen Kecil",
@@ -7,361 +7,354 @@
   "difficulty": "beginner",
   "language": "id",
   "content_version": "1.1",
-  "source_documents": [
-    "CSS_Level_2_Absen_Kecil_Revisi.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
-    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
-    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
-  },
-  "levels": [
-    {
-      "level_id": "CSS_L02",
-      "level_number": 2,
-      "title": "CSS Colors, Text & Fonts",
-      "description": "Pengguna mampu mengatur warna, tampilan teks, dan jenis serta gaya huruf pada halaman web menggunakan properti CSS dasar.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "level": {
+    "level_id": "CSS_L02",
+    "level_number": 2,
+    "title": "CSS Colors, Text & Fonts",
+    "description": "Pengguna mampu mengatur warna, tampilan teks, dan jenis serta gaya huruf pada halaman web menggunakan properti CSS dasar.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "CSS_L02_N01",
+        "title": "Node 01",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti color digunakan untuk mengubah warna teks pada elemen HTML. Nilainya dapat berupa nama warna, kode HEX, atau format RGB.",
+        "code_example": "p {\n  color: blue;\n}",
+        "question": "Properti CSS apa yang digunakan untuk mengubah warna tulisan?\nA. background-color\nB. color\nC. font-size\nD. text-align",
+        "options": [
+          {
+            "id": "a",
+            "text": "background-color"
+          },
+          {
+            "id": "b",
+            "text": "color"
+          },
+          {
+            "id": "c",
+            "text": "font-size"
+          },
+          {
+            "id": "d",
+            "text": "text-align"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! color mengatur warna teks.",
+        "feedback_incorrect": "Belum tepat. Cari properti CSS yang secara langsung mengatur warna tulisan.",
+        "mascot_dialogue": "Bagus! Sekarang kamu bisa memberi warna pada teks."
       },
-      "learning_objectives": [
-        "Mengatur warna teks dan latar belakang menggunakan nama warna, HEX, maupun RGB.",
-        "Mengatur perataan, dekorasi, dan transformasi kapitalisasi teks dengan CSS.",
-        "Menentukan jenis huruf, ukuran, ketebalan, dan gaya huruf pada elemen HTML.",
-        "Menggabungkan beberapa properti pengaturan teks dan tinggi baris dalam satu aturan CSS."
-      ],
-      "nodes": [
-        {
-          "node_id": "CSS_L02_N01",
-          "title": "Node 01",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti color digunakan untuk mengubah warna teks pada elemen HTML. Nilainya dapat berupa nama warna, kode HEX, atau format RGB.",
-          "code_example": "p {\n  color: blue;\n}",
-          "question": "Properti CSS apa yang digunakan untuk mengubah warna tulisan?\nA. background-color\nB. color\nC. font-size\nD. text-align",
-          "options": [
-            {
-              "id": "a",
-              "text": "background-color"
-            },
-            {
-              "id": "b",
-              "text": "color"
-            },
-            {
-              "id": "c",
-              "text": "font-size"
-            },
-            {
-              "id": "d",
-              "text": "text-align"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B",
-          "feedback_correct": "Benar! color mengatur warna teks.",
-          "feedback_incorrect": "Belum tepat. Cari properti CSS yang secara langsung mengatur warna tulisan.",
-          "mascot_dialogue": "Bagus! Sekarang kamu bisa memberi warna pada teks.",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 50,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N02",
-          "title": "Node 02",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti background-color digunakan untuk memberi warna latar belakang pada elemen HTML, misalnya paragraf, tombol, atau seluruh halaman.",
-          "code_example": "body {\n  background-color: lightblue;\n}",
-          "question": "Properti yang digunakan untuk mengubah warna latar belakang adalah\nA. color\nB. font-family\nC. background-color\nD. text-decoration",
-          "options": [
-            {
-              "id": "a",
-              "text": "color"
-            },
-            {
-              "id": "b",
-              "text": "font-family"
-            },
-            {
-              "id": "c",
-              "text": "background-color"
-            },
-            {
-              "id": "d",
-              "text": "text-decoration"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C",
-          "feedback_correct": "Tepat! background-color mengatur warna latar belakang elemen.",
-          "feedback_incorrect": "Belum benar. Bedakan warna teks dengan warna latar belakang.",
-          "mascot_dialogue": "Keren! Latar belakang halamanmu sekarang bisa diatur.",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 53,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N03",
-          "title": "Node 03",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "CSS mendukung beberapa cara menuliskan warna. Contoh nama warna adalah red, HEX adalah #ff0000, dan RGB adalah rgb(255, 0, 0). Ketiganya menunjukkan warna merah.",
-          "code_example": "h1 {\n  color: #ff0000;\n}\np {\n  color: rgb(255, 0, 0);\n}",
-          "question": "Manakah contoh penulisan warna dengan format HEX?\nA. #00ff00\nB. rgb(0, 255, 0)\nC. green\nD. 16px",
-          "options": [
-            {
-              "id": "a",
-              "text": "#00ff00"
-            },
-            {
-              "id": "b",
-              "text": "rgb(0, 255, 0)"
-            },
-            {
-              "id": "c",
-              "text": "green"
-            },
-            {
-              "id": "d",
-              "text": "16px"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "A",
-          "feedback_correct": "Benar! Kode HEX diawali dengan tanda pagar (#), contohnya #00ff00.",
-          "feedback_incorrect": "Belum tepat. Format HEX pada CSS diawali dengan tanda pagar (#).",
-          "mascot_dialogue": "Hebat! Kamu sudah mengenal beberapa format warna CSS.",
-          "correct_option_id": "a",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 53,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N04",
-          "title": "Node 04",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Properti text-align mengatur perataan teks. Nilai yang umum digunakan adalah left, right, center, dan justify.",
-          "code_example": "h1 {\n  text-align: center;\n}",
-          "question": "Nilai apa yang digunakan agar teks berada di tengah?\nA. left\nB. right\nC. center\nD. bottom",
-          "options": [
-            {
-              "id": "a",
-              "text": "left"
-            },
-            {
-              "id": "b",
-              "text": "right"
-            },
-            {
-              "id": "c",
-              "text": "center"
-            },
-            {
-              "id": "d",
-              "text": "bottom"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C",
-          "feedback_correct": "Tepat! Nilai center membuat teks rata tengah.",
-          "feedback_incorrect": "Belum tepat. Pilih nilai perataan yang berarti tengah.",
-          "mascot_dialogue": "Mantap! Kamu bisa mengatur posisi teks.",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 39,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N05",
-          "title": "Node 05",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti text-decoration digunakan untuk memberi atau menghilangkan dekorasi pada teks. Contohnya underline untuk garis bawah, overline untuk garis atas, dan line-through untuk coretan.",
-          "code_example": "a {\n  text-decoration: none;\n}\np {\n  text-decoration: underline;\n}",
-          "question": "Lengkapi properti berikut agar teks memiliki garis bawah:\ntext-decoration: _____;\nJawaban diisi dengan nilai properti CSS.",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "underline",
-          "feedback_correct": "Benar! Nilai underline menambahkan garis bawah pada teks.",
-          "feedback_incorrect": "Belum tepat. Gunakan nilai yang berarti garis bawah.",
-          "mascot_dialogue": "Sip! Kamu bisa menambahkan dekorasi pada tulisan.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "underline"
-          ],
-          "mascot_dialogue_char_count": 49,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N06",
-          "title": "Node 06",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti text-transform mengatur perubahan huruf. Nilai uppercase membuat semua huruf kapital, lowercase membuat huruf kecil, dan capitalize membuat huruf pertama setiap kata menjadi kapital.",
-          "code_example": "h2 {\n  text-transform: uppercase;\n}",
-          "question": "Lengkapi nilai CSS agar semua huruf menjadi kapital:\ntext-transform: _____;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "uppercase",
-          "feedback_correct": "Benar! uppercase mengubah teks menjadi huruf kapital.",
-          "feedback_incorrect": "Belum tepat. Pilih nilai yang berarti semua huruf besar.",
-          "mascot_dialogue": "Bagus! Kamu sudah bisa mengubah bentuk huruf.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "uppercase"
-          ],
-          "mascot_dialogue_char_count": 45,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N07",
-          "title": "Node 07",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Properti font-family digunakan untuk menentukan jenis atau keluarga huruf. Contohnya Arial, Georgia, dan Verdana. Sebaiknya sediakan jenis huruf cadangan seperti sans-serif.",
-          "code_example": "body {\n  font-family: Arial, sans-serif;\n}",
-          "question": "Lengkapi properti untuk mengatur jenis huruf:\n_____: Arial, sans-serif;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "font-family",
-          "feedback_correct": "Tepat! font-family menentukan jenis huruf yang digunakan.",
-          "feedback_incorrect": "Belum tepat. Cari properti CSS yang mengatur keluarga atau jenis huruf.",
-          "mascot_dialogue": "Keren! Tampilan tulisan dapat memiliki karakter yang berbeda.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "font-family"
-          ],
-          "mascot_dialogue_char_count": 61,
-          "answer_order": null
-        },
-        {
-          "node_id": "CSS_L02_N08",
-          "title": "Node 08",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Properti font-size mengatur ukuran huruf, sedangkan font-weight mengatur ketebalan huruf. Nilai ukuran dapat menggunakan satuan seperti px; ketebalan dapat menggunakan kata bold atau angka seperti 700.",
-          "code_example": "h1 {\n  font-size: 32px;\n  font-weight: bold;\n}",
-          "question": "Susun potongan kode berikut agar judul memiliki ukuran 32px dan huruf tebal:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "}"
-            },
-            {
-              "id": 2,
-              "code": "h1 {"
-            },
-            {
-              "id": 3,
-              "code": "font-size: 32px;"
-            },
-            {
-              "id": 4,
-              "code": "font-weight: bold;"
-            }
-          ],
-          "correct_answer": "2 → 3 → 4 → 1",
-          "feedback_correct": "Benar! Selector dan kurung kurawal pembuka ditulis lebih dulu, kemudian deklarasi CSS, lalu kurung penutup.",
-          "feedback_incorrect": "Belum tepat. Mulai dari selector dan kurung pembuka, tulis kedua properti, lalu tutup kurung.",
-          "mascot_dialogue": "Hebat! Kamu bisa mengatur ukuran dan ketebalan huruf.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 53,
-          "answer_order": [
-            2,
-            3,
-            4,
-            1
-          ]
-        },
-        {
-          "node_id": "CSS_L02_N09",
-          "title": "Node 09",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Properti font-style mengatur gaya huruf. Nilai italic membuat teks miring, sedangkan normal mengembalikan gaya ke bentuk biasa.",
-          "code_example": "p {\n  font-style: italic;\n}",
-          "question": "Susun potongan kode berikut agar paragraf ditampilkan miring:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "font-style: italic;"
-            },
-            {
-              "id": 2,
-              "code": "}"
-            },
-            {
-              "id": 3,
-              "code": "p {"
-            }
-          ],
-          "correct_answer": "3 → 1 → 2",
-          "feedback_correct": "Tepat! Aturan CSS dimulai dengan selector p, diikuti deklarasi font-style, lalu kurung penutup.",
-          "feedback_incorrect": "Belum tepat. Urutannya adalah selector, deklarasi properti, kemudian kurung penutup.",
-          "mascot_dialogue": "Mantap! Kamu sudah bisa membuat teks miring.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 44,
-          "answer_order": [
-            3,
-            1,
-            2
-          ]
-        },
-        {
-          "node_id": "CSS_L02_N10",
-          "title": "Node 10",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Properti line-height mengatur jarak vertikal antarbaris teks. Properti ini dapat digabung dengan warna, ukuran, dan jenis huruf dalam satu aturan CSS agar paragraf lebih mudah dibaca.",
-          "code_example": "p {\n  color: #333333;\n  font-family: Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n}",
-          "question": "Susun potongan kode berikut untuk mengatur warna teks dan jarak antarbaris paragraf:",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "line-height: 1.5;"
-            },
-            {
-              "id": 2,
-              "code": "}"
-            },
-            {
-              "id": 3,
-              "code": "p {"
-            },
-            {
-              "id": 4,
-              "code": "color: #333333;"
-            }
-          ],
-          "correct_answer": "3 → 4 → 1 → 2",
-          "feedback_correct": "Luar biasa! Selector ditulis pertama, lalu deklarasi warna dan line-height, kemudian kurung penutup.",
-          "feedback_incorrect": "Belum tepat. Awali dengan selector p, tulis deklarasi CSS di dalam kurung kurawal, lalu tutup.",
-          "mascot_dialogue": "Selamat! Kamu telah menyelesaikan CSS Level 2.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 46,
-          "answer_order": [
-            3,
-            4,
-            1,
-            2
-          ]
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "CSS_L02_N02",
+        "title": "Node 02",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti background-color digunakan untuk memberi warna latar belakang pada elemen HTML, misalnya paragraf, tombol, atau seluruh halaman.",
+        "code_example": "body {\n  background-color: lightblue;\n}",
+        "question": "Properti yang digunakan untuk mengubah warna latar belakang adalah\nA. color\nB. font-family\nC. background-color\nD. text-decoration",
+        "options": [
+          {
+            "id": "a",
+            "text": "color"
+          },
+          {
+            "id": "b",
+            "text": "font-family"
+          },
+          {
+            "id": "c",
+            "text": "background-color"
+          },
+          {
+            "id": "d",
+            "text": "text-decoration"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! background-color mengatur warna latar belakang elemen.",
+        "feedback_incorrect": "Belum benar. Bedakan warna teks dengan warna latar belakang.",
+        "mascot_dialogue": "Keren! Latar belakang halamanmu sekarang bisa diatur."
+      },
+      {
+        "node_id": "CSS_L02_N03",
+        "title": "Node 03",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "CSS mendukung beberapa cara menuliskan warna. Contoh nama warna adalah red, HEX adalah #ff0000, dan RGB adalah rgb(255, 0, 0). Ketiganya menunjukkan warna merah.",
+        "code_example": "h1 {\n  color: #ff0000;\n}\np {\n  color: rgb(255, 0, 0);\n}",
+        "question": "Manakah contoh penulisan warna dengan format HEX?\nA. #00ff00\nB. rgb(0, 255, 0)\nC. green\nD. 16px",
+        "options": [
+          {
+            "id": "a",
+            "text": "#00ff00"
+          },
+          {
+            "id": "b",
+            "text": "rgb(0, 255, 0)"
+          },
+          {
+            "id": "c",
+            "text": "green"
+          },
+          {
+            "id": "d",
+            "text": "16px"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A",
+        "feedback_correct": "Benar! Kode HEX diawali dengan tanda pagar (#), contohnya #00ff00.",
+        "feedback_incorrect": "Belum tepat. Format HEX pada CSS diawali dengan tanda pagar (#).",
+        "mascot_dialogue": "Hebat! Kamu sudah mengenal beberapa format warna CSS."
+      },
+      {
+        "node_id": "CSS_L02_N04",
+        "title": "Node 04",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Properti text-align mengatur perataan teks. Nilai yang umum digunakan adalah left, right, center, dan justify.",
+        "code_example": "h1 {\n  text-align: center;\n}",
+        "question": "Nilai apa yang digunakan agar teks berada di tengah?\nA. left\nB. right\nC. center\nD. bottom",
+        "options": [
+          {
+            "id": "a",
+            "text": "left"
+          },
+          {
+            "id": "b",
+            "text": "right"
+          },
+          {
+            "id": "c",
+            "text": "center"
+          },
+          {
+            "id": "d",
+            "text": "bottom"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! Nilai center membuat teks rata tengah.",
+        "feedback_incorrect": "Belum tepat. Pilih nilai perataan yang berarti tengah.",
+        "mascot_dialogue": "Mantap! Kamu bisa mengatur posisi teks."
+      },
+      {
+        "node_id": "CSS_L02_N05",
+        "title": "Node 05",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti text-decoration digunakan untuk memberi atau menghilangkan dekorasi pada teks. Contohnya underline untuk garis bawah, overline untuk garis atas, dan line-through untuk coretan.",
+        "code_example": "a {\n  text-decoration: none;\n}\np {\n  text-decoration: underline;\n}",
+        "question": "Lengkapi properti berikut agar teks memiliki garis bawah:\ntext-decoration: ___;\nJawaban diisi dengan nilai properti CSS.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "underline"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "underline",
+        "feedback_correct": "Benar! Nilai underline menambahkan garis bawah pada teks.",
+        "feedback_incorrect": "Belum tepat. Gunakan nilai yang berarti garis bawah.",
+        "mascot_dialogue": "Sip! Kamu bisa menambahkan dekorasi pada tulisan."
+      },
+      {
+        "node_id": "CSS_L02_N06",
+        "title": "Node 06",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti text-transform mengatur perubahan huruf. Nilai uppercase membuat semua huruf kapital, lowercase membuat huruf kecil, dan capitalize membuat huruf pertama setiap kata menjadi kapital.",
+        "code_example": "h2 {\n  text-transform: uppercase;\n}",
+        "question": "Lengkapi nilai CSS agar semua huruf menjadi kapital:\ntext-transform: ___;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "uppercase"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "uppercase",
+        "feedback_correct": "Benar! uppercase mengubah teks menjadi huruf kapital.",
+        "feedback_incorrect": "Belum tepat. Pilih nilai yang berarti semua huruf besar.",
+        "mascot_dialogue": "Bagus! Kamu sudah bisa mengubah bentuk huruf."
+      },
+      {
+        "node_id": "CSS_L02_N07",
+        "title": "Node 07",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Properti font-family digunakan untuk menentukan jenis atau keluarga huruf. Contohnya Arial, Georgia, dan Verdana. Sebaiknya sediakan jenis huruf cadangan seperti sans-serif.",
+        "code_example": "body {\n  font-family: Arial, sans-serif;\n}",
+        "question": "Lengkapi properti untuk mengatur jenis huruf:\n___: Arial, sans-serif;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "font-family"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "font-family",
+        "feedback_correct": "Tepat! font-family menentukan jenis huruf yang digunakan.",
+        "feedback_incorrect": "Belum tepat. Cari properti CSS yang mengatur keluarga atau jenis huruf.",
+        "mascot_dialogue": "Keren! Tampilan tulisan dapat memiliki karakter yang berbeda."
+      },
+      {
+        "node_id": "CSS_L02_N08",
+        "title": "Node 08",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Properti font-size mengatur ukuran huruf, sedangkan font-weight mengatur ketebalan huruf. Nilai ukuran dapat menggunakan satuan seperti px; ketebalan dapat menggunakan kata bold atau angka seperti 700.",
+        "code_example": "h1 {\n  font-size: 32px;\n  font-weight: bold;\n}",
+        "question": "Susun potongan kode berikut agar judul memiliki ukuran 32px dan huruf tebal:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "}"
+          },
+          {
+            "id": 2,
+            "code": "h1 {"
+          },
+          {
+            "id": 3,
+            "code": "font-size: 32px;"
+          },
+          {
+            "id": 4,
+            "code": "font-weight: bold;"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          4,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "h1 { font-size: 32px; font-weight: bold; }",
+        "correct_answer": "2 → 3 → 4 → 1",
+        "feedback_correct": "Benar! Selector dan kurung kurawal pembuka ditulis lebih dulu, kemudian deklarasi CSS, lalu kurung penutup.",
+        "feedback_incorrect": "Belum tepat. Mulai dari selector dan kurung pembuka, tulis kedua properti, lalu tutup kurung.",
+        "mascot_dialogue": "Hebat! Kamu bisa mengatur ukuran dan ketebalan huruf."
+      },
+      {
+        "node_id": "CSS_L02_N09",
+        "title": "Node 09",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Properti font-style mengatur gaya huruf. Nilai italic membuat teks miring, sedangkan normal mengembalikan gaya ke bentuk biasa.",
+        "code_example": "p {\n  font-style: italic;\n}",
+        "question": "Susun potongan kode berikut agar paragraf ditampilkan miring:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "font-style: italic;"
+          },
+          {
+            "id": 2,
+            "code": "}"
+          },
+          {
+            "id": 3,
+            "code": "p {"
+          }
+        ],
+        "answer_order": [
+          3,
+          1,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "p { font-style: italic; }",
+        "correct_answer": "3 → 1 → 2",
+        "feedback_correct": "Tepat! Aturan CSS dimulai dengan selector p, diikuti deklarasi font-style, lalu kurung penutup.",
+        "feedback_incorrect": "Belum tepat. Urutannya adalah selector, deklarasi properti, kemudian kurung penutup.",
+        "mascot_dialogue": "Mantap! Kamu sudah bisa membuat teks miring."
+      },
+      {
+        "node_id": "CSS_L02_N10",
+        "title": "Node 10",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Properti line-height mengatur jarak vertikal antarbaris teks. Properti ini dapat digabung dengan warna, ukuran, dan jenis huruf dalam satu aturan CSS agar paragraf lebih mudah dibaca.",
+        "code_example": "p {\n  color: #333333;\n  font-family: Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n}",
+        "question": "Susun potongan kode berikut untuk mengatur warna teks dan jarak antarbaris paragraf:",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "line-height: 1.5;"
+          },
+          {
+            "id": 2,
+            "code": "}"
+          },
+          {
+            "id": 3,
+            "code": "p {"
+          },
+          {
+            "id": 4,
+            "code": "color: #333333;"
+          }
+        ],
+        "answer_order": [
+          3,
+          4,
+          1,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "p { color: #333333; line-height: 1.5; }",
+        "correct_answer": "3 → 4 → 1 → 2",
+        "feedback_correct": "Luar biasa! Selector ditulis pertama, lalu deklarasi warna dan line-height, kemudian kurung penutup.",
+        "feedback_incorrect": "Belum tepat. Awali dengan selector p, tulis deklarasi CSS di dalam kurung kurawal, lalu tutup.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan CSS Level 2."
+      }
+    ]
+  }
 }

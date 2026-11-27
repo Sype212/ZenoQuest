@@ -1,5 +1,5 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "javascript_fundamentals",
   "course_title": "JavaScript Fundamentals",
   "group": "Absen Kecil",
@@ -7,346 +7,339 @@
   "difficulty": "beginner",
   "language": "id",
   "content_version": "1.1",
-  "source_documents": [
-    "Blueprint JavaScript Level 2 - Variables, Data Types & Operators.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
-    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
-    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
-  },
-  "levels": [
-    {
-      "level_id": "JS_L02",
-      "level_number": 2,
-      "title": "JavaScript Variables, Data Types & Operators",
-      "description": "Pengguna mampu mendeklarasikan variabel dan konstanta, membedakan tipe data string, number, dan boolean, serta menerapkan operator aritmatika, perbandingan, dan logika dengan sintaks JavaScript yang benar.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "level": {
+    "level_id": "JS_L02",
+    "level_number": 2,
+    "title": "JavaScript Variables, Data Types & Operators",
+    "description": "Pengguna mampu mendeklarasikan variabel dan konstanta, membedakan tipe data string, number, dan boolean, serta menerapkan operator aritmatika, perbandingan, dan logika dengan sintaks JavaScript yang benar.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "JS_L02_N01",
+        "title": "Node 01",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Variabel digunakan untuk menyimpan nilai data di dalam program. Kata kunci let dipakai untuk membuat variabel yang nilainya dapat diubah kembali di kemudian hari. Gunakan nama variabel yang jelas agar kode mudah dibaca.",
+        "code_example": "let skor = 10;\nskor = 20;",
+        "question": "Kata kunci mana yang digunakan untuk membuat variabel yang nilainya bisa diubah?\nA. let\nB. const\nC. print\nD. text",
+        "options": [
+          {
+            "id": "a",
+            "text": "let"
+          },
+          {
+            "id": "b",
+            "text": "const"
+          },
+          {
+            "id": "c",
+            "text": "print"
+          },
+          {
+            "id": "d",
+            "text": "text"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A",
+        "feedback_correct": "Benar! Kata kunci let membuat variabel yang nilainya dapat diubah.",
+        "feedback_incorrect": "Belum tepat. Pilih kata kunci deklarasi variabel yang fleksibel diubah.",
+        "mascot_dialogue": "Hebat! Sekarang kamu bisa menyimpan data ke dalam variabel."
       },
-      "learning_objectives": [
-        "Mendeklarasikan variabel menggunakan let dan konstanta menggunakan const dengan tepat.",
-        "Membedakan tipe data dasar JavaScript yaitu string, number, dan boolean.",
-        "Menerapkan operator aritmatika, perbandingan ketat, dan logika dalam kode JavaScript.",
-        "Menyusun alur deklarasi variabel, perhitungan, dan evaluasi logika dengan sintaks yang benar."
-      ],
-      "nodes": [
-        {
-          "node_id": "JS_L02_N01",
-          "title": "Node 01",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Variabel digunakan untuk menyimpan nilai data di dalam program. Kata kunci let dipakai untuk membuat variabel yang nilainya dapat diubah kembali di kemudian hari. Gunakan nama variabel yang jelas agar kode mudah dibaca.",
-          "code_example": "let skor = 10;\nskor = 20;",
-          "question": "Kata kunci mana yang digunakan untuk membuat variabel yang nilainya bisa diubah?\nA. let\nB. const\nC. print\nD. text",
-          "options": [
-            {
-              "id": "a",
-              "text": "let"
-            },
-            {
-              "id": "b",
-              "text": "const"
-            },
-            {
-              "id": "c",
-              "text": "print"
-            },
-            {
-              "id": "d",
-              "text": "text"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "A",
-          "feedback_correct": "Benar! Kata kunci let membuat variabel yang nilainya dapat diubah.",
-          "feedback_incorrect": "Belum tepat. Pilih kata kunci deklarasi variabel yang fleksibel diubah.",
-          "mascot_dialogue": "Hebat! Sekarang kamu bisa menyimpan data ke dalam variabel.",
-          "correct_option_id": "a",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 59,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N02",
-          "title": "Node 02",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Konstanta adalah wadah penyimpan data yang nilainya tetap dan tidak boleh diubah setelah dibuat. Dalam JavaScript, konstanta dideklarasikan menggunakan kata kunci const dan wajib langsung diberi nilai awal.",
-          "code_example": "const namaSekolah = \"SMK Nusantara\";\nconst maxSiswa = 36;",
-          "question": "Kata kunci mana yang digunakan untuk menyimpan nilai tetap agar tidak berubah?\nA. let\nB. change\nC. const\nD. number",
-          "options": [
-            {
-              "id": "a",
-              "text": "let"
-            },
-            {
-              "id": "b",
-              "text": "change"
-            },
-            {
-              "id": "c",
-              "text": "const"
-            },
-            {
-              "id": "d",
-              "text": "number"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C",
-          "feedback_correct": "Tepat! const menjaga nilai tetap konstan dan tidak berubah.",
-          "feedback_incorrect": "Belum benar. Pilih kata kunci khusus untuk nilai konstanta.",
-          "mascot_dialogue": "Bagus! Kamu tahu kapan harus memakai variabel dan konstanta.",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 60,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N03",
-          "title": "Node 03",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Tipe data string digunakan untuk menyimpan teks dan selalu diapit oleh tanda kutip (\"...\" atau '...'). Tipe data number digunakan untuk menyimpan angka bulat maupun desimal tanpa tanda kutip agar bisa dihitung.",
-          "code_example": "let nama = \"Rani\";\nlet umur = 16;",
-          "question": "Manakah penulisan data bertipe string yang benar dalam JavaScript?\nA. let kota Semarang;\nB. let kota = \"Semarang\";\nC. let kota = 12345;\nD. let kota = true;",
-          "options": [
-            {
-              "id": "a",
-              "text": "let kota Semarang;"
-            },
-            {
-              "id": "b",
-              "text": "let kota = \"Semarang\";"
-            },
-            {
-              "id": "c",
-              "text": "let kota = 12345;"
-            },
-            {
-              "id": "d",
-              "text": "let kota = true;"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B",
-          "feedback_correct": "Benar! Nilai teks (string) harus diapit tanda kutip.",
-          "feedback_incorrect": "Belum tepat. Perhatikan penulisan tanda kutip pada teks.",
-          "mascot_dialogue": "Keren! Kamu sudah bisa membedakan teks dan angka.",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 49,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N04",
-          "title": "Node 04",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Tipe data boolean hanya memiliki dua kemungkinan nilai, yaitu true (benar) atau false (salah). Nilai boolean ditulis dengan huruf kecil semua tanpa tanda kutip dan sering dipakai untuk menentukan kondisi.",
-          "code_example": "let sudahLogin = true;\nlet lulusUjian = false;",
-          "question": "Apa saja dua nilai yang dimiliki oleh tipe data boolean?\nA. yes dan no\nB. 1 dan 2\nC. on dan off\nD. true dan false",
-          "options": [
-            {
-              "id": "a",
-              "text": "yes dan no"
-            },
-            {
-              "id": "b",
-              "text": "1 dan 2"
-            },
-            {
-              "id": "c",
-              "text": "on dan off"
-            },
-            {
-              "id": "d",
-              "text": "true dan false"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "D",
-          "feedback_correct": "Benar! Tipe data boolean hanya bernilai true atau false.",
-          "feedback_incorrect": "Belum tepat. Ingat istilah bahasa Inggris untuk benar dan salah di JavaScript.",
-          "mascot_dialogue": "Mantap! Kamu memahami logika dasar tipe data boolean.",
-          "correct_option_id": "d",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 53,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N05",
-          "title": "Node 05",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Operator aritmatika digunakan untuk melakukan perhitungan matematika pada angka. JavaScript menyediakan + untuk penjumlahan, - untuk pengurangan, * untuk perkalian, dan / untuk pembagian.",
-          "code_example": "let harga = 5000;\nlet total = harga * 2;",
-          "question": "Lengkapi simbol operator untuk menjumlahkan dua angka berikut:\nlet hasil = 10 _____ 5;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "+",
-          "feedback_correct": "Tepat! Simbol + menjumlahkan kedua nilai angka.",
-          "feedback_incorrect": "Belum tepat. Gunakan simbol penjumlahan standar matematika.",
-          "mascot_dialogue": "Bagus! Sekarang kamu bisa menghitung angka di JavaScript.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "+"
-          ],
-          "mascot_dialogue_char_count": 57,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N06",
-          "title": "Node 06",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Operator perbandingan membandingkan dua nilai dan menghasilkan nilai boolean (true atau false). Gunakan === untuk memeriksa kesamaan nilai beserta tipe datanya secara ketat, serta > atau < untuk membandingkan besar nilai.",
-          "code_example": "let nilai = 85;\nlet tuntas = nilai >= 75;\nlet samaPersis = 10 === 10;",
-          "question": "Lengkapi operator perbandingan ketat untuk mengecek kesamaan nilai dan tipe data:\nlet cek = 5 _____ 5;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "===",
-          "feedback_correct": "Benar! Operator === membandingkan nilai dan tipe data secara ketat.",
-          "feedback_incorrect": "Belum tepat. Gunakan tiga tanda sama dengan untuk perbandingan ketat.",
-          "mascot_dialogue": "Hebat! Kamu bisa membandingkan dua nilai dengan akurat.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "==="
-          ],
-          "mascot_dialogue_char_count": 55,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N07",
-          "title": "Node 07",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Operator logika menggabungkan dua atau lebih kondisi boolean. Operator && (AND) bernilai true hanya jika kedua kondisi benar, operator || (OR) bernilai true jika salah satu benar, dan ! (NOT) membalik nilai logika.",
-          "code_example": "let punyaTiket = true;\nlet tepatWaktu = true;\nlet bolehMasuk = punyaTiket && tepatWaktu;",
-          "question": "Lengkapi operator logika AND agar bernilai true jika kedua kondisi terpenuhi:\nlet lulus = nilaiBagus _____ hadirPenuh;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "&&",
-          "feedback_correct": "Benar! Operator && memastikan kedua syarat bernilai benar.",
-          "feedback_incorrect": "Belum tepat. Gunakan dua simbol ampersand untuk logika AND.",
-          "mascot_dialogue": "Mantap! Kamu sudah mengenal cara menggabungkan logika.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "&&"
-          ],
-          "mascot_dialogue_char_count": 54,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L02_N08",
-          "title": "Node 08",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Variabel harus dideklarasikan terlebih dahulu menggunakan let sebelum nilainya diubah atau diperbarui. Jangan menuliskan kata kunci let berulang kali untuk nama variabel yang sama di lingkup yang sama.",
-          "code_example": "let level = 1;\nlevel = 2;",
-          "question": "Susun potongan kode agar variabel dideklarasikan lebih dulu lalu nilainya diperbarui.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "nyawa = 2;"
-            },
-            {
-              "id": 2,
-              "code": "let nyawa = 3;"
-            }
-          ],
-          "correct_answer": "2 → 1",
-          "feedback_correct": "Tepat! Variabel dibuat dengan let terlebih dahulu sebelum diubah.",
-          "feedback_incorrect": "Belum tepat. Deklarasikan variabel let nyawa = 3; di baris pertama.",
-          "mascot_dialogue": "Bagus! Kamu berhasil mengatur urutan deklarasi variabel.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 56,
-          "answer_order": [
-            2,
-            1
-          ]
-        },
-        {
-          "node_id": "JS_L02_N09",
-          "title": "Node 09",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Program mengeksekusi baris kode dari atas ke bawah. Pastikan semua variabel penyusun rumus sudah memiliki nilai sebelum digunakan dalam operasi perhitungan aritmatika agar tidak menghasilkan nilai undefined atau NaN.",
-          "code_example": "let panjang = 8;\nlet lebar = 4;\nlet luas = panjang * lebar;",
-          "question": "Susun potongan kode untuk menghitung total belanja dengan urutan yang benar.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "let total = harga + ongkir;"
-            },
-            {
-              "id": 2,
-              "code": "let harga = 15000;"
-            },
-            {
-              "id": 3,
-              "code": "let ongkir = 5000;"
-            }
-          ],
-          "correct_answer": "2 → 3 → 1",
-          "feedback_correct": "Benar! Variabel harga dan ongkir didefinisikan sebelum dijumlahkan.",
-          "feedback_incorrect": "Belum tepat. Definisikan kedua komponen angka sebelum baris penjumlahan.",
-          "mascot_dialogue": "Keren! Alur perhitungan variabelmu sudah tersusun rapi.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 55,
-          "answer_order": [
-            2,
-            3,
-            1
-          ]
-        },
-        {
-          "node_id": "JS_L02_N10",
-          "title": "Node 10",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Dalam program nyata, kita sering menggabungkan konstanta, variabel, operator perbandingan, dan operator logika. Tetapkan syarat kelulusan sebagai const, simpan nilai siswa dengan let, lalu evaluasi kelulusannya ke variabel boolean.",
-          "code_example": "const kkm = 75;\nlet nilai = 80;\nlet lulus = nilai >= kkm && true;",
-          "question": "Susun kode untuk mengevaluasi syarat masuk wahana berdasarkan tinggi minimal dan izin tiket.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "let bolehNaik = tinggi >= batasTinggi && punyaTiket;"
-            },
-            {
-              "id": 2,
-              "code": "let tinggi = 145;"
-            },
-            {
-              "id": 3,
-              "code": "const batasTinggi = 140;"
-            }
-          ],
-          "correct_answer": "3 → 2 → 1",
-          "feedback_correct": "Luar biasa! Susunan konstanta, variabel, perbandingan, dan logika sudah benar.",
-          "feedback_incorrect": "Belum tepat. Mulailah dengan konstanta batas, lalu variabel tinggi, kemudian evaluasi logika.",
-          "mascot_dialogue": "Selamat! Kamu menyelesaikan JavaScript Level 2.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 47,
-          "answer_order": [
-            3,
-            2,
-            1
-          ]
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "JS_L02_N02",
+        "title": "Node 02",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Konstanta adalah wadah penyimpan data yang nilainya tetap dan tidak boleh diubah setelah dibuat. Dalam JavaScript, konstanta dideklarasikan menggunakan kata kunci const dan wajib langsung diberi nilai awal.",
+        "code_example": "const namaSekolah = \"SMK Nusantara\";\nconst maxSiswa = 36;",
+        "question": "Kata kunci mana yang digunakan untuk menyimpan nilai tetap agar tidak berubah?\nA. let\nB. change\nC. const\nD. number",
+        "options": [
+          {
+            "id": "a",
+            "text": "let"
+          },
+          {
+            "id": "b",
+            "text": "change"
+          },
+          {
+            "id": "c",
+            "text": "const"
+          },
+          {
+            "id": "d",
+            "text": "number"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! const menjaga nilai tetap konstan dan tidak berubah.",
+        "feedback_incorrect": "Belum benar. Pilih kata kunci khusus untuk nilai konstanta.",
+        "mascot_dialogue": "Bagus! Kamu tahu kapan harus memakai variabel dan konstanta."
+      },
+      {
+        "node_id": "JS_L02_N03",
+        "title": "Node 03",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Tipe data string digunakan untuk menyimpan teks dan selalu diapit oleh tanda kutip (\"...\" atau '...'). Tipe data number digunakan untuk menyimpan angka bulat maupun desimal tanpa tanda kutip agar bisa dihitung.",
+        "code_example": "let nama = \"Rani\";\nlet umur = 16;",
+        "question": "Manakah penulisan data bertipe string yang benar dalam JavaScript?\nA. let kota Semarang;\nB. let kota = \"Semarang\";\nC. let kota = 12345;\nD. let kota = true;",
+        "options": [
+          {
+            "id": "a",
+            "text": "let kota Semarang;"
+          },
+          {
+            "id": "b",
+            "text": "let kota = \"Semarang\";"
+          },
+          {
+            "id": "c",
+            "text": "let kota = 12345;"
+          },
+          {
+            "id": "d",
+            "text": "let kota = true;"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! Nilai teks (string) harus diapit tanda kutip.",
+        "feedback_incorrect": "Belum tepat. Perhatikan penulisan tanda kutip pada teks.",
+        "mascot_dialogue": "Keren! Kamu sudah bisa membedakan teks dan angka."
+      },
+      {
+        "node_id": "JS_L02_N04",
+        "title": "Node 04",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Tipe data boolean hanya memiliki dua kemungkinan nilai, yaitu true (benar) atau false (salah). Nilai boolean ditulis dengan huruf kecil semua tanpa tanda kutip dan sering dipakai untuk menentukan kondisi.",
+        "code_example": "let sudahLogin = true;\nlet lulusUjian = false;",
+        "question": "Apa saja dua nilai yang dimiliki oleh tipe data boolean?\nA. yes dan no\nB. 1 dan 2\nC. on dan off\nD. true dan false",
+        "options": [
+          {
+            "id": "a",
+            "text": "yes dan no"
+          },
+          {
+            "id": "b",
+            "text": "1 dan 2"
+          },
+          {
+            "id": "c",
+            "text": "on dan off"
+          },
+          {
+            "id": "d",
+            "text": "true dan false"
+          }
+        ],
+        "correct_option_id": "d",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "D",
+        "feedback_correct": "Benar! Tipe data boolean hanya bernilai true atau false.",
+        "feedback_incorrect": "Belum tepat. Ingat istilah bahasa Inggris untuk benar dan salah di JavaScript.",
+        "mascot_dialogue": "Mantap! Kamu memahami logika dasar tipe data boolean."
+      },
+      {
+        "node_id": "JS_L02_N05",
+        "title": "Node 05",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Operator aritmatika digunakan untuk melakukan perhitungan matematika pada angka. JavaScript menyediakan + untuk penjumlahan, - untuk pengurangan, * untuk perkalian, dan / untuk pembagian.",
+        "code_example": "let harga = 5000;\nlet total = harga * 2;",
+        "question": "Lengkapi simbol operator untuk menjumlahkan dua angka berikut:\nlet hasil = 10 ___ 5;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "+"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "+",
+        "feedback_correct": "Tepat! Simbol + menjumlahkan kedua nilai angka.",
+        "feedback_incorrect": "Belum tepat. Gunakan simbol penjumlahan standar matematika.",
+        "mascot_dialogue": "Bagus! Sekarang kamu bisa menghitung angka di JavaScript."
+      },
+      {
+        "node_id": "JS_L02_N06",
+        "title": "Node 06",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Operator perbandingan membandingkan dua nilai dan menghasilkan nilai boolean (true atau false). Gunakan === untuk memeriksa kesamaan nilai beserta tipe datanya secara ketat, serta > atau < untuk membandingkan besar nilai.",
+        "code_example": "let nilai = 85;\nlet tuntas = nilai >= 75;\nlet samaPersis = 10 === 10;",
+        "question": "Lengkapi operator perbandingan ketat untuk mengecek kesamaan nilai dan tipe data:\nlet cek = 5 ___ 5;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "==="
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "===",
+        "feedback_correct": "Benar! Operator === membandingkan nilai dan tipe data secara ketat.",
+        "feedback_incorrect": "Belum tepat. Gunakan tiga tanda sama dengan untuk perbandingan ketat.",
+        "mascot_dialogue": "Hebat! Kamu bisa membandingkan dua nilai dengan akurat."
+      },
+      {
+        "node_id": "JS_L02_N07",
+        "title": "Node 07",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Operator logika menggabungkan dua atau lebih kondisi boolean. Operator && (AND) bernilai true hanya jika kedua kondisi benar, operator || (OR) bernilai true jika salah satu benar, dan ! (NOT) membalik nilai logika.",
+        "code_example": "let punyaTiket = true;\nlet tepatWaktu = true;\nlet bolehMasuk = punyaTiket && tepatWaktu;",
+        "question": "Lengkapi operator logika AND agar bernilai true jika kedua kondisi terpenuhi:\nlet lulus = nilaiBagus ___ hadirPenuh;",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "&&"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "&&",
+        "feedback_correct": "Benar! Operator && memastikan kedua syarat bernilai benar.",
+        "feedback_incorrect": "Belum tepat. Gunakan dua simbol ampersand untuk logika AND.",
+        "mascot_dialogue": "Mantap! Kamu sudah mengenal cara menggabungkan logika."
+      },
+      {
+        "node_id": "JS_L02_N08",
+        "title": "Node 08",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Variabel harus dideklarasikan terlebih dahulu menggunakan let sebelum nilainya diubah atau diperbarui. Jangan menuliskan kata kunci let berulang kali untuk nama variabel yang sama di lingkup yang sama.",
+        "code_example": "let level = 1;\nlevel = 2;",
+        "question": "Susun potongan kode agar variabel dideklarasikan lebih dulu lalu nilainya diperbarui.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "nyawa = 2;"
+          },
+          {
+            "id": 2,
+            "code": "let nyawa = 3;"
+          }
+        ],
+        "answer_order": [
+          2,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "let nyawa = 3; nyawa = 2;",
+        "correct_answer": "2 → 1",
+        "feedback_correct": "Tepat! Variabel dibuat dengan let terlebih dahulu sebelum diubah.",
+        "feedback_incorrect": "Belum tepat. Deklarasikan variabel let nyawa = 3; di baris pertama.",
+        "mascot_dialogue": "Bagus! Kamu berhasil mengatur urutan deklarasi variabel."
+      },
+      {
+        "node_id": "JS_L02_N09",
+        "title": "Node 09",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Program mengeksekusi baris kode dari atas ke bawah. Pastikan semua variabel penyusun rumus sudah memiliki nilai sebelum digunakan dalam operasi perhitungan aritmatika agar tidak menghasilkan nilai undefined atau NaN.",
+        "code_example": "let panjang = 8;\nlet lebar = 4;\nlet luas = panjang * lebar;",
+        "question": "Susun potongan kode untuk menghitung total belanja dengan urutan yang benar.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "let total = harga + ongkir;"
+          },
+          {
+            "id": 2,
+            "code": "let harga = 15000;"
+          },
+          {
+            "id": 3,
+            "code": "let ongkir = 5000;"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "let harga = 15000; let ongkir = 5000; let total = harga + ongkir;",
+        "correct_answer": "2 → 3 → 1",
+        "feedback_correct": "Benar! Variabel harga dan ongkir didefinisikan sebelum dijumlahkan.",
+        "feedback_incorrect": "Belum tepat. Definisikan kedua komponen angka sebelum baris penjumlahan.",
+        "mascot_dialogue": "Keren! Alur perhitungan variabelmu sudah tersusun rapi."
+      },
+      {
+        "node_id": "JS_L02_N10",
+        "title": "Node 10",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Dalam program nyata, kita sering menggabungkan konstanta, variabel, operator perbandingan, dan operator logika. Tetapkan syarat kelulusan sebagai const, simpan nilai siswa dengan let, lalu evaluasi kelulusannya ke variabel boolean.",
+        "code_example": "const kkm = 75;\nlet nilai = 80;\nlet lulus = nilai >= kkm && true;",
+        "question": "Susun kode untuk mengevaluasi syarat masuk wahana berdasarkan tinggi minimal dan izin tiket.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "let bolehNaik = tinggi >= batasTinggi && punyaTiket;"
+          },
+          {
+            "id": 2,
+            "code": "let tinggi = 145;"
+          },
+          {
+            "id": 3,
+            "code": "const batasTinggi = 140;"
+          }
+        ],
+        "answer_order": [
+          3,
+          2,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "const batasTinggi = 140; let tinggi = 145; let bolehNaik = tinggi >= batasTinggi && punyaTiket;",
+        "correct_answer": "3 → 2 → 1",
+        "feedback_correct": "Luar biasa! Susunan konstanta, variabel, perbandingan, dan logika sudah benar.",
+        "feedback_incorrect": "Belum tepat. Mulailah dengan konstanta batas, lalu variabel tinggi, kemudian evaluasi logika.",
+        "mascot_dialogue": "Selamat! Kamu menyelesaikan JavaScript Level 2."
+      }
+    ]
+  }
 }

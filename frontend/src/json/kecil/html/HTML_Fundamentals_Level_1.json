@@ -1,366 +1,359 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "html_fundamentals",
   "course_title": "HTML Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "HTML_Fundamentals_Level_1.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; normalisasi spasi dan kapitalisasi sesuai kebutuhan.",
-    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
-    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
-  },
-  "levels": [
-    {
-      "level_id": "HTML_L01",
-      "level_number": 1,
-      "title": "Introduction to HTML",
-      "description": "Pengenalan fungsi HTML, tag dan elemen, struktur dokumen, heading, paragraf, pemformatan teks, tautan, gambar, daftar, dan penyusunan halaman sederhana.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "content_version": "1.1",
+  "level": {
+    "level_id": "HTML_L01",
+    "level_number": 1,
+    "title": "Introduction to HTML",
+    "description": "Pengenalan fungsi HTML, tag dan elemen, struktur dokumen, heading, paragraf, pemformatan teks, tautan, gambar, daftar, dan penyusunan halaman sederhana.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "HTML_L01_N01",
+        "title": "Node 01",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "HTML (HyperText Markup Language) adalah bahasa markup untuk menyusun struktur dan konten halaman web, seperti judul, paragraf, gambar, tautan, dan daftar. HTML bukan bahasa pemrograman untuk logika aplikasi.",
+        "code_example": "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello, web!</h1>\n  </body>\n</html>",
+        "question": "Apa fungsi utama HTML?\nA. Mengatur struktur dan konten halaman web\nB. Mengelola database server\nC. Mengedit video\nD. Mengatur koneksi internet",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mengatur struktur dan konten halaman web"
+          },
+          {
+            "id": "b",
+            "text": "Mengelola database server"
+          },
+          {
+            "id": "c",
+            "text": "Mengedit video"
+          },
+          {
+            "id": "d",
+            "text": "Mengatur koneksi internet"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A",
+        "feedback_correct": "HTML digunakan untuk membangun struktur konten halaman web, misalnya heading dan paragraf.",
+        "feedback_incorrect": "Belum tepat. HTML adalah markup untuk menyusun konten halaman, bukan alat untuk mengedit media atau mengelola server.",
+        "mascot_dialogue": "Hebat! Kamu sudah mengenal bahasa dasar pembentuk halaman web!"
       },
-      "learning_objectives": [
-        "Menjelaskan fungsi HTML sebagai bahasa markup untuk struktur halaman web.",
-        "Mengenali tag, elemen, dan struktur dokumen HTML.",
-        "Menggunakan heading, paragraf, penekanan teks, tautan, gambar, dan daftar.",
-        "Menyusun dokumen HTML sederhana dengan struktur yang benar."
-      ],
-      "nodes": [
-        {
-          "node_id": "HTML_L01_N01",
-          "title": "Node 01",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "HTML (HyperText Markup Language) adalah bahasa markup untuk menyusun struktur dan konten halaman web, seperti judul, paragraf, gambar, tautan, dan daftar. HTML bukan bahasa pemrograman untuk logika aplikasi.",
-          "code_example": "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Hello, web!</h1>\n  </body>\n</html>",
-          "question": "Apa fungsi utama HTML?\nA. Mengatur struktur dan konten halaman web\nB. Mengelola database server\nC. Mengedit video\nD. Mengatur koneksi internet",
-          "options": [
-            {
-              "id": "a",
-              "text": "Mengatur struktur dan konten halaman web"
-            },
-            {
-              "id": "b",
-              "text": "Mengelola database server"
-            },
-            {
-              "id": "c",
-              "text": "Mengedit video"
-            },
-            {
-              "id": "d",
-              "text": "Mengatur koneksi internet"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "A",
-          "feedback_correct": "HTML digunakan untuk membangun struktur konten halaman web, misalnya heading dan paragraf.",
-          "feedback_incorrect": "Belum tepat. HTML adalah markup untuk menyusun konten halaman, bukan alat untuk mengedit media atau mengelola server.",
-          "mascot_dialogue": "Hebat! Kamu sudah mengenal bahasa dasar pembentuk halaman web!",
-          "correct_option_id": "a",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 62,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N02",
-          "title": "Node 02",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Elemen HTML umumnya terdiri dari tag pembuka, konten, dan tag penutup. Nama tag ditulis di dalam tanda kurung sudut untuk memberi tahu browser jenis konten yang ditampilkan.",
-          "code_example": "<p>Ini sebuah paragraf.</p>\n<h1>Judul halaman</h1>",
-          "question": "Bagian manakah yang merupakan tag pembuka pada elemen paragraf?\nA. </p>\nB. <p>\nC. paragraf\nD. <html>",
-          "options": [
-            {
-              "id": "a",
-              "text": "</p>"
-            },
-            {
-              "id": "b",
-              "text": "<p>"
-            },
-            {
-              "id": "c",
-              "text": "paragraf"
-            },
-            {
-              "id": "d",
-              "text": "<html>"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B",
-          "feedback_correct": "Benar! <p> membuka elemen paragraf, sedangkan </p> menutupnya.",
-          "feedback_incorrect": "Perhatikan garis miring. Tag penutup memiliki / setelah tanda <.",
-          "mascot_dialogue": "Bagus! Kamu bisa membedakan tag pembuka dan penutup.",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 52,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N03",
-          "title": "Node 03",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Dokumen HTML memiliki struktur dasar. <!DOCTYPE html> menyatakan penggunaan HTML modern. <html> membungkus dokumen, <head> berisi metadata, dan <body> berisi konten yang terlihat.",
-          "code_example": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Halaman Saya</title>\n</head>\n<body>\n  <p>Halo!</p>\n</body>\n</html>",
-          "question": "Elemen mana yang menampung konten utama yang terlihat di halaman browser?\nA. <head>\nB. <title>\nC. <body>\nD. <!DOCTYPE html>",
-          "options": [
-            {
-              "id": "a",
-              "text": "<head>"
-            },
-            {
-              "id": "b",
-              "text": "<title>"
-            },
-            {
-              "id": "c",
-              "text": "<body>"
-            },
-            {
-              "id": "d",
-              "text": "<!DOCTYPE html>"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C",
-          "feedback_correct": "Tepat! Konten yang ditampilkan pada halaman diletakkan di dalam <body>.",
-          "feedback_incorrect": "<head> berisi informasi dokumen, sedangkan konten halaman berada di <body>.",
-          "mascot_dialogue": "Keren! Struktur dokumen HTML-mu mulai terbentuk.",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 48,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N04",
-          "title": "Node 04",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Heading digunakan untuk judul dan subjudul, dari <h1> hingga <h6>. Tag <p> digunakan untuk paragraf. Pilih heading berdasarkan struktur isi, bukan sekadar ukuran visual.",
-          "code_example": "<h1>Belajar HTML</h1>\n<h2>Pengenalan</h2>\n<p>HTML menyusun konten web.</p>",
-          "question": "Tag yang tepat untuk membuat paragraf adalah ...\nA. <h1>\nB. <p>\nC. <br>\nD. <img>",
-          "options": [
-            {
-              "id": "a",
-              "text": "<h1>"
-            },
-            {
-              "id": "b",
-              "text": "<p>"
-            },
-            {
-              "id": "c",
-              "text": "<br>"
-            },
-            {
-              "id": "d",
-              "text": "<img>"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B",
-          "feedback_correct": "Benar! Elemen <p> digunakan untuk membungkus paragraf.",
-          "feedback_incorrect": "Heading digunakan untuk judul, sedangkan paragraf menggunakan <p>.",
-          "mascot_dialogue": "Mantap! Kamu sudah bisa menyusun judul dan paragraf.",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 52,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N05",
-          "title": "Node 05",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "HTML menyediakan elemen semantik untuk memberi penekanan pada teks. <strong> menandai teks penting, sedangkan <em> memberi penekanan. Browser biasanya menampilkan keduanya dengan gaya tebal atau miring.",
-          "code_example": "<p><strong>Penting:</strong> Simpan pekerjaanmu.</p>\n<p><em>Catatan:</em> Baca instruksi.</p>",
-          "question": "Lengkapi tag penutup untuk elemen strong:\n<strong>Penting</_____>\nJawaban diisi dengan nama tag tanpa tanda kurung sudut.",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "strong",
-          "feedback_correct": "Tepat! Tag penutupnya adalah </strong>.",
-          "feedback_incorrect": "Ingat nama tag penutup harus sama dengan tag pembukanya, diawali garis miring.",
-          "mascot_dialogue": "Sip! Kamu sudah mengenal penekanan teks.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "strong"
-          ],
-          "mascot_dialogue_char_count": 40,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N06",
-          "title": "Node 06",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Elemen <a> membuat tautan ke halaman atau sumber lain. Atribut href menentukan alamat tujuan. Teks di antara tag pembuka dan penutup menjadi bagian yang dapat diklik.",
-          "code_example": "<a href=\"https://example.com\">Kunjungi situs</a>",
-          "question": "Lengkapi atribut untuk menentukan alamat tujuan tautan:\n<a _____=\"https://example.com\">Buka</a>\nJawaban diisi dengan nama atribut.",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "href",
-          "feedback_correct": "Benar! href menyimpan URL tujuan tautan.",
-          "feedback_incorrect": "Petunjuk: atribut ini berarti hypertext reference dan diletakkan pada tag <a>.",
-          "mascot_dialogue": "Bagus! Sekarang halamanmu bisa saling terhubung.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "href"
-          ],
-          "mascot_dialogue_char_count": 48,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N07",
-          "title": "Node 07",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Elemen <img> menampilkan gambar dan termasuk void element sehingga tidak memerlukan tag penutup. Atribut src menentukan lokasi gambar dan alt menyediakan teks alternatif.",
-          "code_example": "<img src=\"kucing.jpg\" alt=\"Kucing duduk di kursi\">",
-          "question": "Lengkapi atribut untuk memberikan deskripsi alternatif gambar:\n<img src=\"logo.png\" _____=\"Logo sekolah\">\nJawaban diisi dengan nama atribut.",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "alt",
-          "feedback_correct": "Tepat! alt menyediakan teks alternatif untuk gambar.",
-          "feedback_incorrect": "Atribut yang dimaksud menjelaskan isi gambar dalam bentuk teks.",
-          "mascot_dialogue": "Hebat! Kamu sudah membuat gambar lebih mudah dipahami.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "alt"
-          ],
-          "mascot_dialogue_char_count": 54,
-          "answer_order": null
-        },
-        {
-          "node_id": "HTML_L01_N08",
-          "title": "Node 08",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Daftar tak berurutan dibuat dengan <ul>, sedangkan daftar berurutan dibuat dengan <ol>. Setiap item daftar ditulis di dalam elemen <li>.",
-          "code_example": "<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n</ul>",
-          "question": "Susun potongan kode berikut menjadi daftar tak berurutan yang berisi HTML.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "</ul>"
-            },
-            {
-              "id": 2,
-              "code": "<li>HTML</li>"
-            },
-            {
-              "id": 3,
-              "code": "<ul>"
-            }
-          ],
-          "correct_answer": "3 → 2 → 1",
-          "feedback_correct": "Urutan benar! <ul> membungkus item <li> dan ditutup dengan </ul>.",
-          "feedback_incorrect": "Mulai dari tag pembungkus daftar, letakkan item di dalamnya, lalu tutup daftar.",
-          "mascot_dialogue": "Yeay! Kamu berhasil menyusun daftar HTML pertamamu.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 51,
-          "answer_order": [
-            3,
-            2,
-            1
-          ]
-        },
-        {
-          "node_id": "HTML_L01_N09",
-          "title": "Node 09",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Tag <br> membuat perpindahan baris tanpa memulai paragraf baru. Komentar HTML ditulis dengan <!-- dan -->, dan tidak ditampilkan sebagai konten halaman.",
-          "code_example": "<p>Baris pertama<br>Baris kedua</p>\n<!-- Ini komentar -->",
-          "question": "Susun potongan berikut agar dua baris teks berada dalam satu paragraf.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "Baris kedua</p>"
-            },
-            {
-              "id": 2,
-              "code": "<p>Baris pertama"
-            },
-            {
-              "id": 3,
-              "code": "<br>"
-            }
-          ],
-          "correct_answer": "2 → 3 → 1",
-          "feedback_correct": "Benar! <br> diletakkan di antara teks untuk memulai baris baru.",
-          "feedback_incorrect": "Letakkan tag paragraf terlebih dahulu, kemudian pemisah baris, lalu teks kedua dan tag penutup.",
-          "mascot_dialogue": "Keren! Kamu bisa mengatur baris teks dengan HTML.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 49,
-          "answer_order": [
-            2,
-            3,
-            1
-          ]
-        },
-        {
-          "node_id": "HTML_L01_N10",
-          "title": "Node 10",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Sebuah halaman sederhana menggabungkan deklarasi doctype, elemen html, head dengan title, serta body berisi heading dan paragraf. Susunan yang benar membantu browser membaca dokumen.",
-          "code_example": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Profil Saya</title>\n</head>\n<body>\n  <h1>Halo!</h1>\n  <p>Saya belajar HTML.</p>\n</body>\n</html>",
-          "question": "Susun potongan utama menjadi dokumen HTML sederhana dengan judul halaman dan konten body.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "<body><h1>Halo!</h1></body>"
-            },
-            {
-              "id": 2,
-              "code": "</html>"
-            },
-            {
-              "id": 3,
-              "code": "<head><title>Profil</title></head>"
-            },
-            {
-              "id": 4,
-              "code": "<!DOCTYPE html><html>"
-            },
-            {
-              "id": 5,
-              "code": "</html>"
-            }
-          ],
-          "correct_answer": "4 → 3 → 1 → 5",
-          "feedback_correct": "Susunan dimulai dari doctype dan html, dilanjutkan metadata head, konten body, lalu penutup dokumen.",
-          "feedback_incorrect": "Pastikan dokumen dimulai dengan doctype, metadata berada sebelum body, dan elemen html ditutup paling akhir.",
-          "mascot_dialogue": "Selamat! Kamu telah menyusun halaman HTML pertamamu!",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 52,
-          "answer_order": [
-            4,
-            3,
-            1,
-            5
-          ]
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "HTML_L01_N02",
+        "title": "Node 02",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Elemen HTML umumnya terdiri dari tag pembuka, konten, dan tag penutup. Nama tag ditulis di dalam tanda kurung sudut untuk memberi tahu browser jenis konten yang ditampilkan.",
+        "code_example": "<p>Ini sebuah paragraf.</p>\n<h1>Judul halaman</h1>",
+        "question": "Bagian manakah yang merupakan tag pembuka pada elemen paragraf?\nA. </p>\nB. <p>\nC. paragraf\nD. <html>",
+        "options": [
+          {
+            "id": "a",
+            "text": "</p>"
+          },
+          {
+            "id": "b",
+            "text": "<p>"
+          },
+          {
+            "id": "c",
+            "text": "paragraf"
+          },
+          {
+            "id": "d",
+            "text": "<html>"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! <p> membuka elemen paragraf, sedangkan </p> menutupnya.",
+        "feedback_incorrect": "Perhatikan garis miring. Tag penutup memiliki / setelah tanda <.",
+        "mascot_dialogue": "Bagus! Kamu bisa membedakan tag pembuka dan penutup."
+      },
+      {
+        "node_id": "HTML_L01_N03",
+        "title": "Node 03",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Dokumen HTML memiliki struktur dasar. <!DOCTYPE html> menyatakan penggunaan HTML modern. <html> membungkus dokumen, <head> berisi metadata, dan <body> berisi konten yang terlihat.",
+        "code_example": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Halaman Saya</title>\n</head>\n<body>\n  <p>Halo!</p>\n</body>\n</html>",
+        "question": "Elemen mana yang menampung konten utama yang terlihat di halaman browser?\nA. <head>\nB. <title>\nC. <body>\nD. <!DOCTYPE html>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<head>"
+          },
+          {
+            "id": "b",
+            "text": "<title>"
+          },
+          {
+            "id": "c",
+            "text": "<body>"
+          },
+          {
+            "id": "d",
+            "text": "<!DOCTYPE html>"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C",
+        "feedback_correct": "Tepat! Konten yang ditampilkan pada halaman diletakkan di dalam <body>.",
+        "feedback_incorrect": "<head> berisi informasi dokumen, sedangkan konten halaman berada di <body>.",
+        "mascot_dialogue": "Keren! Struktur dokumen HTML-mu mulai terbentuk."
+      },
+      {
+        "node_id": "HTML_L01_N04",
+        "title": "Node 04",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Heading digunakan untuk judul dan subjudul, dari <h1> hingga <h6>. Tag <p> digunakan untuk paragraf. Pilih heading berdasarkan struktur isi, bukan sekadar ukuran visual.",
+        "code_example": "<h1>Belajar HTML</h1>\n<h2>Pengenalan</h2>\n<p>HTML menyusun konten web.</p>",
+        "question": "Tag yang tepat untuk membuat paragraf adalah ...\nA. <h1>\nB. <p>\nC. <br>\nD. <img>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<h1>"
+          },
+          {
+            "id": "b",
+            "text": "<p>"
+          },
+          {
+            "id": "c",
+            "text": "<br>"
+          },
+          {
+            "id": "d",
+            "text": "<img>"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B",
+        "feedback_correct": "Benar! Elemen <p> digunakan untuk membungkus paragraf.",
+        "feedback_incorrect": "Heading digunakan untuk judul, sedangkan paragraf menggunakan <p>.",
+        "mascot_dialogue": "Mantap! Kamu sudah bisa menyusun judul dan paragraf."
+      },
+      {
+        "node_id": "HTML_L01_N05",
+        "title": "Node 05",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "HTML menyediakan elemen semantik untuk memberi penekanan pada teks. <strong> menandai teks penting, sedangkan <em> memberi penekanan. Browser biasanya menampilkan keduanya dengan gaya tebal atau miring.",
+        "code_example": "<p><strong>Penting:</strong> Simpan pekerjaanmu.</p>\n<p><em>Catatan:</em> Baca instruksi.</p>",
+        "question": "Lengkapi tag penutup untuk elemen strong:\n<strong>Penting</___>\nJawaban diisi dengan nama tag tanpa tanda kurung sudut.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "strong"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "strong",
+        "feedback_correct": "Tepat! Tag penutupnya adalah </strong>.",
+        "feedback_incorrect": "Ingat nama tag penutup harus sama dengan tag pembukanya, diawali garis miring.",
+        "mascot_dialogue": "Sip! Kamu sudah mengenal penekanan teks."
+      },
+      {
+        "node_id": "HTML_L01_N06",
+        "title": "Node 06",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Elemen <a> membuat tautan ke halaman atau sumber lain. Atribut href menentukan alamat tujuan. Teks di antara tag pembuka dan penutup menjadi bagian yang dapat diklik.",
+        "code_example": "<a href=\"https://example.com\">Kunjungi situs</a>",
+        "question": "Lengkapi atribut untuk menentukan alamat tujuan tautan:\n<a ___=\"https://example.com\">Buka</a>\nJawaban diisi dengan nama atribut.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "href"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "href",
+        "feedback_correct": "Benar! href menyimpan URL tujuan tautan.",
+        "feedback_incorrect": "Petunjuk: atribut ini berarti hypertext reference dan diletakkan pada tag <a>.",
+        "mascot_dialogue": "Bagus! Sekarang halamanmu bisa saling terhubung."
+      },
+      {
+        "node_id": "HTML_L01_N07",
+        "title": "Node 07",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Elemen <img> menampilkan gambar dan termasuk void element sehingga tidak memerlukan tag penutup. Atribut src menentukan lokasi gambar dan alt menyediakan teks alternatif.",
+        "code_example": "<img src=\"kucing.jpg\" alt=\"Kucing duduk di kursi\">",
+        "question": "Lengkapi atribut untuk memberikan deskripsi alternatif gambar:\n<img src=\"logo.png\" ___=\"Logo sekolah\">\nJawaban diisi dengan nama atribut.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "alt"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "alt",
+        "feedback_correct": "Tepat! alt menyediakan teks alternatif untuk gambar.",
+        "feedback_incorrect": "Atribut yang dimaksud menjelaskan isi gambar dalam bentuk teks.",
+        "mascot_dialogue": "Hebat! Kamu sudah membuat gambar lebih mudah dipahami."
+      },
+      {
+        "node_id": "HTML_L01_N08",
+        "title": "Node 08",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Daftar tak berurutan dibuat dengan <ul>, sedangkan daftar berurutan dibuat dengan <ol>. Setiap item daftar ditulis di dalam elemen <li>.",
+        "code_example": "<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n</ul>",
+        "question": "Susun potongan kode berikut menjadi daftar tak berurutan yang berisi HTML.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "</ul>"
+          },
+          {
+            "id": 2,
+            "code": "<li>HTML</li>"
+          },
+          {
+            "id": 3,
+            "code": "<ul>"
+          }
+        ],
+        "answer_order": [
+          3,
+          2,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<ul> <li>HTML</li> </ul>",
+        "correct_answer": "3 → 2 → 1",
+        "feedback_correct": "Urutan benar! <ul> membungkus item <li> dan ditutup dengan </ul>.",
+        "feedback_incorrect": "Mulai dari tag pembungkus daftar, letakkan item di dalamnya, lalu tutup daftar.",
+        "mascot_dialogue": "Yeay! Kamu berhasil menyusun daftar HTML pertamamu."
+      },
+      {
+        "node_id": "HTML_L01_N09",
+        "title": "Node 09",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Tag <br> membuat perpindahan baris tanpa memulai paragraf baru. Komentar HTML ditulis dengan <!-- dan -->, dan tidak ditampilkan sebagai konten halaman.",
+        "code_example": "<p>Baris pertama<br>Baris kedua</p>\n<!-- Ini komentar -->",
+        "question": "Susun potongan berikut agar dua baris teks berada dalam satu paragraf.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "Baris kedua</p>"
+          },
+          {
+            "id": 2,
+            "code": "<p>Baris pertama"
+          },
+          {
+            "id": 3,
+            "code": "<br>"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<p>Baris pertama <br> Baris kedua</p>",
+        "correct_answer": "2 → 3 → 1",
+        "feedback_correct": "Benar! <br> diletakkan di antara teks untuk memulai baris baru.",
+        "feedback_incorrect": "Letakkan tag paragraf terlebih dahulu, kemudian pemisah baris, lalu teks kedua dan tag penutup.",
+        "mascot_dialogue": "Keren! Kamu bisa mengatur baris teks dengan HTML."
+      },
+      {
+        "node_id": "HTML_L01_N10",
+        "title": "Node 10",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Sebuah halaman sederhana menggabungkan deklarasi doctype, elemen html, head dengan title, serta body berisi heading dan paragraf. Susunan yang benar membantu browser membaca dokumen.",
+        "code_example": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Profil Saya</title>\n</head>\n<body>\n  <h1>Halo!</h1>\n  <p>Saya belajar HTML.</p>\n</body>\n</html>",
+        "question": "Susun potongan utama menjadi dokumen HTML sederhana dengan judul halaman dan konten body.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<body><h1>Halo!</h1></body>"
+          },
+          {
+            "id": 2,
+            "code": "</html>"
+          },
+          {
+            "id": 3,
+            "code": "<head><title>Profil</title></head>"
+          },
+          {
+            "id": 4,
+            "code": "<!DOCTYPE html><html>"
+          },
+          {
+            "id": 5,
+            "code": "</html>"
+          }
+        ],
+        "answer_order": [
+          4,
+          3,
+          1,
+          5
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<!DOCTYPE html><html> <head><title>Profil</title></head> <body><h1>Halo!</h1></body> </html>",
+        "correct_answer": "4 → 3 → 1 → 5",
+        "feedback_correct": "Susunan dimulai dari doctype dan html, dilanjutkan metadata head, konten body, lalu penutup dokumen.",
+        "feedback_incorrect": "Pastikan dokumen dimulai dengan doctype, metadata berada sebelum body, dan elemen html ditutup paling akhir.",
+        "mascot_dialogue": "Selamat! Kamu telah menyusun halaman HTML pertamamu!"
+      }
+    ]
+  }
 }

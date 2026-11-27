@@ -1,252 +1,350 @@
 {
-  "schema_version": "draft-1.0",
-  "course_id": "css_fundamentals",
-  "course_title": "CSS Fundamentals",
+  "schema_version": "1.0",
+  "course_id": "html_fundamentals",
+  "course_title": "HTML Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "CSS_Fundamentals_Level_3.pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_blank": "accepted_answers berisi jawaban yang diterima.",
-    "arrange_code": "answer_order berisi urutan ID fragmen kode yang benar.",
-    "mascot_dialogue": "Dialog maskot ditampilkan setelah jawaban diperiksa."
-  },
-  "levels": [
-    {
-      "level_id": "CSS_L03",
-      "level_number": 3,
-      "title": "CSS Box Model, Borders & Spacing",
-      "description": "Mengatur ukuran elemen, ruang dalam dan luar, garis tepi, serta sudut elemen menggunakan properti CSS.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "content_version": "1.1",
+  "level": {
+    "level_id": "HTML_L03",
+    "level_number": 3,
+    "title": "HTML Structure & Semantics",
+    "description": "Materi struktur halaman HTML5 dan elemen semantik untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "HTML_L03_N01",
+        "title": "Introduction to Semantic HTML",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Semantic HTML menggunakan tag yang menjelaskan makna kontennya secara jelas kepada browser dan developer, seperti <header>, <nav>, <main>, dan <footer>.",
+        "code_example": "<header>\n  <h1>Website Belajar</h1>\n</header>",
+        "question": "Apa tujuan utama penggunaan elemen semantik dalam HTML5?\nA. Mempercepat koneksi internet pengguna\nB. Memberikan makna dan struktur yang jelas pada bagian halaman web\nC. Menggantikan fungsi bahasa pemrograman JavaScript\nD. Menghapus kebutuhan file CSS",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mempercepat koneksi internet pengguna"
+          },
+          {
+            "id": "b",
+            "text": "Memberikan makna dan struktur yang jelas pada bagian halaman web"
+          },
+          {
+            "id": "c",
+            "text": "Menggantikan fungsi bahasa pemrograman JavaScript"
+          },
+          {
+            "id": "d",
+            "text": "Menghapus kebutuhan file CSS"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Memberikan makna dan struktur yang jelas pada bagian halaman web",
+        "feedback_correct": "Benar! Elemen semantik menjelaskan peran setiap bagian konten sehingga lebih mudah dibaca mesin dan developer.",
+        "feedback_incorrect": "Belum tepat. Semantic HTML berfokus pada kejelasan makna struktur konten halaman.",
+        "mascot_dialogue": "Tag semantik bikin struktur kodemu lebih rapi dan mudah dipahami!"
       },
-      "nodes": [
-        {
-          "node_id": "CSS_L03_N01",
-          "title": "Box Model",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Elemen HTML tersusun dari content, padding, border, dan margin. Keempat bagian ini menentukan ukuran serta jarak elemen.",
-          "code_example": "div {\n  padding: 16px;\n  border: 2px solid black;\n  margin: 10px;\n}",
-          "question": "Bagian yang memberi ruang di luar border adalah ...",
-          "options": [
-            {"id": "a", "text": "content"},
-            {"id": "b", "text": "padding"},
-            {"id": "c", "text": "border"},
-            {"id": "d", "text": "margin"}
-          ],
-          "answer_fragments": [],
-          "correct_answer": "D. margin",
-          "correct_option_id": "d",
-          "accepted_answers": [],
-          "answer_order": null,
-          "feedback_correct": "Benar! margin mengatur jarak di luar border.",
-          "feedback_incorrect": "Padding berada di dalam border, sedangkan margin di luarnya.",
-          "mascot_dialogue": "Bagus! Kamu mengenal susunan kotak CSS."
-        },
-        {
-          "node_id": "CSS_L03_N02",
-          "title": "Padding",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Padding mengatur ruang antara isi elemen dan border. Nilainya dapat ditulis dengan satu atau beberapa ukuran.",
-          "code_example": ".card {\n  padding: 20px;\n}",
-          "question": "Properti untuk memberi ruang di dalam border adalah ...",
-          "options": [
-            {"id": "a", "text": "margin"},
-            {"id": "b", "text": "padding"},
-            {"id": "c", "text": "outline"},
-            {"id": "d", "text": "gap"}
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B. padding",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "answer_order": null,
-          "feedback_correct": "Tepat! padding memberi ruang di dalam border.",
-          "feedback_incorrect": "Bedakan ruang dalam (padding) dan ruang luar (margin).",
-          "mascot_dialogue": "Keren! Isi elemen jadi lebih lega."
-        },
-        {
-          "node_id": "CSS_L03_N03",
-          "title": "Margin",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Margin adalah ruang di luar border yang memisahkan elemen. margin: 0 auto dapat memusatkan elemen blok yang memiliki lebar tertentu.",
-          "code_example": ".container {\n  width: 80%;\n  margin: 0 auto;\n}",
-          "question": "Apa fungsi margin: 0 auto pada elemen yang memiliki width?",
-          "options": [
-            {"id": "a", "text": "Membuat teks tebal"},
-            {"id": "b", "text": "Mengubah warna latar"},
-            {"id": "c", "text": "Memusatkan elemen horizontal"},
-            {"id": "d", "text": "Mengatur tinggi elemen"}
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C. Memusatkan elemen horizontal",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "answer_order": null,
-          "feedback_correct": "Benar! Margin kiri dan kanan otomatis dapat memusatkan elemen.",
-          "feedback_incorrect": "Perhatikan pengaturan margin kiri dan kanan.",
-          "mascot_dialogue": "Mantap! Kamu bisa mengatur jarak antarelemen."
-        },
-        {
-          "node_id": "CSS_L03_N04",
-          "title": "Border",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Border mengatur garis tepi elemen. Penulisannya dapat menggabungkan ketebalan, jenis garis, dan warna.",
-          "code_example": ".box {\n  border: 2px solid #333;\n}",
-          "question": "Manakah contoh penulisan border yang benar?",
-          "options": [
-            {"id": "a", "text": "2px solid black"},
-            {"id": "b", "text": "solid 2px 10px"},
-            {"id": "c", "text": "black border 2px"},
-            {"id": "d", "text": "2px padding solid"}
-          ],
-          "answer_fragments": [],
-          "correct_answer": "A. 2px solid black",
-          "correct_option_id": "a",
-          "accepted_answers": [],
-          "answer_order": null,
-          "feedback_correct": "Tepat! Ketebalan, jenis garis, lalu warna.",
-          "feedback_incorrect": "Periksa kembali format singkat border.",
-          "mascot_dialogue": "Bagus! Elemenmu memiliki garis tepi."
-        },
-        {
-          "node_id": "CSS_L03_N05",
-          "title": "Border Radius",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "border-radius membuat sudut elemen menjadi melengkung. Nilainya dapat menggunakan px atau persen.",
-          "code_example": "button {\n  border-radius: 8px;\n}",
-          "question": "Lengkapi: border-_____ : 8px;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "radius",
-          "correct_option_id": null,
-          "accepted_answers": ["radius"],
-          "answer_order": null,
-          "feedback_correct": "Benar! border-radius membuat sudut membulat.",
-          "feedback_incorrect": "Nama propertinya diawali border dan mengatur radius sudut.",
-          "mascot_dialogue": "Sip! Sudut kotak tidak lagi tajam."
-        },
-        {
-          "node_id": "CSS_L03_N06",
-          "title": "Width and Height",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "width mengatur lebar elemen dan height mengatur tinggi elemen. Nilai dapat menggunakan px atau persen.",
-          "code_example": ".card {\n  width: 300px;\n  height: 150px;\n}",
-          "question": "Lengkapi properti untuk mengatur lebar: _____: 300px;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "width",
-          "correct_option_id": null,
-          "accepted_answers": ["width"],
-          "answer_order": null,
-          "feedback_correct": "Tepat! width mengatur lebar elemen.",
-          "feedback_incorrect": "Cari properti yang berarti lebar.",
-          "mascot_dialogue": "Keren! Kamu dapat mengatur ukuran elemen."
-        },
-        {
-          "node_id": "CSS_L03_N07",
-          "title": "Box Sizing",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "box-sizing: border-box membuat width dan height mencakup content, padding, serta border.",
-          "code_example": "* {\n  box-sizing: border-box;\n}",
-          "question": "Lengkapi nilai: box-sizing: _____;",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "border-box",
-          "correct_option_id": null,
-          "accepted_answers": ["border-box"],
-          "answer_order": null,
-          "feedback_correct": "Benar! border-box memasukkan padding dan border ke ukuran.",
-          "feedback_incorrect": "Pilih nilai yang membuat ukuran total lebih mudah dikendalikan.",
-          "mascot_dialogue": "Hebat! Ukuran elemen lebih terprediksi."
-        },
-        {
-          "node_id": "CSS_L03_N08",
-          "title": "Margin and Padding Together",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Margin dan padding dapat digunakan bersama untuk mengatur jarak luar dan dalam elemen.",
-          "code_example": ".card {\n  margin: 12px;\n  padding: 20px;\n}",
-          "question": "Susun kode untuk memberi margin 12px dan padding 20px.",
-          "options": [],
-          "answer_fragments": [
-            {"id": 1, "code": "}"},
-            {"id": 2, "code": "padding: 20px;"},
-            {"id": 3, "code": ".card {"},
-            {"id": 4, "code": "margin: 12px;"}
-          ],
-          "correct_answer": "3 → 4 → 2 → 1",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "answer_order": [3, 4, 2, 1],
-          "feedback_correct": "Benar! Selector ditulis lebih dulu, kemudian deklarasi, lalu kurung penutup.",
-          "feedback_incorrect": "Mulai dari selector, masukkan dua deklarasi, lalu tutup aturan.",
-          "mascot_dialogue": "Sip! Kamu bisa mengatur ruang dalam dan luar."
-        },
-        {
-          "node_id": "CSS_L03_N09",
-          "title": "Border Style",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "border-style menentukan bentuk garis tepi, seperti solid, dashed, dotted, dan double.",
-          "code_example": "p {\n  border-style: dashed;\n}",
-          "question": "Susun kode agar paragraf memiliki garis tepi putus-putus.",
-          "options": [],
-          "answer_fragments": [
-            {"id": 1, "code": "border-style: dashed;"},
-            {"id": 2, "code": "}"},
-            {"id": 3, "code": "p {"}
-          ],
-          "correct_answer": "3 → 1 → 2",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "answer_order": [3, 1, 2],
-          "feedback_correct": "Tepat! Selector, deklarasi, lalu kurung penutup.",
-          "feedback_incorrect": "Susun aturan CSS dari selector hingga penutup.",
-          "mascot_dialogue": "Mantap! Kamu mengenal berbagai bentuk border."
-        },
-        {
-          "node_id": "CSS_L03_N10",
-          "title": "Complete Box Styling",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Aturan CSS dapat menggabungkan width, padding, border, dan margin dalam satu selector.",
-          "code_example": ".panel {\n  width: 300px;\n  padding: 16px;\n  border: 1px solid #777;\n  margin: 12px;\n}",
-          "question": "Susun kode untuk membuat panel dengan empat properti tersebut.",
-          "options": [],
-          "answer_fragments": [
-            {"id": 1, "code": "margin: 12px;"},
-            {"id": 2, "code": "}"},
-            {"id": 3, "code": "width: 300px;"},
-            {"id": 4, "code": ".panel {"},
-            {"id": 5, "code": "border: 1px solid #777;"},
-            {"id": 6, "code": "padding: 16px;"}
-          ],
-          "correct_answer": "4 → 3 → 6 → 5 → 1 → 2",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "answer_order": [4, 3, 6, 5, 1, 2],
-          "feedback_correct": "Luar biasa! Semua deklarasi berada di dalam aturan .panel.",
-          "feedback_incorrect": "Awali dengan selector, tulis empat deklarasi, lalu tutup kurung.",
-          "mascot_dialogue": "Selamat! Kamu menyelesaikan CSS Box Model."
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "HTML_L03_N02",
+        "title": "Header and Navigation",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Tag <header> digunakan untuk bagian kepala halaman atau artikel, sedangkan <nav> digunakan khusus untuk mengelompokkan tautan navigasi utama.",
+        "code_example": "<nav>\n  <a href=\"#home\">Beranda</a>\n  <a href=\"#about\">Tentang</a>\n</nav>",
+        "question": "Elemen HTML manakah yang paling tepat digunakan untuk membungkus menu navigasi utama?\nA. <footer>\nB. <nav>\nC. <aside>\nD. <section>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<footer>"
+          },
+          {
+            "id": "b",
+            "text": "<nav>"
+          },
+          {
+            "id": "c",
+            "text": "<aside>"
+          },
+          {
+            "id": "d",
+            "text": "<section>"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. <nav>",
+        "feedback_correct": "Tepat! Tag <nav> dirancang khusus untuk menampung tautan navigasi.",
+        "feedback_incorrect": "Perhatikan nama tag yang merupakan singkatan dari navigation.",
+        "mascot_dialogue": "Gunakan <nav> agar menu navigasimu mudah dikenali browser!"
+      },
+      {
+        "node_id": "HTML_L03_N03",
+        "title": "Main and Article",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Elemen <main> menampung konten utama yang unik pada satu halaman, sedangkan <article> digunakan untuk konten mandiri seperti berita atau postingan blog.",
+        "code_example": "<main>\n  <article>\n    <h2>Judul Berita</h2>\n    <p>Isi berita...</p>\n  </article>\n</main>",
+        "question": "Elemen apa yang digunakan untuk membungkus konten utama pada dokumen HTML?\nA. <main>\nB. <head>\nC. <meta>\nD. <span>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<main>"
+          },
+          {
+            "id": "b",
+            "text": "<head>"
+          },
+          {
+            "id": "c",
+            "text": "<meta>"
+          },
+          {
+            "id": "d",
+            "text": "<span>"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. <main>",
+        "feedback_correct": "Benar! Tag <main> menandai isi pokok dari halaman web.",
+        "feedback_incorrect": "Ingat, <head> berisi metadata dokumen, sedangkan konten utama ada di dalam <main>.",
+        "mascot_dialogue": "Konten inti halaman selalu ditempatkan di dalam <main>!"
+      },
+      {
+        "node_id": "HTML_L03_N04",
+        "title": "Footer Element",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Elemen <footer> berada di bagian bawah halaman atau section dan umumnya berisi informasi hak cipta, kontak, atau tautan tambahan.",
+        "code_example": "<footer>\n  <p>&copy; 2026 ZenoQuest</p>\n</footer>",
+        "question": "Informasi apa yang umumnya diletakkan di dalam elemen <footer>?\nA. Judul tab browser\nB. Informasi hak cipta dan kontak\nC. Impor file CSS eksternal\nD. Deklarasi DOCTYPE",
+        "options": [
+          {
+            "id": "a",
+            "text": "Judul tab browser"
+          },
+          {
+            "id": "b",
+            "text": "Informasi hak cipta dan kontak"
+          },
+          {
+            "id": "c",
+            "text": "Impor file CSS eksternal"
+          },
+          {
+            "id": "d",
+            "text": "Deklarasi DOCTYPE"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Informasi hak cipta dan kontak",
+        "feedback_correct": "Tepat! <footer> biasa memuat informasi penutup seperti hak cipta dan kontak.",
+        "feedback_incorrect": "Footer berada di bagian bawah halaman untuk informasi penutup.",
+        "mascot_dialogue": "Bagus! Bagian bawah halaman selalu ditutup rapi dengan <footer>."
+      },
+      {
+        "node_id": "HTML_L03_N05",
+        "title": "Section Tag",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Tag <section> digunakan untuk mengelompokkan konten berdasarkan tema atau topik tertentu di dalam dokumen HTML.",
+        "code_example": "<section>\n  <h2>Fitur Utama</h2>\n  <p>Belajar coding interaktif.</p>\n</section>",
+        "question": "Lengkapi tag pembuka berikut untuk membuat bagian bertema pada halaman:\n<___>\n  <h2>Tentang Kami</h2>\n</section>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "section"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "section",
+        "feedback_correct": "Tepat! Tag <section> digunakan untuk membagi halaman ke dalam bagian-bagian tematik.",
+        "feedback_incorrect": "Perhatikan tag penutup </section> untuk menentukan nama tag pembukanya.",
+        "mascot_dialogue": "Sip! <section> membantu membagi konten berdasarkan topiknya."
+      },
+      {
+        "node_id": "HTML_L03_N06",
+        "title": "Aside Tag",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Tag <aside> digunakan untuk konten sampingan yang berkaitan secara tidak langsung dengan konten utama, seperti sidebar atau kotak info.",
+        "code_example": "<aside>\n  <p>Artikel Terkait</p>\n</aside>",
+        "question": "Lengkapi tag penutup untuk elemen konten sampingan berikut:\n<aside>\n  <p>Catatan Tambahan</p>\n</___>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "aside"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "aside",
+        "feedback_correct": "Benar! Tag penutup </aside> melengkapi blok konten sampingan.",
+        "feedback_incorrect": "Gunakan nama tag yang sama dengan tag pembukanya yaitu aside.",
+        "mascot_dialogue": "Mantap! Sekarang kamu tahu cara membuat sidebar semantik."
+      },
+      {
+        "node_id": "HTML_L03_N07",
+        "title": "Div Container",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Tag <div> adalah wadah (container) umum non-semantik yang sering dipakai untuk mengelompokkan elemen saat mengatur tata letak dengan CSS.",
+        "code_example": "<div class=\"card\">\n  <p>Isi kartu</p>\n</div>",
+        "question": "Lengkapi wadah umum non-semantik berikut:\n<___ class=\"box\">\n  <p>Halo</p>\n</div>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "div"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "div",
+        "feedback_correct": "Tepat! <div> merupakan elemen container umum di HTML.",
+        "feedback_incorrect": "Lihat tag penutup </div> untuk melengkapi tag pembukanya.",
+        "mascot_dialogue": "Keren! <div> sering dipakai sebagai pembungkus elemen untuk styling."
+      },
+      {
+        "node_id": "HTML_L03_N08",
+        "title": "Build a Semantic Header",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Struktur header yang baik membungkus judul utama halaman di dalam elemen <header>.",
+        "code_example": "<header>\n  <h1>Portal Belajar</h1>\n</header>",
+        "question": "Susun potongan kode berikut menjadi struktur header yang benar:\n1. <h1>Portal Belajar</h1>\n2. </header>\n3. <header>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<h1>Portal Belajar</h1>"
+          },
+          {
+            "id": 2,
+            "code": "</header>"
+          },
+          {
+            "id": 3,
+            "code": "<header>"
+          }
+        ],
+        "answer_order": [
+          3,
+          1,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<header> <h1>Portal Belajar</h1> </header>",
+        "correct_answer": "3 → 1 → 2",
+        "feedback_correct": "Sempurna! Judul utama berada di antara tag pembuka dan penutup <header>.",
+        "feedback_incorrect": "Mulai dari tag pembuka <header>, isi judul <h1>, lalu tutup dengan </header>.",
+        "mascot_dialogue": "Bagus! Struktur header semantikmu sudah tersusun rapi."
+      },
+      {
+        "node_id": "HTML_L03_N09",
+        "title": "Create a Navigation Block",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Menu navigasi diletakkan di dalam elemen <nav> menggunakan tag tautan <a>.",
+        "code_example": "<nav>\n  <a href=\"index.html\">Home</a>\n</nav>",
+        "question": "Susun potongan kode berikut menjadi blok navigasi yang benar:\n1. <a href=\"index.html\">Home</a>\n2. <nav>\n3. </nav>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<a href=\"index.html\">Home</a>"
+          },
+          {
+            "id": 2,
+            "code": "<nav>"
+          },
+          {
+            "id": 3,
+            "code": "</nav>"
+          }
+        ],
+        "answer_order": [
+          2,
+          1,
+          3
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<nav> <a href=\"index.html\">Home</a> </nav>",
+        "correct_answer": "2 → 1 → 3",
+        "feedback_correct": "Benar! Tautan menu sudah dibungkus dengan elemen <nav>.",
+        "feedback_incorrect": "Buka blok dengan <nav>, masukkan tautan <a>, lalu tutup dengan </nav>.",
+        "mascot_dialogue": "Hebat! Menu navigasi sudah siap digunakan."
+      },
+      {
+        "node_id": "HTML_L03_N10",
+        "title": "Complete Page Layout",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Halaman web semantik utuh menyusun bagian kepala (<header>), isi utama (<main>), dan bagian bawah (<footer>) secara berurutan.",
+        "code_example": "<header>Judul</header>\n<main>Konten</main>\n<footer>Copyright</footer>",
+        "question": "Susun urutan struktur layout halaman web semantik dari atas ke bawah:\n1. <footer>Copyright</footer>\n2. <header>Judul</header>\n3. <main>Konten</main>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "<footer>Copyright</footer>"
+          },
+          {
+            "id": 2,
+            "code": "<header>Judul</header>"
+          },
+          {
+            "id": 3,
+            "code": "<main>Konten</main>"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<header>Judul</header> <main>Konten</main> <footer>Copyright</footer>",
+        "correct_answer": "2 → 3 → 1",
+        "feedback_correct": "Luar biasa! Urutan tata letak halaman semantik dimulai dari header, main, lalu footer.",
+        "feedback_incorrect": "Ingat posisi bagian halaman: kepala (header) di atas, isi (main) di tengah, kaki (footer) di bawah.",
+        "mascot_dialogue": "Selamat! Kamu sudah menguasai struktur semantik HTML Level 3!"
+      }
+    ]
+  }
 }

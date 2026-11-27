@@ -1,363 +1,345 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "javascript_fundamentals",
   "course_title": "JavaScript Fundamentals",
   "group": "Absen Kecil",
   "division": "Content Team",
   "difficulty": "beginner",
   "language": "id",
-  "content_version": "1.0",
-  "source_documents": [
-    "Blueprint_JavaScript_Level_1_Introduction_to_JavaScript_Absen_Kecil(2).pdf"
-  ],
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar.",
-    "fill_in_the_blank": "accepted_answers berisi jawaban yang diterima; hilangkan spasi awal/akhir; kata kunci JavaScript tetap case-sensitive.",
-    "arrange_code": "answer_order berisi urutan ID fragmen yang benar; validasi urutan fragmen secara persis.",
-    "mascot_dialogue": "Mascot dialogue maksimal 160 karakter; lakukan validasi otomatis sebelum rilis."
-  },
-  "levels": [
-    {
-      "level_id": "JS_L01",
-      "level_number": 1,
-      "title": "Introduction to JavaScript",
-      "description": "Pengenalan JavaScript, fungsi JavaScript dalam website, tools, cara menghubungkan JavaScript dengan HTML, dan sintaks dasar JavaScript.",
-      "node_count": 10,
-      "question_count": 10,
-      "distribution": {
-        "multiple_choice": 4,
-        "fill_in_the_blank": 3,
-        "arrange_code": 3
+  "content_version": "1.1",
+  "level": {
+    "level_id": "JS_L01",
+    "level_number": 1,
+    "title": "Introduction to JavaScript",
+    "description": "Materi pengenalan dasar JavaScript untuk pemula.",
+    "node_count": 10,
+    "question_count": 10,
+    "distribution": {
+      "multiple_choice": 4,
+      "fill_blank": 3,
+      "arrange_code": 3
+    },
+    "nodes": [
+      {
+        "node_id": "JS_L01_N01",
+        "title": "What is JavaScript?",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis, seperti merespons klik tombol atau memvalidasi formulir.",
+        "code_example": "console.log(\"Hello, JavaScript!\");",
+        "question": "Sebuah halaman web ingin menampilkan pesan pop-up atau mengubah teks secara langsung ketika tombol diklik. Teknologi apa yang paling tepat digunakan untuk membuat interaksi tersebut?\nA. HTML\nB. CSS\nC. JavaScript\nD. SQL",
+        "options": [
+          {
+            "id": "a",
+            "text": "HTML"
+          },
+          {
+            "id": "b",
+            "text": "CSS"
+          },
+          {
+            "id": "c",
+            "text": "JavaScript"
+          },
+          {
+            "id": "d",
+            "text": "SQL"
+          }
+        ],
+        "correct_option_id": "c",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. JavaScript",
+        "feedback_correct": "Benar! JavaScript berperan memberikan interaktivitas pada halaman web.",
+        "feedback_incorrect": "Belum tepat. HTML untuk struktur dan CSS untuk tampilan, sedangkan JavaScript untuk interaktivitas.",
+        "mascot_dialogue": "Hebat! JavaScript bikin halaman web jadi hidup dan interaktif!"
       },
-      "learning_objectives": [
-        "Menjelaskan peran JavaScript dalam website.",
-        "Mengenali alat pengembangan JavaScript.",
-        "Menghubungkan JavaScript dengan HTML.",
-        "Menulis sintaks dasar JavaScript.",
-        "Menyusun interaksi sederhana menggunakan JavaScript."
-      ],
-      "nodes": [
-        {
-          "node_id": "JS_L01_N01",
-          "title": "Node 01",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "JavaScript adalah bahasa pemrograman yang membuat halaman web dapat merespons tindakan pengguna dan menjalankan logika. HTML membentuk struktur konten, CSS mengatur tampilannya, sedangkan JavaScript mengatur perilaku. JavaScript dapat berjalan di browser tanpa harus memasang aplikasi tambahan pada setiap pengunjung.",
-          "code_example": "const pesan = \"Halo JavaScript!\";\nconsole.log(pesan);",
-          "question": "Sebuah website menampilkan tombol. Pengembang ingin menampilkan pesan ketika tombol diklik. Teknologi apa yan",
-          "options": [
-            {
-              "id": "a",
-              "text": "HTML saja untuk menjalankan logika klik"
-            },
-            {
-              "id": "b",
-              "text": "CSS untuk menyimpan hasil klik ke variabel"
-            },
-            {
-              "id": "c",
-              "text": "JavaScript untuk merespons interaksi pengguna"
-            },
-            {
-              "id": "d",
-              "text": "Gambar PNG untuk menjalankan perintah"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "C",
-          "feedback_correct": "Benar! JavaScript dapat menjalankan kode sebagai respons terhadap interaksi pengguna.",
-          "feedback_incorrect": "Belum tepat. Bedakan struktur HTML, tampilan CSS, dan perilaku JavaScript.",
-          "mascot_dialogue": "Bagus! Kamu sudah mengenali peran JavaScript dalam website.",
-          "correct_option_id": "c",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 59,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N02",
-          "title": "Node 02",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "JavaScript sering digunakan untuk memvalidasi input, memperbarui teks, menampilkan atau menyembunyikan bagian halaman, serta menangani interaksi tanpa memuat ulang seluruh dokumen. JavaScript tidak menggantikan HTML sebagai struktur halaman dan tidak otomatis menyimpan data ke server.",
-          "code_example": "document.querySelector(\"#status\").textContent = \"Aktif\";",
-          "question": "Pada halaman terdapat <p id=\"status\">Belum aktif</p>. Apa hasil kode contoh ketika elemen tersebut ditemukan",
-          "options": [
-            {
-              "id": "a",
-              "text": "Isi paragraf berubah menjadi Aktif"
-            },
-            {
-              "id": "b",
-              "text": "Paragraf dihapus dari dokumen"
-            },
-            {
-              "id": "c",
-              "text": "Warna seluruh halaman menjadi biru"
-            },
-            {
-              "id": "d",
-              "text": "Browser menutup tab secara otomatis"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "A",
-          "feedback_correct": "Tepat! textContent mengubah isi teks elemen yang dipilih.",
-          "feedback_incorrect": "Belum tepat. Perhatikan elemen dengan id status dan properti textContent.",
-          "mascot_dialogue": "Keren! Kamu melihat bagaimana JavaScript mengubah konten halaman.",
-          "correct_option_id": "a",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 65,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N03",
-          "title": "Node 03",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "Untuk mulai belajar JavaScript, peserta dapat menggunakan editor kode seperti Visual Studio Code, browser untuk menjalankan halaman, dan Developer Tools untuk melihat pesan console. Console membantu mengamati keluaran kode sederhana. File JavaScript biasanya disimpan dengan ekstensi .js.",
-          "code_example": "console.log(\"Tes berjalan\");",
-          "question": "Seorang siswa ingin memeriksa hasil console.log dari file JavaScript yang dijalankan pada halaman web. Di man",
-          "options": [
-            {
-              "id": "a",
-              "text": "Panel Layers pada editor gambar"
-            },
-            {
-              "id": "b",
-              "text": "Tab Console pada Developer Tools browser"
-            },
-            {
-              "id": "c",
-              "text": "Pengaturan printer"
-            },
-            {
-              "id": "d",
-              "text": "Folder unduhan browser"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "B",
-          "feedback_correct": "Benar! Pesan console.log dapat dilihat di Console browser.",
-          "feedback_incorrect": "Belum tepat. Cari alat pengembang browser yang menampilkan keluaran console.log.",
-          "mascot_dialogue": "Mantap! Kamu tahu tempat memeriksa hasil eksekusi kode.",
-          "correct_option_id": "b",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 55,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N04",
-          "title": "Node 04",
-          "difficulty": "beginner",
-          "type": "multiple_choice",
-          "theory": "JavaScript dapat ditulis langsung dalam elemen <script> atau di file .js terpisah. File eksternal dihubungkan melalui atribut src pada <script>. Atribut defer pada script eksternal klasik membuat file dijalankan setelah dokumen selesai diparsing, sehingga cocok untuk kode yang mengakses elemen HTML.",
-          "code_example": "<head>\n  <script src=\"app.js\" defer></script>\n</head>",
-          "question": "File index.html dan app.js berada dalam folder yang sama. Manakah cara yang benar untuk menghubungkan file Ja",
-          "options": [
-            {
-              "id": "a",
-              "text": "<link href=\"app.js\">"
-            },
-            {
-              "id": "b",
-              "text": "<script href=\"app.js\"></script>"
-            },
-            {
-              "id": "c",
-              "text": "<style src=\"app.js\"></style>"
-            },
-            {
-              "id": "d",
-              "text": "<script src=\"app.js\" defer></script>"
-            }
-          ],
-          "answer_fragments": [],
-          "correct_answer": "D",
-          "feedback_correct": "Tepat! Elemen script menggunakan src untuk memuat file JavaScript.",
-          "feedback_incorrect": "Belum tepat. File JavaScript eksternal dimuat dengan elemen script dan atribut src.",
-          "mascot_dialogue": "Hebat! Kamu berhasil menghubungkan JavaScript ke HTML.",
-          "correct_option_id": "d",
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 54,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N05",
-          "title": "Node 05",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "console.log() digunakan untuk menampilkan informasi pada Console browser. Teks atau nilai yang ditampilkan diletakkan di dalam tanda kurung. Pemanggilan ini berguna untuk mencoba sintaks dasar dan melihat hasil sementara ketika belajar.",
-          "code_example": "console.log(\"Belajar JavaScript\");",
-          "question": "Lengkapi kode agar teks muncul pada Console browser:\nconsole._____(\"Halo!\");",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "log",
-          "feedback_correct": "Benar! console.log() menampilkan nilai pada Console.",
-          "feedback_incorrect": "Belum tepat. Nama method Console yang digunakan untuk menampilkan pesan adalah log.",
-          "mascot_dialogue": "Sip! Kamu sudah dapat menampilkan pesan dari JavaScript.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "log"
-          ],
-          "mascot_dialogue_char_count": 56,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N06",
-          "title": "Node 06",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "Variabel menyimpan nilai yang dapat digunakan dalam program. Kata kunci const membuat binding yang tidak dapat diberi nilai ulang setelah inisialisasi. Gunakan const untuk nilai yang tidak perlu ditetapkan ulang; let digunakan jika variabel perlu menerima nilai baru.",
-          "code_example": "const nama = \"Rani\";\nconsole.log(nama);",
-          "question": "Lengkapi deklarasi variabel yang tidak akan diberi nilai ulang:\n_____ sekolah = \"SMA Nusantara\";",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "const",
-          "feedback_correct": "Tepat! const dipakai untuk mendeklarasikan binding yang tidak ditetapkan ulang.",
-          "feedback_incorrect": "Belum tepat. Pilih kata kunci deklarasi untuk nilai yang tidak perlu diubah melalui penugasan ulang.",
-          "mascot_dialogue": "Bagus! Kamu mulai menulis variabel JavaScript.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "const"
-          ],
-          "mascot_dialogue_char_count": 46,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N07",
-          "title": "Node 07",
-          "difficulty": "beginner",
-          "type": "fill_blank",
-          "theory": "String adalah data teks yang ditulis di antara tanda kutip tunggal, ganda, atau backtick. Angka yang diberi tanda kutip diperlakukan sebagai teks. Pada kode berikut, nilai string disimpan ke variabel lalu ditampilkan menggunakan console.log.",
-          "code_example": "const kota = \"Bandung\";\nconsole.log(kota);",
-          "question": "Lengkapi kode agar variabel kota menyimpan teks Bandung:\nconst kota = \"_____\";",
-          "options": [],
-          "answer_fragments": [],
-          "correct_answer": "Bandung",
-          "feedback_correct": "Benar! Teks Bandung menjadi isi string yang disimpan dalam variabel.",
-          "feedback_incorrect": "Belum tepat. Isilah hanya teks di antara tanda kutip, tanpa menambahkan kutip baru.",
-          "mascot_dialogue": "Mantap! Kamu mengenali nilai bertipe string.",
-          "correct_option_id": null,
-          "accepted_answers": [
-            "Bandung"
-          ],
-          "mascot_dialogue_char_count": 44,
-          "answer_order": null
-        },
-        {
-          "node_id": "JS_L01_N08",
-          "title": "Node 08",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Kode JavaScript dieksekusi mengikuti alur pernyataan yang dijalankan. Agar suatu nilai dapat ditampilkan, deklarasikan variabel terlebih dahulu lalu panggil console.log dengan nama variabel tersebut. Dalam latihan susun kode, setiap potongan digunakan tepat satu kali.",
-          "code_example": "const pesan = \"Selamat datang\";\nconsole.log(pesan);",
-          "question": "Susun potongan kode agar pesan disimpan lebih dulu lalu ditampilkan di Console.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "console.log(pesan);"
-            },
-            {
-              "id": 2,
-              "code": "const pesan = \"Selamat datang\";"
-            }
-          ],
-          "correct_answer": "2 → 1",
-          "feedback_correct": "Benar! Variabel dibuat sebelum nilainya digunakan oleh console.log.",
-          "feedback_incorrect": "Belum tepat. Deklarasikan pesan sebelum menampilkannya.",
-          "mascot_dialogue": "Keren! Kamu berhasil menyusun program JavaScript sederhana.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 59,
-          "answer_order": [
-            2,
-            1
-          ]
-        },
-        {
-          "node_id": "JS_L01_N09",
-          "title": "Node 09",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Dokumen HTML dapat memuat file JavaScript eksternal dengan <script src=\"...\">. Pada latihan ini, script ditempatkan setelah konten halaman, sebelum penutup body, sehingga elemen HTML telah diparsing ketika script klasik tersebut dieksekusi. Setiap potongan adalah satu blok lengkap.",
-          "code_example": "<!DOCTYPE html>\n<html lang=\"id\">\n<head><title>Latihan JS</title></head>\n<body>\n  <h1>Halo!</h1>\n  <script src=\"app.js\"></script>\n</body>\n</html>",
-          "question": "Susun blok menjadi dokumen HTML yang menampilkan judul dan memuat app.js setelah judul.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "<script src=\"app.js\"></script>"
-            },
-            {
-              "id": 2,
-              "code": "</body></html>"
-            },
-            {
-              "id": 3,
-              "code": "<body><h1>Halo!</h1>"
-            },
-            {
-              "id": 4,
-              "code": "<!DOCTYPE html><html lang=\"id\"><head><title>Latihan JS</title></head>"
-            }
-          ],
-          "correct_answer": "4 → 3 → 1 → 2",
-          "feedback_correct": "Tepat! Dokumen dibuka, konten ditulis, script dimuat, lalu dokumen ditutup.",
-          "feedback_incorrect": "Belum tepat. Letakkan script setelah konten, tetapi sebelum penutup body.",
-          "mascot_dialogue": "Hebat! Kamu sudah menggabungkan struktur HTML dan file JavaScript.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 66,
-          "answer_order": [
-            4,
-            3,
-            1,
-            2
-          ]
-        },
-        {
-          "node_id": "JS_L01_N10",
-          "title": "Node 10",
-          "difficulty": "beginner",
-          "type": "arrange_code",
-          "theory": "Interaksi sederhana dapat dibuat dengan memilih elemen HTML dan memasang event listener. addEventListener(\"click\", ...) menjalankan callback ketika tombol diklik. Kode JavaScript perlu mengakses elemen yang sudah tersedia dalam dokumen. Tantangan ini menggunakan dua file: index.html dan app.js.",
-          "code_example": "index.html:\n<button id=\"sapa\">Sapa</button>\n<p id=\"hasil\">Belum disapa</p>\n<script src=\"app.js\"></script>\napp.js:\nconst tombol = document.querySelector(\"#sapa\");\ntombol.addEventListener(\"click\", () => {\n  document.querySelector(\"#hasil\").textContent = \"Halo!\";\n});",
-          "question": "Susun potongan sesuai urutan isi index.html, lalu app.js, agar klik tombol mengubah teks paragraf.",
-          "options": [],
-          "answer_fragments": [
-            {
-              "id": 1,
-              "code": "[app.js] tombol.addEventListener(\"click\", () => { document.querySelector(\"#hasil\").textContent = \"Halo!\"; });"
-            },
-            {
-              "id": 2,
-              "code": "[index.html] <script src=\"app.js\"></script>"
-            },
-            {
-              "id": 3,
-              "code": "[index.html] <button id=\"sapa\">Sapa</button><p id=\"hasil\">Belum disapa</p>"
-            },
-            {
-              "id": 4,
-              "code": "[app.js] const tombol = document.querySelector(\"#sapa\");"
-            }
-          ],
-          "correct_answer": "3 → 2 → 4 → 1",
-          "feedback_correct": "Luar biasa! Tombol tersedia, file dimuat, lalu event listener mengubah teks saat diklik.",
-          "feedback_incorrect": "Belum tepat. Susun elemen HTML, pemuatan script, pemilihan tombol, lalu event listener.",
-          "mascot_dialogue": "Selamat! Kamu berhasil menyusun interaksi pertama dengan JavaScript.",
-          "correct_option_id": null,
-          "accepted_answers": [],
-          "mascot_dialogue_char_count": 68,
-          "answer_order": [
-            3,
-            2,
-            4,
-            1
-          ]
-        }
-      ]
-    }
-  ]
+      {
+        "node_id": "JS_L01_N02",
+        "title": "Where JavaScript Runs",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Secara bawaan, kode JavaScript dijalankan langsung di dalam web browser menggunakan JavaScript engine (seperti V8 di Chrome), dan juga dapat dijalankan di server menggunakan Node.js.",
+        "code_example": "// Dijalankan di Console Browser\nalert(\"Selamat datang!\");",
+        "question": "Kode JavaScript sisi klien (client-side) secara langsung dijalankan pada halaman web. Di manakah kode tersebut dieksekusi?\nA. Di dalam web browser pengguna\nB. Di dalam aplikasi Microsoft Excel\nC. Di dalam sistem BIOS komputer\nD. Di dalam editor gambar",
+        "options": [
+          {
+            "id": "a",
+            "text": "Di dalam web browser pengguna"
+          },
+          {
+            "id": "b",
+            "text": "Di dalam aplikasi Microsoft Excel"
+          },
+          {
+            "id": "c",
+            "text": "Di dalam sistem BIOS komputer"
+          },
+          {
+            "id": "d",
+            "text": "Di dalam editor gambar"
+          }
+        ],
+        "correct_option_id": "a",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "A. Di dalam web browser pengguna",
+        "feedback_correct": "Tepat! Web browser memiliki engine bawaan untuk menjalankan JavaScript secara langsung.",
+        "feedback_incorrect": "Ingat, JavaScript client-side dieksekusi langsung oleh web browser.",
+        "mascot_dialogue": "Bagus! Browser modern sudah punya mesin khusus untuk menjalankan JS."
+      },
+      {
+        "node_id": "JS_L01_N03",
+        "title": "Linking External JavaScript",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Untuk menghubungkan file JavaScript eksternal ke dokumen HTML, digunakan tag <script> dengan atribut src yang menunjuk lokasi file .js.",
+        "code_example": "<script src=\"app.js\"></script>",
+        "question": "Manakah cara yang benar untuk menghubungkan file JavaScript eksternal bernama script.js ke dalam dokumen HTML?\nA. <link href=\"script.js\">\nB. <script src=\"script.js\"></script>\nC. <js file=\"script.js\"></js>\nD. <style src=\"script.js\"></style>",
+        "options": [
+          {
+            "id": "a",
+            "text": "<link href=\"script.js\">"
+          },
+          {
+            "id": "b",
+            "text": "<script src=\"script.js\"></script>"
+          },
+          {
+            "id": "c",
+            "text": "<js file=\"script.js\"></js>"
+          },
+          {
+            "id": "d",
+            "text": "<style src=\"script.js\"></style>"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. <script src=\"script.js\"></script>",
+        "feedback_correct": "Benar! Tag <script src=\"script.js\"></script> digunakan untuk memuat file JavaScript eksternal.",
+        "feedback_incorrect": "Perhatikan nama tag dan atributnya: gunakan <script> dengan atribut src.",
+        "mascot_dialogue": "Mantap! Pisahkan kode JS ke file terpisah agar proyek lebih rapi."
+      },
+      {
+        "node_id": "JS_L01_N04",
+        "title": "Console Output in JavaScript",
+        "difficulty": "beginner",
+        "type": "multiple_choice",
+        "theory": "Perintah console.log() digunakan untuk mencetak pesan atau nilai variabel ke konsol developer browser, sangat berguna untuk memeriksa hasil dan debugging.",
+        "code_example": "console.log(\"Belajar JavaScript\");",
+        "question": "Perintah manakah yang digunakan untuk menampilkan pesan atau nilai ke konsol developer browser untuk keperluan debugging?\nA. print.screen()\nB. console.log()\nC. document.writeLine()\nD. echo()",
+        "options": [
+          {
+            "id": "a",
+            "text": "print.screen()"
+          },
+          {
+            "id": "b",
+            "text": "console.log()"
+          },
+          {
+            "id": "c",
+            "text": "document.writeLine()"
+          },
+          {
+            "id": "d",
+            "text": "echo()"
+          }
+        ],
+        "correct_option_id": "b",
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. console.log()",
+        "feedback_correct": "Tepat! console.log() menampilkan output ke konsol developer.",
+        "feedback_incorrect": "Gunakan objek console diikuti method log() untuk mencetak ke konsol.",
+        "mascot_dialogue": "Keren! console.log() bakal jadi sahabat terbaikmu saat debugging."
+      },
+      {
+        "node_id": "JS_L01_N05",
+        "title": "Script Tag",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Kode JavaScript di dalam HTML ditulis di antara tag pembuka <script> dan tag penutup </script>.",
+        "code_example": "<script>\n  console.log(\"Halo\");\n</script>",
+        "question": "Lengkapi tag pembuka HTML untuk menyisipkan kode JavaScript:\n<___>\n  console.log(\"Halo Dunia\");\n</script>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "script"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "script",
+        "feedback_correct": "Benar! Tag <script> digunakan untuk menuliskan atau memuat JavaScript.",
+        "feedback_incorrect": "Lihat tag penutup </script> untuk mengetahui nama tag pembukanya.",
+        "mascot_dialogue": "Sip! Tag <script> adalah wadah kode JS di dalam HTML."
+      },
+      {
+        "node_id": "JS_L01_N06",
+        "title": "Using console.log",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Method log() pada objek console menerima teks string di dalam tanda kurung untuk ditampilkan.",
+        "code_example": "console.log(\"Mulai\");",
+        "question": "Lengkapi perintah berikut untuk menampilkan tulisan 'Siap Coding' ke konsol:\nconsole.___(\"Siap Coding\");",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "log"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "log",
+        "feedback_correct": "Tepat! console.log() mencetak teks ke konsol.",
+        "feedback_incorrect": "Gunakan method log setelah kata console.",
+        "mascot_dialogue": "Bagus! Kamu sudah lancar mencetak output ke konsol."
+      },
+      {
+        "node_id": "JS_L01_N07",
+        "title": "Single-Line Comment",
+        "difficulty": "beginner",
+        "type": "fill_blank",
+        "theory": "Komentar satu baris di JavaScript diawali dengan dua garis miring (//). Komentar diabaikan saat program dijalankan.",
+        "code_example": "// Ini adalah komentar\nconsole.log(\"Aktif\");",
+        "question": "Lengkapi simbol komentar satu baris di JavaScript:\n___ Baris ini tidak akan dijalankan oleh browser",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [
+          "//"
+        ],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "//",
+        "feedback_correct": "Benar! Tanda // menandai komentar satu baris di JavaScript.",
+        "feedback_incorrect": "Gunakan dua tanda garis miring (//) di awal baris komentar.",
+        "mascot_dialogue": "Mantap! Komentar membantu memberi catatan pada kodemu."
+      },
+      {
+        "node_id": "JS_L01_N08",
+        "title": "Build a Console Log Statement",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Pernyataan console.log terdiri dari objek console, tanda titik, method log, dan argumen string di dalam tanda kurung.",
+        "code_example": "console.log(\"Hello JS\");",
+        "question": "Susun potongan kode berikut untuk menampilkan teks 'Hello JS' ke konsol:\n1. (\"Hello JS\");\n2. console.log",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "(\"Hello JS\");"
+          },
+          {
+            "id": 2,
+            "code": "console.log"
+          }
+        ],
+        "answer_order": [
+          2,
+          1
+        ],
+        "assembly_separator": "",
+        "correct_code": "console.log(\"Hello JS\");",
+        "correct_answer": "2 → 1",
+        "feedback_correct": "Sempurna! Susunan perintah console.log sudah tepat.",
+        "feedback_incorrect": "Mulai dengan console.log diikuti tanda kurung berisi teks.",
+        "mascot_dialogue": "Yeay! Perintah JavaScript pertamamu berhasil disusun!"
+      },
+      {
+        "node_id": "JS_L01_N09",
+        "title": "Inline Script Block",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Blok skrip di HTML diawali <script>, diikuti perintah JavaScript, dan ditutup </script>.",
+        "code_example": "<script>\n  console.log(\"Berhasil\");\n</script>",
+        "question": "Susun potongan kode berikut menjadi blok script HTML yang valid dan utuh:\n1. console.log(\"Berhasil\");\n2. </script>\n3. <script>",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": "console.log(\"Berhasil\");"
+          },
+          {
+            "id": 2,
+            "code": "</script>"
+          },
+          {
+            "id": 3,
+            "code": "<script>"
+          }
+        ],
+        "answer_order": [
+          3,
+          1,
+          2
+        ],
+        "assembly_separator": " ",
+        "correct_code": "<script> console.log(\"Berhasil\"); </script>",
+        "correct_answer": "3 → 1 → 2",
+        "feedback_correct": "Benar! Blok <script> sudah tersusun dengan urutan yang tepat.",
+        "feedback_incorrect": "Buka dengan <script>, isi perintah console.log, lalu tutup dengan </script>.",
+        "mascot_dialogue": "Bagus! Kamu sudah bisa menyisipkan JS di dalam HTML."
+      },
+      {
+        "node_id": "JS_L01_N10",
+        "title": "Alert Interaction",
+        "difficulty": "beginner",
+        "type": "arrange_code",
+        "theory": "Fungsi alert() menampilkan kotak dialog pesan singkat di browser pengguna.",
+        "code_example": "alert(\"Halo Pengguna!\");",
+        "question": "Susun potongan kode berikut untuk menampilkan pop-up pesan 'Halo Pengguna!':\n1. ;\n2. alert\n3. (\"Halo Pengguna!\")",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
+        "answer_fragments": [
+          {
+            "id": 1,
+            "code": ";"
+          },
+          {
+            "id": 2,
+            "code": "alert"
+          },
+          {
+            "id": 3,
+            "code": "(\"Halo Pengguna!\")"
+          }
+        ],
+        "answer_order": [
+          2,
+          3,
+          1
+        ],
+        "assembly_separator": "",
+        "correct_code": "alert(\"Halo Pengguna!\");",
+        "correct_answer": "2 → 3 → 1",
+        "feedback_correct": "Luar biasa! Perintah alert() tersusun dengan benar.",
+        "feedback_incorrect": "Susun nama fungsi alert, tanda kurung beserta teks, lalu titik koma.",
+        "mascot_dialogue": "Selamat! Kamu telah menyelesaikan JavaScript Level 1!"
+      }
+    ]
+  }
 }

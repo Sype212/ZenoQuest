@@ -1,5 +1,5 @@
 {
-  "schema_version": "draft-1.0",
+  "schema_version": "1.0",
   "course_id": "csharp_fundamentals",
   "course_title": "C# Fundamentals",
   "group": "Absen Besar",
@@ -7,21 +7,6 @@
   "difficulty": "beginner",
   "language": "id",
   "content_version": "1.1",
-  "source_documents": [
-    "Blueprint_CSharp_Level_1.pdf",
-    "Blueprint_CSharp_Level_2.pdf",
-    "Blueprint_CSharp_Level_3.pdf",
-    "Blueprint_CSharp_Level_4.pdf",
-    "Blueprint_CSharp_Level_5.pdf"
-  ],
-  "mvp_scope_note": "Lima level disertakan sebagai hasil penyusunan materi. Konfirmasi cakupan rilis MVP dengan Team Lead dan Developer berdasarkan PRD yang berlaku.",
-  "validation_notes": {
-    "multiple_choice": "Gunakan correct_option_id untuk menentukan opsi benar; pastikan empat opsi tersedia dan ID opsi unik.",
-    "fill_in_the_blank": "accepted_answers berisi token jawaban yang diterima. Developer perlu menyepakati normalisasi spasi, kapitalisasi, dan tanda baca.",
-    "arrange_code": "answer_fragments berisi potongan kode ber-ID; answer_order berisi urutan ID fragmen yang benar.",
-    "mascot_dialogue": "Pastikan mascot_dialogue tidak melebihi 160 karakter.",
-    "source_note": "Data diekstrak dari lima blueprint PDF. Periksa kembali hasil ekstraksi dan validasi sintaks sebelum integrasi."
-  },
   "level": {
     "level_id": "CSH_L05",
     "level_number": 5,
@@ -31,7 +16,7 @@
     "question_count": 10,
     "distribution": {
       "multiple_choice": 4,
-      "fill_in_the_blank": 3,
+      "fill_blank": 3,
       "arrange_code": 3
     },
     "nodes": [
@@ -43,9 +28,6 @@
         "theory": "Method adalah blok kode yang memiliki nama dan digunakan untuk menjalankan tugas tertentu. Method membantu membuat program lebih terstruktur, mengurangi pengulangan kode, dan memudahkan pemeliharaan program.",
         "code_example": "static void SayHello()\n{\n    Console.WriteLine(\"Hello!\");\n}",
         "question": "Apa fungsi utama method dalam pemrograman?\nA. Menyimpan banyak nilai dalam satu variabel\nB. Mengelompokkan instruksi untuk menjalankan tugas tertentu\nC. Menghentikan semua proses program\nD. Mengubah semua tipe data menjadi string",
-        "feedback_correct": "Tepat! Method membantu mengelompokkan kode berdasarkan tugas agar program lebih terstruktur dan mudah digunakan kembali.",
-        "feedback_incorrect": "Belum tepat. Ingat, method digunakan untuk mengelompokkan instruksi yang menjalankan tugas tertentu.",
-        "mascot_dialogue": "Keren! Method membuat kode program lebih rapi dan mudah digunakan kembali.",
         "options": [
           {
             "id": "a",
@@ -65,7 +47,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Mengelompokkan instruksi untuk menjalankan tugas tertentu"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Mengelompokkan instruksi untuk menjalankan tugas tertentu",
+        "feedback_correct": "Tepat! Method membantu mengelompokkan kode berdasarkan tugas agar program lebih terstruktur dan mudah digunakan kembali.",
+        "feedback_incorrect": "Belum tepat. Ingat, method digunakan untuk mengelompokkan instruksi yang menjalankan tugas tertentu.",
+        "mascot_dialogue": "Keren! Method membuat kode program lebih rapi dan mudah digunakan kembali."
       },
       {
         "node_id": "CSH_L05_N02",
@@ -75,9 +65,6 @@
         "theory": "Method declaration adalah proses mendefinisikan method. Dalam contoh method sederhana, deklarasi terdiri dari modifier, return type, nama method, tanda kurung parameter, dan blok kode.",
         "code_example": "static void ShowMessage()\n{\n    Console.WriteLine(\"Welcome!\");\n}",
         "question": "Pada kode berikut, bagian manakah yang merupakan nama method?\nstatic void ShowMessage()\n{\n    Console.WriteLine(\"Welcome!\");\n}\nA. static\nB. void\nC. ShowMessage\nD. Console.WriteLine",
-        "feedback_correct": "Benar! ShowMessage adalah nama method yang digunakan untuk mengenali dan memanggil method tersebut.",
-        "feedback_incorrect": "Perhatikan bagian setelah return type. Bagian tersebut merupakan nama method.",
-        "mascot_dialogue": "Bagus! Kamu sudah mengenali bagian penting dalam deklarasi method.",
         "options": [
           {
             "id": "a",
@@ -97,7 +84,15 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. ShowMessage"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. ShowMessage",
+        "feedback_correct": "Benar! ShowMessage adalah nama method yang digunakan untuk mengenali dan memanggil method tersebut.",
+        "feedback_incorrect": "Perhatikan bagian setelah return type. Bagian tersebut merupakan nama method.",
+        "mascot_dialogue": "Bagus! Kamu sudah mengenali bagian penting dalam deklarasi method."
       },
       {
         "node_id": "CSH_L05_N03",
@@ -107,9 +102,6 @@
         "theory": "Parameter adalah variabel yang ditulis pada deklarasi method untuk menerima data dari pemanggil method. Dengan parameter, satu method dapat digunakan untuk mengolah nilai yang berbeda.",
         "code_example": "static void Greet(string name)\n{\n    Console.WriteLine(\"Hello \" + name);\n}",
         "question": "Pada method berikut, apa fungsi parameter name?\nstatic void Greet(string name)\n{\n    Console.WriteLine(\"Hello \" + name);\n}\nA. Menghentikan method\nB. Menerima nilai yang dikirimkan ketika method dipanggil\nC. Mengubah method menjadi array\nD. Mengembalikan nilai integer secara otomatis",
-        "feedback_correct": "Tepat! Parameter name menerima data yang diberikan ketika method Greet dipanggil.",
-        "feedback_incorrect": "Ingat, parameter berfungsi sebagai tempat menerima data dari pemanggil method.",
-        "mascot_dialogue": "Mantap! Dengan parameter, method dapat bekerja menggunakan data yang berbeda.",
         "options": [
           {
             "id": "a",
@@ -129,7 +121,15 @@
           }
         ],
         "correct_option_id": "b",
-        "correct_answer": "B. Menerima nilai yang dikirimkan ketika method dipanggil"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "B. Menerima nilai yang dikirimkan ketika method dipanggil",
+        "feedback_correct": "Tepat! Parameter name menerima data yang diberikan ketika method Greet dipanggil.",
+        "feedback_incorrect": "Ingat, parameter berfungsi sebagai tempat menerima data dari pemanggil method.",
+        "mascot_dialogue": "Mantap! Dengan parameter, method dapat bekerja menggunakan data yang berbeda."
       },
       {
         "node_id": "CSH_L05_N04",
@@ -139,9 +139,6 @@
         "theory": "Return type menentukan jenis nilai yang dikembalikan oleh method. Method dengan return type void tidak mengembalikan nilai. Method dengan return type seperti int dapat mengembalikan nilai integer menggunakan pernyataan return.",
         "code_example": "static int Add(int a, int b)\n{\n    return a + b;\n}",
         "question": "Apa fungsi pernyataan return pada method di atas?\nA. Mengulang method dari awal\nB. Menghentikan seluruh aplikasi\nC. Mengembalikan hasil penjumlahan kepada pemanggil method\nD. Mengubah parameter menjadi string",
-        "feedback_correct": "Benar! Return mengirimkan hasil dari method kepada bagian program yang memanggilnya.",
-        "feedback_incorrect": "Perhatikan return type int. Method tersebut harus mengembalikan nilai integer melalui return.",
-        "mascot_dialogue": "Hebat! Kamu sudah memahami bagaimana method mengembalikan hasil.",
         "options": [
           {
             "id": "a",
@@ -161,55 +158,81 @@
           }
         ],
         "correct_option_id": "c",
-        "correct_answer": "C. Mengembalikan hasil penjumlahan kepada pemanggil method"
+        "accepted_answers": [],
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "C. Mengembalikan hasil penjumlahan kepada pemanggil method",
+        "feedback_correct": "Benar! Return mengirimkan hasil dari method kepada bagian program yang memanggilnya.",
+        "feedback_incorrect": "Perhatikan return type int. Method tersebut harus mengembalikan nilai integer melalui return.",
+        "mascot_dialogue": "Hebat! Kamu sudah memahami bagaimana method mengembalikan hasil."
       },
       {
         "node_id": "CSH_L05_N05",
         "title": "Void Method",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Kata kunci void digunakan sebagai return type untuk method yang tidak mengembalikan nilai. Method void tetap dapat menjalankan instruksi seperti menampilkan teks atau mengubah data.",
         "code_example": "static void DisplayInfo()\n{\n    Console.WriteLine(\"Learning C#\");\n}",
-        "question": "Lengkapi deklarasi berikut agar method tidak mengembalikan nilai.\nstatic ______ DisplayMessage()\n{\n    Console.WriteLine(\"Hello!\");\n}",
-        "feedback_correct": "Tepat! Void digunakan ketika method tidak mengembalikan nilai.",
-        "feedback_incorrect": "Petunjuk: gunakan return type yang menunjukkan bahwa method tidak mengembalikan nilai.",
-        "mascot_dialogue": "Sip! Kamu sudah tahu kapan harus menggunakan void.",
+        "question": "Lengkapi deklarasi berikut agar method tidak mengembalikan nilai.\nstatic ___ DisplayMessage()\n{\n    Console.WriteLine(\"Hello!\");\n}",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "void"
         ],
-        "correct_answer": "void"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "void",
+        "feedback_correct": "Tepat! Void digunakan ketika method tidak mengembalikan nilai.",
+        "feedback_incorrect": "Petunjuk: gunakan return type yang menunjukkan bahwa method tidak mengembalikan nilai.",
+        "mascot_dialogue": "Sip! Kamu sudah tahu kapan harus menggunakan void."
       },
       {
         "node_id": "CSH_L05_N06",
         "title": "Calling a Method",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Method dipanggil dengan menuliskan nama method diikuti tanda kurung. Jika method memiliki parameter, nilai yang diperlukan harus diberikan saat pemanggilan.",
         "code_example": "static void SayHello()\n{\n    Console.WriteLine(\"Hello!\");\n}\n// Memanggil method\nSayHello();",
-        "question": "Lengkapi kode berikut agar method ShowMessage dijalankan.\nstatic void ShowMessage()\n{\n    Console.WriteLine(\"Welcome!\");\n}\n____________;",
-        "feedback_correct": "Benar! Method dijalankan dengan menuliskan nama method dan tanda kurung.",
-        "feedback_incorrect": "Ingat, pemanggilan method menggunakan nama method diikuti tanda kurung.",
-        "mascot_dialogue": "Bagus! Sekarang kamu bisa memanggil method yang sudah dibuat.",
+        "question": "Lengkapi kode berikut agar method ShowMessage dijalankan.\nstatic void ShowMessage()\n{\n    Console.WriteLine(\"Welcome!\");\n}\n___;",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "ShowMessage()"
         ],
-        "correct_answer": "ShowMessage()"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "ShowMessage()",
+        "feedback_correct": "Benar! Method dijalankan dengan menuliskan nama method dan tanda kurung.",
+        "feedback_incorrect": "Ingat, pemanggilan method menggunakan nama method diikuti tanda kurung.",
+        "mascot_dialogue": "Bagus! Sekarang kamu bisa memanggil method yang sudah dibuat."
       },
       {
         "node_id": "CSH_L05_N07",
         "title": "Return Statement",
         "difficulty": "beginner",
-        "type": "fill_in_the_blank",
+        "type": "fill_blank",
         "theory": "Pernyataan return digunakan untuk mengembalikan nilai dari method yang memiliki return type selain void. Nilai yang dikembalikan harus sesuai dengan return type method.",
         "code_example": "static int Multiply(int a, int b)\n{\n    return a * b;\n}",
-        "question": "Lengkapi method berikut agar mengembalikan hasil penjumlahan dua bilangan.\nstatic int Add(int a, int b)\n{\n    ______ a + b;\n}",
-        "feedback_correct": "Tepat! Return mengembalikan hasil penjumlahan kepada pemanggil method.",
-        "feedback_incorrect": "Petunjuk: gunakan kata kunci yang mengirimkan nilai hasil dari method.",
-        "mascot_dialogue": "Hebat! Kamu berhasil menggunakan return untuk mengirimkan hasil perhitungan.",
+        "question": "Lengkapi method berikut agar mengembalikan hasil penjumlahan dua bilangan.\nstatic int Add(int a, int b)\n{\n    ___ a + b;\n}",
+        "options": [],
+        "correct_option_id": null,
         "accepted_answers": [
           "return"
         ],
-        "correct_answer": "return"
+        "answer_fragments": [],
+        "answer_order": null,
+        "assembly_separator": null,
+        "correct_code": null,
+        "correct_answer": "return",
+        "feedback_correct": "Tepat! Return mengembalikan hasil penjumlahan kepada pemanggil method.",
+        "feedback_incorrect": "Petunjuk: gunakan kata kunci yang mengirimkan nilai hasil dari method.",
+        "mascot_dialogue": "Hebat! Kamu berhasil menggunakan return untuk mengirimkan hasil perhitungan."
       },
       {
         "node_id": "CSH_L05_N08",
@@ -219,9 +242,9 @@
         "theory": "Untuk menggunakan method, program perlu mendeklarasikan method terlebih dahulu. Setelah itu, method dapat dipanggil dari bagian program yang sesuai. Pada contoh berikut, method Main memanggil method SayHello.",
         "code_example": "class Program\n{\n    static void Main()\n    {\n        SayHello();\n    }\n    static void SayHello()\n    {\n        Console.WriteLine(\"Hello C#\");\n    }\n}",
         "question": "Susun potongan kode berikut agar program mendeklarasikan method SayHello dan memanggilnya dari Main.\nPotongan kode:\n1. static void SayHello()\n2. Console.WriteLine(\"Hello C#\");\n3. static void Main()\n4. SayHello();\n5. {\n6. }\n7. {\n8. }",
-        "feedback_correct": "Keren! Kamu berhasil menyusun deklarasi Main, pemanggilan SayHello, dan isi method dengan urutan yang benar.",
-        "feedback_incorrect": "Mulai dari Main, buka blok, panggil SayHello, lalu deklarasikan method SayHello beserta isi bloknya.",
-        "mascot_dialogue": "Mantap! Kamu sudah bisa membuat dan memanggil method sendiri.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -270,7 +293,12 @@
           2,
           8
         ],
-        "correct_answer": "3 → 5 → 4 → 6 → 1 → 7 → 2 → 8"
+        "assembly_separator": " ",
+        "correct_code": "static void Main() { SayHello(); } static void SayHello() { Console.WriteLine(\"Hello C#\"); }",
+        "correct_answer": "3 → 5 → 4 → 6 → 1 → 7 → 2 → 8",
+        "feedback_correct": "Keren! Kamu berhasil menyusun deklarasi Main, pemanggilan SayHello, dan isi method dengan urutan yang benar.",
+        "feedback_incorrect": "Mulai dari Main, buka blok, panggil SayHello, lalu deklarasikan method SayHello beserta isi bloknya.",
+        "mascot_dialogue": "Mantap! Kamu sudah bisa membuat dan memanggil method sendiri."
       },
       {
         "node_id": "CSH_L05_N09",
@@ -280,9 +308,9 @@
         "theory": "Method dapat menerima parameter untuk memproses data yang dikirimkan oleh pemanggil. Tipe data parameter harus sesuai dengan nilai yang diberikan ketika method dipanggil.",
         "code_example": "class Program\n{\n    static void Main()\n    {\n        Greet(\"Alya\");\n    }\n    static void Greet(string name)\n    {\n        Console.WriteLine(\"Hello \" + name);\n    }\n}",
         "question": "Susun potongan kode berikut agar program memanggil method Greet dengan parameter nama Alya.\nPotongan kode:\n1. static void Greet(string name)\n2. Console.WriteLine(\"Hello \" + name);\n3. static void Main()\n4. Greet(\"Alya\");\n5. {\n6. }\n7. {\n8. }",
-        "feedback_correct": "Tepat! Method Greet menerima parameter string dan memproses nama yang diberikan ketika dipanggil.",
-        "feedback_incorrect": "Susun Main terlebih dahulu, panggil Greet dengan nilai Alya, lalu deklarasikan Greet dengan parameter string name.",
-        "mascot_dialogue": "Luar biasa! Method dengan parameter membuat program lebih fleksibel.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -331,7 +359,12 @@
           2,
           8
         ],
-        "correct_answer": "3 → 5 → 4 → 6 → 1 → 7 → 2 → 8"
+        "assembly_separator": " ",
+        "correct_code": "static void Main() { Greet(\"Alya\"); } static void Greet(string name) { Console.WriteLine(\"Hello \" + name); }",
+        "correct_answer": "3 → 5 → 4 → 6 → 1 → 7 → 2 → 8",
+        "feedback_correct": "Tepat! Method Greet menerima parameter string dan memproses nama yang diberikan ketika dipanggil.",
+        "feedback_incorrect": "Susun Main terlebih dahulu, panggil Greet dengan nilai Alya, lalu deklarasikan Greet dengan parameter string name.",
+        "mascot_dialogue": "Luar biasa! Method dengan parameter membuat program lebih fleksibel."
       },
       {
         "node_id": "CSH_L05_N10",
@@ -341,9 +374,9 @@
         "theory": "Problem solving adalah proses menyelesaikan masalah melalui langkah-langkah yang terstruktur. Dalam pemrograman, masalah dapat dipecah menjadi bagian kecil, kemudian setiap tugas dibuat menjadi method agar solusi lebih mudah dipahami dan diuji.",
         "code_example": "class Program\n{\n    static void Main()\n    {\n        int area = CalculateArea(5, 3);\n        Console.WriteLine(area);\n    }\n    static int CalculateArea(int length, int width)\n    {\n        return length * width;\n    }\n}",
         "question": "Susun potongan kode berikut agar program menghitung luas persegi panjang dengan panjang 5 dan lebar 3, kemudian menampilkan hasilnya.\nPotongan kode:\n1. return length * width;\n2. int area = CalculateArea(5, 3);\n3. static int CalculateArea(int length, int width)\n4. Console.WriteLine(area);\n5. static void Main()\n6. {\n7. }\n8. {\n9. }",
-        "feedback_correct": "Luar biasa! Kamu berhasil memecah perhitungan menjadi method, memanggilnya, dan menampilkan hasilnya.",
-        "feedback_incorrect": "Mulai dari Main, panggil CalculateArea, tampilkan hasil, lalu deklarasikan method yang mengembalikan hasil perkalian panjang dan lebar.",
-        "mascot_dialogue": "Hebat! Kamu sudah menerapkan method untuk menyelesaikan masalah sederhana.",
+        "options": [],
+        "correct_option_id": null,
+        "accepted_answers": [],
         "answer_fragments": [
           {
             "id": 1,
@@ -397,7 +430,12 @@
           1,
           9
         ],
-        "correct_answer": "5 → 6 → 2 → 4 → 7 → 3 → 8 → 1 → 9"
+        "assembly_separator": " ",
+        "correct_code": "static void Main() { int area = CalculateArea(5, 3); Console.WriteLine(area); } static int CalculateArea(int length, int width) { return length * width; }",
+        "correct_answer": "5 → 6 → 2 → 4 → 7 → 3 → 8 → 1 → 9",
+        "feedback_correct": "Luar biasa! Kamu berhasil memecah perhitungan menjadi method, memanggilnya, dan menampilkan hasilnya.",
+        "feedback_incorrect": "Mulai dari Main, panggil CalculateArea, tampilkan hasil, lalu deklarasikan method yang mengembalikan hasil perkalian panjang dan lebar.",
+        "mascot_dialogue": "Hebat! Kamu sudah menerapkan method untuk menyelesaikan masalah sederhana."
       }
     ]
   }
