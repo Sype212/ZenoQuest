@@ -37,11 +37,23 @@
   /* Mobile viewport bounds */
   --mobile-min: 360px;
   --mobile-max: 430px;
+
+  /* iOS-inspired motion curves */
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-ios-spring: cubic-bezier(0.22, 1.18, 0.36, 1);
 }
 
 /* ─── Global Reset ─────────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+button, a, [role="button"], input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
 }
 
 html, body {
@@ -146,25 +158,206 @@ html, body {
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition: opacity 0.22s var(--ease-ios), transform 0.22s var(--ease-ios), background-color 0.22s ease, box-shadow 0.22s ease;
   -webkit-tap-highlight-color: transparent;
 }
-.btn-cta:active { transform: scale(0.97); opacity: 0.9; }
+.btn-cta:active:not(:disabled) { transform: scale(0.97); opacity: 0.92; }
 .btn-cta:disabled { opacity: 0.4; cursor: not-allowed; }
 
-/* ─── Smooth page transition ───────────────────────────────────────────────── */
+/* ─── Tactile iOS press physics ────────────────────────────────────────────── */
+.ios-press {
+  transition: transform 0.22s var(--ease-ios), border-color 0.22s ease, background-color 0.22s ease, opacity 0.2s ease, box-shadow 0.22s ease;
+}
+.ios-press:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* ─── Smooth iOS navigation transitions ────────────────────────────────────── */
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.34s var(--ease-ios), opacity 0.28s var(--ease-ios);
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  will-change: transform, opacity;
 }
 .slide-left-enter-from  { transform: translateX(100%); opacity: 0; }
-.slide-left-leave-to    { transform: translateX(-30%); opacity: 0; }
+.slide-left-leave-to    { transform: translateX(-24%); opacity: 0; }
 .slide-right-enter-from { transform: translateX(-100%); opacity: 0; }
-.slide-right-leave-to   { transform: translateX(30%); opacity: 0; }
+.slide-right-leave-to   { transform: translateX(24%); opacity: 0; }
+
+/* Root tab crossfade (keeps bottom tab bar anchored cleanly) */
+.ios-tab-enter-active {
+  transition: opacity 0.2s var(--ease-ios);
+}
+.ios-tab-leave-active {
+  transition: opacity 0.11s ease-out;
+}
+.ios-tab-enter-from,
+.ios-tab-leave-to {
+  opacity: 0;
+}
+
+/* Drill-in push / pop for Quiz & Onboarding exit */
+.ios-push-enter-active,
+.ios-pop-enter-active {
+  transition: transform 0.24s var(--ease-ios), opacity 0.22s var(--ease-ios);
+}
+.ios-push-leave-active,
+.ios-pop-leave-active {
+  transition: transform 0.13s ease-out, opacity 0.12s ease-out;
+}
+.ios-push-enter-from { transform: translateX(24px); opacity: 0; }
+.ios-push-leave-to   { transform: translateX(-12px); opacity: 0; }
+.ios-pop-enter-from  { transform: translateX(-16px); opacity: 0; }
+.ios-pop-leave-to    { transform: translateX(24px); opacity: 0; }
+
+/* Bottom sheet backdrop + inner rising card */
+.ios-sheet-enter-active {
+  transition: opacity 0.26s ease-out;
+}
+.ios-sheet-leave-active {
+  transition: opacity 0.2s ease-in;
+}
+.ios-sheet-enter-from,
+.ios-sheet-leave-to {
+  opacity: 0;
+}
+.ios-sheet-enter-active .ios-sheet-card {
+  transition: transform 0.36s var(--ease-ios), opacity 0.26s ease-out;
+}
+.ios-sheet-leave-active .ios-sheet-card {
+  transition: transform 0.22s ease-in, opacity 0.18s ease-in;
+}
+.ios-sheet-enter-from .ios-sheet-card,
+.ios-sheet-leave-to .ios-sheet-card {
+  transform: translateY(36px);
+  opacity: 0;
+}
+
+/* Center modal dialog backdrop + spring scale */
+.ios-dialog-enter-active {
+  transition: opacity 0.24s ease-out;
+}
+.ios-dialog-leave-active {
+  transition: opacity 0.18s ease-in;
+}
+.ios-dialog-enter-from,
+.ios-dialog-leave-to {
+  opacity: 0;
+}
+.ios-dialog-enter-active .ios-dialog-card {
+  transition: transform 0.34s var(--ease-ios-spring), opacity 0.24s ease-out;
+}
+.ios-dialog-leave-active .ios-dialog-card {
+  transition: transform 0.18s ease-in, opacity 0.16s ease-in;
+}
+.ios-dialog-enter-from .ios-dialog-card,
+.ios-dialog-leave-to .ios-dialog-card {
+  transform: scale(0.92) translateY(10px);
+  opacity: 0;
+}
+
+/* Popover dropdown menu */
+.ios-popover-enter-active {
+  transition: transform 0.24s var(--ease-ios), opacity 0.2s ease-out;
+  transform-origin: top left;
+}
+.ios-popover-leave-active {
+  transition: transform 0.16s ease-in, opacity 0.14s ease-in;
+  transform-origin: top left;
+}
+.ios-popover-enter-from,
+.ios-popover-leave-to {
+  transform: translateY(-6px) scale(0.96);
+  opacity: 0;
+}
+
+/* Gentle inline fade / banner / question transitions */
+.ios-fade-enter-active {
+  transition: opacity 0.2s var(--ease-ios);
+}
+.ios-fade-leave-active {
+  transition: opacity 0.13s ease-out;
+}
+.ios-fade-enter-from,
+.ios-fade-leave-to {
+  opacity: 0;
+}
+
+.ios-banner-enter-active,
+.ios-banner-leave-active {
+  transition: transform 0.28s var(--ease-ios), opacity 0.24s ease;
+}
+.ios-banner-enter-from,
+.ios-banner-leave-to {
+  transform: translateY(12px) scale(0.98);
+  opacity: 0;
+}
+
+.ios-question-enter-active {
+  transition: transform 0.24s var(--ease-ios), opacity 0.22s var(--ease-ios);
+}
+.ios-question-leave-active {
+  transition: transform 0.14s ease-out, opacity 0.13s ease-out;
+}
+.ios-question-enter-from {
+  transform: translateX(18px);
+  opacity: 0;
+}
+.ios-question-leave-to {
+  transform: translateX(-14px);
+  opacity: 0;
+}
+
+.ios-feedback-enter-active {
+  transition: transform 0.28s var(--ease-ios-spring), opacity 0.22s ease-out;
+}
+.ios-feedback-leave-active {
+  transition: transform 0.14s ease-in, opacity 0.12s ease-in;
+}
+.ios-feedback-enter-from {
+  transform: translateY(12px);
+  opacity: 0;
+}
+.ios-feedback-leave-to {
+  transform: translateY(6px);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-left-enter-active,
+  .slide-left-leave-active,
+  .slide-right-enter-active,
+  .slide-right-leave-active,
+  .ios-tab-enter-active,
+  .ios-tab-leave-active,
+  .ios-push-enter-active,
+  .ios-push-leave-active,
+  .ios-pop-enter-active,
+  .ios-pop-leave-active,
+  .ios-sheet-enter-active,
+  .ios-sheet-leave-active,
+  .ios-sheet-enter-active .ios-sheet-card,
+  .ios-sheet-leave-active .ios-sheet-card,
+  .ios-dialog-enter-active,
+  .ios-dialog-leave-active,
+  .ios-dialog-enter-active .ios-dialog-card,
+  .ios-dialog-leave-active .ios-dialog-card,
+  .ios-popover-enter-active,
+  .ios-popover-leave-active,
+  .ios-fade-enter-active,
+  .ios-fade-leave-active,
+  .ios-banner-enter-active,
+  .ios-banner-leave-active,
+  .ios-question-enter-active,
+  .ios-question-leave-active,
+  .ios-feedback-enter-active,
+  .ios-feedback-leave-active {
+    transition-duration: 0.01ms !important;
+  }
+}

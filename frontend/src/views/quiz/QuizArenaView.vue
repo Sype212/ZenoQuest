@@ -360,7 +360,7 @@ function exitToMap() {
           <div
             v-for="idx in totalNodes"
             :key="idx"
-            class="h-1.5 flex-1 rounded-full transition-all duration-300"
+            class="h-1.5 flex-1 rounded-full transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
             :style="{
               backgroundColor: idx - 1 < nodeIndex
                 ? '#22C55E'
@@ -409,9 +409,11 @@ function exitToMap() {
 
     <!-- ── MAIN QUIZ BODY ─────────────────────────────────────────────────── -->
     <template v-else-if="currentNode">
-      <div class="flex-1 min-h-0 overflow-y-auto scrollbar-hide px-4 py-3.5 flex flex-col gap-3.5">
+      <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden scrollbar-hide px-4 py-3.5">
+        <Transition name="ios-question" mode="out-in">
+          <div :key="currentNode.nodeId" class="flex flex-col gap-3.5">
 
-        <!-- ZONA 2: MASCOT + DIALOGUE / QUESTION BUBBLE -->
+            <!-- ZONA 2: MASCOT + DIALOGUE / QUESTION BUBBLE -->
         <div class="flex items-center gap-3 shrink-0">
           <!-- Mascot Tile -->
           <div
@@ -517,13 +519,15 @@ function exitToMap() {
             :track-badge="trackBadgeName"
             :assembly-separator="currentNode.assemblySeparator"
           />
-        </div>
+            </div>
 
+          </div>
+        </Transition>
       </div>
 
       <!-- ── ZONA 4: STICKY ACTION BAR / FEEDBACK BOTTOM SHEET ────────────── -->
       <div
-        class="shrink-0 px-4 pt-2.5 pb-4 border-t border-[#1A2238] transition-colors"
+        class="shrink-0 px-4 pt-2.5 pb-4 border-t border-[#1A2238] transition-colors duration-300"
         :class="feedbackState === 'correct'
           ? 'bg-[#0F241A] border-[#22C55E]/40'
           : feedbackState === 'incorrect'
@@ -531,8 +535,9 @@ function exitToMap() {
             : 'bg-[#0B0F19]'"
         style="padding-bottom: max(16px, env(safe-area-inset-bottom))"
       >
-        <!-- Feedback Bottom Sheet Content -->
-        <div v-if="feedbackState === 'correct'" class="flex flex-col gap-3">
+        <Transition name="ios-feedback" mode="out-in">
+          <!-- Feedback Bottom Sheet Content -->
+          <div v-if="feedbackState === 'correct'" key="correct" class="flex flex-col gap-3">
           <div class="flex items-start gap-2.5">
             <div class="w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center shrink-0 mt-0.5">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -568,7 +573,7 @@ function exitToMap() {
           </button>
         </div>
 
-        <div v-else-if="feedbackState === 'incorrect' && currentHearts > 0" class="flex flex-col gap-3">
+        <div v-else-if="feedbackState === 'incorrect' && currentHearts > 0" key="incorrect" class="flex flex-col gap-3">
           <div class="flex items-start gap-2.5">
             <div class="w-6 h-6 rounded-full bg-[#FF2B51] flex items-center justify-center shrink-0 mt-0.5">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
@@ -602,6 +607,7 @@ function exitToMap() {
         <!-- Default Check Answer CTA -->
         <button
           v-else
+          key="idle"
           type="button"
           :disabled="!canSubmit"
           @click="checkAnswer"
@@ -610,20 +616,23 @@ function exitToMap() {
         >
           PERIKSA JAWABAN →
         </button>
+        </Transition>
       </div>
     </template>
 
     <!-- ── LEVEL COMPLETE / GAME OVER MODAL ──────────────────────────────── -->
-    <QuizResultModal
-      v-if="resultModal"
-      :mode="resultModal.mode"
-      :level-title="`Level ${levelMeta?.num} • ${levelMeta?.title}`"
-      :earned-xp="sessionXpEarned"
-      :perfect-bonus-xp="resultModal.perfectBonusXp"
-      :hearts-remaining="currentHearts"
-      :unlocked-next-title="resultModal.unlockedNextTitle"
-      @retry="handleRestartLevel"
-      @exit="exitToMap"
-    />
+    <Transition name="ios-dialog">
+      <QuizResultModal
+        v-if="resultModal"
+        :mode="resultModal.mode"
+        :level-title="`Level ${levelMeta?.num} • ${levelMeta?.title}`"
+        :earned-xp="sessionXpEarned"
+        :perfect-bonus-xp="resultModal.perfectBonusXp"
+        :hearts-remaining="currentHearts"
+        :unlocked-next-title="resultModal.unlockedNextTitle"
+        @retry="handleRestartLevel"
+        @exit="exitToMap"
+      />
+    </Transition>
   </div>
 </template>

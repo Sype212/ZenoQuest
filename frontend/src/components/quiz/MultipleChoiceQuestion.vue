@@ -36,7 +36,7 @@ function optionClasses(optId, props) {
       type="button"
       :disabled="disabled"
       @click="emit('update:modelValue', opt.id)"
-      class="w-full flex items-center gap-3 px-3.5 py-3 rounded-xl border-[1.5px] text-left transition-all active:scale-[0.985] cursor-pointer disabled:cursor-default"
+      class="ios-press w-full flex items-center gap-3 px-3.5 py-3 rounded-xl border-[1.5px] text-left cursor-pointer disabled:cursor-default"
       :class="optionClasses(opt.id, $props)"
     >
       <!-- Letter Badge -->

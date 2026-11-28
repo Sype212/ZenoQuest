@@ -12,7 +12,7 @@ const props = defineProps({
   selectedTrack: { type: String, default: 'html' },
   selectedMinutes: { type: Number, default: 10 },
 })
-const emit = defineEmits(['update:nickname'])
+const emit = defineEmits(['update:nickname', 'submit'])
 
 const track = computed(() => CourseTrack.findById(props.selectedTrack))
 const trackName = computed(() => track.value?.title || 'HTML Fundamentals')
@@ -47,6 +47,7 @@ const isValidNick = computed(() => {
       </label>
       <input
         v-model="nicknameInput"
+        @keyup.enter="isValidNick && emit('submit')"
         type="text"
         maxlength="20"
         placeholder="Masukkan nicknamemu (min. 3 huruf)..."

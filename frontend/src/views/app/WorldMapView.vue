@@ -157,8 +157,16 @@ function runCameraPanToActive() {
   }, 180)
 }
 
+function syncSelectedTrack(trackId) {
+  if (!trackId || !CourseTrack.findById(trackId)) return
+  if (gameStore.state.profile && gameStore.state.profile.selectedTrack !== trackId) {
+    gameStore.updateProfile({ selectedTrack: trackId })
+  }
+}
+
 onMounted(async () => {
   gameStore.refresh()
+  syncSelectedTrack(activeTrackId.value)
   await nextTick()
   measurePathConnectors()
   runCameraPanToActive()
@@ -172,6 +180,7 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   cancelCameraPan()
   resizeObserver?.disconnect()
+  if (pulseTimer) clearTimeout(pulseTimer)
 })
 
 // ─── Load Profile & Progress (Reactive) ──────────────────────────────────────
@@ -183,6 +192,26 @@ const progressMap   = computed(() => gameStore.state.progress || {})
 const activeSession = computed(() => gameStore.state.activeSession)
 
 const xp     = computed(() => stats.value?.xp ?? 0)
+const unlockedAchievementsCount = computed(() =>
+  Array.isArray(gameStore.state.achievements) ? gameStore.state.achievements.length : 0
+)
+const achievementPulse = ref(false)
+let pulseTimer = null
+
+watch(unlockedAchievementsCount, (nextCount, prevCount) => {
+  if (typeof prevCount === 'number' && nextCount > prevCount) {
+    achievementPulse.value = true
+    if (pulseTimer) clearTimeout(pulseTimer)
+    pulseTimer = setTimeout(() => {
+      achievementPulse.value = false
+    }, 1200)
+  }
+})
+
+function goToAchievements() {
+  router.push({ path: '/profile', query: { focus: 'achievements' } })
+}
+
 const hearts = computed(() => {
   if (activeSession.value?.trackId === activeTrackId.value && activeSession.value?.currentHearts > 0) {
     return activeSession.value.currentHearts
@@ -197,11 +226,14 @@ const activeTrackId = ref(route.params.trackId && route.params.trackId !== 'acti
 
 // Sinkronisasi jika parameter rute berubah
 watch(() => route.params.trackId, async (newId) => {
-  if (newId && newId !== 'active' && newId !== activeTrackId.value) {
-    activeTrackId.value = newId
-    await nextTick()
-    measurePathConnectors()
-    runCameraPanToActive()
+  if (newId && newId !== 'active' && CourseTrack.findById(newId)) {
+    syncSelectedTrack(newId)
+    if (newId !== activeTrackId.value) {
+      activeTrackId.value = newId
+      await nextTick()
+      measurePathConnectors()
+      runCameraPanToActive()
+    }
   }
 })
 
@@ -213,6 +245,7 @@ const showTrackMenu = ref(false)
 
 async function switchTrack(trackId) {
   activeTrackId.value = trackId
+  syncSelectedTrack(trackId)
   showTrackMenu.value = false
   router.replace(`/map/${trackId}`)
   await nextTick()
@@ -309,21 +342,40 @@ const tipMessage = computed(() => {
           </svg>
         </button>
 
-        <!-- Center: XP + Hearts Badge Container -->
-        <div class="flex items-center gap-2">
+        <!-- Center: XP + Achievement + Hearts Badge Container -->
+        <div class="flex items-center gap-1.5">
           <!-- XP Capsule -->
-          <div class="flex items-center gap-1.5 bg-[#13192B] border border-[#222B45] rounded-full px-3 py-1.5">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7DF1E">
+          <div class="flex items-center gap-1 bg-[#13192B] border border-[#222B45] rounded-full px-2.5 py-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#F7DF1E">
               <path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z"/>
             </svg>
-            <span class="text-[13px] font-bold text-[#F7DF1E]">{{ xp }} XP</span>
+            <span class="text-[12px] font-bold text-[#F7DF1E] whitespace-nowrap">{{ xp }} XP</span>
           </div>
+
+          <!-- Achievements Capsule -->
+          <button
+            @click="goToAchievements"
+            type="button"
+            data-testid="hud-achievement-pill"
+            class="flex items-center gap-1 bg-[#13192B] border rounded-full px-2.5 py-1.5 cursor-pointer active:scale-95 transition-all duration-300"
+            :class="achievementPulse
+              ? 'border-[#22C55E] shadow-[0_0_12px_rgba(34,197,94,0.55)] scale-105'
+              : 'border-[#222B45] hover:border-[#22C55E]/70'"
+            :aria-label="`Pencapaian terbuka: ${unlockedAchievementsCount}`"
+            title="Lihat Pencapaian"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z" stroke="#22C55E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-[12px] font-bold text-[#22C55E] whitespace-nowrap">{{ unlockedAchievementsCount }}</span>
+          </button>
+
           <!-- Hearts Capsule -->
-          <div class="flex items-center gap-1.5 bg-[#13192B] border border-[#222B45] rounded-full px-3 py-1.5">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF2B51">
+          <div class="flex items-center gap-1 bg-[#13192B] border border-[#222B45] rounded-full px-2.5 py-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="#FF2B51">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
-            <span class="text-[13px] font-bold text-[#FF2B51]">{{ hearts }}</span>
+            <span class="text-[12px] font-bold text-[#FF2B51] whitespace-nowrap">{{ hearts }}</span>
           </div>
         </div>
 
@@ -354,11 +406,18 @@ const tipMessage = computed(() => {
           </svg>
         </button>
 
-        <!-- Dropdown Menu -->
-        <Transition name="slide-left">
+        <!-- Click-away backdrop for Track Popover -->
+        <div
+          v-if="showTrackMenu"
+          @click="showTrackMenu = false"
+          class="fixed inset-0 z-10"
+        />
+
+        <!-- Dropdown Menu (iOS Popover reveal) -->
+        <Transition name="ios-popover">
           <div
             v-if="showTrackMenu"
-            class="absolute left-4 right-4 top-full mt-1 bg-[#13192B] border border-[#222B45] rounded-xl overflow-hidden shadow-2xl z-30"
+            class="absolute left-4 right-4 top-full mt-1 bg-[#13192B]/95 backdrop-blur-md border border-[#222B45] rounded-2xl overflow-hidden shadow-2xl z-30"
           >
             <button
               v-for="track in allTracks"
@@ -437,7 +496,7 @@ const tipMessage = computed(() => {
               ref="bossBtnRef"
               @click="onSelectBossGate"
               type="button"
-              class="w-16 h-16 rounded-2xl flex items-center justify-center border-2 transition-all cursor-pointer active:scale-95"
+              class="ios-press w-16 h-16 rounded-2xl flex items-center justify-center border-2 cursor-pointer"
               :class="bossUnlocked
                 ? 'bg-gradient-to-br from-[#F7DF1E] to-[#F97316] border-[#F7DF1E] shadow-[0_0_20px_rgba(247,223,30,0.4)]'
                 : 'bg-[#13192B] border-[#222B45]'"
@@ -452,7 +511,7 @@ const tipMessage = computed(() => {
               </svg>
             </button>
             <div class="mt-1.5 text-center">
-              <span class="text-[12px] font-bold px-2.5 py-0.5 rounded-xl bg-[#0B0F19]" :class="bossUnlocked ? 'text-[#F7DF1E]' : 'text-[#8E9AB0]'">
+              <span class="text-[12px] font-bold px-2 py-0.5 rounded-full bg-[#0B0F19]/85" :class="bossUnlocked ? 'text-[#F7DF1E]' : 'text-[#8E9AB0]'">
                 Boss Gate • Proyek Akhir
               </span>
             </div>
@@ -472,7 +531,7 @@ const tipMessage = computed(() => {
                   class="flex items-center gap-1 mb-1 self-start -ml-2"
                 >
                   <MascotAvatar variant="idle" size="2xs" />
-                  <span class="text-[11px] font-extrabold text-[#FF2B51] tracking-wider uppercase bg-[#24101B] px-2 py-0.5 rounded-full border border-[#FF2B51] shadow-[0_0_8px_rgba(255,43,81,0.4)]">
+                  <span class="text-[11px] font-extrabold text-[#FF2B51] tracking-wider uppercase bg-[rgba(255,43,81,0.18)] px-2 py-0.5 rounded-full border border-[#FF2B51] shadow-[0_0_8px_rgba(255,43,81,0.4)]">
                     {{ activeSession?.levelId === level.id ? `LANJUT ${activeSession.nodeIndex + 1}/10` : 'MULAI' }}
                   </span>
                 </div>
@@ -482,7 +541,7 @@ const tipMessage = computed(() => {
                   :ref="(el) => setNodeBtnRef(level.id, el)"
                   type="button"
                   @click="onSelectLevel(level)"
-                  class="w-16 h-16 rounded-2xl flex items-center justify-center transition-all cursor-pointer active:scale-95"
+                  class="ios-press w-16 h-16 rounded-2xl flex items-center justify-center cursor-pointer"
                   :class="[
                     level.isCompleted
                       ? 'bg-[#22C55E] border-2 border-[#22C55E] shadow-[0_0_16px_rgba(34,197,94,0.4)]'
@@ -510,7 +569,7 @@ const tipMessage = computed(() => {
               <!-- Level Title Pill -->
               <div class="mt-1.5 text-center max-w-[156px]">
                 <div
-                  class="text-[12px] font-bold px-2.5 py-0.5 rounded-xl inline-block bg-[#0B0F19]"
+                  class="text-[12px] font-bold px-2.5 py-0.5 rounded-full inline-block bg-[#0B0F19]/90"
                   :class="level.isActive
                     ? 'text-white !bg-[#13192B] border border-[#222B45] shadow-sm'
                     : level.isCompleted
@@ -528,7 +587,7 @@ const tipMessage = computed(() => {
       </div>
 
       <!-- ── TIPS CARD (Tips L3-Bot) ────────────────────────────────────── -->
-      <Transition name="slide-right">
+      <Transition name="ios-banner">
         <div
           v-if="showTip"
           class="shrink-0 mx-4 mb-2 card-base p-3 flex items-start gap-2.5 border-[#FF2B51]/30 bg-[rgba(255,43,81,0.06)]"
@@ -553,14 +612,14 @@ const tipMessage = computed(() => {
         </div>
       </Transition>
 
-      <!-- ── LEVEL DETAIL MODAL (Saat mengetuk level) ────────────────────── -->
-      <Transition name="slide-left">
+      <!-- ── LEVEL DETAIL MODAL (iOS Bottom Sheet) ───────────────────────── -->
+      <Transition name="ios-sheet">
         <div
           v-if="selectedLevelModal"
-          class="absolute inset-0 bg-black/75 flex items-end justify-center z-50 pb-6 px-4"
+          class="absolute inset-0 bg-black/75 backdrop-blur-xs flex items-end justify-center z-50 pb-6 px-4"
           @click.self="selectedLevelModal = null"
         >
-          <div class="card-base w-full max-w-sm p-5 flex flex-col gap-4 border-[#222B45] bg-[#13192B] shadow-2xl">
+          <div class="ios-sheet-card card-base w-full max-w-sm p-5 flex flex-col gap-4 border-[#222B45] bg-[#13192B] shadow-2xl">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div

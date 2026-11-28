@@ -20,7 +20,7 @@ const icons = {
 <template>
   <button
     @click="$emit('select', target.minutes)"
-    class="card-base w-full flex items-center justify-between gap-3 p-4 active:scale-[0.98] transition-transform"
+    class="ios-press card-base w-full flex items-center justify-between gap-3 p-4 cursor-pointer"
     :class="{ 'card-active': isSelected }"
   >
     <div class="flex items-center gap-3">

@@ -2,6 +2,7 @@ import { reactive } from 'vue'
 import { StorageService } from '../core/services/StorageService.js'
 import { CurriculumService } from '../core/services/CurriculumService.js'
 import { calculateNodeXp, calculatePerfectRunBonus } from '../core/services/quizEngine.js'
+import { findNewlyUnlockedAchievements } from '../core/services/achievementEngine.js'
 
 /**
  * @module gameStore
@@ -15,14 +16,62 @@ const state = reactive({
   progress: StorageService.getProgress(),
   nodeClaims: StorageService.getNodeClaims(),
   activeSession: StorageService.getActiveSession(),
+  achievements: StorageService.getClaimedAchievements(),
+  achievementToasts: [],
 })
 
-function refresh() {
+/**
+ * Evaluate current progression snapshot, persist any newly earned achievements,
+ * and enqueue celebratory toast banners when `notify` is enabled.
+ * @param {{ notify?: boolean }} [options]
+ * @returns {Array<Object>}
+ */
+function checkAndClaimAchievements({ notify = true } = {}) {
+  if (!state.profile) {
+    state.achievements = []
+    return []
+  }
+
+  const newlyUnlocked = findNewlyUnlockedAchievements(
+    {
+      profile: state.profile,
+      stats: state.stats,
+      progress: state.progress,
+      nodeClaims: state.nodeClaims,
+    },
+    state.achievements
+  )
+
+  if (!newlyUnlocked.length) return []
+
+  for (const achievement of newlyUnlocked) {
+    StorageService.addClaimedAchievement(achievement.id)
+    if (notify && !state.achievementToasts.some((t) => t.id === achievement.id)) {
+      state.achievementToasts.push(achievement)
+    }
+  }
+
+  state.achievements = StorageService.getClaimedAchievements()
+  return newlyUnlocked
+}
+
+function dismissAchievementToast(id) {
+  if (!state.achievementToasts.length) return
+  if (!id) {
+    state.achievementToasts.shift()
+    return
+  }
+  state.achievementToasts = state.achievementToasts.filter((item) => item.id !== id)
+}
+
+function refresh({ notifyAchievements = true } = {}) {
   state.profile = StorageService.getProfile()
   state.stats = StorageService.getStats()
   state.progress = StorageService.getProgress()
   state.nodeClaims = StorageService.getNodeClaims()
   state.activeSession = StorageService.getActiveSession()
+  state.achievements = StorageService.getClaimedAchievements()
+  checkAndClaimAchievements({ notify: notifyAchievements })
 }
 
 function updateProfile(patch) {
@@ -54,6 +103,7 @@ function claimNodeXp(nodeId) {
     StorageService.saveStats(nextStats)
     state.nodeClaims = StorageService.getNodeClaims()
     state.stats = nextStats
+    checkAndClaimAchievements({ notify: true })
   }
   return xpEarned
 }
@@ -131,7 +181,8 @@ function completeLevel({ trackId, levelId, currentHearts, maxHearts = 5 }) {
 
 function resetAll() {
   StorageService.clearAll()
-  refresh()
+  state.achievementToasts = []
+  refresh({ notifyAchievements: false })
 }
 
 export const gameStore = {
@@ -142,5 +193,7 @@ export const gameStore = {
   saveSession,
   clearSession,
   completeLevel,
+  checkAndClaimAchievements,
+  dismissAchievementToast,
   resetAll,
 }

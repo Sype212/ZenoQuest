@@ -171,7 +171,9 @@ const headerDotColor = computed(() => {
               />
 
               <!-- Placed Code Fragment(s) on this Line -->
-              <div
+              <TransitionGroup
+                tag="div"
+                name="chip-pop"
                 class="flex flex-wrap items-baseline flex-1 min-w-0"
                 :class="line.joinGap === '' ? 'gap-0' : 'gap-x-1 gap-y-1'"
               >
@@ -182,7 +184,7 @@ const headerDotColor = computed(() => {
                   :disabled="disabled"
                   @click="removeAt(item.origIndex)"
                   :title="disabled ? undefined : 'Ketuk untuk hapus dari editor'"
-                  class="font-code text-[12.5px] leading-[1.55] text-left break-words whitespace-pre-wrap transition-colors"
+                  class="ios-press font-code text-[12.5px] leading-[1.55] text-left break-words whitespace-pre-wrap"
                   :class="feedbackState === 'correct'
                     ? 'px-0.5 py-0 border-transparent bg-transparent cursor-default'
                     : feedbackState === 'incorrect'
@@ -199,11 +201,12 @@ const headerDotColor = computed(() => {
                 <!-- Blinking Editor Cursor at End of Last Line -->
                 <span
                   v-if="lIdx === formattedLines.length - 1 && !disabled"
+                  key="editor-cursor"
                   aria-hidden="true"
                   class="inline-block w-[2px] h-4 ml-0.5 align-middle animate-pulse shrink-0"
                   :style="{ backgroundColor: headerDotColor }"
                 />
-              </div>
+              </TransitionGroup>
             </div>
           </div>
         </div>
@@ -239,7 +242,7 @@ const headerDotColor = computed(() => {
           type="button"
           :disabled="disabled || isUsed(frag.id)"
           @click="addFragment(frag.id)"
-          class="px-3 py-2 rounded-lg border font-code text-[12.5px] leading-snug transition-all text-left break-words whitespace-normal"
+          class="ios-press px-3 py-2 rounded-lg border font-code text-[12.5px] leading-snug text-left break-words whitespace-normal"
           :class="isUsed(frag.id)
             ? 'bg-[#0F1524] border-[#1A2238] opacity-40 cursor-default'
             : 'bg-[#13192B] border-[#222B45] hover:border-[var(--zq-accent,#FF2B51)] active:scale-95 cursor-pointer'"
@@ -254,3 +257,17 @@ const headerDotColor = computed(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.chip-pop-enter-active {
+  transition: transform 0.24s cubic-bezier(0.22, 1.18, 0.36, 1), opacity 0.18s ease;
+}
+.chip-pop-leave-active {
+  transition: transform 0.15s ease-in, opacity 0.14s ease-in;
+}
+.chip-pop-enter-from,
+.chip-pop-leave-to {
+  transform: scale(0.86);
+  opacity: 0;
+}
+</style>

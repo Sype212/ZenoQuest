@@ -14,7 +14,7 @@ defineEmits(['select'])
   <button
     @click="$emit('select', track.id)"
     type="button"
-    class="card-base w-full text-left p-3.5 flex flex-col gap-2 active:scale-[0.98] transition-all cursor-pointer"
+    class="ios-press card-base w-full text-left p-3.5 flex flex-col gap-2 cursor-pointer"
     :class="{ 'card-active': isSelected }"
   >
     <!-- Header: badge + title + status -->

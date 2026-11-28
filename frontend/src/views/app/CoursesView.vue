@@ -27,6 +27,13 @@ const progressMap = computed(() => gameStore.state.progress || {})
 
 const nickname = computed(() => profile.value?.nickname || 'Petualang')
 const totalXp  = computed(() => stats.value?.xp ?? 0)
+const unlockedAchievementsCount = computed(() =>
+  Array.isArray(gameStore.state.achievements) ? gameStore.state.achievements.length : 0
+)
+
+function goToAchievements() {
+  router.push({ path: '/profile', query: { focus: 'achievements' } })
+}
 
 // All 5 tracks with reactive progress data
 const tracksWithProgress = computed(() =>
@@ -40,6 +47,7 @@ const tracksWithProgress = computed(() =>
 )
 
 function goToMap(trackId) {
+  gameStore.updateProfile({ selectedTrack: trackId })
   router.push(`/map/${trackId}`)
 }
 </script>
@@ -63,24 +71,35 @@ function goToMap(trackId) {
         </div>
 
         <!-- XP summary bar -->
-        <div class="flex items-center gap-3 p-3 rounded-xl bg-[#13192B] border border-[#222B45]">
-          <div class="flex items-center gap-1.5">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F7DF1E">
+        <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#13192B] border border-[#222B45]">
+          <div class="flex items-center gap-1.5 min-w-0">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F7DF1E" class="shrink-0">
               <path d="M13 2L4.5 13.5H12L11 22L19.5 10.5H12L13 2Z"/>
             </svg>
-            <span class="text-[15px] font-extrabold text-white">{{ totalXp }} XP</span>
-            <span class="text-[12px] text-[#8E9AB0]">Total</span>
+            <span class="text-[14px] font-extrabold text-white whitespace-nowrap">{{ totalXp }} XP</span>
           </div>
-          <div class="w-px h-4 bg-[#222B45]" />
-          <div class="flex items-center gap-1.5">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#22C55E">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="#22C55E" stroke-width="0" fill="none"/>
-              <path d="M22 4L12 14.01l-3-3" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <div class="w-px h-4 bg-[#222B45] shrink-0" />
+          <div class="flex items-center gap-1.5 min-w-0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="shrink-0">
+              <path d="M22 4L12 14.01l-3-3" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span class="text-[12px] text-[#8E9AB0]">
+            <span class="text-[12px] text-[#8E9AB0] truncate">
               {{ tracksWithProgress.reduce((s, t) => s + t.done, 0) }} Level Tamat
             </span>
           </div>
+          <button
+            @click="goToAchievements"
+            type="button"
+            data-testid="courses-achievement-pill"
+            class="ml-auto shrink-0 flex items-center gap-1 px-2 py-1 rounded-full bg-[#0B0F19] border border-[#222B45] hover:border-[#22C55E] transition-colors cursor-pointer active:scale-95"
+            aria-label="Lihat Pencapaian"
+            title="Lihat Pencapaian"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z" stroke="#22C55E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-[12px] font-bold text-[#22C55E]">{{ unlockedAchievementsCount }}</span>
+          </button>
         </div>
       </div>
 
@@ -97,7 +116,7 @@ function goToMap(trackId) {
             :key="track.id"
             @click="goToMap(track.id)"
             type="button"
-            class="card-base w-full text-left p-4 flex flex-col gap-3 active:scale-[0.98] transition-transform cursor-pointer"
+            class="ios-press card-base w-full text-left p-4 flex flex-col gap-3 cursor-pointer"
             :class="track.id === profile?.selectedTrack ? 'card-active' : ''"
           >
             <!-- Row 1: Badge + Title + Progress label -->

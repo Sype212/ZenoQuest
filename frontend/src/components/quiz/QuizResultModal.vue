@@ -23,7 +23,7 @@ const emit = defineEmits(['retry', 'exit'])
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-5 backdrop-blur-xs">
     <div class="mobile-frame !min-h-0 !bg-transparent flex items-center justify-center">
-      <div class="w-full card-base p-6 flex flex-col items-center text-center gap-4 bg-[#13192B] border-[#222B45] shadow-2xl">
+      <div class="ios-dialog-card w-full card-base p-6 flex flex-col items-center text-center gap-4 bg-[#13192B] border-[#222B45] shadow-2xl">
         <!-- Mascot -->
         <MascotAvatar
           :variant="mode === 'complete' ? 'happy' : 'sad'"

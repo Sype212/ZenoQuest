@@ -14,6 +14,7 @@ export class StorageService {
     PROGRESS: 'zq_progress',
     NODE_CLAIMS: 'zq_node_claims',
     ACTIVE_SESSION: 'zq_active_session',
+    ACHIEVEMENTS: 'zq_achievements',
   };
 
   /** Read and parse a JSON value. Returns null on error/missing. */
@@ -131,6 +132,37 @@ export class StorageService {
 
   static clearActiveSession() {
     StorageService.remove(StorageService.KEYS.ACTIVE_SESSION);
+  }
+
+  // ─── Achievements ────────────────────────────────────────────────────────
+
+  static getAchievements() {
+    const raw = StorageService.get(StorageService.KEYS.ACHIEVEMENTS);
+    return {
+      claimedIds: Array.isArray(raw?.claimedIds) ? raw.claimedIds : [],
+    };
+  }
+
+  static getClaimedAchievements() {
+    return StorageService.getAchievements().claimedIds;
+  }
+
+  static saveAchievements(data) {
+    const claimedIds = Array.isArray(data?.claimedIds)
+      ? [...new Set(data.claimedIds.map(String))]
+      : [];
+    return StorageService.set(StorageService.KEYS.ACHIEVEMENTS, { claimedIds });
+  }
+
+  static addClaimedAchievement(id) {
+    if (!id) return false;
+    const claimedIds = StorageService.getClaimedAchievements();
+    if (!claimedIds.includes(id)) {
+      claimedIds.push(id);
+      StorageService.saveAchievements({ claimedIds });
+      return true;
+    }
+    return false;
   }
 
   // ─── Schema Migration Guard ───────────────────────────────────────────────

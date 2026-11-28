@@ -3,7 +3,7 @@
  * OnboardingView
  * Orchestrator for the 4-screen onboarding flow.
  * Controls step transitions, delegates mutations to onboardingStore,
- * and navigates to /courses upon completion.
+ * and navigates directly to the chosen learning track (/map/:trackId) upon completion.
  *
  * Step mapping:
  *   0 → Step0Welcome     (no nav bar, no step indicators)
@@ -79,9 +79,9 @@ function onNext() {
   if (ctaDisabled.value) return
 
   if (state.currentStep === 3) {
-    // Final step: commit profile and navigate to app
-    store.finishOnboarding()
-    router.replace({ name: 'courses' })
+    // Final step: commit profile and navigate directly to selected learning track map
+    const profile = store.finishOnboarding()
+    router.replace({ name: 'map', params: { trackId: profile.selectedTrack || 'html' } })
     return
   }
 
@@ -128,6 +128,7 @@ function onSkip() {
           @selectExperience="store.selectExperience($event)"
           @selectMinutes="store.selectDailyTarget($event)"
           @update:nickname="store.setNickname($event)"
+          @submit="onNext"
         />
       </Transition>
     </div>

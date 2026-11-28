@@ -16,7 +16,7 @@ defineEmits(['select'])
 <template>
   <button
     @click="$emit('select', id)"
-    class="card-base p-4 flex flex-col gap-2 text-left active:scale-[0.97] transition-transform"
+    class="ios-press card-base p-4 flex flex-col gap-2 text-left cursor-pointer"
     :class="{ 'card-active': isSelected }"
   >
     <span class="text-2xl">{{ icon }}</span>

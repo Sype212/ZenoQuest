@@ -162,9 +162,7 @@ const isSad = computed(() => props.variant === 'sad')
           <line x1="189" y1="92" x2="189" y2="56" stroke="#0F1115" stroke-width="9" stroke-linecap="round" />
 
           <!-- Spinning sky-blue propeller blade -->
-          <g class="l3-propeller">
-            <rect x="98" y="69" width="182" height="19" rx="9.5" fill="#67D4FA" stroke="#0F1115" stroke-width="8" />
-          </g>
+          
 
           <!-- Red ball tip -->
           <circle cx="189" cy="54" r="14" :fill="suitColor" stroke="#0F1115" stroke-width="9" />
